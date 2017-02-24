@@ -1,0 +1,52 @@
+*{
+	font-family:"Microsoft yahei";
+	font-size:12px;
+}
+/*set bomb box style*/
+.M-bomb{
+	width: 500px;
+    height: 200px;
+    margin: 0 auto;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+     z-index: 2050;
+     background-color: #fff;
+     border-radius:5px;
+}
+/*modal*/
+.M-opacity {
+    width: 100%;
+    height: 100%;
+    color: #333;
+    font-family: 'Microsoft YaHei' !important;
+    opacity: 0.5;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+}
+/*title*/
+.M-bomb_title{
+	padding: 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #2ea4ed;
+    border-radius: 5px 5px 0 0;
+}
+/*modal foot*/
+.M-bomb_foot{
+	position: absolute;
+    bottom: 0px;
+    padding: 15px;
+    width: 100%;
+}   
+.mbtn{
+	width: 65px;
+    height: 30px;
+} 
