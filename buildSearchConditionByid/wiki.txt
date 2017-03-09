@@ -1,0 +1,30 @@
+1，需要引入jquery.js和bootstrap.js 和bootstrap.css
+2，后台接口返回数据json样列
+[{
+	allowOrderBy:true,
+	allowOutterQuery:true,//必填
+	column:"contact:phone",//必填
+	destinationView:"6e8f7ebe-ee96-11e6-bf5f-00163e0052f2",
+	hrefText:undefined,
+	name:"电话号码",//必填
+	pickApplet:"3b3d4349-ee96-11e6-bf5f-00163e0052f2",
+	pickFlag:"0",
+	pickList:undefined,
+	pickListId:undefined,
+	searchType:undefined,
+	type:"text"//必填
+},
+{
+	allowOrderBy:true,
+	allowOutterQuery:true,//必填
+	column:"contact:phone",//必填
+	destinationView:"6e8f7ebe-ee96-11e6-bf5f-00163e0052f2",
+	hrefText:undefined,
+	name:"电话号码",
+	pickApplet:"3b3d4349-ee96-11e6-bf5f-00163e0052f2",
+	pickFlag:"0",
+	pickList:[{id:"male",name:"男"},{id:"female",name:"女"}],//必填
+	pickListId:undefined,
+	searchType:undefined,
+	type:"text"
+}]
