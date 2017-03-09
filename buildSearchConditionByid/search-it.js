@@ -1,8 +1,9 @@
 (function($) {
 	var soptions={
     		"appletid":null,//appletId
-    		"onChangetrigger":true,//selected时是否触发搜索事件
-    		"afterSelectSearch":null,//select触发搜索事件之后的回调函数
+    		"selectOnChange":true,//selected时是否触发搜索事件
+    		"inputOnChange":true,//input时是否触发搜索事件
+    		"afterChangeSearch":null,//select触发搜索事件之后的回调函数
     		"conditionApplet":null
     };
 	//扩展jquery方法
@@ -20,12 +21,12 @@
             soptions.conditionApplet = options.appletid;
             $(this).append(result);
             //所有select onchange时触发搜索
-            if(options.onChangetrigger){
-            	options.afterSelectSearch = widget.changeCondtionSelect({"callBack":options.afterSelectSearch});
-            }else{
-            	widget.changeCondtionSelect();
+            if(options.selectOnChange){
+            	widget.changeSelectCondtion({"callBack":options.afterChangeSearch});
             }
-            //构建完搜索按钮给搜索按钮绑定回调事件
+            if(options.inputOnChange){
+            	widget.changeInputCondtion({"callBack":options.afterChangeSearch});
+            }
             // return options;
         }
     });
@@ -98,10 +99,17 @@
 	    	}
 	    	return html;
 	    },
-	    //onchange触发筛选
-	    changeCondtionSelect:function(obj){
+	    //onchange-Select触发筛选
+	    changeSelectCondtion:function(obj){
 	    	var $slct = $(".cds-item .cds-select");
 	    	$slct.change(function(){
+	    		widget.searchByCondition({"condition":widget.buildSearchCondition(),"callBack":obj.callBack});
+	    	})
+	    },
+	  //onchange-input触发筛选
+	    changeInputCondtion:function(obj){
+	    	var $ipt = $(".cds-item .cds-input");
+	    	$ipt.change(function(){
 	    		widget.searchByCondition({"condition":widget.buildSearchCondition(),"callBack":obj.callBack});
 	    	})
 	    },
@@ -110,6 +118,7 @@
 	    	var condition={};
 	    	var ipts = $(".cds-item .cds-input");
 	    	var selets=$(".cds-item .cds-select");
+	    	//input
 	        for(var i = 0 ; i < ipts.length ; i++){
 	        	var key=$(ipts[i]).attr("data-column");
 	        	var val=$(ipts[i]).val();
@@ -117,6 +126,7 @@
 	        		condition[key] = " like '%" + val + "%'";
 	        	}
 	        }
+	        //select
 	        for(var j = 0 ;j < selets.length ; j++){
 	        	var key=$(selets[j]).attr("data-column");
 	        	var val=$(selets[j]).val();
