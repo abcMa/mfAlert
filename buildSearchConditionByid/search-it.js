@@ -3,7 +3,7 @@
     		"appletid":null,//appletId
     		"selectOnChange":true,//selected时是否触发搜索事件
     		"inputOnChange":true,//input时是否触发搜索事件
-    		"afterChangeSearch":null,//select触发搜索事件之后的回调函数
+    		"afterChangeSearch":null,//搜索事件之后的回调函数
     		"conditionApplet":null
     };
 	//扩展jquery方法
@@ -20,10 +20,11 @@
             })
             soptions.conditionApplet = options.appletid;
             $(this).append(result);
-            //所有select onchange时触发搜索
+            //select bind onchange 事件
             if(options.selectOnChange){
             	widget.changeSelectCondtion({"callBack":options.afterChangeSearch});
             }
+            //input bind onchange 事件
             if(options.inputOnChange){
             	widget.changeInputCondtion({"callBack":options.afterChangeSearch});
             }
