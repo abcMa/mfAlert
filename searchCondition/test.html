@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="易掌客">
+  <meta name="Keywords" content="易掌天下，易掌客">
+  <meta name="Description" content="唯一一个致力于帮助企业提高用户互联网运营的专业移动CRM产品">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+
+  <title>创建营销活动</title>
+  <body>
+  <div class="container"> </div>
+  </body>
+<script src="js/extend/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/extend/jquery-ui.min.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script> 
+<script src="js/search-it.js" type="text/javascript" charset="utf-8"></script>
+<script>
+Iptools.DEFAULTS.tenantId = "33";
+Iptools.DEFAULTS.token = "c59d4a00-d273-49bd-80ce-50ddc6028a33";
+Iptools.DEFAULTS.API_URL = "http://eisst.63home.cn:80/eis/v1/";
+var op1 = {async:false,"nameList":'\"contact_list_all\"'};
+var contactGroupApplet;
+Iptools.uidataTool._getCustomizeApplet(op1).done(function(data){
+  contactGroupApplet = data.applets[0].applet;
+})
+$(".container").buildConditionByAppletId({
+	appletid : contactGroupApplet,
+	onChangetrigger : true,
+	afterSelectSearch : function(rt){
+		//do something
+		console.log(rt);
+	}});
+</script>
+  </html>
