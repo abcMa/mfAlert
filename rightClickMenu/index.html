@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.contextMenu{
+    display:none;
+    border: 1px solid #dbdbdb;
+    width: 100px;
+    position: absolute;
+    padding: 15px;
+    margin: 0;
+    background: beige;
+}
+.show-menu {
+    display:block;
+    opacity: 1;
+    -webkit-transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1);
+    pointer-events: auto;
+}
+.menu-item{
+    list-style: none;
+    padding:3px;
+}
+</style>
+</head>
+<body>
+<div class="nav">
+<span>第一</span>
+<span>第二</span>
+</div>
+</body>
+<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/contextMenu.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(".nav").bindContextMenu();
+</script>
+</html>

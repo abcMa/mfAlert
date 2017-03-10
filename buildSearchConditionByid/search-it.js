@@ -107,7 +107,7 @@
 	    		widget.searchByCondition({"condition":widget.buildSearchCondition(),"callBack":obj.callBack});
 	    	})
 	    },
-	  //onchange-input触发筛选
+	    //onchange-input触发筛选
 	    changeInputCondtion:function(obj){
 	    	var $ipt = $(".cds-item .cds-input");
 	    	$ipt.change(function(){
