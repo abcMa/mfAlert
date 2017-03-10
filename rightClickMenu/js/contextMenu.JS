@@ -3,7 +3,7 @@
 		"bindContextMenu":function(){
 			widget.init();
 			//增加contextmenu事件,匿名函数直接把事件对象保存到内存中（知识点：为什么widget.onContextMenu()不可以）
-			document.addEventListener('contextmenu',function(e){
+			$(this)[0].addEventListener('contextmenu',function(e){
 				e.preventDefault();
 			    widget.showMenu(e.pageX, e.pageY);
 			    //document.addEventListener('mousedown', onMouseDown, false);
