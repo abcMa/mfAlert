@@ -24,9 +24,11 @@
 			widget.bindEventAfterDomReady();
 		},
 		bindEventAfterDomReady:function(){
-			widget.refresh();
+			widget.refreshCurrentTab();
 			widget.documentClick();
-			widget.closeAll();
+			widget.closeAllTabs();
+			widget.closeOtherTab();
+			widget.currentTab();
 		},
 		domReady:function(){
 			var html = "";
@@ -57,16 +59,25 @@
         		}
         	})
 		},
-        refresh:function(){
+        refreshCurrentTab:function(){
         	$(".cur-refresh").on("click",function(){
         		widget.hideMenu();
         		location.reload();
         	})
         },
-        closeAll:function(){
+        closeAllTabs:function(){
         	$(".all-close").on("click",function(){
         		widget.hideMenu();
-        		location.reload();
+        	})
+        },
+        closeOtherTab:function(){
+        	$(".other-close").on("click",function(){
+        		widget.hideMenu();
+        	})
+        },
+		currentTab:function(){
+			$(".cur-close").on("click",function(){
+        		widget.hideMenu();
         	})
         }
 	}
