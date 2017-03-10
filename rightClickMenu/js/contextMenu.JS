@@ -10,10 +10,6 @@
 			} , false);
 		}
 	})
-	function onMouseDown(e){
-	    widget.hideMenu();
-	    document.removeEventListener('mousedown', onMouseDown);
-	}
 	var widget ={
 		param:{
 			menu:""
