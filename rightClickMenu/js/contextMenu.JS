@@ -1,7 +1,6 @@
 (function($){
 	$.fn.extend({
 		"bindContextMenu":function(){
-			
 			//增加contextmenu事件
 			$(this)[0].addEventListener('contextmenu', onContextMenu, false);
 		}
@@ -11,6 +10,7 @@
 				'<li class="menu-item">刷新</li>'+
 				'<li class="menu-item">关闭当前</li>'+
 				'<li class="menu-item">关闭其他</li>'+
+				'<li class="menu-separator"></li>'+
 				'<li class="menu-item">关闭所有</li>'+
 			    '</menu>';
 	$("body").append(html);
