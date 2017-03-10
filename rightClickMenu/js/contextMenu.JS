@@ -25,6 +25,8 @@
 		},
 		bindEventAfterDomReady:function(){
 			widget.refresh();
+			widget.documentClick();
+			widget.closeAll();
 		},
 		domReady:function(){
 			var html = "";
@@ -46,6 +48,14 @@
 		},
 		hideMenu :function (){
 			widget.param.menu.removeClass('show-menu');
+		},
+		documentClick:function(){
+			$(document).on("click",function(e){
+        		var clkArea = $(e.target);
+        		if(!clkArea.hasClass("contextMenu")){
+        			widget.hideMenu();
+        		}
+        	})
 		},
         refresh:function(){
         	$(".cur-refresh").on("click",function(){
