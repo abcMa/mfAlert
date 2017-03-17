@@ -2,13 +2,80 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <meta name="Generator" content="EditPlus®">
+  <meta name="Generator" content="">
   <meta name="Author" content="">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
   <title>问卷</title>
+  <link href="css/dist/bootstrap.min.css" rel="stylesheet">
+  <link href="css/dist/summernote.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
   <link href="css/common.css" rel="stylesheet">
  </head>
  <body>
+ <div class="question_type">
+  <ul>
+	 <li>单选题</li>
+	 <li>下拉题</li>
+	 <li>多选题</li>
+	 <li>单行文本</li>
+	 <li>多行文本</li>
+  </ul>
+ </div>
+<ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+        <a href="#question_main" class="tabSwitch" role="tab" data-toggle="tab" aria-expanded="true">第一页</a>
+    </li>
+    <li role="presentation">
+        <a href="#end_page" class="tabSwitch" role="tab" data-toggle="tab" aria-expanded="true">结束页</a>
+    </li>
+</ul>
+<!-- Tab panes -->
+<div class="tab-content">
+    <!-- 第一页 -->
+	<div class="tab-pane active" id="question_main" role="tabpanel">
+	   <div class="quesiotn q_radio">
+	     <div class="title">
+	       <span class="title_index">1</span>
+	       <span class="title_text">单选题</span>
+	     </div>
+	     <div class="inputs">
+	       <div>
+	         <input type="radio" name="answer_1"/>
+	         <label for="answer_1">选项一</label>
+	       </div>
+	       <div>
+	         <input type="radio" name="answer_1"/>
+	         <label for="answer_1">选项一</label>
+	       </div>
+	     </div>
+	   </div>
+	   
+	   <div class="quesiotn q_select">
+	     <div class="title">
+	       <span class="title_index">1</span>
+	       <span class="title_text">下拉题</span>
+	     </div>
+	     <div class="inputs">
+	       <select name="answer_q-3-BECc" class="survey_form_input"> 
+	       <option value="">--请选择--</option>  
+	       <option id="option_q-3-BECc_o-100-ABCD" value="o-100-ABCD" data-oid="o-100-ABCD" class=""> 选项 </option>  
+	       <option id="option_q-3-BECc_o-101-EFGH" value="o-101-EFGH" data-oid="o-101-EFGH" class=""> 选项 </option>  
+	       </select>
+	     </div>
+	   </div>
+	</div>
+	<!-- 结束页 -->
+	<div class="tab-pane" id="end_page" role="tabpanel">
+	    <div id="end_summernote"></div>
+	</div>
+</div>
+<script type="text/javascript" src="js/dist/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/dist/bootstrap.js"></script>
+
+<script src="js/summernote/summernote_v2.js"></script>
+<script src="js/summernote/lang/summernote-zh-CN.js"></script>
+
+<script src="js/base.js"></script>
  </body>
  </html>
