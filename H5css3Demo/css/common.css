@@ -155,3 +155,42 @@ body {
 	form{bottom: 288px;}
 	to{bottom: 290px;}
 }
+.clound{
+	height: 200px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+.lf-move-cld-1{
+	background: url(../img/page2_left_cloud.png) center no-repeat;
+    background-size: 100% 100%;
+    width: 200px;
+    height: 77px;
+    position:relative;
+    animation:left-move-cld 3s linear infinite alternate;
+    -webkit-animation:left-move-cld 3s linear infinite alternate; /*Safari and Chrome*/
+}
+@keyframes left-move-cld{
+	0% {
+        left: .43rem;
+        bottom: .42rem;
+    }
+
+    50% {
+        left: 1.41rem;
+        bottom: .84rem;
+    }
+
+    100% {
+        left: .64rem;
+        bottom: 1.03rem;
+    }
+}
+.lf-cld-1{
+	background: url(../img/bottom_left1.png) center no-repeat;
+    background-size: 100% 100%;
+}
+.lf-cld-2{
+	background: url(../img/bottom_right2.png) center no-repeat;
+    background-size: 100% 100%;
+}
