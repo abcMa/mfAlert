@@ -1,13 +1,13 @@
-//var widget = {};
-//widget={
-//   init:function(){
-//	   widget.componentsInit();
-//   },
-//   componentsInit:function(){
-//	   $("#end_summernote").summernote();
-//   }
-//}
-//widget.init();
+var widget = {};
+widget={
+   init:function(){
+	   widget.componentsInit();
+   },
+   componentsInit:function(){
+	   $("#end_summernote").summernote();
+   }
+}
+widget.init();
 'use strict';
 var words = document.querySelector('[data-question]');
 //var sentence = document.querySelector('[data-sentence]');
