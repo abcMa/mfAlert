@@ -11,6 +11,50 @@
   <link href="css/dist/summernote.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet" />
   <link href="css/common.css" rel="stylesheet">
+  <style>
+  .gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
+
+.gu-hide {
+  display: none !important;
+}
+
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+  .question{
+    padding: 15px;
+    background-color: #d4d0d0;
+    display: block;
+    margin:15px;
+    transition: background .3s;
+    cursor: move;
+  }
+  .question:hover {
+  background: #bcbcbc;
+}
+  .question:active {
+  background: #ababab;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grabbing;
+}
+  </style>
  </head>
  <body>
  <div class="question_type">
@@ -30,11 +74,11 @@
         <a href="#end_page" class="tabSwitch" role="tab" data-toggle="tab" aria-expanded="true">结束页</a>
     </li>
 </ul>
-<!-- Tab panes -->
+
 <div class="tab-content">
-    <!-- 第一页 -->
-	<div class="tab-pane active" id="question_main" role="tabpanel">
-	   <div class="quesiotn q_radio">
+    第一页
+	<div class="tab-pane active app" data-question id="question_main" role="tabpanel">
+	   <div class="question q_radio">
 	     <div class="title">
 	       <span class="title_index">1</span>
 	       <span class="title_text">单选题</span>
@@ -51,7 +95,7 @@
 	     </div>
 	   </div>
 	   
-	   <div class="quesiotn q_select">
+	   <div class="question q_select">
 	     <div class="title">
 	       <span class="title_index">1</span>
 	       <span class="title_text">下拉题</span>
@@ -65,17 +109,27 @@
 	     </div>
 	   </div>
 	</div>
-	<!-- 结束页 -->
+	结束页
 	<div class="tab-pane" id="end_page" role="tabpanel">
 	    <div id="end_summernote"></div>
 	</div>
 </div>
+<main class="app">
+	<div data-words class="words">
+		<span class="word">Synergy</span>
+		<span class="word">Circle-back</span>
+		<span class="word">Affinity</span>
+		<span class="word">But</span>
+	</div>
+</main>
 <script type="text/javascript" src="js/dist/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="js/dist/bootstrap.js"></script>
 
 <script src="js/summernote/summernote_v2.js"></script>
 <script src="js/summernote/lang/summernote-zh-CN.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.1/dragula.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.12.0/lodash.min.js"></script>
 <script src="js/base.js"></script>
  </body>
  </html>
