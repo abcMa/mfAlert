@@ -12,7 +12,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet" />
   <link href="css/common.css" rel="stylesheet">
   <style>
-  .gu-mirror {
+.gu-mirror {
   position: fixed !important;
   margin: 0 !important;
   z-index: 9999 !important;
@@ -34,20 +34,20 @@
 
 .gu-transit {
   opacity: 0.2;
-      box-shadow: 2px 2px #b79393;
+  box-shadow: 2px 2px #b79393;
   box-shadow:
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
   filter: alpha(opacity=20);
 }
-  .question{
-    padding: 15px;
-    /* background-color: #d4d0d0; */
-    display: block;
-    margin:15px;
-    transition: background .3s;
-    cursor: move;
-  }
-  .question:hover {
+.question{
+  padding: 15px;
+  /* background-color: #d4d0d0; */
+  display: block;
+  margin:15px;
+  transition: background .3s;
+  cursor: move;
+}
+.question:hover {
   background: #e4e0e0;
 }
   .question:active {
@@ -78,7 +78,6 @@
 </ul>
 
 <div class="tab-content">
-    第一页
 	<div class="tab-pane active app" data-question id="question_main" role="tabpanel">
 	   <div class="question q_radio">
 	     <div class="title">
@@ -111,19 +110,10 @@
 	     </div>
 	   </div>
 	</div>
-	结束页
 	<div class="tab-pane" id="end_page" role="tabpanel">
 	    <div id="end_summernote"></div>
 	</div>
 </div>
-<main class="app">
-	<div data-words class="words">
-		<span class="word">Synergy</span>
-		<span class="word">Circle-back</span>
-		<span class="word">Affinity</span>
-		<span class="word">But</span>
-	</div>
-</main>
 <script type="text/javascript" src="js/dist/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="js/dist/bootstrap.js"></script>
 
