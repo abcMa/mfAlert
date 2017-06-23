@@ -1,1 +1,30 @@
 @CHARSET "UTF-8";
+.wrap{
+	font-family:"Microsoft YAHEI";
+	margin-top:30px;
+}
+.album_bgImg {
+	text-align:center;
+}
+.album_bgImg img{
+	margin:0 auto;
+	width:200px;
+	border-radius:50%;
+}
+.player-wrapper{
+	width:300px;
+	margin:0 auto;
+}
+.move360{
+	animation: Move360 8s linear infinite normal;
+    -webkit-animation: Move360 8s linear infinite normal;
+}
+@keyframes Move360 {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+ 
+@-webkit-keyframes Move360 {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
