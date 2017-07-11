@@ -1,21 +1,19 @@
 {
-  "version": "0.0.1",
-  "private": true,
-  "name": "mafangAlert",
-  "description": "a light wight alert plug-in",
-  "repository": "https://www.yizhangke.com",
-  "license": "MIT",
-  "devDependencies": {
-    "karma": "^0.12.16",
-    "karma-chrome-launcher": "^0.1.4",
-    "karma-jasmine": "^0.1.5",
-    "protractor": "~1.0.0",
-    "http-server": "^0.6.1",
-    "tmp": "0.0.23",
-    "bower": "^1.3.1",
-    "shelljs": "^0.2.6"
-  },
+  "name": "mfproject",
+  "version": "1.0.0",
+  "description": "mf-exercise-libray",
+  "main": "index.js",
   "scripts": {
-    "start": "http-server -a 0.0.0.0 -p 9999 -d false"
-  }
+    "start": "http-server -a 0.0.0.0 -p 9399"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abcMa/mfAlert.git"
+  },
+  "author": "mafang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abcMa/mfAlert/issues"
+  },
+  "homepage": "https://github.com/abcMa/mfAlert#readme"
 }
