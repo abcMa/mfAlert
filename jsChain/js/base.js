@@ -45,3 +45,12 @@ typeof o3
 console.log(f1.prototype === Function.prototype);//false
 console.log(f1.prototype === Object.prototype);//false
 console.log(f1.prototype instanceof Object);//true
+
+
+//------------------------------
+$(".area1").on("click",".a-span",function(e){
+    alert("span1");
+})
+$(".area2").on("click",".a-span",function(e){
+    $(".area2").append("<p>eeeee</p>");
+})
