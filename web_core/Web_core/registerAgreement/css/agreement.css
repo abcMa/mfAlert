@@ -1,0 +1,47 @@
+html,body{
+    background-color: #eff3f8;
+    font-family:"Microsoft Yahei", Helvetica, Arial, sans-serif;
+}
+img{
+    vertical-align: middle;
+    border: 0;
+}
+.agreement{
+    width: 711px;
+    height: 805px;
+    margin: 0 auto;
+    padding: 60px 50px;
+    background-color: #fff;
+    margin-bottom: 75px;
+}
+.autograph{
+    text-align: right;
+    font-weight: normal;
+    color: #282828;
+}
+.modalBottom{
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+.statement{
+    font-size: 16px;
+    line-height: 2.5rem;
+}
+.autograph{
+    font-size: 16px;
+    line-height: 2rem;
+}
+.agreementHead{
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+.logo{
+    position: fixed;
+    top: 5%;
+    left: 3%;
+}
+.logo img{
+    width: 60%;
+    height: 100%;
+}

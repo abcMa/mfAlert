@@ -1,0 +1,13 @@
+/*noinspection CssInvalidPropertyValue*/
+.icon-magic:before,.icon-stop:before{
+    padding:0 5px;
+}
+body {
+    background: #eff3f8;
+    min-height: 800px;
+    height: auto;
+}
+.mainSection{
+    background-color: #ffffff;
+    padding:0px;
+}

@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>新建客户群</title>
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Content/Style/standard.css"/>
+    <link rel="stylesheet" href="Style/newGroup.css"/>
+
+</head>
+<body marginwidth="0" marginheight="0" style="min-height:600px;">
+  <div class="row">
+    <!-- 基本信息 -->
+      <nav class="navbar navbar-default search-function-container" style="border-radius: 5px;margin-bottom:20px;border:none;">
+          <div class="container-fluid" style="background: #fff;border-radius: 5px;">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#NewPanelHeader">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" style="color:#78c9fb;">客户群新建</a>
+              </div>
+              <div class="collapse navbar-collapse" id="NewPanelHeader">
+                  <ul id="buttonListPanel" class="nav navbar-nav navbar-right">
+                      <li>
+                          <a class="newDataBtn" style="color:#fff;padding: 6px 10px;" data-loading-text="<span class='icon-spin icon-spinner' style='margin-right:2px'></span>保存中">
+                              <span class="iconfontyyy iconNewGroup">&#xe709;</span>保存
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  <form class="clearfix">
+    <div class="top clearfix">
+         <div class="name  demo clearfix col-sm-6">
+             <div class="form-group dataNewAppletMain col-sm-12 content">
+                 <label class="control-label">群名称</label>
+                 <input class="form-control control-normal-text" type="text" name="groupname">
+             </div>
+        </div>
+        <div class="divide  demo clearfix col-sm-6">
+            <div class="form-group dataNewAppletMain col-sm-12 content">
+                <label class="control-label">分群依据</label>
+                <select class="form-control control-normal-select" style="box-sizing: border-box;" name="groupreson">
+                <option value="">请选择分群依据</option>
+                <option value="2">客户价值</option>
+                <option value="1">消费频次</option>
+                <option value="3">接触渠道</option>
+                <option value="4">客户运营阶段</option>
+                </select>
+            </div>
+        </div>
+    </div>
+      <div class="top clearfix">
+          <div class="detial-des  demo clearfix col-sm-12">
+          <div class="form-group dataNewAppletMain col-sm-12 content">
+              <label class="control-label">群描述</label>
+              <span style="color:#ff7e9b;"> &nbsp; &nbsp;&nbsp;* 群描述用于详细记录建群的动机、意图，客户群的特征，以及群运营的规划概要，十分重要！</span>
+              <textarea class="form-control control-normal-text"  rows= "5" name="groupdescri"  placeholder="例如：本群均为种子客户，用于企业前期产品体验、优化、测试；之后将围绕种子客户开展一系列活动帮助改进服务流程"></textarea>
+          </div>
+          </div>
+      </div>
+
+    </form>
+    <!-- 添加成员 -->
+      <nav class="navbar navbar-default search-function-container" style="margin-bottom:0;border:none;">
+          <div class="container-fluid" style="background: #fff;border-radius: 5px 5px 0 0;">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#NewPanelHeader">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand">添加群成员<span style="font-size:14px;padding-left: 20px;">也可稍后添加群成员</span></a>
+              </div>
+              <div class="collapse navbar-collapse" id="AddPanelHeader">
+                  <div class="title-bar" style="float: right;">
+                      <div class="onlineCount"><span class="iconfontyyy iconPer">&#xe739;</span>当前人数：<i style="color:red;">0</i> 人</div>
+                      <div class="onlineCount del"><button type="button" disabled="disabled" style="background: rgba(255,255,255,0);border:none;"><span class="iconfontyyy iconDel">&#xe6df;</span>移除</button></div>
+                      <div class="onlineCount addCon"><span class="iconfontyyy iconAdd">&#xe6d9;</span>添加</div>
+                  </div>
+              </div>
+          </div>
+      </nav>
+    <div class="row table-area">
+      <table class="table table-hover selContactContent">
+        <thead>
+        <tr><th><input type="checkbox" class="finalAll blueCheckbox"></th>
+        <!--<th>序号</th>-->
+        <!--<th>头像</th>-->
+        <th>姓名</th>
+        <th>手机</th>
+         <!--<th>性别</th>-->
+        <th>标签</th>
+        <th>客户类型</th>
+        <th>客户来源</th>
+         <!--<th>累计消费</th>-->
+         <!--<th>自定义属性</th>-->
+         </tr>
+         </thead>
+        <tbody>
+        </tbody>
+      </table>
+        <div class="nodata" style="text-align: center;margin:40px 0;">
+            <img src="../../Content/Image/emptyData.png" class="" style="width:150px;height:auto;cursor:pointer">
+            <br><br>
+            <span style="font-size:20px;">暂无数据，快去添加吧</span>
+        </div>
+    </div><!-- table-end --> 
+    <!--<div class="row newContact" style="position: relative;">-->
+    <!--<span onclick="addToGroup(this)"></span>-->
+    <!--<input type="button"></div>-->
+  </div>
+</div>
+<div class="modal fade in" id="addToContactGroupModal" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">添加客户</h4>
+            </div>
+            <div class="addGroup">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span>姓名</span>
+                            <input class="form-control form-condition con-name">
+                        </div>
+                        <div class="col-md-2">
+                            <span>手机</span>
+                            <input class="form-control form-condition con-phone">
+                        </div>
+                        <div class="col-md-2">
+                            <span>标签</span>
+                            <input class="form-control form-condition con-tag">
+                        </div>
+                        <!--<div class="col-md-2">-->
+                            <!--<span>性别</span>-->
+                            <!--<select class="form-control control-normal-select con-gender" name="10_gender" style="box-sizing: border-box;">-->
+                                <!--<option value="">请选择</option>-->
+                                <!--<option value="female">女</option>-->
+                                <!--<option value="male">男</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                        <div class="col-md-3">
+                            <span>客户类型</span>
+                            <select class="form-control control-normal-select con-type" name="10_gender" style="box-sizing: border-box;">
+                                <option value="">请选择</option>
+                                <option value="2">潜在客户</option>
+                                <option value="3">消费客户</option>
+                                <option value="4">会员客户</option>
+
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <span>客户来源</span>
+                            <input class="form-control form-condition con-channel">
+                        </div>
+                        <div class="col-md-1" style="padding:0;"><a class="btn btn-primary btn-search" style="">筛选</a></div>
+                    </div>
+                    <div class="row" style="margin: 10px;height: 470px;">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" class="allCheck blueCheckbox"/></th>
+                                <th>姓名</th>
+                                <th>手机</th>
+                                <!--<th>性别</th>-->
+                                <th>标签</th>
+                                <th>客户类型</th>
+                                <th>客户来源</th>
+                            </tr>
+                            </thead>
+                            <tbody class="contactGroupListTbody">
+
+                            </tbody>
+                        </table>
+                        <div id="pager-example-panel-allConList"></div>
+                        <div class="none" style="text-align: center;margin:126px 0;display: none;">
+                            <img src="../Content/Image/emptyData.png" class="addGroup" style="width:150px;height:auto;cursor:pointer" >
+                            <br><br>
+                            <span style="font-size:20px;">暂无数据，快去添加吧</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="modal-footer">
+                    <!--<button class="btn confirmBtn addAll" hidefocus="true" onclick="addAllSearch()">添加全部筛选结果</button>-->
+                    <button type="button" class="btn closebtn" data-dismiss="modal" hidefocus="true" style="outline:none;">关闭</button>
+                    <button type="button" class="btn confirmBtn" id="addGroup"  hidefocus="true" style="outline:none;" data-loading-text="<span class='icon-spin icon-spinner' style='margin-right:2px'></span>添加中">确认添加</button>
+                </div>
+            </div>
+            <div class="newGroup" style="display:none">
+                <div class="modal-body">
+                    <div class="row">
+                        <span>群名称</span>
+                        <input class="form-control new-con-name">
+                    </div>
+                    <div class="row">
+                        <span>等级</span>
+                        <input class="form-control new-con-level">
+                    </div>
+                    <div class="row">
+                        <span>备注</span>
+                        <input class="form-control new-con-des">
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-default closebtn" data-dismiss="modal">取消</button> -->
+                    <button type="button" class="btn" onclick="comfirmNewContact(this)">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<script src="../Content/JS/jquery-1.9.1.js"></script>-->
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.js"></script>
+<script src="../Content/bootstrap/js/bootstrapValidator.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script src="JS/common_widget.js"></script>
+<script src="JS/widget.js"></script>
+<script src="../contactDetail/JS/trace_widget.js"></script>
+<script>
+    Iptools.Start();
+    common._init();
+    trace._init();
+    widget._init();
+</script>
+</body>
+</html>

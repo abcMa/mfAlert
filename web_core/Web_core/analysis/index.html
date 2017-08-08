@@ -1,0 +1,400 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <title>报表分析</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-multiselect.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <link href="Style/Common.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_byzfm05z14ptx1or.css">
+    <script src="../Content/JS/jquery-1.9.1.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-notify.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-multiselect.js"></script>
+    <script src="../Content/JS/highcharts.js"></script>
+    <script src="../Content/JS/highcharts-3d.js"></script>
+    <script src="../Content/JS/highcharts-themes.js"></script>
+    <script src="../Content/JS/iptools_v2.js"></script>
+    <script src="JS/widget.js"></script>
+</head>
+<body>
+    <div class="col-sm-12 mainContent">
+        <div class="topContent">
+            <ul class="nav nav-pills nav-justified analysis-tab" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#contact-analysis" role="tab" data-toggle="tab" data-type="1">
+                        <div class="tab-icon-panel">
+                            <div>客户分析
+                                <span  data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="客户分析用来对所有或者部分客户进行多维度统计分析。" data-original-title title>
+                                    <i class="iconfont icon-i"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <!--<li role="presentation">-->
+                    <!--<a href="#channel-analysis" role="tab" data-toggle="tab" data-type="2">-->
+                        <!--<div class="tab-icon-panel">-->
+                            <!--<div>-->
+                                <!--渠道分析-->
+                                <!--<span  data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="通过渠道分析能清楚的知道：企业所拥有的渠道种类、不同渠道种类的增长速度、客户覆盖范围、每条渠道的相对获利能力等。" data-original-title title>-->
+                                    <!--<i class="iconfont icon-i"></i>-->
+                                <!--</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li role="presentation">-->
+                    <!--<a href="#funnel-analysis" role="tab" data-toggle="tab" data-type="3">-->
+                        <!--<div class="tab-icon-panel">-->
+                            <!--<div>漏斗分析-->
+                                <!--<span  data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="人们不会在第一次接触到你的产品或服务信息后就成为你的客户，而是经历一个转化路径，大量潜在客户在转化路径的某个阶段会流式掉。创建一个漏斗分析来研究分析转化路径，找到路径中的问题。" data-original-title title>-->
+                                    <!--<i class="iconfont icon-i"></i>-->
+                                <!--</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <li role="presentation">
+                    <a href="#campaign-analysis" role="tab" data-toggle="tab" data-type="4">
+                        <div class="tab-icon-panel">
+                            <div>营销分析
+                                <span  data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="将所有的营销活动做一个总体分析，效果分析，对比分析，为之后的活动提供准确的优化方向。" data-original-title title>
+                                    <i class="iconfont icon-i"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content analysis-content">
+            <div role="tabpanel" class="tab-pane active" id="contact-analysis">
+                <ul class="nav nav-pills analysis-tab-child" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#ana1" role="tab" data-toggle="tab" data-type="1">综合分析</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#ana2" role="tab" data-toggle="tab" data-type="2">属性分析</a>
+                    </li>
+                </ul>
+                <div class="tab-content analysis-content dataList">
+                    <div role="tabpanel" class="tab-pane active" id="ana1">
+                        <div>
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="iconfont icon-shugang"></span>
+                                    <span class="landing-panel-font">客户趋势分析</span>
+                                    <!--<ul class="nav nav-pills nav-chart-btn" role="tablist">-->
+                                        <!--<li role="presentation" class="active"><a href="#stepChart" role="tab" data-toggle="tab">新增</a></li>-->
+                                    <!--</ul>-->
+                                    <div class="btn-group btn-group-sm navbar-right">
+                                        <button type="button" class="btn report-time-btn" data-type="day" data-target="contact-trend">本日</button>
+                                        <button type="button" class="btn report-time-btn" data-type="week" data-target="contact-trend">本周</button>
+                                        <button type="button" class="btn report-time-btn" data-type="month" data-target="contact-trend">本月</button>
+                                        <button type="button" class="btn report-time-btn report-btn-selected" data-type="year" data-target="contact-trend">本年</button>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active dataBlock" id="stepChart" style="height: 300px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="iconfont icon-shugang"></span>
+                                    <span class="landing-panel-font">客户转化分析</span>
+                                    <div class="navbar-right search-text-group">
+                                        <span>时间范围</span>
+                                        <input type="text" class="form-control datetimepickSearch" id="contact-startTime"/>
+                                        <span class="seperator-line">-</span>
+                                        <input type="text" class="form-control datetimepickSearch"  id="contact-endTime"/>
+                                        <button type="button" id="reportSearch_cpt" class="btn btn-sm btn-primary">
+                                            <span class="icon-refresh"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="dataBlock" style="overflow: hidden;">
+                                        <div class="col-sm-6">
+                                            <div id="contactChart" style="height: 260px;"></div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div id="predictChart" class="contact-change-report">
+                                                <div class="perfect-line">
+                                                    <div class="blank"></div>
+                                                    <div class="blank"></div>
+                                                    <div class="line-angle-down-sm"><div></div></div>
+                                                    <div class="line-angle-down-lg"><div></div></div>
+                                                </div>
+                                                <div class="perfect-line font-line">
+                                                    <div class="blank"></div>
+                                                    <div class="blank"></div>
+                                                    <div class="line-font-sm">消费转化率<span id="line_rate_cost">0%</span></div>
+                                                    <div class="blank"></div>
+                                                    <div class="blank"></div>
+                                                    <div class="blank"></div>
+                                                </div>
+                                                <div class="perfect-line">
+                                                    <div class="blank"></div>
+                                                    <div class="line-angle-down-sm"><div></div></div>
+                                                    <div class="line-angle-up-sm"><div></div></div>
+                                                    <div class="line-font-lg">总体转化率<span id="line_rate_total">0%</span></div>
+                                                </div>
+                                                <div class="perfect-line font-line">
+                                                    <div class="blank"></div>
+                                                    <div class="line-font-sm">会员转化率<span id="line_rate_member">0%</span></div>
+                                                    <div class="blank"></div>
+                                                    <div class="blank"></div>
+                                                    <div class="blank"></div>
+                                                    <div class="blank"></div>
+                                                </div>
+                                                <div class="perfect-line">
+                                                    <div class="line-lg"></div>
+                                                    <div class="line-angle-up-sm"><div></div></div>
+                                                    <div class="line-sm"></div>
+                                                    <div class="line-angle-up-lg"><div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="iconfont icon-shugang"></span>
+                                    <span class="landing-panel-font">标签分布</span>
+                                    <ul class="nav nav-pills nav-chart-btn" role="tablist" id="tag_report_analysis">
+                                        <li role="presentation" class="active"><a href="#all-type-contact" role="tab" data-toggle="tab" data-type="1">全部</a></li>
+                                        <li role="presentation"><a href="#1-type-contact" role="tab" data-toggle="tab" data-type="2">潜在客户</a></li>
+                                        <li role="presentation"><a href="#2-type-contact" role="tab" data-toggle="tab" data-type="3">消费客户</a></li>
+                                        <li role="presentation"><a href="#3-type-contact" role="tab" data-toggle="tab" data-type="4">会员客户</a></li>
+                                    </ul>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="all-type-contact" style="height: 300px;"></div>
+                                        <div role="tabpanel" class="tab-pane" id="1-type-contact" style="height: 300px;"></div>
+                                        <div role="tabpanel" class="tab-pane" id="2-type-contact" style="height: 300px;"></div>
+                                        <div role="tabpanel" class="tab-pane" id="3-type-contact" style="height: 300px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="ana2">
+                        <div class="col-sm-6 contact-report-panel-pie">
+                            <span class="line"></span>
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="iconfont icon-shugang"></span>
+                                    <span class="landing-panel-font">客户类型</span>
+                                </div>
+                                <div class="panel-body dataBlock">
+                                    <div id="ana2-pie-chart-1" class="analysis-chart-area"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 contact-report-panel-pie">
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="iconfont icon-shugang"></span>
+                                    <span class="landing-panel-font">客户来源</span>
+                                    <div class="btn-group btn-group-sm navbar-right">
+                                        <button type="button" class="btn report-type-btn report-btn-selected" data-type="1" data-target="ana2-pie-chart-2">全部</button>
+                                        <button type="button" class="btn report-type-btn" data-type="2" data-target="ana2-pie-chart-2">潜在客户</button>
+                                        <button type="button" class="btn report-type-btn" data-type="3" data-target="ana2-pie-chart-2">消费客户</button>
+                                        <button type="button" class="btn report-type-btn" data-type="4" data-target="ana2-pie-chart-2">会员客户</button>
+                                    </div>
+                                </div>
+                                <div class="panel-body dataBlock">
+                                    <div id="ana2-pie-chart-2" class="analysis-chart-area"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 contact-report-panel-pie">
+                            <span class="line"></span>
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="iconfont icon-shugang"></span>
+                                    <span class="landing-panel-font">地理位置</span>
+                                    <div class="btn-group btn-group-sm navbar-right">
+                                        <button type="button" class="btn btn-default report-type-btn report-btn-selected" data-type="1" data-target="ana2-pie-chart-3">全部</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="2" data-target="ana2-pie-chart-3">潜在客户</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="3" data-target="ana2-pie-chart-3">消费客户</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="4" data-target="ana2-pie-chart-3">会员客户</button>
+                                    </div>
+                                </div>
+                                <div class="panel-body dataBlock">
+                                    <div id="ana2-pie-chart-3" class="analysis-chart-area"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 contact-report-panel-pie">
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="iconfont icon-shugang"></span>
+                                    <span class="landing-panel-font">性别比例</span>
+                                    <div class="btn-group btn-group-sm navbar-right">
+                                        <button type="button" class="btn btn-default report-type-btn report-btn-selected" data-type="1" data-target="ana2-pie-chart-4">全部</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="2" data-target="ana2-pie-chart-4">潜在客户</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="3" data-target="ana2-pie-chart-4">消费客户</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="4" data-target="ana2-pie-chart-4">会员客户</button>
+                                    </div>
+                                </div>
+                                <div class="panel-body dataBlock">
+                                    <div id="ana2-pie-chart-4" class="analysis-chart-area"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 contact-report-panel-pie">
+                            <span class="line"></span>
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="iconfont icon-shugang"></span>
+                                    <span class="landing-panel-font">年龄分布</span>
+                                    <div class="btn-group btn-group-sm navbar-right">
+                                        <button type="button" class="btn btn-default report-type-btn report-btn-selected" data-type="1" data-target="ana2-pie-chart-5">全部</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="2" data-target="ana2-pie-chart-5">潜在客户</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="3" data-target="ana2-pie-chart-5">消费客户</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="4" data-target="ana2-pie-chart-5">会员客户</button>
+                                    </div>
+                                </div>
+                                <div class="panel-body dataBlock">
+                                    <div id="ana2-pie-chart-5" class="analysis-chart-area"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 contact-report-panel-pie">
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="iconfont icon-shugang"></span>
+                                    <span class="landing-panel-font">收入分布</span>
+                                    <div class="btn-group btn-group-sm navbar-right">
+                                        <button type="button" class="btn btn-default report-type-btn report-btn-selected" data-type="1" data-target="ana2-pie-chart-6">全部</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="2" data-target="ana2-pie-chart-6">潜在客户</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="3" data-target="ana2-pie-chart-6">消费客户</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="4" data-target="ana2-pie-chart-6">会员客户</button>
+                                    </div>
+                                </div>
+                                <div class="panel-body dataBlock">
+                                    <div id="ana2-pie-chart-6" class="analysis-chart-area"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 contact-report-panel-pie">
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="iconfont icon-shugang"></span>
+                                    <span class="landing-panel-font">教育程度</span>
+                                    <div class="btn-group btn-group-sm navbar-right pie-group">
+                                        <button type="button" class="btn btn-default report-type-btn report-btn-selected" data-type="1" data-target="ana2-pie-chart-7">全部</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="2" data-target="ana2-pie-chart-7">潜在客户</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="3" data-target="ana2-pie-chart-7">消费客户</button>
+                                        <button type="button" class="btn btn-default report-type-btn" data-type="4" data-target="ana2-pie-chart-7">会员客户</button>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="ana2-pie-chart-7" class="analysis-chart-area"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="channel-analysis">
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="funnel-analysis">
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="campaign-analysis">
+                <div class="col-sm-12">
+                    <div class="col-sm-5 campaign-select-panel">
+                        <p>选择2-5个营销活动进行对比分析</p>
+                        <select id="campaign-choosen-list" multiple="multiple"></select>
+                    </div>
+                    <div class="col-sm-1" style="text-align: center;padding-top: 30px;">
+                        <span class="icon-chevron-right" style="font-size: 30px;"></span>
+                    </div>
+                    <div class="col-sm-6">
+                        <p>待分析的营销活动</p>
+                        <div class="panel panle-default campaign-tag-choosen">
+                            <div class="panel-body" id="campaign-choosen-body">
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" class="btn commonBtn" id="start-analysis-campaign">开始分析</button>
+                            <button type="button" class="btn commonBtn revert" id="clear-analysis-campaign">清  空</button>
+                        </div>
+                        <div style="text-align: center;">
+                            <span class="icon-chevron-down" style="font-size: 30px;"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="panel panel-default landing-panel">
+                        <div class="panel-heading">
+                            <span class="iconfont icon-shugang"></span>
+                            <span class="landing-panel-font">营销活动对比分析</span>
+                            <ul class="nav nav-pills nav-chart-btn" role="tablist" id="campaign-analysis-tab-holder">
+                                <li role="presentation" class="active">
+                                    <a href="#campaign-type-1" role="tab" data-toggle="tab" data-type="1">页面浏览量</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#campaign-type-2" role="tab" data-toggle="tab" data-type="2">吸引点击</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#campaign-type-3" role="tab" data-toggle="tab" data-type="3">参与人数</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#campaign-type-4" role="tab" data-toggle="tab" data-type="4">平均停留时长</a>
+                                </li>
+                            </ul>
+                            <div class="navbar-right search-text-group">
+                                <span>时间范围</span>
+                                <input type="text" class="form-control datetimepickSearch" id="campaign-startTime"/>
+                                <span class="seperator-line">-</span>
+                                <input type="text" class="form-control datetimepickSearch" id="campaign-endTime"/>
+                                <button type="button" id="reportSearch_campaign" class="btn btn-sm btn-primary">
+                                    <span class="icon-refresh"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane analysis-chart-area active" id="campaign-type-1"></div>
+                                <div role="tabpanel" class="tab-pane analysis-chart-area" id="campaign-type-2"></div>
+                                <div role="tabpanel" class="tab-pane analysis-chart-area" id="campaign-type-3"></div>
+                                <div role="tabpanel" class="tab-pane analysis-chart-area" id="campaign-type-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        Iptools.Start();
+        widget._init();
+        $(function (){
+            $("[data-toggle='popover']").popover();
+            $("[data-toggle='popover']").mouseenter(function(){
+                $(this).find(".iconfont").css("color","#09f");
+            })
+            $("[data-toggle='popover']").mouseleave(function(){
+                $(this).find(".iconfont").css("color","#e6e8eb");
+            })
+        });
+    </script>
+</body>
+</html>

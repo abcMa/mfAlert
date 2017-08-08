@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <title>报表分析</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-multiselect.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/common.css">
+    <link href="css/contactAnalysis.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_byzfm05z14ptx1or.css">
+</head>
+<body>
+<div class="col-sm-12 mainContent" style="padding:0px;margin:0px;">
+    <div class="left">
+        <ul>
+            <li class="title">
+                <h3>综合分析</h3>
+                <ul>
+                    <li class="active"><a href="#collapseTrend" data-toggle="tab" role="tab" aria-controls="collapseTrend" aria-expanded="true">客户趋势分析</a></li>
+                    <li><a href="#collapseConversion" data-toggle="tab" role="tab"  aria-controls="collapseConversion" aria-expanded="false">客户转化分析</a></li>
+                    <li><a href="#collapseTags" data-toggle="tab" role="tab"  aria-controls="collapseTags" aria-expanded="false">客户标签分析</a></li>
+                </ul>
+            </li>
+            <li class="title">
+                <h3>属性分析</h3>
+                <ul class="attribute">
+                    <!--<li><a href="#models" data-toggle="tab" role="tab"  aria-controls="models" aria-expanded="false">车型分析</a></li>-->
+                    <li><a href="#valueContact" data-toggle="tab" role="tab"  aria-controls="valueContact" aria-expanded="false">储值客户分析</a></li>
+                    <li><a href="#sourceContact" data-toggle="tab" role="tab"  aria-controls="sourceContact" aria-expanded="false">客户来源</a></li>
+                    <li><a href="#store" data-toggle="tab" role="tab"  aria-controls="store" aria-expanded="false">末次到店分析</a></li>
+                    <!--<li><a href="#buy" data-toggle="tab" role="tab"  aria-controls="buy" aria-expanded="false">购车时间</a></li>-->
+                    <li><a href="#interaction" data-toggle="tab" role="tab"  aria-controls="interaction" aria-expanded="false">用户互动</a></li>
+                    <li><a href="#consumption" data-toggle="tab" role="tab"  aria-controls="consumption" aria-expanded="false">消费额</a></li>
+                    <li><a href="#type" data-toggle="tab" role="tab"  aria-controls="type" aria-expanded="false">消费频次</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="right">
+        <div class="tab-content analysis-content dataList">
+            <div role="tabpanel" class="tab-pane active" id="ana1">
+                <div>
+                    <ul class="comprehensive">
+                        <li id="collapseTrend">
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="landing-panel-font">客户趋势分析</span>
+                                    <div class="btn-group btn-group-sm navbar-right">
+                                        <button type="button" class="btn report-time-btn" data-type="day" data-target="contact-trend">本日</button>
+                                        <button type="button" class="btn report-time-btn" data-type="week" data-target="contact-trend">本周</button>
+                                        <button type="button" class="btn report-time-btn" data-type="month" data-target="contact-trend">本月</button>
+                                        <button type="button" class="btn report-time-btn report-btn-selected" data-type="year" data-target="contact-trend">本年</button>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active dataBlock" id="stepChart" style="height: 400px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="collapseConversion" class="conversion collapse">
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="landing-panel-font">客户转化分析</span>
+                                    <div class="navbar-right search-text-group">
+                                        <span>时间范围</span>
+                                        <input type="text" class="form-control datetimepickSearch" id="contact-startTime"/>
+                                        <span class="seperator-line">-</span>
+                                        <input type="text" class="form-control datetimepickSearch"  id="contact-endTime"/>
+                                        <button type="button" id="reportSearch_cpt" class="btn btn-sm btn-primary commonBtn">
+                                            <span class="icon-refresh"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="dataBlock" style="overflow: hidden;">
+                                        <div class="col-sm-6">
+                                            <div id="contactChart" style="height: 260px;"></div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div id="predictChart" class="contact-change-report">
+                                                <div class="perfect-line">
+                                                    <div class="blank"></div>
+                                                    <div class="blank"></div>
+                                                    <div class="line-angle-down-sm"><div></div></div>
+                                                    <div class="line-angle-down-lg"><div></div></div>
+                                                </div>
+                                                <div class="perfect-line font-line">
+                                                    <div class="blank"></div>
+                                                    <div class="blank"></div>
+                                                    <div class="line-font-sm">消费转化率<span id="line_rate_cost">0%</span></div>
+                                                    <div class="blank"></div>
+                                                    <div class="blank"></div>
+                                                    <div class="blank"></div>
+                                                </div>
+                                                <div class="perfect-line">
+                                                    <div class="blank"></div>
+                                                    <div class="line-angle-down-sm"><div></div></div>
+                                                    <div class="line-angle-up-sm"><div></div></div>
+                                                    <div class="line-font-lg">总体转化率<span id="line_rate_total">0%</span></div>
+                                                </div>
+                                                <div class="perfect-line font-line">
+                                                    <div class="blank"></div>
+                                                    <div class="line-font-sm">会员转化率<span id="line_rate_member">0%</span></div>
+                                                    <div class="blank"></div>
+                                                    <div class="blank"></div>
+                                                    <div class="blank"></div>
+                                                    <div class="blank"></div>
+                                                </div>
+                                                <div class="perfect-line">
+                                                    <div class="line-lg"></div>
+                                                    <div class="line-angle-up-sm"><div></div></div>
+                                                    <div class="line-sm"></div>
+                                                    <div class="line-angle-up-lg"><div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="collapseTags" class="collapse">
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="landing-panel-font">标签分布</span>
+                                    <ul class="nav nav-pills nav-chart-btn" role="tablist" id="tag_report_analysis">
+                                        <li role="presentation" class="active"><a href="#all-type-contact" role="tab" data-toggle="tab" data-type="1">全部</a></li>
+                                        <li role="presentation"><a href="#1-type-contact" role="tab" data-toggle="tab" data-type="2">潜在客户</a></li>
+                                        <li role="presentation"><a href="#2-type-contact" role="tab" data-toggle="tab" data-type="3">保有客户</a></li>
+                                        <li role="presentation"><a href="#3-type-contact" role="tab" data-toggle="tab" data-type="4">会员客户</a></li>
+                                    </ul>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="all-type-contact" style="height: 400px;"></div>
+                                        <div role="tabpanel" class="tab-pane" id="1-type-contact" style="height: 400px;"></div>
+                                        <div role="tabpanel" class="tab-pane" id="2-type-contact" style="height: 400px;"></div>
+                                        <div role="tabpanel" class="tab-pane" id="3-type-contact" style="height: 400px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="nature">
+                        <!--<li id="models" class="collapse">-->
+                            <!--<div class="panel panel-default landing-panel">-->
+                                <!--<div class="panel-heading">-->
+                                    <!--<span class="landing-panel-font">车型分析</span>-->
+                                <!--</div>-->
+                                <!--<div class="panel-body">-->
+                                    <!--<div class="tab-content">-->
+                                        <!--<div role="tabpanel" class="tab-pane active dataBlock" id="modelsChart" style="height: 400px;"></div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <li id="valueContact" class="collapse">
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="landing-panel-font">储值客户分析</span>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active dataBlock" id="valueContactChart" style="height: 400px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="sourceContact" class="collapse">
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="landing-panel-font">客户来源</span>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active dataBlock" id="sourceContactChart" style="height: 400px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="store" class="collapse">
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="landing-panel-font">末次到店分析</span>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active dataBlock" id="storeChart" style="height: 400px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!--<li id="buy" class="collapse">-->
+                            <!--<div class="panel panel-default landing-panel">-->
+                                <!--<div class="panel-heading">-->
+                                    <!--<span class="landing-panel-font">购车时间</span>-->
+                                <!--</div>-->
+                                <!--<div class="panel-body">-->
+                                    <!--<div class="tab-content">-->
+                                        <!--<div role="tabpanel" class="tab-pane active dataBlock" id="buyChart" style="height: 400px;"></div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <li id="interaction" class="collapse">
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="landing-panel-font">用户互动</span>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active dataBlock" id="interactionChart" style="height: 400px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="consumption" class="collapse">
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="landing-panel-font">消费额</span>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active dataBlock" id="consumptionChart" style="height: 400px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="type" class="collapse">
+                            <div class="panel panel-default landing-panel">
+                                <div class="panel-heading">
+                                    <span class="landing-panel-font">消费频次</span>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active dataBlock" id="typeChart" style="height: 400px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-notify.min.js"></script>
+<script src="../Content/JS/highcharts.js"></script>
+<script src="../Content/JS/highcharts-3d.js"></script>
+<script src="../Content/JS/highcharts-themes.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="js/widget.js"></script>
+<script>
+    Iptools.Start();
+    widget._init();
+</script>
+</body>
+</html>

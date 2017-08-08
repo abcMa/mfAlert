@@ -1,0 +1,78 @@
+.col-md-2,.col-md-5,.col-md-4{
+  padding-left: 0;
+  padding-right: 0;
+  height: 40px;
+  line-height: 40px;
+}
+/* .row input{
+  height: 40px;
+  line-height: 40px;
+  width: 40%;  
+} */
+.middle .row{
+  margin:15px 0;
+}
+
+/*  .fileUpload{
+  display: inline-block;
+  padding: 0px 10px; 
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  border-radius: 3px;
+}
+
+.fileUpload input.upload ,.upload{  
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+} */ 
+
+.muilt-bgimg img{
+  width: 75%;
+  height: 180px;
+}
+.muilt-bgimg input{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  opacity: 0;
+  width: 100%;
+}
+.muilt-bgimg span{
+  display: inline-block;
+  width: 75%;
+  height: 180px;
+  background: rgba(247, 247, 247, 1) url(../images/add.png) no-repeat center center;
+  border: 3px dashed rgb(218, 216, 216);
+  z-index: 2;
+}
+.bgimg-item{
+  text-align: center;
+  margin-top: 10px;
+}
+.muilt-bgimg .col-md-3{
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.removeBGimg{
+    background: url(../images/remove.png) no-repeat center center;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    cursor: pointer;
+}
+
+.MultiPageForm .col-md-4 input{
+  width: 100%;
+}

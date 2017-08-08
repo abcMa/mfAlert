@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>客户群列表</title>
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Content/Style/standard.css" />
+    <link href="Style/Common.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-12 mainSection" id="mainList"></div>
+    </div>
+    <div class="modal fade" id="createModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">新建客户群</h4>
+                </div>
+                <div class="modal-body">
+                    <h1 class="type-title">请选择客户类型</h1>
+                    <div class="create-group-type">
+                        <div class="type-item selected" style="margin-right: 5%" data-type="static">
+                            <img src="Image/g1.png" alt="" />
+                            <span class="type-txt">静态客户群</span>
+                        </div>
+                        <div class="type-item" style="margin-left: 5%" data-type="automatic">
+                            <img src="Image/g2.gif" alt="" />
+                            <span class="type-txt">动态客户群</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn cancel" data-dismiss="modal">取消</button>
+                    <button type="button" id="create_next_step" class="btn commonBtn">下一步</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="staticModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">新建客户群（静态）</h4>
+                </div>
+                <div class="modal-body" style="padding: 0 15px;">
+                    <div id="static_new"></div>
+                    <div style="clear: both;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn cancel" data-dismiss="modal">取消</button>
+                    <button id="static_new_confirm" type="button" class="btn commonBtn" data-loading-text="
+                        <span class='fa fa-spin fa-spinner'></span>执行中">创建
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="autoModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">新建客户群（动态）</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="dynamic_form">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="group-label">客户群名称</label>
+                                <input type="text" id="groupName" name="group_name" class="form-control" placeholder="客户群名称" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="group-label">分群依据</label>
+                                <select id="group_reason" name="group_by" class="form-control">
+                                    <option value="">请选择...</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="group-label">描述</label>
+                                <textarea class="form-control" id="groupDes" name="group_des" placeholder="客户群描述"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="rule_header">
+                        <label class="group-label">客户群设置</label>
+                    </div>
+                    <div class="col-sm-12" id="group_rule_container" style="display: none">
+                        <div>
+                            <label class="group-label">【规则设置】</label>
+                            <div class="con-type">
+                                <a><input name="con-type" type="radio" class="blueRadio" />满足以下全部条件</a>
+                                <a><input name="con-type" type="radio" class="blueRadio" />满足以下任意条件</a>
+                            </div>
+                            <div class="auto-condition-container">
+                                <label class="group-label">条件规则</label>
+                                <div class="condition-panel">
+                                    <div class="g-condition">
+                                        <ul id="g_con_list" class="g-con-ul"></ul>
+                                    </div>
+                                    <div class="g-con-add">
+                                        <a>
+                                            <span class="fa fa-plus"></span>增加条件
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn cancel" data-dismiss="modal">取消</button>
+                    <button type="button" id="dynamic_create" class="btn commonBtn" data-loading-text="
+                        <span class='fa fa-spin fa-spinner'></span>执行中">创建
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.js"></script>
+    <script src="../Content/bootstrap/js/bootstrapValidator.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-switch.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../Content/JS/iptools_v2.js"></script>
+    <script src="../Content/JS/ipComponents.js"></script>
+    <script src="JS/newGroupWidget.js"></script>
+    <script>
+        Iptools.Start();
+        widget._init();
+    </script>
+</body>
+</html>

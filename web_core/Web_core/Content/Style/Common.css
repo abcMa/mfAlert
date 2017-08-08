@@ -1,0 +1,178 @@
+﻿
+*:not:input {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei";
+    font-size: 13px;
+}
+
+body {
+    background-color: #FFF;
+    overflow: hidden !important;
+    color: #444d58;
+    font-family: "Microsoft YaHei" !important;
+    background: #eff3f8 !important;
+    font-size: 13px;
+    line-height: 1.42857143;
+    min-height: 800px;
+    height: auto;
+}
+
+a {
+    color: #5b9bd1;
+}
+
+    a, a:hover {
+        text-decoration: none;
+    }
+
+
+@media all {
+    .container {
+        width: auto;
+    }
+}
+
+.bg-img {
+    margin: 0;
+    background-image: url('../Image/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    min-width: 100%;
+    max-width: none;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0px;
+    right:0px;
+    background-color: #000;
+}
+.yz-logo {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 5%;
+}
+
+.form-login {
+    position: absolute;
+    right:170px;
+    padding: 40px 50px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.8);
+    width:390px;
+    height: 423px;
+}
+.form_register{
+    height: 600px;
+}
+#login_form{
+    width:290px;
+    height: 210px;
+}
+.form-control {
+    margin: 20px 0;
+    border-radius: 2px;
+}
+
+.btn-login {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #09f;
+    height: 50px;
+    font-size: 18px;
+}
+.loginBtn{
+    background-color: #09f;
+}
+.loginBtn:hover{
+    background-color: #06c;
+    color: #fff;
+}
+.resetBtn{
+    background-color: #09f;
+}
+.resetBtn:hover{
+    background-color: #06c;
+    color: #fff;
+}
+
+.form-login-down {
+    padding-top: 10px;
+    position: relative;
+}
+
+    .form-login-down a {
+        float: right;
+        color: white;
+        cursor: pointer;
+    }
+
+        .form-login-down a:hover {
+            color: #1192cb;
+        }
+
+        .form-login-down a:active, .form-login-down a:visited, .form-login-down a:focus {
+            border: none;
+            outline-style: none;
+        }
+
+.form-item {
+    border: none;
+    width: 96%;
+}
+
+.login-input {
+    width: 85%;
+    font-size: 16px;
+    height: 36px;
+    line-height: 36px;
+    border: 0;
+}
+.reset-input{
+    width: 85%;
+    font-size: 16px;
+    height: 36px;
+    line-height: 36px;
+    border: 0;
+}
+
+.login-input:focus {
+    outline: none;
+    border-color: #fff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+}
+.reset-input:focus {
+    outline: none;
+    border-color: #fff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+}
+
+.login-icon {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.4;
+    padding-top: 5px;
+}
+
+.login-remember {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+/*.login-panel {*/
+    /*height: 60px;*/
+    /*line-height: 50px;*/
+/*}*/
+
+	

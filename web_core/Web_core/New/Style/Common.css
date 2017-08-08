@@ -1,0 +1,306 @@
+﻿
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFF;
+    color: #444d58;
+    font-family: "Microsoft YaHei" !important;
+    font-size: 13px;
+    line-height: 1.42857143;
+}
+
+a {
+    color: #5b9bd1;
+}
+
+    a, a:hover {
+        text-decoration: none;
+    }
+
+#mainArea {
+    padding: 15px 50px 50px 50px;
+    min-height: 850px;
+    height: auto;
+    background-color: #fff;
+    position: relative;
+}
+
+    #mainArea #mainContent {
+        position: absolute;
+        width: 100%;
+        padding-bottom: 50px;
+        padding-right: 100px;
+    }
+
+.input-cr {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin-top: -2px !important;
+}
+/*disableBtn*/
+.input-disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #999;
+}
+
+/*print*/
+.print-container {
+    display: none;
+}
+
+.print-table {
+    width: 100%;
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+}
+
+    .print-table th {
+        padding: 5px 8px;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+
+    .print-table td {
+        padding: 5px 8px;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+
+/*Pagination*/
+.pageForm {
+    margin: 8px 0;
+}
+
+.pageInput {
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.pageButton {
+    padding: 3px 14px;
+    height: 30px;
+    line-height: 14px;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    background: #006063;
+    background: #eee;
+    border-color: #eee;
+    color: #333;
+    font-size: 13px;
+}
+
+    .pageButton:hover {
+        background: #ccc;
+        border-color: #ccc;
+        color: #FFFFFF;
+    }
+
+.pageInput {
+    width: 3.5em;
+    height: 25px;
+    box-shadow: inset 1px 2px 1px #000000;
+    box-shadow: inset 1px 2px 1px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    border: solid 1px #006063;
+    margin-right: 5px;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.pageLabel {
+    position: absolute;
+    left: -9999em;
+}
+
+.pageSkip {
+    display: inline-block;
+    background: transparent url('../../Content/Image/left_small.png') no-repeat -10px -10px;
+    text-indent: -999em;
+    background-size: 40px;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin: -2px 7px 0 2px;
+    margin-bottom: 4px;
+}
+
+.pageNext {
+    display: inline-block;
+    background: transparent url('../../Content/Image/right_small.png') no-repeat -10px -10px;
+    text-indent: -999em;
+    background-size: 40px;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin: -2px 2px 4px 7px;
+}
+
+.pagination {
+    width: 100%;
+    text-align: center;
+    -moz-user-select: -moz-none;
+    user-select: none;
+    margin: 0;
+    font-size: 18px;
+    border-radius: 0 0 6px 6px;
+}
+
+.pagenum {
+    font-size: 16px;
+    color: #333;
+    margin: 0 5px;
+    line-height: 21px;
+    vertical-align: text-top;
+}
+
+.base {
+    background-color: #fff;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    height: 100px;
+    width: 160px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.arrow-right {
+    width: 30%;
+    cursor: pointer;
+    background-color: #eee;
+    border-radius: 0 6px 6px 0;
+}
+
+    .arrow-right:hover {
+        background-color: #ccc;
+    }
+
+.arrow-left {
+    width: 30%;
+    cursor: pointer;
+    background-color: #eee;
+    border-radius: 7px 0 0 7px;
+    box-sizing: border-box;
+}
+
+    .arrow-left:hover {
+        background-color: #ccc;
+    }
+
+[disabled].form-control, [readonly].form-control, fieldset[disabled] .form-control {
+    cursor: not-allowed;
+}
+
+input[name=modalListRadio], input[name=selectListCheckbox] {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.detailTextarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.clear {
+    clear: both;
+}
+
+
+.pictureprogress {
+    display: none;
+    width: 80px;
+    height: 16px;
+    vertical-align: bottom;
+    margin-bottom: 0;
+    color: white;
+    margin-left: 8px;
+}
+
+.img-file {
+    margin-left: 8px;
+    display: inline-block;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+    .img-file input[type=file] {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 100px;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+
+.file-upload {
+    margin-left: 8px;
+    display: inline-block;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+    .file-upload input[type=file] {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 100px;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+
+.file-download {
+    margin-left: 10px;
+    cursor: pointer;
+    vertical-align: bottom;
+}
+
+.help-block {
+    position: absolute;
+}
+
+
+.border-input-focus {
+    border: 1px solid #87cefa;
+}
+
+.border-span-focus {
+    border: 1px solid #87cefa;
+    border-right: none;
+}
+
+input[name=list-item] {
+    height: 15px;
+    width: 15px;
+}
+
+.searchContextItem {
+    padding: 0;
+}
+
+.pageCountCalText {
+    font-size: 14px;
+}

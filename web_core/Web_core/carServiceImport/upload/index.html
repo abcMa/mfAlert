@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>导入文件</title>
+    <link href="../../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../Content/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../Content/Style/standard.css">
+    <link rel="stylesheet" href="../../contactImport/css/importFileCommon.css">
+    <link rel="stylesheet" href="css/carUpload.css">
+</head>
+<body>
+<section class="step">
+    <div class="step1">
+        <div class="header">
+            <div class="inner">
+                <div class="left">导入文件</div>
+                <div class="right">
+                    <ul>
+                        <li class="circle active">
+                            <span></span>
+                        </li>
+                        <li class="line"></li>
+                        <li class="circle">
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="inner">
+                <h1>选择一个文件上传</h1>
+                <div class="uploadFile">
+                    <p class="importIcon first"><span class="line1">将文件拖拽至此处</span><br><span class="line2">或</span><br><span class="chooseFile"><span class="again">选择文件</span><input type="file" accept=".xls,.xlsx" class="importFile"></span></p>
+                    <!--<p class="importIcon next"><span class="fileName"></span><span class="chooseFile">重新选择<input type="file" accept=".xls,.xlsx" class="importFile"></span></p>-->
+                </div>
+                <!--<div class="afterUploadFile">-->
+                    <!--<p class="iconfontyyy">&#xe78d;</p>-->
+                    <!--<p><span>文件名称.xlsx</span>&nbsp;&nbsp;&nbsp;<span>重新选择</span></p>-->
+                <!--</div>-->
+                <div class="button">
+                    <button class="btn cancel">取  消</button>
+                    <button class="btn disableBtn next" data-loading-text="<span class='icon-spin icon-spinner' ></span>跳转中" disabled>下一步，导入细节确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="step3">
+        <div class="header">
+            <div class="inner">
+                <div class="left">导入文件</div>
+                <div class="right">
+                    <ul>
+                        <li class="circle active">
+                            <span></span>
+                        </li>
+                        <li class="line active"></li>
+                        <li class="circle active">
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="inner">
+                <h1>维保属性匹配</h1>
+                <div class="list">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" class="blueCheckbox" disabled>上传文件中的属性</th>
+                            <th>第一条信息预览</th>
+                            <th>易掌客 维保属性</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <!--<tr>-->
+                            <!--<td><label for=""><input type="checkbox"></label></td>-->
+                            <!--<td>姓名</td>-->
+                            <!--<td>小王</td>-->
+                            <!--<td>-->
+                                <!--<select name="" id="">-->
+                                    <!--<option value="">请选择客户属性</option>-->
+                                    <!--<option value="">姓名</option>-->
+                                    <!--<option value="">手机号码</option>-->
+                                    <!--<option value="">生日</option>-->
+                                    <!--<option value="">星座</option>-->
+                                    <!--<option value="">邮箱</option></select></td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td><label for=""><input type="checkbox"></label></td>-->
+                            <!--<td>姓名</td>-->
+                            <!--<td>小王</td>-->
+                            <!--<td>-->
+                                <!--<select name="" id="">-->
+                                    <!--<option value="">请选择客户属性</option>-->
+                                    <!--<option value="">姓名</option>-->
+                                    <!--<option value="">手机号码</option>-->
+                                    <!--<option value="">生日</option>-->
+                                    <!--<option value="">星座</option>-->
+                                    <!--<option value="">邮箱</option>-->
+                                <!--</select>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td><label for=""><input type="checkbox"></label></td>-->
+                            <!--<td>姓名</td>-->
+                            <!--<td>小王</td>-->
+                            <!--<td>-->
+                                <!--<select name="" id="">-->
+                                    <!--<option value="">请选择客户属性</option>-->
+                                    <!--<option value="">姓名</option>-->
+                                    <!--<option value="">手机号码</option>-->
+                                    <!--<option value="">生日</option>-->
+                                    <!--<option value="">星座</option>-->
+                                    <!--<option value="">邮箱</option>-->
+                                <!--</select></td>-->
+                        <!--</tr>-->
+                    </table>
+                </div>
+                <div class="button">
+                    <div class="buttonLeft">
+                        <button class="btn commonBtn revert before">上一步</button>
+                        <button class="btn cancel">取  消</button></div>
+                    <button class="btn disableBtn  next sure" disabled data-loading-text="<span class='icon-spin icon-spinner' ></span>导入中">开始导入</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../Content/JS/iptools_v2.js"></script>
+<script src="../../Content/JS/jszip.js"></script>
+<script src="../../Content/JS/xlsx.js"></script>
+<script src="../../contactImport/upload/js/commonupload.js"></script>
+<script src="js/widget.js"></script>
+<script>
+    Iptools.Start({
+        baseRoot: false,
+        custmomizeUrl: "../../Content/JS/properties.xml"
+    });
+    CommonWidget._init();
+    widget._init();
+</script>
+</body>
+</html>

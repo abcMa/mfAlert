@@ -1,0 +1,241 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <link href="Style/Common1.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="contact-data contact block row">
+                <div id="contact_all_list" class="col-sm-4" title="点击查看详情">
+                    <span id="c_total" class="num">0</span>
+                    <span class="text">保有客户总数</span>
+                    <span class="line"></span>
+                </div>
+                <div class="col-sm-4 contact-group" title="点击查看详情">
+                    <span id="c_new_total" class="num group" data-group="report_to_cg:week_new_group">0</span>
+                    <span class="text">本周新增客户</span>
+                    <span class="line"></span>
+                </div>
+                <div class="col-sm-4 contact-group" title="点击查看详情">
+                    <span id="c_service_total" class="num group" data-group="report_to_cg:week_service_group">0</span>
+                    <span class="text">本周保养客户</span>
+                </div>
+                <div class="group-tool" data-toggle="modal" data-target="#reportGroupModal">
+                    <span class="fa fa-cog"></span>
+                </div>
+            </div>
+            <div class="statistic block row">
+                <div class="col-sm-3 data-report">
+                    <h3 class="title">
+                        储值客户<span class="fa fa-sign-in cg-in-btn" title="点击进入储值客户群"
+                                  data-group="report_to_cg:paid_group"></span>
+                    </h3>
+                    <div id="money_report" class="report group" data-group="report_to_cg:paid_group" data-name="储值客户"></div>
+                </div>
+                <div class="col-sm-3 data-report">
+                    <h3 class="title">
+                        高消费客户<span class="fa fa-sign-in cg-in-btn" title="点击进入高消费客户群"
+                                   data-group="report_to_cg:high_fee_group"></span>
+                    </h3>
+                    <div id="fee_report" class="report group" data-group="report_to_cg:high_fee_group" data-name="高消费客户"></div>
+                </div>
+                <div class="col-sm-3 data-report">
+                    <h3 class="title">
+                        高频次客户<span class="fa fa-sign-in cg-in-btn" title="点击进入高频次客户群"
+                                   data-group="report_to_cg:high_money_group"></span>
+                    </h3>
+                    <div id="times_report" class="report group" data-group="report_to_cg:high_money_group" data-name="高频次客户"></div>
+                </div>
+                <div class="col-sm-3 data-report no-line">
+                    <h3 class="title">
+                        高互动客户<span class="fa fa-sign-in cg-in-btn" title="点击进入高互动客户群"
+                                   data-group="report_to_cg:high_interact_group"></span>
+                    </h3>
+                    <div id="interact_report" class="report group" data-group="report_to_cg:high_interact_group" data-name="高互动客户"></div>
+                </div>
+                <div class="group-tool" data-toggle="modal" data-target="#reportGroupModal">
+                    <span class="fa fa-cog"></span>
+                </div>
+            </div>
+            <div class="contact-data">
+                <div class="row block">
+                    <div class="col-sm-4 contact-group" title="点击查看详情">
+                        <span id="c_back_total" class="num group" data-group="report_to_cg:without_first_service_group">0</span>
+                        <span class="text">首保未回客户</span>
+                        <span class="line"></span>
+                    </div>
+                    <div class="col-sm-4 contact-group" title="点击查看详情">
+                        <span id="c_to_lose_total" class="num group" data-group="report_to_cg:about_lose_group">0</span>
+                        <span class="text">流失边缘客户</span>
+                        <span class="line"></span>
+                    </div>
+                    <div class="col-sm-4 contact-group" title="点击查看详情">
+                        <span id="c_lose_total" class="num group" data-group="report_to_cg:lose_group">0</span>
+                        <span class="text">流失客户</span>
+                    </div>
+                    <div class="group-tool" data-toggle="modal" data-target="#reportGroupModal">
+                        <span class="fa fa-cog"></span>
+                    </div>
+                </div>
+                <div class="report block">
+                    <span class="report-text">流失客户趋势分析</span>
+                    <div id="stepChart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="block task">
+                <div class="title-header" role="button" data-toggle="collapse" href="#task" aria-expanded="false" aria-controls="task"><span class="title">一周任务</span><span class="fa  fa-angle-up"></span></div>
+                <div class="panel-body panel-collapse collapse in" id="task" role="tabpanel" aria-labelledby="task">
+                    <ul class="content row">
+                        <li class="col-sm-6">
+                            <span class="state">进行中</span>
+                            <span id="task_active" class="num mock">0</span>
+                            <span class="line"></span>
+                        </li>
+                        <li class="col-sm-6">
+                            <span class="state">已完成</span>
+                            <span id="task_done" class="num mock">0</span>
+                        </li>
+                    </ul>
+                    <ul class="view">
+                        <li class="view-all" data-loading-text="<span class='fa fa-spin fa-spinner'></span>">全部</li>
+                        <li class="view-my" data-loading-text="<span class='fa fa-spin fa-spinner'></span>">我的</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block touch">
+                <div class="title-header" role="button" data-toggle="collapse" href="#touch" aria-expanded="true" aria-controls="touch"><span class="title">一周互动</span><span class="fa  fa-angle-up"></span></div>
+                <div class="panel-body collapse in" id="touch">
+                    <ul class="content row">
+                        <li class="col-sm-6">
+                            <span class="state">系统触发</span>
+                            <span id="interact_sys" class="num mock">0</span>
+                            <span class="line"></span>
+                        </li>
+                        <li class="col-sm-6">
+                            <span class="state">人工介入</span>
+                            <span id="interact_man" class="num mock">0</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block activity">
+                <div class="title-header" role="button" data-toggle="collapse" href="#activity" aria-expanded="true" aria-controls="activity"><span class="title">一周活动</span><span class="fa fa-angle-up"></span></div>
+                <div class="panel-body collapse in" id="activity">
+                    <ul class=" content row">
+                        <li class="col-sm-6 active">
+                            <span class="active">进行中</span>
+                        </li>
+                        <li class="col-sm-6">
+                            <span class="closed">已结束</span>
+                        </li>
+                    </ul>
+                    <div class="campaign now">
+                    </div>
+                    <div class="campaign end">
+                    </div>
+                    <ul class="view">
+                        <li class="view-all" data-loading-text="<span class='fa fa-spin fa-spinner'></span>">查看全部</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='reportGroupModal' tabindex='-1' role='dialog' aria-labelledby='calable'>
+        <div class='modal-dialog' role='document' style="width:40%;min-width: 550px;">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title' id='calable'>设置看板客群</h4>
+                </div>
+                <div class='modal-body rg-conditions' style="height: 400px;">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label>本周新增客户群</label>
+                            <select name="report_to_cg:week_new_group" class="form-control group-select"></select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label>本周保养客户群</label>
+                            <select name="report_to_cg:week_service_group" class="form-control group-select"></select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label>储值客户群</label>
+                            <select name="report_to_cg:paid_group" class="form-control group-select"></select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label>高消费客户群</label>
+                            <select name="report_to_cg:high_fee_group" class="form-control group-select"></select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label>高频次客户群</label>
+                            <select name="report_to_cg:high_money_group" class="form-control group-select"></select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label>高互动客户群</label>
+                            <select name="report_to_cg:high_interact_group" class="form-control group-select"></select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label>首保未回客户群</label>
+                            <select name="report_to_cg:without_first_service_group" class="form-control group-select"></select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label>流失边缘客户群</label>
+                            <select name="report_to_cg:about_lose_group" class="form-control group-select"></select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+                            <label>流失客户群</label>
+                            <select name="report_to_cg:lose_group" class="form-control group-select"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' id="reportGroupSubmit" class='btn commonBtn'
+                            data-loading-text="
+                        <span class='fa fa-spin fa-spinner'></span>">确定
+                    </button>
+                    <button type='button' class='btn cancel' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-notify.min.js"></script>
+<script src="../Content/JS/highcharts-new.js"></script>
+<script src="../Content/JS/highcharts-3d-new.js"></script>
+<script src="http://cdn.hcharts.cn/highcharts/modules/drilldown.js"></script>
+<script src="../Content/JS/highcharts-themes.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="JS/widget1.js"></script>
+<script>
+    Iptools.Start();
+    widget._init();
+</script>

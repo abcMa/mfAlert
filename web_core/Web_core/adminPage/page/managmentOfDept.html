@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>易掌CRM-部门管理</title>
+
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Content/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style/dist/css/Lobibox.min.css"/>
+    <link href="../style/common_admin.css" rel="stylesheet" />
+    <link href="../style/managmentOfDept.css" media="screen" rel="stylesheet" type="text/css">
+    <!--<script src="../../Content/JS/jquery-1.9.1.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../../Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../JS/lobibox.min.js"></script>
+    <script src="../../Content/JS/iptools_v2.js"></script>
+    <script src="../JS/managment-dept.js"></script>
+</head>
+<body>
+<div class="container-fluid" style="padding: 0 33px;">
+   <div class="row" style="margin-right:0;margin-left:0;">
+       <div class="main" style="padding: 0 37px;">
+           <div class="left-content col-md-9">
+               <h3 class="">部门管理</h3>
+               <div class="form-group">
+	               <div class="new-btn">
+	                   <button class="btn btn-sm btn-success" data-target="#newModal" data-backdrop="static" data-toggle="modal" style="background-color: #ffffff;color: #4CAE4C">新建</button>
+	                   <a href="adminPage.html" class="btn">返回</a>
+	               </div>
+               </div>
+               <div class="deptList">
+                   <table class="table table-striped deptTable">
+			          <tbody class="deptListBody" style="height:200px;">
+			          </tbody>
+			       </table>
+               </div>
+           </div>
+           <div class="right-content col-md-3">
+               <h5 class="">部门管理</h5>
+               <div>可以新建部门名称，或者对已经新建的部门名称进行修改或删除。</div>
+           </div>
+       </div>
+   </div>
+</div>
+<!-- modal -->
+<div class="modal fade" id="delModal" tabindex="-1" role="dialog" >
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                   <h4 class="modal-title" style="background-color: #ffffff;color: #D9534F">删除</h4>
+               </div>
+               <div class="modal-body">
+                   <div class="alert alert-danger" role="alert" id="DelAlertBox">确认删除？</div>
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-default closebtn" data-dismiss="modal">关闭</button>
+                   <button type="button" class="btn" id="commitDel" onclick="confirmDel(this)">确定</button>
+               </div>
+
+           </div>
+       </div>
+</div><!-- modal-end -->
+<!-- Modal -->
+<div class="modal fade" id="newModal" tabindex="-1" role="dialog" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">新建部门</h4>
+      </div>
+      <div class="modal-body">
+          <div >
+             <label class="control-label">部门名称</label>
+             <input type="text" class="form-control name">
+          </div>
+      </div>
+      <div class="clear"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default closebtn" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn" id="commitData" onclick="commitData(this)">提交</button>
+      </div>
+    </div>
+  </div>
+</div><!-- modal-end -->
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">新建部门</h4>
+      </div>
+      <div class="modal-body">
+          <div>
+             <label class="control-label">部门名称</label>
+             <input type="text" class="form-control name">
+          </div>
+      </div>
+      <div class="clear"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default closebtn" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn" id="commitEditData" onclick="commitData(this)">提交</button>
+      </div>
+    </div>
+  </div>
+</div><!-- modal-end -->
+<script>
+//    window.sessionStorage.setItem("tenantId", 33);
+Iptools.Start({
+    baseRoot: false,
+    custmomizeUrl: "../../Content/JS/properties.xml"
+});
+</script>
+</body>
+
+</html>

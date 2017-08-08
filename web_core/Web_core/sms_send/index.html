@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>短信发送记录</title>
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="title-panel">
+                <div class="title">短信群发记录</div>
+                <div class="search">
+                    <form id="sms_list_form">
+                        <div class="search-item">
+                            <label>手机号码</label>
+                            <input class="form-control" id="sms_search_phone" />
+                        </div>
+                        <div class="search-item">
+                            <label>状态</label>
+                            <select class="form-control" id="sms_search_status">
+                                <option value="">请选择...</option>
+                                <option value="suc">发送成功</option>
+                                <option value="fail">发送失败</option>
+                            </select>
+                        </div>
+                        <button id="sms_list_search" class="btn commonBtn search-btn">筛选</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="main-panel">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>手机号码</th>
+                                <th>内容</th>
+                                <th>短信签名</th>
+                                <th>发送时间</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sms_table_body"></tbody>
+                    </table>
+                </div>
+                <div id="pagination"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script src="js/widget.js"></script>
+<script>
+    Iptools.Start();
+    widget._init();
+</script>

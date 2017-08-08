@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gb2312" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <title>工作台</title>
+    <link href="../Content/Image/favicon.ico" rel="shortcut icon">
+    <link href="../Content/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="Style/Common.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/lightbox.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_byzfm05z14ptx1or.css">
+    <script src="../Content/JS/jquery-1.9.1.js"></script>
+    <script src="http://cdn.goeasy.io/goeasy.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-notify.min.js"></script>
+    <script src="../Content/bootstrap/js/lightbox.js"></script>
+    <script src="JS/iptools.js"></script>
+    <script src="JS/widget.js"></script>
+    <style>
+        .kf5-support-chat #kf5-support-btn{ height: 36px;width:36px;right:20px;box-shadow:none;}
+        .kf5-support-chat #kf5-support-btn:before{font-size: 20px;line-height: 0;margin-bottom: 20px;}
+        @media (max-width: 1024px){
+            .kf5-support-chat #kf5-support-btn{
+                right:0px;
+                border-radius: 50%;
+                padding: 0px;
+                background-color: #09f !important;
+                text-align: center;
+                bottom:50px;
+            }
+        }
+        @media (max-width: 1024px) and (max-height: 768px ){
+            .kf5-support-chat #kf5-support-btn span{
+                display: none;
+            }
+            .kf5-chatSupport-style3 {
+                /* padding: 0 15px 0 12px; */
+            }
+            .kf5-support-chat #kf5-support-btn{
+                right:0px;
+                border-radius: 50%;
+                padding: 0px;
+                background-color: #09f !important;
+                text-align: center;
+                bottom:50px;
+            }
+            .kf5-support-chat #kf5-support-btn:before{
+                vertical-align: baseline;
+                margin-left: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class='modal fade' id='coverModal' tabindex='-1' role='dialog' aria-labelledby='' data-backdrop='static'>
+        <div class='modal-dialog' role='document' style="margin-top:400px;">
+            <div class='modal-content' style="background: transparent;border: none;box-shadow: none;">
+                <div class='modal-body'>
+                    <div>
+                        <img src="../Content/Image/loading.gif" alt="" style="display: block;margin: auto;height: 80px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header S -->
+    <div class="headerArea">
+        <div id="header" class="header container">
+            <div class="help-center-icon">
+                <span class="tenant-logo"><img alt="Waiting..." id="application_logo" src="../Content/Image/logo.svg" /></span>
+            </div>
+            <div class="header-rt">
+                <div class="application-tool dropdown">
+                    <a class="dropdown-toggle tool-ip tool-caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="iconfont">&#xe79a;</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        <li>
+                            <div class="tool-container">
+                                <div class="tool-item tool-v-link" data-v-name="contact_new">
+                                    <div><span class="iconfont" style="color: rgb(245,187,120)">&#xe735;</span></div>
+                                    <p>新建客户</p>
+                                </div>
+                                <div class="tool-item tool-v-link" data-v-name="contact_group_new">
+                                    <div><span class="iconfont" style="color: rgb(255,125,126)">&#xe74d;</span></div>
+                                    <p>新建客户群</p>
+                                </div>
+                                <div class="tool-item tool-v-link" data-v-name="campaign_new">
+                                    <div><span class="iconfont" style="color: rgb(139,208,139); ">&#xe74e;</span></div>
+                                    <p>新建活动</p>
+                                </div>
+                                <div class="tool-item tool-v-link" data-v-name="mcardView">
+                                    <div><span class="iconfont" style="color: #91c8f8">&#xe74f;</span></div>
+                                    <p>企业微名片</p>
+                                </div>
+                                <div class="tool-item tool-v-link" data-v-name="campaign publish page">
+                                    <div><span class="iconfont" style="color: rgb(245,187,120)">&#xe74c;</span></div>
+                                    <p>短信营销</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="application-tool">
+                    <a class="tool-ip full-screen-sizer" data-full="0">
+                    <span class="iconfont">&#xe7b5;</span></a>
+                </div>
+                <div class="application-funcBar dropdown">
+                    <div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <div class="personInfoArea">
+	                        <img src="../Content/Image/defaultHead2.svg" alt="个人头像" class="user_headpic"/>
+	                        <span id="application_user"></span>
+	                        <span class="caret"></span>
+                        </div>
+                    </div>
+                    <ul id="cDropMenu" class="dropdown-menu pull-right">
+                        <span class="iconfont personMsgHorn">&#xe7a2;</span><li><a style="cursor: pointer;" id="retractSessionBtn"><span class="icon-share-alt"></span>注销</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header E -->
+    <!-- nav S -->
+    <div class="navbar navbar-inverse screenBar" role="navigation" style="">
+        <div class="container collapse navbar-collapse">
+            <ul id="screenMenu" class='nav navbar-nav'></ul>
+        </div>
+    </div>
+    <div class="container viewBarContainer">
+        <nav class="navbar navbar-inverse viewBar">
+            <ol class="breadcrumb viewBread"></ol>
+        </nav>
+    </div>
+    <div class="mainContainer">
+        <!-- 主要内容区域 -->
+        <div class="container">
+            <!-- nav E -->
+            <!-- S,面包屑菜单 -->
+            <div id="screenMenu_fixed" class="menu-fixed">
+                <ol class="breadcrumb breadNav"></ol>
+            </div>
+            <div id="mainArea" class="sectionDiv">
+                <iframe id="mainframe" name="mainframe" scrolling="no"
+                        marginheight="0" marginwidth="0"></iframe>
+            </div>
+        </div>
+        <!--<footer class="site-footer">-->
+            <!--<div class="container">-->
+                <!--<span>Copyright <small>©</small> 2010-2016 北京易掌天下科技有限公司 | </span>-->
+                <!--<a href="http://www.yizhangke.com/" target="_blank">官网</a>-->
+                <!--&lt;!&ndash;<span> | QQ群:101222192</span>&ndash;&gt;-->
+            <!--</div>-->
+        <!--</footer>-->
+        <!--右边的icon-->
+        <div class="iconList">
+            <div class="goBack" style="bottom:250px;display: none;cursor: pointer;">
+                <i class="iconfont">&#xe6ce;</i>
+            </div>
+
+            <div class="changeLayout" style="bottom:200px;">
+                <!-- ReSharper disable once Html.PathError -->
+                <a href="../Mainleft" target="_self" style="text-decoration: none;outline:none;">
+                    <span style="display:none;color:#fff;position: relative;top: -3px;margin:0 7.4px;">切换布局</span>
+                    <i class="iconfont" style="font-size: 20px;">&#xe6cd;</i>
+                </a>
+            </div>
+            <div class="companyId" style="bottom:150px;">
+                <span style="display:none;color:#fff;position: relative;top: -3px;width:88px;text-align:center;margin:0 1px;user-select:text">企业ID: <span></span></span>
+                <i class="iconfont">&#xe6f8;</i>
+            </div>
+            <div class="code" style="bottom:100px;">
+                <div class="pic" style="display: none;">
+                    <img src="../Content/Image/code.png" alt="" />
+                    <span>关注"易掌客"微信号 <br/>将客户带在身边</span>
+                </div>
+
+                <i class="iconfont">&#xe6cc;</i>
+            </div>
+        </div>
+        <script>
+            Iptools.Start({
+                checkSession: true,
+                loadingCircle: true,
+                userInvironment: true,
+                removeLoading: true,
+            });
+            widget._init();
+
+        </script>
+    </div>
+
+    <!-- Start of KF5 supportbox script -->
+    <script type="text/javascript">
+        document.write('<script src="\/\/assets-cdn.kf5.com\/supportbox\/main.js?' + (new Date).getDay() + '" id="kf5-provide-supportBox" kf5-domain="yizhangke.kf5.com" charset="utf-8"><\/script>');
+    </script>
+    <!-- End of KF5 supportbox script -->
+</body>
+</html>

@@ -1,0 +1,593 @@
+
+header{
+    height: 150px;
+    width: 100%;
+    border-radius: 5px;
+}
+.headerOne{
+    width: 100%;
+    height: 100%;
+    background: url("../../Content/Image/channelTopBg.png") no-repeat;
+    background-size: 100% 100%;
+}
+.headerTwo{
+    width: 100%;
+    height: 100%;
+    background: url("../../Content/Image/sourceTopBg.png") no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.contactTabList{
+    padding-left: 77px;
+    border-bottom: 1px solid #dbdbdb;
+}
+.tab-content{
+    margin-top: 30px;
+}
+.title{
+    padding-left: 20px;
+    margin-top: 13PX;
+    height: 38px;
+    position: relative;
+}
+.titleName{
+    font-size: 18px;
+}
+.baceInput{
+    width: 230px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.baceInput input{
+    padding-left: 25px;
+    color: #282828;
+}
+.feedbackInput textarea{
+    color: #282828;
+}
+.importInput input{
+    color: #282828;
+}
+.baceIcon {
+    display: inline-block;
+    position: absolute;
+    top: 22px;
+    left: 5px;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    color: #c3c3c3;
+}
+.baceIcons {
+    display: inline-block;
+    position: absolute;
+    top: 22px;
+    left: 5px;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    color: #c3c3c3;
+}
+.main{
+    position: relative;
+    height: 47px;
+}
+.mainbace{
+    padding-left: 0;
+    height: 47px;
+}
+.mainbace li{
+    height: 47px;
+}
+.main > .contactTabList > li > a{
+    font-size: 16px;
+    padding: 10px 15px;
+}
+.bacebg{
+    top: -34px;
+}
+.enter{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 36px;
+    height: 20px;
+    margin-top: 7px;
+    background-color: #09f;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+.enter:hover{
+    background-color: #06c;
+}
+.enters{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 36px;
+    height: 20px;
+    margin-top: 7px;
+    background-color: #09f;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+.enters:hover{
+    background-color: #06c;
+}
+.enterIcon{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    color: #fff;
+    font-size: 10px;
+}
+.enterIcons{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    color: #fff;
+    font-size: 10px;
+}
+.baceInput .enterInput{
+    padding-left: 10px;
+}
+.coirceMain{
+    min-height: 173px;
+    padding-left: 33px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+}
+.coirceTitle{
+    display: block;
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.dataOne{
+    display: inline-block;
+    width: 140px;
+    height: 160px;
+    margin-right: 18px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 2px 2px #eae9e9;
+    border-radius: 5px;
+    text-align: center;
+}
+.dataOneIcon{
+    padding-top: 60px;
+    position: relative;
+}
+.dataIcon{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    color: #b5f791;
+}
+.dataOneWord{
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+}
+.feedback{
+    padding-bottom: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.feedbackTitle{
+    margin-bottom: 10px;
+}
+.feedbackMainTitle{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.feedbackNav{
+    font-size: 16px;
+    opacity: 0.7;
+}
+.feedbackInput{
+    margin-bottom: 20px;
+}
+.feedbackBtn{
+    position: relative;
+}
+.feedBtn{
+    position: absolute;
+    right: 0;
+}
+.all{
+    padding-left: 33px;
+    padding-right: 33px;
+}
+.recommends{
+    margin-bottom: 10px;
+}
+.recommend{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.recommendTerm{
+    position: relative;
+    display: inline-block;
+    width: 184px;
+    height: 218px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 2px 2px #eae9e9;
+    border-radius: 5px;
+}
+.recommendTerms{
+    position: relative;
+    display: inline-block;
+    width: 184px;
+    height: 218px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 2px 2px #eae9e9;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.recommendTermsIcon{
+    position: relative;
+    width: 150px;
+    height: 120px;
+    background-color: #00703c;
+    border-radius: 5px;
+    margin-left: 17px;
+    margin-top: 20px;
+}
+.recommendTermIcon{
+    position: relative;
+    width: 150px;
+    height: 120px;
+    background-color: #14a938;
+    border-radius: 5px;
+    margin-left: 17px;
+    margin-top: 20px;
+}
+.recommendTermIcons{
+    position: relative;
+    width: 150px;
+    height: 120px;
+    background-color: #f5bd22;
+    border-radius: 5px;
+    margin-left: 17px;
+    margin-top: 20px;
+}
+.termIcon{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: 10px;
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    color: #fff;
+}
+.recommendTitle{
+    position: absolute;
+    top: 155px;
+    right: 17px;
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+}
+.viceTitle{
+    position: absolute;
+    top: 180px;
+    right: 17px;
+    font-size: 16px;
+}
+.recommendTermcsv{
+    background-color: #f58d2c;
+}
+.termsIcon{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 0;
+    margin-left: -30px;
+    font-size: 60px;
+    color: #09f;
+}
+.termsIcon:hover{
+    color: #06c;
+}
+.newtermIcon{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: 0;
+    margin-left: 15px;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+}
+.newtermWord{
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    margin-left: 60px;
+    font-size: 18px;
+    color: #fff;
+}
+.recommendtermWord{
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    margin-left: 60px;
+    font-size: 18px;
+    color: #fff;
+}
+.csvtermIcon{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 0;
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    color: #fff;
+}
+.onlineIcon{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 0;
+    margin-left: -35px;
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    color: #fff;
+}
+.inportDataMain{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.importDataInput{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.importDataInputTwo{
+    padding-left: 40px;
+    padding-right: 40px;
+    display: none;
+}
+.importInput{
+    position: relative;
+}
+.importsInput{
+    padding-left: 25px;
+}
+.importTitle{
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    position: relative;
+}
+.flodong{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #555;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.importMain .importTerm{
+    position: relative;
+    color: #555;
+    font-size: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dbdbdb;
+}
+.importTermIcon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    opacity: 0.7;
+}
+.importContent{
+    margin-top: 30px;
+}
+.importDateTerm{
+    position: relative;
+    color: #555;
+    font-size: 16px;
+    padding-bottom: 10px;
+    margin-top: 5px;
+    border-bottom: 1px solid #dbdbdb;
+}
+.newlyIcon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.weekIcon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.mouthIcon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.yearIcon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.openAll{
+    position: relative;
+}
+.openLink{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    color: #09f;
+    font-size: 16px;
+    cursor: pointer;
+}
+.openLink:hover{
+    color: #06c;
+}
+.importTitles{
+    position: relative;
+    width: 100%;
+    height: 54px;
+    line-height: 54px;
+    margin-right: 10px;
+    border-bottom: 1px solid #dbdbdb;
+}
+.fileName{
+    color: #555;
+    font-size: 18px;
+    padding-left: 20px;
+}
+.fileIcon{
+    position: absolute;
+    top: 19px;
+    right: 20px;
+    font-size: 20px;
+    color: #09f;
+    cursor: pointer;
+}
+.fileIcon:hover{
+    color: #06c;
+}
+.importData{
+    display: none;
+}
+.table > tbody > tr >.tablePadding{
+    padding-left: 20px;
+}
+.form-group{
+    margin-bottom: 0;
+}
+.importnewly{
+    display: none;
+}
+.week{
+    display: none;
+}
+.mouth{
+    display: none;
+}
+.year{
+    display: none;
+}
+.ticker{
+    padding-left: 15px;
+    padding-right: 20px;
+}
+.failPhone{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+    border: 22px solid transparent;
+    border-top: 22px solid #ff7d7e;
+    border-right: 22px solid #ff7d7e;
+}
+.failText{
+    position: absolute;
+    top: 6px;
+    right: 2px;
+    color: #fff;
+    background-color: #ff7d7e;
+    transform:rotate(45deg);
+    -ms-transform:rotate(45deg); /* Internet Explorer */
+    -moz-transform:rotate(45deg); /* Firefox */
+    -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+    -o-transform:rotate(45deg); /* Opera */
+}
+.successPhone{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+    border: 22px solid transparent;
+    border-top: 22px solid #09f;
+    border-right: 22px solid #09f;
+    display: none;
+}
+.successText{
+    position: absolute;
+    top: 6px;
+    right: 2px;
+    color: #fff;
+    background-color: #09f;
+    transform:rotate(45deg);
+    -ms-transform:rotate(45deg); /* Internet Explorer */
+    -moz-transform:rotate(45deg); /* Firefox */
+    -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+    -o-transform:rotate(45deg); /* Opera */
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1000px) {.headerContent{font-size:20px;}}
+@media (min-width:1000px) and (max-width:1100px){.headerContent{font-size:21px;}}
+@media (min-width:1100px) and (max-width:1150px){.headerContent{font-size:22px;}}
+@media (min-width:1150px) and (max-width:1200px){.headerContent{font-size:23px;}}
+@media (min-width:1200px) and (max-width:1250px){.headerContent{font-size:24px;}}
+@media (min-width:1250px) and (max-width:1300px){.headerContent{font-size:25px;}}
+@media (min-width:1300px) and (max-width:1350px){.headerContent{font-size:26px;}}
+@media (min-width:1350px) and (max-width:1400px){.headerContent{font-size:27px;}}
+@media (min-width:1400px) and (max-width:1450px){.headerContent{font-size:28px;}}
+@media (min-width:1450px) and (max-width:1500px){.headerContent{font-size:29px;}}
+@media (min-width:1500px) and (max-width:1600px){.headerContent{font-size:29px;}}
+@media (min-width:1600px) and (max-width:1920px){.headerContent{font-size:30px;}}
+@media (max-width:1400px) {
+    .bacebg{
+        top: -34px;
+    }
+}

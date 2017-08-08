@@ -1,0 +1,493 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFF;
+    overflow: hidden !important;
+    color: #444d58;
+    font-family: "Microsoft YaHei" !important;
+    background: #eff3f8 !important;
+    font-size: 13px;
+    line-height: 1.42857143;
+    min-height: 800px;
+    height: auto;
+}
+
+a {
+    color: #5b9bd1;
+}
+
+    a, a:hover {
+        text-decoration: none;
+    }
+
+.search-function-container {
+    margin: 10px 20px;
+    border-radius: 0;
+}
+
+.mainSection {
+    min-height: 800px;
+    height: auto;
+    background-color: #fff;
+}
+
+    .mainSection .searchArea {
+        overflow-x: hidden;
+        overflow-y: hidden;
+        box-shadow: 1px 0 5px #f6f6f6;
+        background-color: #fff;
+        padding-bottom: 150px;
+    }
+
+        .mainSection .searchArea h1 {
+            box-sizing: content-box;
+            height: 20px;
+            margin: 0 8px;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0 5px 0;
+            font-size: 12px;
+            line-height: 22px;
+            font-weight: bold;
+            color: #555;
+        }
+
+.content_right {
+    padding-bottom: 50px;
+}
+
+
+.dateSearchPicker {
+    float: left;
+}
+
+.table-no-wrap td, .table-no-wrap th {
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+.listSearchTable {
+    height: auto;
+    width: 100%;
+    padding-top: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+    .listSearchTable .searchlabel {
+        text-align: left;
+        font-size: 13px;
+        line-height: 30px;
+        vertical-align: middle;
+        padding: 0;
+    }
+
+    .listSearchTable .searchData {
+        margin-bottom: 15px;
+    }
+
+        .listSearchTable .searchData .form-control {
+            height: 31px;
+            line-height: 31px;
+            padding: 0 5px;
+        }
+
+
+input[name=modalListRadio], input[name=selectListCheckbox], input[name=modalListCheckbox] {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.searchExcute {
+    width: 120px;
+}
+
+/*screenMenuSelect*/
+.screenMenuSelect {
+    margin-bottom: 14px;
+    margin-right: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    /*ScreenMenuselect*/
+    .screenMenuSelect .caret {
+        margin-left: 7px;
+        border-top: 7px dashed;
+        border-top: 7px solid \9;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+    }
+
+.screenViewDrop {
+    z-index: 9909;
+    min-width: 175px;
+    font-family: "Microsoft YaHei";
+}
+
+    .screenViewDrop > li:hover {
+        background-color: #55616f;
+    }
+
+    .screenViewDrop > li a {
+        font-size: 15px;
+        color: #444d58;
+    }
+
+        .screenViewDrop > li a:hover {
+            background-color: transparent !important;
+            background-image: none !important;
+            color: #bcc2cb;
+        }
+
+.content_right .details {
+    padding: 10px 10px 10px 0;
+    float: left;
+}
+
+.content_right .table_tr {
+    width: 100%;
+    background-color: #FDFDFD;
+    cursor: pointer;
+    height: 87px;
+    box-sizing: border-box;
+    border-bottom: 3px solid #fff;
+    margin-bottom: 4px;
+}
+
+
+
+.content_right .pic-td {
+    padding-left: 20px;
+    width: 10%;
+}
+
+    .content_right .pic-td div {
+        line-height: 50px;
+        text-align: center;
+        font-size: 22px;
+        background: url(../../Content/Image/headBack.png) no-repeat;
+        background-size: cover;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        color: #fff;
+        font-weight: bold;
+    }
+
+.content_right .title-td {
+    width: 50%;
+}
+
+    .content_right .title-td div:first-child {
+        padding-left: 15px;
+        text-align: left;
+    }
+
+.content_right .icon-td {
+    width: 20%;
+}
+
+.content_right .last-td {
+    width: 40%;
+    text-align: left;
+}
+
+.content_right .table_tr:hover {
+    width: 100%;
+    background-color: #f6f6f6;
+}
+
+.content_right .table_tr .blue_no {
+    width: 20px;
+}
+
+.content_right .table_tr .headpic {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+    color: rgba(255,255,255,0.8);
+    background-size: 100%;
+}
+
+.content_right .table_tr .tr_title {
+    margin-top: 0;
+    margin-bottom: 3px;
+    font-size: 14px;
+}
+
+.content_right .table_tr .response {
+    color: #999;
+    background-color: #FCF;
+    width: 120px;
+    text-align: center;
+    padding: 4px 0 4px 0;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    height: 36px;
+    margin-top: 27px;
+    font-weight: bold;
+    line-height: 28px;
+}
+
+.content_right .table_tr .last_td {
+    margin-bottom: -5px;
+}
+
+    .content_right .table_tr .last_td li {
+        list-style-type: none;
+    }
+
+.content_right .footer {
+    background-color: #eee;
+    border-radius: 0 0 6px 6px;
+    text-align: center;
+    height: 15px;
+}
+
+.content_right .table_tr .blue {
+    width: 10px;
+    background-color: #3598DC;
+    height: 100%;
+}
+
+.content_right .table_tr .blue_after {
+    width: 10px;
+}
+
+.content_right .table_tr .overdue {
+    color: #FFF;
+    background-color: #F36;
+    width: 120px;
+    text-align: center;
+    padding: 4px 0 4px 0;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+
+.checkAll {
+    vertical-align: middle;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+}
+
+.dropdown-menu li {
+    text-align: center;
+    position: relative;
+}
+
+/*print*/
+.print-container {
+    display: none;
+}
+
+.print-table {
+    width: 100%;
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+}
+
+    .print-table th {
+        padding: 5px 8px;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+
+    .print-table td {
+        padding: 5px 8px;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+
+/*import*/
+.dropdown-menu, .form-control {
+    font-family: "Microsoft YaHei";
+}
+
+    .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+        color: black;
+        text-decoration: none;
+        background-color: #f5f5f5;
+    }
+
+#export_body span {
+    font-size: 12px;
+    margin: 5px;
+    color: gray;
+}
+
+    #export_body span span {
+        color: red;
+        vertical-align: middle;
+        margin-right: 3px;
+    }
+
+/*disableBtn*/
+.input-disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #dcdcdc !important;
+}
+
+.input-tags-disabled {
+    pointer-events: none;
+    cursor: default;
+    margin-right: 4px;
+    padding: 2px 5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/*Pagination*/
+.pageForm {
+    margin: 8px 0;
+}
+
+.pageInput {
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.pageButton {
+    padding: 3px 14px;
+    height: 30px;
+    line-height: 14px;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    background: #006063;
+    background: #eee;
+    border-color: #eee;
+    color: #333;
+    font-size: 13px;
+}
+
+    .pageButton:hover {
+        background: #ccc;
+        border-color: #ccc;
+        color: #FFFFFF;
+    }
+
+.pageInput {
+    width: 3.5em;
+    height: 25px;
+    box-shadow: inset 1px 2px 1px #000000;
+    box-shadow: inset 1px 2px 1px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    border: solid 1px #006063;
+    margin-right: 5px;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.pageLabel {
+    position: absolute;
+    left: -9999em;
+}
+
+.pageSkip {
+    display: inline-block;
+    background: transparent url('../../Content/Image/left_small.png') no-repeat -10px -10px;
+    text-indent: -999em;
+    background-size: 40px;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin: -2px 7px 0 2px;
+    margin-bottom: 4px;
+}
+
+.pageNext {
+    display: inline-block;
+    background: transparent url('../../Content/Image/right_small.png') no-repeat -10px -10px;
+    text-indent: -999em;
+    background-size: 40px;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin: -2px 2px 4px 7px;
+}
+
+.pagination {
+    width: 100%;
+    text-align: center;
+    -moz-user-select: -moz-none;
+    user-select: none;
+    margin: 0;
+    font-size: 18px;
+    border-radius: 0 0 6px 6px;
+}
+
+.pagenum {
+    font-size: 16px;
+    color: #333;
+    margin: 0 5px;
+    line-height: 21px;
+    vertical-align: text-top;
+}
+
+.base {
+    background-color: #fff;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    height: 100px;
+    width: 160px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.arrow-right {
+    width: 30%;
+    cursor: pointer;
+    background-color: #eee;
+    border-radius: 0 6px 6px 0;
+}
+
+    .arrow-right:hover {
+        background-color: #7ba9d0;
+    }
+
+.arrow-left {
+    width: 30%;
+    cursor: pointer;
+    background-color: #eee;
+    border-radius: 7px 0 0 7px;
+    box-sizing: border-box;
+}
+
+    .arrow-left:hover {
+        background-color: #7ba9d0;
+    }
+
+[disabled].form-control, [readonly].form-control, fieldset[disabled] .form-control {
+    cursor: not-allowed;
+}
+
+input[name=list-item] {
+    height: 15px;
+    width: 15px;
+}
+
+.searchContextItem {
+    padding: 0;
+}
+
+.pageCountCalText {
+    font-size: 14px;
+}

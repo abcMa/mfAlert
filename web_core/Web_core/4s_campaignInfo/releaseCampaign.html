@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="易掌客">
+    <meta name="Keywords" content="易掌天下，易掌客">
+    <meta name="Description" content="唯一一个致力于帮助企业提高用户互联网运营的专业移动CRM产品">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/market-common.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+    <link href="css/iconfont.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/activityInfo.css">
+    <link rel="stylesheet" type="text/css" href="../Content/Style/standard.css">
+    <link rel="stylesheet" href="../Content/Style/jquery.tagit.css"/>
+    <link rel="stylesheet" href="../Content/Style/tag.css"/>
+    <link rel="stylesheet" href="../Content/Style/tagit.ui-zendesk.css"/>
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/releaseCampaign.css">
+    <title>创建营销活动</title>
+    <style>
+        .QRCode table {
+            display: inherit;
+        }
+
+        #rechargeItems .active {
+            display: inline-block;
+        }
+
+        .wx_mobile_qr table {
+            margin: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="main container">
+<!-- 短信营销 -->
+<section class="row messageChannel">
+<div class="col-md-12 col-sm-12" style="padding: 0px;">
+    <div class="panel panel-default penel-box">
+        <div class="panel-body">
+            <div class="col-md-12 col-sm-12 rightEdit">
+                <div class="previewMsg">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">预览</div>
+                        <div class="panel-body panelShadow">
+                            <div class="msgBox">
+
+                            </div>
+                        </div>
+                    </div>
+                    <span class="showWordNum">已经输入<i>0</i>字</span>
+              <span style="display: inline-block;width:100%;padding-left:40px;margin-top: 20px; font-size: 14px;">
+              注：<br>一条短信字数不超过69字（包含标点符号）；<br>内容中超链接建议改为短链；<br>
+              <a href="http://dwz.cn/" target="_blank" class="longToShort"
+                 style="padding-top: 5px;display: inline-block;">长链转短链传送门</a></span>
+                    <a class="msg_record_list" target="_blank"
+                       style="padding-top: 5px;font-size: 14px;display: inline-block;padding-left: 40px;">查看短信发送记录</a></span>
+                </div>
+                <div class="rightContent">
+                    <form action="" class="form-horizontal" id="massageContentForm">
+                        <div class="channel-content">
+                            <!--title-->
+                            <div class="row  form-group" style="height: 58px;">
+                                <label style="display: inline-block;font-size: 18px">群&nbsp;发</label>
+                                <span class="campaignName" style="font-size: 18px;margin: 0 7px;color: #09f;"></span>
+                                <span data-placement="bottom"
+                                      data-container="body"
+                                      data-trigger="hover"
+                                      data-toggle="popover"
+                                      data-content="根据相关规定，营销短信的发送时间为早上8:00至晚上9:00，其余时间均不能发送，请合理安排短信发送时间。"><i
+                                        class="fa fa-info-circle"></i></span>
+                            </div>
+
+                            <div class="row form-group">
+                                <label>群发标题</label>
+                                <div class="yz-col-230">
+                                    <input name="title" id="title" class="form-control checkfocus"
+                                           maxlength="20">
+                                    <span class="title_note" style="padding-top:3px;float: left;color: rgb(160, 150, 150);">标题在1-49字之间</span>
+                                </div>
+                            </div>
+
+                            <div class="row form-group ">
+                                <label>选择渠道</label>
+                                <div class="pull-left">
+                                    <label class="control-radio">
+                                        <input type="radio" name="send-channel" data-val="1" style="margin:0px;"
+                                               checked="checked" class="blueRadio"><span>短信</span>
+                                    </label>
+                                </div>
+                                <div class="pull-left">
+                                    <label class="control-radio">
+                                        <input type="radio" name="send-channel" data-val="0" style="margin:0px;"
+                                               class="blueRadio"><span>微信公众号</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="row form-group msg-content-area">
+                                <label>群发内容</label>
+                                <div class="yz-col-470" style="display: inline-block">
+                                    <input placeholder="小主，你好久没有来看我了呢！双十二活动开始啦，来看看我吧" name="msg_content"
+                                           id="msg_content"
+                                           class="form-control sendContent checkfocus msg_content">
+                                    <span class="identify content_note" style="margin-top:3px;display:none">发送内容必填</span>
+
+                                </div>
+                                <div class="chooseBtn">
+                                    <button type="button" class="btn keepBtn commonBtn revert"
+                                            data-toggle="modal" data-target="#messageExample">选择模板
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="row form-group wx-content-area">
+                                <label>群发文本</label>
+                                <div class="yz-col-470" style="position: relative;">
+                                    <textarea class="wx-content-input" maxlength="600"></textarea>
+                                    <span class="wx-content-no">还可以输入<span>600</span>字</span>
+                                    <span class="identify wx_content_note" style="margin-top:3px;display:none">群发文本在1-599之间</span>
+                                </div>
+                            </div>
+
+                            <div class="row form-group contentTypeArea">
+                                <label>嵌入系统营销活动</label>
+                                <div class="pull-left">
+                                    <label class="control-radio">
+                                        <input type="radio" name="content-type" data-val="1" style="margin:0px;"
+                                               checked="checked" class="blueRadio"><span>否</span>
+                                    </label>
+                                </div>
+                                <div class="pull-left">
+                                    <label class="control-radio">
+                                        <input type="radio" name="content-type" data-val="0" style="margin:0px;"
+                                               class="blueRadio"><span>是</span>
+                                    </label>
+                                </div>
+                                <div class="yz-col-230 allCampaigns"></div>
+                            </div>
+
+                            <div class="row  form-group msgSignature">
+                                <label style="margin-bottom: 0px">短信签名<span data-placement="top"
+                                                                            data-container="body"
+                                                                            data-trigger="hover"
+                                                                            data-toggle="popover"
+                                                                            data-content="根据相关规定，签名需备案，否则短信无法正常发送；一次备案，长期使用；使用新签名，需再次备案"><i
+                                        class="fa fa-info-circle"></i></span></label>
+
+                                <div class="yz-col-230">
+                                    <input name="msgSig" id="msgSig" class="form-control msgSig checkfocus"
+                                           maxlength="8">
+                                    <span class="sig_note" style="margin-top:3px;float: left;color: rgb(160, 150, 150);">3-8个字，汉字、字母、数字均可</span>
+                                    <!--  <span class="identify sig_note"></span> -->
+                                </div>
+                            </div>
+
+                            <div class="row  form-group">
+                                <label>发送对象<span style="line-height:34px;"><span
+                                        class="targetNum">0</span>人</span></label>
+
+                                <div class="yz-col-230" style="display: inline-block">
+                                    <select class="form-control targetType">
+                                        <option value="-1">选择发送对象</option>
+                                        <option value="1">全部用户</option>
+                                        <option value="2">按客户群筛选</option>
+                                    </select>
+                                </div>
+                                <div class="conditionArea">
+                                </div>
+                            </div>
+
+                            <!--抄送-->
+                            <div class="row form-group sendByPhones">
+                                <label>抄送</label>
+                                <div class="yz-col-470 phoneTags tag"
+                                     style="padding-left:0px;padding-right:0px;">
+                                    <ul class="form-control" id="phoneEventTags"
+                                        placeHolder="输入手机号，以'空格'分隔"></ul>
+                                    <span class="target_note" style="margin-top:3px;float: left;color: rgb(160, 150, 150);">发送对象和抄送需必填一项</span>
+                                </div>
+                            </div>
+
+                            <div class="row  form-group sendWay">
+                                <label>发送方式</label>
+                                <div class="pull-left">
+                                    <label class="control-radio">
+                                        <input type="radio" name="sendNow" data-val="1" style="margin:0px;"
+                                               checked="checked"
+                                               class="blueRadio direct sendNow"><span>直接发送</span>
+                                    </label>
+                                </div>
+                                <div class="pull-left fixed-time">
+                                    <label class="control-radio">
+                                        <input type="radio" name="sendNow" data-val="0" style="margin:0px;"
+                                               class="blueRadio timing"><span>定时发送</span>
+                                    </label>
+                                    <div class="sendTime" style="display:none;">
+                                        <input class="form-control sendTiming checkfocus yz-col-230"
+                                               data-date-format="YYYY-MM-DD HH">
+                                        <span class="identify sendTime_note" style="margin-top:3px;">&nbsp;</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row  form-group sendLoop">
+                                <label>循环发送设置</label>
+                                <div class="pull-left">
+                                    <label class="control-radio">
+                                        <input type="radio" name="sendLoop" data-val="1" style="margin:0px;"
+                                               checked="checked" class="blueRadio"><span>不循环</span>
+                                    </label>
+                                </div>
+                                <div class="pull-left">
+                                    <label class="control-radio" style="display: inline-block">
+                                        <input type="radio" name="sendLoop" data-val="0" style="margin:0px;"
+                                               class="blueRadio"><span>循环</span>
+                                    </label>
+                                    <div class="loop-select yz-col-230">
+                                        <select class="form-control loopType">
+                                            <option value="day">每天循环</option>
+                                            <option value="week">每周循环</option>
+                                            <option value="month">每月循环</option>
+                                        </select>
+                                    </div>
+                                    <div class="control-loop-time">
+                                        <span class="loop-time"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                    <div class="row form-group msgContentFormBottom" style="height:60px;line-height:50px;padding:0px 15px;margin: 0px;">
+                        <div class="yz-col-470 msgField">
+                            <span class="btnleft">
+                                <span>消耗短信：<span class="contactCount">0</span></span>
+                                <span style="margin-left:10px;">剩余：
+                                    <span class="msgNum">0</span>
+                                </span>
+                                <button style="margin-left:10px;" onclick="openRechargeModal()"
+                                        data-backdrop="static" data-toggle="modal"
+                                        class="btn keepBtn rechargeBtn commonBtn revert">充 值
+                                </button>
+                                <span class="group_note" style="margin-top:3px;"></span>
+                            </span>
+                            <div class="btnRight">
+                                <button class="btn commonBtn mobilePreview revert"
+                                        style="margin-right:10px;margin-bottom: 0px;" onclick="openPreviewModal()">
+                                    预 览
+                                </button>
+                                <button class="btn commonBtn sendGroup" onclick="updateAndNewAct(this,null,false)">
+                                    群 发
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+    <!--select activityType-->
+    <!--<div class="row shareTypeTitle" style="padding-left: 10px;">您也可以选择：</div>
+    <section class="middle row shareType">
+        <div class="col-md-4 col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3 class="panel-title">社交营销<span style="margin-left: 10px;">热点引爆、快速传播</span>
+                </h3></div>
+                <div class="panel-body">
+                    <div class="channel-content socialCircle">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4">
+                                <i class="icon iconfont">&#xe618;</i>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <i class="icon iconfont">&#xe615;</i>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <i class="icon iconfont">&#xe63b;</i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4">
+                                <i class="icon iconfont">&#xe63c;</i>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <i class="icon iconfont">&#xe61f;</i>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <i class="icon iconfont">&#xe63a;</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="panel panel-default block-panel">
+                <div class="panel-heading"><h3 class="panel-title">云推客<span style="margin-left: 10px;">客户共享、互惠互利</span>
+                </h3></div>
+                <div class="panel-body" style="padding:45px;">
+                    <span class="yuntuiQRCode"></span>
+                    <span class="yuntuiNote">微信扫一扫即刻资源共享</span>
+                    <div style="text-align:center;margin-top:30px;background-color: #95d4fb;padding: 5px;color: white;">
+                        点此查看什么是“云推客”？
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <div class="panel panel-default block-panel">
+                <div class="panel-heading"><h3 class="panel-title">圈子营销<span style="margin-left: 10px;">圈内影响、口碑氛围</span>
+                </h3></div>
+                <div class="panel-body">
+                    <div class="channel-content">
+                        <div class="row" style="text-align: right;padding:0px 15px;">
+                            <span style="float:left;">工作圈<br>朋友圈<br>同事圈<br>...</span>
+                            <span class="QRCode"></span>
+                            <a class="viewDress"></a>
+                            &lt;!&ndash; <button type="button" class="btn commonBtn" onclick="copyUrl()">复制链接</button> &ndash;&gt;
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>-->
+</div>
+<br><br><br><br><br><br>
+<!-- Modal -->
+<div class="modal fade" id="rechargeModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div id="rechargeItems">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">短信充值</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+              <span class="recharge-mask active">
+                 <i class="icon iconfont">&#xe631;</i>
+              </span>
+              <span class="recharge">
+                 <p class="messageNum"><span>50</span>条</p>
+                 <p class="total"><span>5</span>元</p>
+              </span>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+              <span class="recharge-mask">
+                <i class="icon iconfont">&#xe631;</i>
+              </span>
+              <span class="recharge">
+                 <p class="messageNum"><span>100</span>条</p>
+                 <p class="total"><span>10</span>元</p>
+              </span>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+              <span class="recharge-mask">
+                <i class="icon iconfont">&#xe631;</i>
+              </span>
+              <span class="recharge">
+                 <p class="messageNum"><span>200</span>条</p>
+                 <p class="total"><span>20</span>元</p>
+              </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="modal-footer">
+                    <label style="float: left;">
+                        <input type="checkbox" checked="checked"><a href="../payAgreement" target="_blank">《用户支付协议》</a>
+                    </label>
+                    <button type="button" class="btn closeBtn cancel" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn next-step btn-disable commonBtn" id="goPay" onclick="goPay(this)">
+                        支付
+                    </button>
+                </div>
+            </div><!-- 短信充值 -->
+
+            <div id="payQRArea" style="display:none">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">充值方式</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="height:220px;text-align:center">
+                        <div class="wx_mobile_qr"></div>
+                        <p style="margin-top: 11px;margin-bottom:0">微信扫码支付</p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn closeBtn" onclick="preStep()">返回</button>
+                    <!-- <button type="button" class="btn next-step" id="commitData" onclick="goPay(this)">
+                      支付</button> -->
+                </div>
+            </div><!-- 支付方式-扫码 -->
+
+            <div id="payState" style="display:none">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">支付状态</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+	              <span class="pay_success" style="display:none">
+	              <i class="icon iconfont" style="font-size: 50px;">&#xe616;</i>
+	              <p style="margin-top: 20px;">支付成功</p>
+	              </span>
+	              <span class="pay_fail" style="display:none">
+	              <i class="icon iconfont">&#xe622;</i>
+	              <p>支付失败</p>
+	              </span>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn commonBtn down-btn" data-dismiss="modal">关闭</button>
+                    <!-- <button type="button" class="btn next-step" id="commitData" onclick="goPay(this)">
+                      支付</button> -->
+                </div>
+            </div><!-- 支付状态 -->
+        </div>
+    </div>
+</div><!-- modal-end -->
+<!-- Modal -->
+<div class="modal fade" id="confirmMass" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">群发确认</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <span class="confirm-key">标题</span>
+                    <span class="confirm-value val-channel-title"></span>
+                </div>
+                <div class="row">
+                    <span class="confirm-key">渠道</span>
+                    <span class="confirm-value val-channel-type"></span>
+                </div>
+                <div class="row"><span class="confirm-key">内容</span><span class="confirm-value val-content"></span>
+                </div>
+                <div class="row"><span class="confirm-key">群发对象</span><span
+                        class="confirm-value val-send-target"></span></div>
+                <div class="row"><span class="confirm-key">签名</span><span class="confirm-value val-signatrue"></span>
+                </div>
+                <div class="row"><span class="confirm-key">发送方式</span>
+			  <span class="confirm-value val-send-type">
+		      </span>
+                </div>
+
+            </div>
+            <div class="clear"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn commonBtn revert closebtn" data-dismiss="modal">取消</button>
+                <button type="button" class="btn next-step" id="commitData" onclick="commitData()">
+                    确认
+                </button>
+            </div>
+        </div>
+    </div>
+</div><!-- modal-end -->
+<!-- Modal -->
+<div class="modal fade" id="preview" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">预览发送的手机号码：</h4>
+            </div>
+            <div class="modal-body">
+                <input style="width: 30%;display:inline-block" class="form-control phoneNum">
+                <span style="width: 30%;color:red;display:none" class="telError">请输入正确的手机号码</span>
+            </div>
+            <div class="clear"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn commonBtn revert closeBtn" data-dismiss="modal">取消</button>
+                <button type="button" class="btn commonBtn next-step sendSomeone" id="commitSend" onclick="mobilePreview(this)">
+                    确认
+                </button>
+            </div>
+        </div>
+    </div>
+</div><!-- modal-end -->
+<!-- Modal -->
+<div class="modal fade" id="messageExample" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">短信模板<span style="margin-left: 10px;">可复制，也可以编辑</span></h4>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><input class="form-control" val="msgBox">
+                        <button type="button" class="btn commonBtn">复制</button>
+                    </li>
+                    <li class="list-group-item"><input class="form-control" val="msgBox">
+                        <button type="button" class="btn commonBtn">复制</button>
+                    </li>
+                    <li class="list-group-item"><input class="form-control" val="msgBox">
+                        <button type="button" class="btn commonBtn">复制</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <div class="modal-footer">
+                <span style="color:red;">【温馨提示】营销短信的内容要和链接对应的活动主题保持一直，否则无法通过审核！</span>
+            </div>
+        </div>
+    </div>
+</div><!-- modal-end -->
+<script src="js/extend/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="js/extend/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/extend/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/extend/jquery-ui-sliderAccess.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="js/extend/jquery.qrcode.min.js"></script>
+<!-- <script src="../Content/JS/distpicker.data.js"></script> 
+<script src="../Content/JS/distpicker.js"></script>  -->
+<script src="../Content/JS/tag-it.js"></script>
+<!-- <script type="text/javascript" src="http://www.coding123.net/getip.ashx?js=1" charset="utf-8"></script> -->
+<script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8" charset="gb2312"></script>
+<script src="js/act-common.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/releaseCampaign.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function () {
+        $("[data-toggle='popover']").popover();
+    })
+    widget.init();
+</script>
+</body>
+</html>

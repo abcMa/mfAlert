@@ -1,0 +1,280 @@
+@font-face {
+    font-family: 'iconfont';  /* project id 125778 */
+    src: url('//at.alicdn.com/t/font_75ve23jtu1tyy14i.eot');
+    src: url('//at.alicdn.com/t/font_75ve23jtu1tyy14i.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_75ve23jtu1tyy14i.woff') format('woff'),
+    url('//at.alicdn.com/t/font_75ve23jtu1tyy14i.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_75ve23jtu1tyy14i.svg#iconfont') format('svg');
+}
+body{background: #eff3f8;}
+.iconfontyyy {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+input,textarea{
+    -webkit-border-radius: 8px;
+    -webkit-user-select:text;
+    -moz-user-select:text;
+}
+input[type="text"],textarea{ -webkit-appearance: none;-moz-appearance:none;}
+#pager-example-panel .list-paging {
+    padding: 0 20px;
+}
+.iconNewGroup, .iconAdd, .iconDel, .iconPer {
+    display: inline-block;
+    height: 0px;
+    margin-right: 6px;
+}
+.row{margin:0;}
+.clearfix:before,.clearfix:after{content: "";display: table;}
+.clearfix:after{clear: both;}
+.clearfix{zoom:1;}
+/*.top{margin-top:20px;}*/
+.demo{margin:0px auto;}
+.name,.level,.divide{width:49%;}
+.detial-des{
+    width:100%;
+}
+.name{float: left;}
+.divide{float: right;}
+.divide select{width: 100%;
+    height: 40px;
+   }
+.level,.detial-des{float: right;}
+.des{float: left;width:20%;height:40px;line-height: 40px;text-align: center;color:#868686;border-right: 1px solid #AAA;}
+.content{float: right;}
+.content input{height: 40px;width:100%;border-radius: 4px;text-align:left;padding:0;text-indent: 10px;}
+.title-bar{
+    height: 52px;
+    /*background-color: #f8f8f8;*/
+    border-color: #e7e7e7;
+    border-radius: 4px;
+    line-height:52px;
+}
+.selContactContent thead tr th {
+    border-bottom: 1px solid #ddd;
+}
+.btn-search:hover {
+    background: #0685d3;
+    border: none;
+}
+.btn-search {
+    margin-top: 15px;
+    padding: 8px 15px;
+    border: none;
+    height:1.7rem;
+    background: #2ea4ed;
+    color: #fff;
+}
+.btn-search:active, .btn-search:focus, .btn-primary:active:focus, .btn-primary:active:hover {
+    background: #0685d3;
+    color:#fff;
+    border:none;
+}
+.closebtn {
+    background-color: #dbdbdb;
+    border-color: #dbdbdb;
+    opacity: 0.8;
+    color: #fff;
+}
+.confirmBtn {
+    background-color: #ff7d7e;
+    border-color: #ff7d7e;
+    opacity: 0.8;
+    color: #fff;
+}
+.confirmBtn:hover {
+    opacity: 1;
+    color: #fff;
+    background-color: #ff7d7e;
+    border-color: #ff7d7e;
+}
+.closebtn:hover {
+    opacity: 1;
+    color: #fff;
+    background-color: #dbdbdb;
+    border-color: #dbdbdb;
+}
+.modal-header {
+    background: #2ea4ed;
+    border-radius: 5px 5px 0 0;
+}
+.modal-header h4{
+    color:#fff;
+}
+.input-col input{
+    height: 50px;
+    /*width: 100%;*/
+    border-radius: 4px;
+    border: 1px solid #CEC6C6;
+}
+.input-col span{
+    position: relative;
+    /*top: 32px;*/
+    padding: 0 20px;
+    border-right: 1px solid #CEC6C6;
+}
+.table-area{
+    margin-top:0px;
+    background: #fff;
+    min-height:367px;
+    border-radius: 0 0 5px 5px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+}
+.onlineCount {
+    float: right;
+    background-color: #cecece;
+    color: #2ea4ed;
+    border-radius: 5px;
+    padding: 0 10px;
+    height: 32px;
+    line-height: 30px;
+    margin-top: 10px;
+    border: 1px solid #2ea4ed;
+    background: #fff;
+}
+.del {
+    background: #cecece;
+    cursor: pointer;
+    margin-right: 10px;
+    border: 1px solid #2ea4ed;
+    background: #fff;
+}
+.del button{
+    outline: none;
+}
+.addCon {
+    background: #2ea4ed;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    margin-right: 10px;
+}
+.addCon:hover {
+    background: #0685d3;
+}
+
+.container{
+    /*background: #fff;*/
+    width:100%;
+    padding: 0;
+    margin: 0px;
+}
+.container-fluid{
+    background: #fff;
+    border-radius: 5px;
+}
+.table > tbody > tr > td{
+    vertical-align: middle;
+}
+.tag {
+    background-color: #95d4fb;
+    border: 1px solid #95d4fb;
+    padding: 0.25rem 0.75rem;
+    padding:3px 5px;
+    /*font-size: 0.7rem;*/
+    color: white; display:inline-block;font-weight: lighter;
+    opacity:1;
+    margin-right:4px;
+    color:#fff;
+    cursor: pointer;
+    font-size: 12px;
+}
+.delToRed{
+    background-color: red;
+    border:none;
+    border:1px solid red;
+}
+.delToRed button{
+    color: #fff;
+}
+.newDataBtn{
+    cursor: pointer;margin-top:9px;background:#2ea4ed;border-radius:4px
+}
+#buttonListPanel li .newDataBtn:hover {
+    background: #0685d3;
+}
+form {
+    background: #fff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+}
+form>.top:first-child {
+    width: 40%;
+    float: left;
+}
+form>.top:last-child {
+    width: 60%;
+    float: right;
+}
+.name {
+    float: left;
+    width: 100%;
+    padding: 0 20px;
+}
+.divide {
+    float: left;
+    width: 100%;
+    padding: 0 20px 20px 20px;
+}
+.level, .detial-des {
+    float: right;
+    padding: 0 20px 0 0;
+}
+.detial-des {
+    width: 100%;
+}
+.name .content {
+    margin: 20px 0px 20px;
+    text-align: left;
+    padding: 0;
+}
+.divide .content {
+    margin: 0px 0px 20px;
+    text-align: left;
+    padding: 0;
+}
+.detial-des .content {
+    margin: 20px 0px 20px;
+    text-align: left;
+    padding: 0;
+}
+.help-block {
+    position: absolute;
+}
+.form-control{
+    padding:6px 6px;
+}
+.form-control-feedback{
+    right:30px;
+}
+@media screen and (min-width: 768px) {
+    .modal-dialog {
+        width: 850px;
+        margin: 30px auto;
+    }
+}
+table.table input[type="checkbox"]{
+    margin:0px;
+}
+table.table  input[type="checkbox"]{
+    width:17px;
+    height: 18px;
+    background: url("../../Content/Image/checkAndRadio.png") no-repeat;
+    background-position: 1px 1px;
+    background-size: 32px auto;
+}
+table.table  input[type="checkbox"]:checked{
+    width:17px;
+    height: 18px;
+    background: url("../../Content/Image/checkAndRadio.png") no-repeat;
+    background-position: -16px 1px;
+    background-size: 32px auto;
+}

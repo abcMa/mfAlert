@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>群发列表</title>
+    <link href="../Content/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" type="text/css" >
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/sendDetail.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+
+<div class="col-md-12 channel-detail">
+    <!--<blockquote>-->
+        <p style="font-size: 18px">群发详情</p>
+    <!--</blockquote>-->
+      <div class="col-md-6">
+          <div class="col-detail-row">
+              <span class="col-key">群发标题</span>
+              <span class="col-md-val title"></span>
+              <div style="clear: both"></div>
+          </div>
+          <div class="col-detail-row">
+              <span class="col-key">渠道</span>
+              <span class="col-md-val channel"></span>
+              <div style="clear: both"></div>
+          </div>
+          <div class="col-detail-row">
+              <span class="col-key">群发内容</span>
+              <span class="col-md-val content"></span>
+              <div style="clear: both"></div>
+          </div>
+          <div class="col-detail-row">
+              <span class="col-key">首次发送时间</span>
+              <span class="col-md-val sendTime"></span>
+              <div style="clear: both"></div>
+          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="col-detail-row">
+            <span class="col-key">发送对象</span>
+            <span class="col-md-val target"></span>
+            <div style="clear: both"></div>
+        </div>
+        <div class="col-detail-row">
+            <span class="col-key">发送方式</span>
+            <span class="col-md-val sendType"></span>
+            <div style="clear: both"></div>
+        </div>
+        <div class="col-detail-row">
+            <span class="col-key">发送状态</span>
+            <span class="col-md-val sendStatus"></span>
+            <div style="clear: both"></div>
+        </div>
+      </div>
+</div>
+<div class="mainSection col-sm-12">
+</div>
+<!-- Modal -->
+<div class="modal fade" id="ewmModal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">提示</h4>
+            </div>
+            <div class="modal-body">
+                <div class="ewm-area">
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default closebtn" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div><!-- modal-end -->
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script src="js/sendDetail.js"></script>
+<script>
+    Iptools.Start();
+    widget._init();
+</script>
+</body>
+</html>

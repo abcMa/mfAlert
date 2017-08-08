@@ -1,0 +1,541 @@
+.mainSection{
+    height: 100%;
+}
+.contents{
+    width:100%;
+    position: relative;
+    height:100%;
+}
+.leftTask{
+    position: absolute;
+    left:0;
+    top:0;
+    background-color: transparent;
+    width:300px;
+    height: 100%;
+    border-radius: 5px;
+    padding-top: 0;
+    display: none;
+}
+.rightTask{
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+    padding-top: 0;
+    height: 100%;
+}
+.leftMainTitle{
+    height: 300px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.leftMainContent{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.leftNavContent{
+    height: 54px;
+    line-height: 54px;
+    padding-left: 15px;
+}
+.taskPadding{
+    padding-left: 10px;
+}
+.taskSize{
+    position: relative;
+    top: -3px;
+    font-size: 14px;
+}
+.allTask{
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    width: 170px;
+}
+.screenTitle{
+    height: 54px;
+    line-height: 54px;
+    padding-left: 15px;
+}
+.administration{
+    position: relative;
+    overflow: hidden;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.adminTasks{
+    float: left;
+}
+.adminTaskBtn{
+    float: left;
+    margin-left: 20px;
+}
+.taskSearch{
+    float: right;
+    position: relative;
+    overflow: hidden;
+}
+.iconTaskList{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+.taskLists{
+    padding: 5px 10px;
+    border: 1px solid #2ea4ed;
+    border-right: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    cursor: pointer;
+    color: #2ea4ed;
+}
+.taskLists:hover{
+    color: #0685d3;
+}
+span.active{
+    background-color: #2ea4ed;
+    color: #fff;
+}
+span.active .iconfont{
+    background-color: #2ea4ed;
+    color: #fff;
+}
+span.active:hover{
+    background-color: #0685d3;
+    color: #fff;
+}
+span.active:hover .iconfont{
+    background-color: #0685d3;
+    color: #fff;
+}
+.taskPanels{
+    padding: 5px 10px;
+    border: 1px solid #2ea4ed;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    color: #2ea4ed;
+}
+.taskPanels:hover{
+    color: #0685d3;
+}
+.iconSearch{
+    display: inline-block;
+    position: absolute;
+    top: 19px;
+    left: 4px;
+    font-size: 18px;
+    color: #a9a9a9;
+    width: 18px;
+    height: 18px;
+}
+.searchInput{
+    float: left;
+    width: 250px;
+    margin-right: 20px;
+    padding-left: 25px;
+    margin-top: 13px;
+}
+.transaction{
+    float: right;
+    margin-top: 13px;
+}
+.tabList{
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 50px;
+    height: 90%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.popup{
+    position: absolute;
+    top: 51px;
+    right: 15px;
+    width: 370px;
+    padding-top: 20px;
+    background-color: #fff;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    display: none;
+    z-index: 10;
+}
+.titleName{
+    display: block;
+}
+.setDay{
+    margin-right: 5%;
+}
+.timeName{
+    display: inline-block;
+    width: 47%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+.form-group{
+    padding-top: 0;
+}
+.popupFoot{
+    padding-left: 15px;
+    height: 74px;
+    line-height: 74px;
+    background-color: #dbdbdb;
+    cursor: pointer;
+}
+.iconAdd{
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    font-weight: normal;
+    color: #09f;
+}
+.addNewLeft{
+    color: #09f;
+}
+.addNewLeft:hover{
+    color: #06c;
+}
+.addCustomer{
+    color: #2ea4ed;
+    cursor: pointer;
+    margin-right: 15px;
+    font-weight: normal;
+}
+.addCustomer:hover{
+    color: #0685d3;
+}
+.addCustomers{
+    cursor: pointer;
+    margin-right: 15px;
+    font-weight: normal;
+}
+.addNewCustomer{
+    /*position: relative;*/
+    /*top: 7px;*/
+    /*right: 0;*/
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    color: #06c;
+    cursor: pointer;
+    font-weight: normal;
+}
+.addNewCustomer:hover{
+    color: #333;
+}
+.addNewCustomers{
+    /*position: relative;*/
+    /*top: 6px;*/
+    /*right: 0;*/
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    color: #06c;
+    cursor: pointer;
+    font-weight: normal;
+}
+.addNewCustomers:hover{
+    color: #333;
+}
+.addTransaction{
+    color: #09f;
+    cursor: pointer;
+    font-weight: normal;
+}
+.addTransaction:hover{
+    color: #0685d3;
+}
+.addNewTransaction{
+    color: #2ea4ed;
+    cursor: pointer;
+    font-weight: normal;
+}
+.addNewTransaction:hover{
+    color: #0685d3;
+}
+.searchBtn{
+    position: absolute;
+    top: 20px;
+    right: 117px;
+    width: 28px;
+    height: 20px;
+    background-color: #2ea4ed;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+.searchBtn:hover{
+    background-color: #0685d3;
+}
+.iconSearchTask{
+    position: absolute;
+    top: -6px;
+    right: 7px;
+    font-size: 16px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    color: #fff;
+}
+.iconScreenTitle{
+    color: #2ea4ed;
+}
+.iconEdit{
+    line-height: 0;
+    font-weight: bold;
+    margin-left: 6px;
+    cursor: pointer;
+}
+.addLeft{
+    color: #09f;
+}
+.addLeft:hover{
+    color: #06c;
+}
+.taskTab{
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+.table td.taskNameType:hover{
+    cursor: pointer;
+    color: #2ea4ed;
+}
+input.blueCheckbox[type="checkbox"], input.blueRadio[type="radio"]{
+    margin-top: -1px;
+    cursor: pointer;
+}
+.addTaskCustomer{
+    display: none;
+}
+.addTaskDeal{
+    display: none;
+}
+.addHeight{
+    height: 110px;
+    margin-bottom: 0;
+}
+.addDealsData{
+    display: none;
+}
+.addNewDealsData{
+    display: none;
+}
+.input-group-btn{
+    width: 0;
+}
+/*面板样式*/
+.stage_main_content{
+    padding-top: 0;
+    height: 825px;
+    overflow-y: scroll;
+}
+.stageContent li.stageBlock{
+    font-size: 14px;
+}
+.dealsTitle{
+    font-size: 1.0em;
+}
+.stageContent li .header{
+    height: auto;
+}
+.header-content{
+    width:100%;
+    height: 100%;
+}
+.modal-open .modal{
+    overflow-y: hidden;
+}
+.searchOwnerListInput{
+}
+#test_panel{
+    height: 100%;
+}
+.addCustomerVal{
+    /*margin-right: 10px;*/
+    position: relative;
+    margin-left: 5px;
+    margin-right: 10px;
+    /*top: 5px;*/
+    /*left: 5px;*/
+}
+.addNewCustomerVal{
+    margin-right: 10px;
+    /*position: relative;*/
+    /*top: 4px;*/
+    /*left: 5px;*/
+}
+.newCustomer{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    height: 28px;
+    line-height: 28px;
+    background-color: #09f;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+.newNewCustomer{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    height: 28px;
+    line-height: 28px;
+    background-color: #09f;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+.newDeal{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background-color: #95d4fb;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+.newNewDeal{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background-color: #09f;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+.iconMan,.addNewDeal,.addNewNewDeal{
+    position: relative;
+    top: 7px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    color: #fff;
+}
+.addTransactionVal{
+    position: relative;
+    top: 4px;
+    left: 5px;
+    margin-right: 5px;
+}
+.addNewTransactionVal{
+    position: relative;
+    top: 4px;
+    left: 5px;
+    margin-right: 5px;
+}
+.addNewRight,.addNewLeft{
+    position: relative;
+    /*top: 5px;*/
+    color: #09f;
+}
+.addNewRight:hover{
+    color: #06c;
+}
+.newBuildCarOwner{
+    cursor: pointer;
+}
+.buildCarOwner{
+    cursor: pointer;
+}
+.taskBg{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../../Content/Image/loadingData.gif");
+}
+/*关联车主的样式*/
+.carOwner{
+    display: none;
+}
+.newCarOwner{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background-color: #09f;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+.addRight:hover{
+    color: #06c;
+}
+.searCarInput .dropdown-toggle{
+    display: block;
+}
+.addCarOwnerName{
+    /*margin-right: 10px;*/
+    position: relative;
+    /*top: 5px;*/
+    /*left: 5px;*/
+    margin-left: 5px;
+    margin-right: 10px;
+}
+.addNewCarOwner{
+    /*position: relative;*/
+    /*top: 7px;*/
+    /*right: 0;*/
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    color: #06c;
+    cursor: pointer;
+    font-weight: normal;
+}
+.addNewCarOwner:hover{
+    color: #333;
+}
+.newBuildCarOwner{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    height: 28px;
+    line-height: 28px;
+    background-color: #09f;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+.newBuildCarOwnerVal{
+    margin-right: 10px;
+}
+.addNewNewCarOwner{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    color: #06c;
+    cursor: pointer;
+    font-weight: normal;
+}
+.taskCarNameTitle{
+    color: #09f;
+    cursor: pointer;
+}
+.taskCarNameTitle:hover{
+    color: #06c;
+}

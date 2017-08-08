@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>测试</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/cropper.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #eff3f8;
+        }
+
+        #c1 {
+            height: 100px;
+            width: 100px;
+            background-color: #06c;
+            color: #fff;
+            line-height: 100px;
+            text-align: center;
+            display: none;
+        }
+
+        #test {
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="test">
+        <button class="btn commonBtn" onclick="modal();">弹出</button>
+    </div>
+    <div id="c1">自定义区域</div>
+</body>
+</html>
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrapValidator.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-switch.min.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="../Content/bootstrap/js/cropper.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script>
+    Iptools.Start();
+    Iptools.DEFAULTS.token = "c6981f77-ee06-415d-a4c3-cdf378cb9b86";
+    //component._panel("#test", {
+    //    applet: "fb58ed21-5559-448b-824e-fb629870a3f6",
+    //    valueId: 3326,
+    //    afterLoad: function () {
+    //        console.log($("#test").data("panel"));
+    //    },
+    //    autoRefresh: false,
+    //    events:[
+    //    {
+    //        target: ".pn-section .button-nav .pn-button.save",
+    //        type: "click",
+    //        event:function(e) {
+    //            e = e || event;
+    //            e.stopPropagation();
+    //            var me = $(this);
+    //            me.addClass("icon-spin icon-spinner");
+    //            setTimeout(function () {
+    //                me.removeClass("icon-spin icon-spinner");
+    //            },3000);
+    //        }
+    //    }]
+    //});
+    //component._unit("#test", {
+    //    applet: "bce06032-40c2-4714-87a5-3a7afa76ecdc",
+    //    afterLoad: function () {
+    //        console.log($("#test").data("unit"));
+    //    }
+    //});
+    function modal() {
+        var unit = component._unit("", {
+            applet: "bce06032-40c2-4714-87a5-3a7afa76ecdc",
+            type: "modal",
+            modal: {
+                title: "创建",
+                width: 1000,
+                maxHeight: 600
+            },
+            afterLoad: function () {
+                console.log(unit.data("unit"));
+            }
+        });
+    };
+    //component._table("#test", {
+    //    applet: "4ea5987a-9bc7-45f4-b519-864b285cd1fe"
+    //});
+</script>

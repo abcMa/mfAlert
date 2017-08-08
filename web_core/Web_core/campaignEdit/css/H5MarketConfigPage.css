@@ -1,0 +1,106 @@
+
+.row{
+  margin:15px 0;
+}
+/* .col-md-3,.col-md-9{
+  padding-left: 0;
+  padding-right: 0;
+  height: 32px;
+  line-height: 32px;
+}
+ */
+.col-md-9 input{
+  width: 100%;
+}
+.check-title{
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+.link-input input,.mobile-form input{
+  width: 100%;
+}
+.mobile-form input{
+  height: 18px;
+}
+.mobile-form-page{
+    background-color: rgba(51, 51, 51, 0.7);
+    width: 252px;
+    height: 448px;
+    position: relative;
+    top: -517px;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.mobile-form{
+    width: 190px;
+    background-color: white;
+    height: 260px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+.mobile-form .row{
+  font-size: 10px;
+  margin:48px 0;
+}
+.mobile-form .row .col-md-4{
+  font-size: 10px;
+}
+.mobile-form-title{
+  padding: 0 5px;
+}
+.top-title{
+    text-align: left;
+    padding: 5px 10px;
+    color: white;
+    background-color: rgba(51, 51, 51, 0.7);;
+}
+.mobile-close{
+  font-family: 'Arial Negreta', 'Arial';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 15px;
+    color: #CCCCCC;
+    margin-right: 5px;
+    
+}
+.mobile-submit-btn button{
+    position: absolute;
+    bottom: 9px;
+    border: none;
+    background-color: #FF5E00;
+    color: white;
+    border-radius: 2px;
+    margin: auto;
+    left: 74px;
+    line-height:30px;
+}
+ .mobile-title-btn button{
+    position: absolute;
+    top: -10px;
+    border: none;
+    background-color: #FF5E00;
+    color: white;
+    /* box-shadow: 2px 2px 2px #9E3D27; */
+    border-radius: 2px;
+    margin: auto;
+    left: 66px;
+    line-height:30px;s
+}
+.check-note{
+   color: red;
+   font-weight: bold;
+   margin-top: 38px;
+}
+.font16{
+    margin: 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+}

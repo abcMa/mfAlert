@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0,,minimal-ui" />
+    <title>北京易掌天下科技有限公司-互联网式的用户运营平台</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" href="css/weui.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/market.css">
+</head>
+<body by="0" aid="1" mp="0">
+<!--分享至微信朋友圈logo-->
+<div style="margin:0 auto;display:none;">
+    <img src="http://enterpriseserver.yizhangke.com/upload/33/pic/1462524871029.jpg">
+</div>
+<div id="dowebok">
+    <div class="section">
+        <img src="img/photoOne.png" alt=""/>
+    </div>
+    <div class="section">
+        <img src="img/photoTwo.png" alt=""/>
+    </div>
+    <div class="section">
+        <img src="img/photoThree.png" alt=""/>
+    </div>
+    <div class="section">
+        <img src="img/photoFour.png" alt=""/>
+    </div>
+    <div class="section">
+        <img src="img/photoFive.png" alt=""/>
+    </div>
+</div>
+<!-- 活动期间填写表单 -->
+<!--<div class="over-form clearfix"> </div>-->
+<!--<div class="content">-->
+    <!--<article>请填写如下信息</article>-->
+    <!--<div class="form"></div>-->
+    <!-- 提交信息按钮 -->
+    <!--<div class="sub">-->
+        <!--<button type="submit">提交</button>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div class="award">-->
+    <!--<p>恭喜您获得</p>-->
+    <!--<p class="awardName"></p>-->
+    <!--<a href="tel:18332580459">-->
+        <!--<button>立即领奖</button>-->
+    <!--</a>-->
+<!--</div>-->
+<!-- 倒计时 -->
+<!--<section class="time">-->
+    <!--<p class="text"></p>-->
+    <!-- <p class="count"></p> -->
+<!--</section>-->
+
+<div class="goIcon go-icon" id="goIcon" style="top: auto; bottom: 10px;">
+    <i class="iconfont">&#xe68f;</i>
+</div>
+<!-- 弹出框 -->
+<!--<div class="weui_dialog_alert" id="dialog2">-->
+    <!--<div class="weui_mask" style="z-index:10;"></div>-->
+    <!--<div class="weui_dialog">-->
+        <!-- 弹框标题 -->
+        <!--<div class="weui_dialog_hd"><strong class="weui_dialog_title"></strong></div>-->
+        <!--<div class="weui_dialog_bd">报名成功啦</div>-->
+        <!--<div class="weui_dialog_ft">-->
+            <!--<a href="javascript:;" class="weui_btn_dialog primary">确定</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div id="allmap"></div>-->
+<!--<script src="../js/jquery-1.11.1.min.js"></script>-->
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=evpqAQ0kPfZvx8l1bgSukTTk06Dsyeoc"></script>
+<!--<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>-->
+<!--<script src="js/intopalmSha1.js"></script>-->
+<!--<script src="js/intoplamShare.js" charset="gbk"></script>-->
+<script src="js/jquery.fullPage.js"></script>
+<!--<script src="js/iptools.js"></script>-->
+<script src="../Content/JS/iptools_v2.js"></script>
+<!--<script src="js/common.js"></script>-->
+<script type="text/javascript">
+Iptools.Start({
+    baseRoot: false,
+    custmomizeUrl: "../Content/JS/properties.xml"
+});
+//先判断url内有没有携带租户id和h5id
+//var tenantId = getUrlParameter("tenantId");
+//var campaignH5_id = getUrlParameter("h5Id");
+//if(checkDataInUrl(tenantId)){
+//    Iptools.DEFAULTS.tenantId = tenantId;
+//};
+//if(checkDataInUrl(campaignH5_id)){
+//    Iptools.DEFAULTS.campaignH5_id = campaignH5_id;
+//}
+Iptools.DEFAULTS.tenantId= 33;
+//Iptools.DEFAULTS.isView = true;
+//var imgData = [
+////			{url:"http://enterpriseserver.intopalm.com/upload/33/pic/1465901094783.jpg"},
+////			{url:"http://enterpriseserver.intopalm.com/upload/33/pic/1465901111679.jpg"},
+////			{url:"http://enterpriseserver.intopalm.com/upload/33/pic/1465901128258.jpg"}
+//];
+//stayTime();
+//var timeLength = setInterval("stayTime()",1000);
+//comTime(startTime,endTime);
+//setInterval("comTime(startTime,endTime)",1000);
+//getResAppletId();
+//getStaAppletId();
+var pageCount = "";
+$(document).ready(function(){
+//    renderPage();
+    //页面加载完统计页面浏览量 不记名
+//    browseCount();
+//    getContactTraceAppletId();
+//    $(".join button").click(function(){
+//        //统计点击参与活动按钮的次数
+////        clickCount();
+//        if(startSubTime == null){
+//            return;
+//        }
+//        //开始时间与当前时间的差值大于0.则证明活动没开始
+//        //活动未开始和已结束时不向后台发送统计数量的请求
+//        if(startSubTime>0){
+//            $("#dialog2").show();
+//            $(".weui_dialog_bd").html("活动未开始!");
+//        }else if(endSubTime<0){
+//            $("#dialog2").show();
+//            $(".weui_dialog_bd").html("活动已结束!");
+//        }else{ //活动进行中时判断弹出表单或者打开一个链接
+//            //点击成功后向后台插入数据,统计数量
+//            if(form_applet == 0){
+//                openLink(linkUrl);
+//            }else{
+//                setFormData(formData);
+//                $(".over-form").show();
+//                $(".content").show();
+//            };
+//        }
+//    });
+    $(function(){
+        $('#dowebok').fullpage({
+            slideTime: 800,
+            effect: {
+                transform: {
+                    translate: 'Y',
+                    scale: [1, 1],
+                    rotate: [0, 0]
+                },
+                opacity: [0, 1]
+            },
+            //是否循环转
+            continuousVertical:true,
+            // mode: 'wheel,touch,nav:navBar',
+            easing: 'ease-out',
+            onLeave: function(index, nextIndex, direction){
+                // var leavingSection = $(this);
+                //after leaving section 2
+                if(index == pageCount){
+                    $(".goIcon").show();
+                }
+            },
+            afterLoad: function(anchorLink, index){
+                var loadedSection = $(this);
+                //using index
+                if(index == pageCount){
+                    $(".goIcon").hide();
+                }
+            }
+        });
+    });
+
+});
+//向上键头-翻页
+$(document).on('click', '#goIcon', function(){
+    $.fn.fullpage.moveSectionDown();
+});
+//function renderPage(){
+//    Iptools.GetJson({
+//        async: false,
+//        ajaxCounting: false,
+//        url: "basic/customizeApplets",
+//        data: {
+//            tenantId: Iptools.DEFAULTS.tenantId,
+//            nameList: '"Campaign_H5 Detail Applet"'
+//        },
+//        success: function (data) {
+//            var H5_detailId = data[0].appletId;
+//            Iptools.GetJson({
+//                async: false,
+//                ajaxCounting: false,
+//                url: "service/appletDataGetDetail",
+//                data: {
+//                    tenantId: Iptools.DEFAULTS.tenantId,
+//                    appletId: H5_detailId,
+//                    valueId: Iptools.DEFAULTS.campaignH5_id
+//                },
+//                success: function (data) {
+//                    //多图
+//                    console.log(data.detailData)
+//                    var rootId =  data.rootBcGroupLinkId;
+//                    //获得campaignid
+//                    Iptools.DEFAULTS.campaignId = data.detailData[rootId+'_campaign_id']['id'];
+//                    if(data.detailData[rootId+'_is_cancelled']){
+//                        var html = '<div style="text-align: center;">'+'<p style="text-align: center;margin-top:40px;">该活动已被删除</p>'+
+//                                "<img src='img/none.jpg' style='width:50%;margin-top:30px;'>"+'</div>';
+//                        $("body").html("");
+//                        $("body").append(html);
+//                        return;
+//                    };
+//                    if(data.detailData[rootId+'_rich_pic']){
+//                        var imgSrc =  data.detailData[rootId+'_rich_pic'].split('|');
+//                        imgData = imgSrc;
+//                        pageCount = imgData.length;
+//                        //遍历img
+//                        for(var i=0;i<imgData.length;i++){
+//                            if(i == imgData.length-1){
+//                                var html = '<div class="section">'+
+////                                        '<img src="'+imgData[imgData.length-1]+'" alt="">'+
+//                                        '<div class="join">'+
+//                                        '<button></button>'+
+//                                        '</div>'+
+//                                        '</div>';
+//
+//                            }else{
+//
+//                                var html = '<div class="section">'+
+//                                        '<img src="'+imgData[i]+'" alt="">'+
+//                                        '</div>';
+//                            }
+//
+//                            $("#dowebok").append(html);
+//                        };
+//                    }
+//                    //按钮颜色
+//                    if(data.detailData[rootId+'_button_color']){
+//                        btnC = data.detailData[rootId+'_button_color'];
+//                        setBtnColor(btnC);
+//                    }else{
+//                        setBtnColor(btnC);
+//                    };
+//                    //按钮文字
+//                    if(data.detailData[rootId+'_button_text']){
+//                        btnHtml = data.detailData[rootId+'_button_text'];
+//                        setBtnHtml(btnHtml);
+//                    }else{
+//                        setBtnHtml(btnHtml);
+//                    };
+//                    //铺设表单applet
+//                    form_applet = data.detailData[rootId+'_form_applet'];
+//                    if(form_applet != 0){
+//                        renderForm(form_applet);
+//                    }
+//
+//                    //跳转链接
+//                    if(data.detailData[rootId+'_forward_link']){
+//                        linkUrl = data.detailData[rootId+'_forward_link'];
+//                    };
+//                    //8:奖品数量
+//                    if(data.detailData[rootId+'_award_count']){
+//                        awardLeft = data.detailData[rootId+'_award_count'];
+//                    }
+//                    //奖品名称
+//                    if(data.detailData[rootId+'_award_name']){
+//                        awardName = data.detailData[rootId+'_award_name']
+//                    };
+//                    if(data.detailData[rootId+'_award_phone']){
+//                        awardTel = data.detailData[rootId+'_award_phone'];
+//                    }
+//                    //h5页面标题
+//                    if(data.detailData[rootId+'_title']){
+//                        title = data.detailData[rootId+'_title'];
+//                    };
+//                }
+//            })
+//        }
+//    });
+//}
+//function renderForm(formApp){
+//    Iptools.GetJson({
+//        async: false,
+//        ajaxCounting:false,
+//        url: "service/appletDataGetDetail",
+//        data: {
+//            tenantId:Iptools.DEFAULTS.tenantId,
+//            appletId:formApp,
+//            valueId:Iptools.DEFAULTS.campaignH5_id
+//        },
+//        success:function(data){
+//            if(JSON.stringify(data) != "{}"  && data.controls.length>0) {
+//                for (var d = 0; d < data.controls.length; d++) {
+//                    var formDemo = {};
+//                    formDemo.display_name = data.controls[d].display_name;
+//                    formDemo.field_type = data.controls[d].field_type;
+//                    formDemo.columnName = data.controls[d].columnName;
+//                    formData.push(formDemo);
+//                }
+//                ;
+//            }
+//        }
+//    });
+//}
+//window.onbeforeunload = onbeforeunload_handler;
+//function onbeforeunload_handler(){
+//    clearInterval(timeLength);
+//    timeCounter(time);
+////         var warning="你在该页面呆了"+time+"秒";
+////         return warning;
+//};
+</script>
+</body>
+</html>

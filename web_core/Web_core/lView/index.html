@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>lView</title>
+    <link href="../Content/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/lightbox.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="Style/Common.css" rel="stylesheet" />
+    <!--<script src="../Content/JS/jquery-1.9.1.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../Content/bootstrap/js/lightbox.js"></script>
+    <script src="../Content/JS/jszip.js"></script>
+    <script src="../Content/JS/xlsx.js"></script>
+    <script src="../Content/JS/highcharts.js"></script>
+    <script src="../Content/JS/iptools.js"></script>
+    <script src="JS/widget.js"></script>
+</head>
+<body>
+    <div class='modal fade' id='mainListSearchModal' tabindex='-1' role='dialog' aria-labelledby='titleModalLabel' data-backdrop='static'>
+        <div class='modal-dialog' role='document' style="width:auto;max-width:80%">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title' id='titleModalLabel'>查询</h4>
+                </div>
+                <div class='modal-body'>
+                    <nav class="navbar navbar-default">
+                        <div class="collapse navbar-collapse">
+                            <form class="navbar-form navbar-left list-search-form" role="search"></form>
+                        </div>
+                    </nav>
+                    <form>
+                        <div id='upBox_form_body' style='width:100%'>
+                        </div>
+                    </form>
+                </div>
+                <div class='clear'></div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn-sm mainSearchPick'>
+                        确定
+                    </button>
+                    <button type='button' class='btn-sm btn-default dismissAppletNewModal' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='ExportModal' tabindex='-1' role='dialog' data-backdrop='static'>
+        <div class='modal-dialog' role='document' style="width:auto;max-width:40%">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title'>Excel导入</h4>
+                </div>
+                <div class='modal-body'>
+                    <form>
+                        <div id="export_body">
+                            <input type="file" class="form-control import-file" accept=".xls,.xlsx" style="width: 80%;min-height: 40px;margin-bottom: 10px;" />
+                            <button type="button" class="btn btn-sm btn-default" id="export_excute" disabled="disabled" data-loading-text="导入中...">
+                                导入
+                            </button>
+                            <span class="export-hint"><span>*</span>请选择文件</span>
+                        </div>
+                    </form>
+                </div>
+                <div class='clear'></div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn-sm btn-default' data-dismiss='modal' style='margin-left:5px;'>关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='WithdrawExcelOutModal' tabindex='-1' role='dialog'>
+        <div class='modal-dialog' role='document' style="width:auto;max-width:40%">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title'>导出连连支付提现申请EXCEL</h4>
+                </div>
+                <div class='modal-body'>
+                    <form>
+                        <div id="Withdraw_body" style="padding: 0 30px;">
+                            <div class="form-group">
+                                <label for="withdraw_status">状态</label>
+                                <select class="form-control" id="withdraw_status">
+                                    <option value="">请选择</option>
+                                    <option value="1" selected="selected">创建</option>
+                                    <option value="2">已提交</option>
+                                    <option value="3">成功</option>
+                                    <option value="4">失败</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="withdraw_start_date">起始时间</label>
+                                <div class="input-group">
+                                    <input class="form-control dateStampPicker" id="withdraw_start_date" />
+                                    <span class="input-group-addon">
+                                        <span class="icon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="withdraw_end_date">结束时间</label>
+                                <div class="input-group">
+                                    <input class="form-control dateStampPicker" id="withdraw_end_date" />
+                                    <span class="input-group-addon">
+                                        <span class="icon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class='clear'></div>
+                <div class='modal-footer'>
+                    <button type='button' id="withdraw_excel_excute" class='btn btn-sm btn-default' style='margin-left:5px;' data-loading-text="导出中...">导出</button>
+                    <button type='button' class='btn btn-sm btn-default' data-dismiss='modal' style='margin-left:5px;'>关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='InvestRecordExcelOutModal' tabindex='-1' role='dialog'>
+        <div class='modal-dialog' role='document' style="width:auto;max-width:40%">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title'>导出投资记录EXCEL</h4>
+                </div>
+                <div class='modal-body'>
+                    <form>
+                        <div id="InvestRecord_body" style="padding: 0 30px;">
+                            <div class="form-group">
+                                <label for="invest_start_date">起始时间</label>
+                                <div class="input-group">
+                                    <input class="form-control dateStampPicker" id="invest_start_date" />
+                                    <span class="input-group-addon">
+                                        <span class="icon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="invest_end_date">结束时间</label>
+                                <div class="input-group">
+                                    <input class="form-control dateStampPicker" id="invest_end_date" />
+                                    <span class="input-group-addon">
+                                        <span class="icon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class='clear'></div>
+                <div class='modal-footer'>
+                    <button type='button' id="investrecord_excel_excute" class='btn btn-sm btn-default' style='margin-left:5px;' data-loading-text="导出中...">导出</button>
+                    <button type='button' class='btn btn-sm btn-default' data-dismiss='modal' style='margin-left:5px;'>关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='debtsAnalysisModal' tabindex='-1' role='dialog'>
+        <div class='modal-dialog' role='document' style="width:600px;">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title'>债权数据统计</h4>
+                </div>
+                <div class='modal-body'>
+                    <form>
+                        <div id="debtsAnalysis_body" style="padding: 0 30px;">
+                        </div>
+                    </form>
+                </div>
+                <div class='clear'></div>
+            </div>
+        </div>
+    </div>
+    <div class="mainSection col-sm-12">
+        <nav class="navbar navbar-default search-function-container">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#listPanelHeader">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" id="lView_title"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="listPanelHeader">
+                    <form class="navbar-form navbar-left" role="search">
+                        <a class="btn" role="button" data-toggle="collapse" href="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                            搜索
+                        </a>
+                    </form>
+                    <ul id="buttonListPanel" class="nav navbar-nav navbar-right"></ul>
+                </div>
+                <div class="collapse" id="collapseSearch">
+                    <div id="searchPanel"></div>
+                    <div class="hiddenCondition" style="display: none;"></div>
+                </div>
+            </div>
+        </nav>
+        <div id="contentPanel" class="col-sm-12 content_right"></div>
+    </div>
+    <script>
+        Iptools.Start();
+        widget._init();
+    </script>
+</body>
+</html>

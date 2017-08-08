@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AB测试</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="col-sm-12 banner-title">
+        <div class="col-sm-1 title">
+            A/B测试
+        </div>
+        <div class="col-sm-11 content">
+            A/B 测试是一种“先验”的实验体系，属于预测型结论，与“后验”的归纳型结论差别巨大。A/B测试的目的在于通过科学的实验设计、采样样本代表性、
+            流量分割与小流量测试等方式来获得具有代表性的实验结论，并确信该结论在推广到全部流量可信。
+        </div>
+    </div>
+    <div class="col-sm-3 abtest-sidebar">
+        <div class="title">A/B测试名称</div>
+        <div class="list-group at-list">
+            <a href="#" class="list-group-item active">
+                背景图测试
+            </a>
+            <a href="#" class="list-group-item">活动标题A/B测试</a>
+            <a href="#" class="list-group-item">渠道A/B测试</a>
+            <a href="#" class="list-group-item">客户群测试</a>
+        </div>
+    </div>
+    <div class="col-sm-9" style="padding-left: 20px;padding-right: 0">
+        <div class="abtest-content">
+            <div class="navigation">
+                <div class="title">背景图测试</div>
+                <div class="toolbar">
+                    <ul class="nav nav-pills" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#item-test-panel" role="tab" data-toggle="tab">
+                                <span class="iconfont">&#xe74b;</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#list-test-panel" role="tab" data-toggle="tab">
+                                <span class="iconfont">&#xe760;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content at-item-container">
+                <div role="tabpanel" class="tab-pane active" id="item-test-panel">
+                    <div class="col-sm-6 at-panel">
+                        <div class="at-item add" id="add_new_test">
+                            <span class="iconfont adding-icon">&#xe741;</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 at-panel">
+                        <div class="at-item show">
+                            <div class="itag">背景图</div>
+                            <div class="header">
+                                <div class="title">双十二活动</div>
+                                <div class="limit">2017-01-01至2017-12-12</div>
+                            </div>
+                            <div class="main-area">
+                                <div class="report" id="report1"></div>
+                                <div class="rate">
+                                    <div class="rating-area">
+                                        <div class="rate-name">主方案转化率</div>
+                                        <div class="rate-num">18%</div>
+                                    </div>
+                                    <div class="rating-area">
+                                        <div class="rate-name">对比方案转化率</div>
+                                        <div class="rate-num">34%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 at-panel">
+                        <div class="at-item show">
+                            <div class="itag">活动标题</div>
+                            <div class="header">
+                                <div class="title">迎新春，除夕夜一起嗨！</div>
+                                <div class="limit">2017-01-01至2017-12-12</div>
+                            </div>
+                            <div class="main-area">
+                                <div class="report" id="report2"></div>
+                                <div class="rate">
+                                    <div class="rating-area">
+                                        <div class="rate-name">主方案转化率</div>
+                                        <div class="rate-num">13%</div>
+                                    </div>
+                                    <div class="rating-area">
+                                        <div class="rate-name">对比方案转化率</div>
+                                        <div class="rate-num">55%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="list-test-panel">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>开始时间</th>
+                                <th>结束时间</th>
+                                <th>类别</th>
+                                <th>主方案转化率</th>
+                                <th>对比方案转化率</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>双十二活动</td>
+                                <td>2017-01-01</td>
+                                <td>2017-12-12</td>
+                                <td>背景图</td>
+                                <td>18%</td>
+                                <td>34%</td>
+                                <td><span class="icon-edit" style="color: #2ea4ed;"></span></td>
+                            </tr>
+                            <tr>
+                                <td>迎新春，除夕夜一起嗨！</td>
+                                <td>2017-01-01</td>
+                                <td>2017-12-12</td>
+                                <td>活动标题</td>
+                                <td>13%</td>
+                                <td>55%</td>
+                                <td><span class="icon-edit" style="color: #2ea4ed;"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../Content/JS/highcharts.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="js/widget.js"></script>
+<script>
+    Iptools.Start();
+    widget._init();
+</script>

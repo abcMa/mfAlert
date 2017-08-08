@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>dView</title>
+    <link href="../Content/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/lightbox.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/summernote/summernote.css" rel="stylesheet" />
+    <link href="Style/Common.css" rel="stylesheet" />
+    <!--<script src="../Content/JS/jquery-1.9.1.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../Content/bootstrap/js/bootstrapValidator.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-switch.min.js"></script>
+    <script src="../Content/bootstrap/summernote/summernote.js"></script>
+    <script src="../Content/bootstrap/summernote/lang/summernote-zh-CN.js"></script>
+    <script src="../Content/bootstrap/js/lightbox.js"></script>
+    <script src="../Content/JS/iptools.js"></script>
+    <script src="JS/widget.js"></script>
+</head>
+<body>
+    <div class='modal fade' id='detailControlSearchModal' tabindex='-1' role='dialog' aria-labelledby='titleModalLabel' data-backdrop='static'>
+        <div class='modal-dialog' role='document' style="width: auto; max-width: 80%">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title'>选择</h4>
+                </div>
+                <div class='modal-body'>
+                    <nav class="navbar navbar-default">
+                        <div class="collapse navbar-collapse">
+                            <form class="navbar-form navbar-left control-search-form" role="search"></form>
+                        </div>
+                    </nav>
+                    <form>
+                        <div id='modalList_body' style='width:auto'>
+                        </div>
+                    </form>
+                </div>
+                <div class='clear'></div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn-sm detailSearchPick'>
+                        确定
+                    </button>
+                    <button type='button' class='btn-sm btn-default dismissAppletNewModal' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='listSelectButtonModal' tabindex='-1' role='dialog' aria-labelledby='titleModalLabel' data-backdrop='static'>
+        <div class='modal-dialog' role='document' style="width: auto; max-width: 80%">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title' id='titleModalLabel'>选择</h4>
+                </div>
+                <div class='modal-body'>
+                    <form>
+                        <div id='selectList_body' style='width:auto'>
+                        </div>
+                    </form>
+                </div>
+                <div class='clear'></div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn-sm listAppletSelect'>
+                        确定
+                    </button>
+                    <button type='button' class='btn-sm btn-default dismissAppletNewModal' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='debtsListModal' tabindex='-1' role='dialog'>
+        <div class='modal-dialog' role='document' style="width:auto;max-width:80%">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title'>资金出借债权列表</h4>
+                </div>
+                <div class='modal-body'>
+                    <div id="debtsList_body" style="padding: 0 10px;">
+                        <p>尊敬的<span id="debtsList_user" class="input-after"></span>先生/女士</p>
+                        <p style="text-indent: 2em;">
+                            您好！通过放心信息咨询（北京）有限公司信用评估与筛选，推荐您于<span id="debts_date" class="input-after"></span>
+                            通过受让他人既有的个人间借贷合同或债权受让的方式，获取如下债权，具体信息如下：
+                        </p>
+                        <p>货币单位：人民币（元）</p>
+                        <table id="debts_list_abstract">
+                            <thead>
+                                <tr>
+                                    <th>出借编号</th>
+                                    <th>受让人</th>
+                                    <th>身份证（护照）号码</th>
+                                    <th>资金出借及回收方式</th>
+                                    <th>实际出街金额（元）</th>
+                                    <th>初始出借日期</th>
+                                    <th>封闭到期日</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="debts-list-title"><span>债权列表</span></div>
+                        <table id="debts_list_data">
+                            <thead>
+                                <tr>
+                                    <th colspan="4">债权基本信息</th>
+                                    <th colspan="7">债权人如约还款时债权收益信息</th>
+                                </tr>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>借款人姓名</th>
+                                    <th>借款人身份证号码</th>
+                                    <th>抵押物/借款用途</th>
+                                    <th>还款起始日期</th>
+                                    <th>还款期数（月）</th>
+                                    <th>剩余还款期数（月）</th>
+                                    <th>本次转让债权价值（元）</th>
+                                    <th>本期还款金额（元/月）</th>
+                                    <th>预期债权收益率（年）</th>
+                                    <th>借款人属性</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class='clear'></div>
+            </div>
+        </div>
+    </div>
+    <div id="mainArea"></div>
+    <script>
+        Iptools.Start();
+        widget._init();
+    </script>
+</body>
+</html>

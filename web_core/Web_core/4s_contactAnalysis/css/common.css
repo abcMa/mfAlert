@@ -1,0 +1,106 @@
+html{
+    background-color: #eff3f8;
+    width:100%;
+    overflow: hidden;
+}
+body{
+    width:100%;
+    height: 100%;
+    background-color: #eff3f8;
+}
+ul{
+    padding: 0px;
+    margin:0px;
+}
+li{
+    list-style: none;
+}
+.left{
+    position: relative;
+    float: left;
+    width: 300px;
+    margin-right: -300px;
+    background-color: white;
+}
+.right{
+    width: 100%;
+    float: right;
+    overflow: hidden;
+}
+.right .dataList{
+    margin-left: 320px;
+}
+.landing-panel .landing-panel-font {
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    font-size: 16px;
+}
+/*默认样式修改*/
+.panel-default {
+    border:none;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: none;
+    border-radius: 0px;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    padding: 20px;
+}
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: white;
+    border:none;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+.navbar-right {
+    margin-right:0px;
+}
+.report-time-btn, .report-type-btn {
+    color: #09f;
+    background-color: #fff;
+    border-color: #09f;
+}
+.report-time-btn:hover, .report-type-btn:hover {
+    color: #06c;
+    background-color: white;
+}
+.landing-panel button.report-btn-selected {
+    background-color: #09f;
+    border-color: #09f;
+    color: #fff;
+}
+.landing-panel button.report-btn-selected:hover {
+    background-color: #09f;
+}
+/**/
+.nav-chart-btn {
+    display: inline-block;
+    vertical-align: bottom;
+    height: 26px;
+}
+.nav-chart-btn li {
+    margin-left: 15px;
+    display: inline-block;
+    height: 26px;
+}
+.nav-chart-btn li a {
+    padding: 0px 8px;
+    color: #09f;
+    height: 26px;
+    line-height: 26px;
+}
+.nav-chart-btn li a:hover {
+    color: #06c;
+    background-color: white;
+}
+#ana1 .landing-panel ul li.active a {
+    background-color: #09f;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #09f;
+}

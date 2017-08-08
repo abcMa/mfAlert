@@ -1,0 +1,95 @@
+.form-3 .middle iframe,.config-4 .middle iframe{
+    border: none;
+    width: 245px;
+    position: absolute;
+    top: 95px;
+    left: 33px;
+    height: 384px;
+}
+.row{
+  margin:15px 0;
+}
+.col-md-3,.skip-type .col-md-4,.link-input .col-md-2,.link-input .col-md-4,.link-input .col-md-8,.mobile-form .col-md-4,.mobile-form .col-md-8,.mobile-form .col-md-11{
+  padding-right: 0;
+  padding-left: 0;
+}
+.col-md-7,.col-md-5{
+  padding-right: 0;
+  padding-left: 0;	
+}
+.link-input input{
+  height: 40px;
+  line-height: 40px;
+}
+.link-input .col-md-2{
+  line-height: 40px;
+}
+.check-note{
+   color: red;
+   font-family: 300;
+}
+.check-title{
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+.link-input input,.mobile-form input{
+  width: 100%;
+}
+.mobile-form input{
+  height: 18px;
+}
+.mobile-form-page{
+    background-color: rgba(51, 51, 51, 0.7);
+    width: 252px;
+    height: 449px;
+    position: relative;
+    top: -517px;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.mobile-form{
+    width: 190px;
+    background-color: white;
+    height: 260px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+.mobile-form .row{
+  margin:15px 0;
+}
+
+.mobile-form-title{
+  padding: 0 5px;
+}
+.top-title{
+    text-align: left;
+    padding: 5px 10px;
+    color: white;
+    background-color: rgba(51, 51, 51, 0.7);;
+}
+.mobile-close{
+  font-family: 'Arial Negreta', 'Arial';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 15px;
+    color: #CCCCCC;
+    margin-right: 5px;
+}
+.mobile-submit-btn button{
+    position: absolute;
+    bottom: 9px;
+    border: none;
+    background-color: #FF5E00;
+    color: white;
+    border-radius: 2px;
+    margin: auto;
+    left: 75px;
+}

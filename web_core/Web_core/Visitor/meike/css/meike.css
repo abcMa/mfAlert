@@ -1,0 +1,733 @@
+.mainSection{
+    min-width: 870px;
+}
+.title{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    background-color: #fff;
+    color: #555;
+    font-weight: normal;
+}
+.nav{
+    background-color: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 100%;
+    height: 41px;
+}
+.storeName{
+    float: left;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 15px;
+}
+.dateChoice{
+    float: right;
+    height: 50px;
+    line-height: 50px;
+    padding-right: 15px;
+    overflow: hidden;
+}
+.dateText{
+    display: inline-block;
+}
+.dateInput{
+    display: inline-block;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    border: none;
+    border-bottom: 3px solid #30a5ed;
+}
+.contactTabList{
+    font-size:16px;
+}
+.contactTabList li{
+    display: inline-block;
+    height: 50px;
+}
+.btn:active {
+    outline: none;
+    box-shadow: none;
+}
+.nav-tabs{
+    border-bottom: none;
+}
+.tab-content{
+    margin-top: 15px;
+}
+.census{
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.customerFlow{
+    width: 25%;
+    min-width: 120px;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    float: left;
+    padding: 0 10px;
+}
+.comeInStore{
+    width: 25%;
+    min-width: 120px;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    float: left;
+    padding: 0 10px;
+}
+.newCustomerNum{
+    width: 25%;
+    min-width: 120px;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    float: left;
+    padding: 0 10px;
+}
+.stopTime{
+    width: 25%;
+    min-width: 120px;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    float: left;
+    padding: 0 10px;
+}
+.customerFlowContent{
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #e6e8eb;
+    padding: 20px 20px;
+    border-radius: 4px;
+    padding-right: 10px;
+}
+.setIconLeft{
+    float: left;
+    width: 44px;
+    height: 44px;
+    padding: 6px;
+}
+.setIconLeft i{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 38px;
+    position: relative;
+}
+i.iconSetOne{
+    color: #f5bb78;
+    font-size: 34px;
+}
+i.iconSetTwo{
+    color: #ff7d7e;
+    font-size: 36px;
+}
+i.iconSetThree{
+    color: #8bd08b;
+    font-size: 34px;
+}
+.iconSetFour{
+    color: #95d4fb;
+}
+.setIconRight{
+    float: right;
+    height: 56px;
+    text-align: right;
+}
+.flowIcon{
+    color: #e6e8eb;
+    display: inline-block;
+    height: 16px;
+    cursor: default;
+}
+.flowNum{
+    font-size: 24px;
+    color: #666;
+    padding-right: 18px;
+}
+.panel-heading{
+    line-height: 24px;
+}
+.report-btn-selected{
+    background-color: #2ea4ec;
+    color: #fff;
+}
+.report-btn-selected:hover{
+    color: #fff;
+    background-color: #06c;
+    border: 1px solid transparent;
+}
+.panel-default > .panel-heading{
+    background-color: #fff;
+}
+.panel{
+    border: none;
+}
+/*顾客属性*/
+.genderEducation{
+    overflow: hidden;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.genderCharts{
+    float: left;
+    width: 49%;
+    border-right: 1px solid #ddd;
+}
+.genderTitle{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+}
+.heatTitle{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 13px;
+}
+.iconGender{
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    color: #2ea4ec;
+}
+.educationCharts{
+    float: right;
+    width: 49%;
+}
+.educationTitle{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+}
+.ageIncome{
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.ageCharts{
+    float: left;
+    width: 60%;
+    border-right: 1px solid #ddd;
+}
+.agePhone{
+    width: 100%;
+    text-align: center;
+}
+.agePhone img{
+    width: 92%;
+    margin-left: 5px;
+}
+.incomeCharts{
+    float: right;
+    width: 39%;
+}
+.liftCharts{
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.heatMaps{
+    border-top: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+.gradeCharts{
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.panel-body{
+    padding-right: 0;
+}
+.ticker{
+    width: 100%;
+    height: 50px;
+}
+.dateChoice .refresh{
+    /*vertical-align: inherit;*/
+    background-color: #09f;
+    border: 1px solid #09f;
+}
+.panel-body{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.panel-body .table >  tbody > tr > th{
+    border-top: none;
+    font-weight: normal;
+}
+/*高级设置*/
+.adminInfo{
+    position: fixed;
+    top: 106px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.labelInfo{
+    position: fixed;
+    top: 106px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 350px;
+    background-color: #fff;
+}
+.senior{
+    width: 680px;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.comeInTime{
+    display: inline-block;
+    width: 83%;
+}
+.employeeTime{
+    display: inline-block;
+    width: 83%;
+}
+.senior span{
+    height: 34px;
+    line-height: 34px;
+}
+.comeTime,.employeeComeTime{
+    width: 17%;
+}
+.seniorBtn{
+    text-align: right;
+    padding-right: 20px;
+}
+.form-group{
+    margin-bottom: 0;
+    height: 66px;
+}
+.searchAdd{
+    overflow: hidden;
+    margin-top: 5%;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+}
+.baceIcon{
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    color: #c3c3c3;
+}
+.comeInTimes i{
+    display: none!important;
+}
+.winaAddress{
+    float: left;
+    height: 34px;
+    outline: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 27px;
+    width: 194px;
+}
+.enter{
+    position: absolute;
+    top: 0;
+    left: 165px;
+    width: 36px;
+    height: 20px;
+    line-height: 17px;
+    margin-top: 7px;
+    background-color: #09f;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+.enter:hover{
+    background-color: #06c;
+}
+.enterIcon{
+    color: #fff;
+}
+.addWina{
+    float: right;
+}
+.winaData{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.winaTitle span{
+    color: #000;
+    font-size: 16px;
+}
+.winaTab span{
+    font-size: 14px;
+}
+
+
+.modal-dialog{
+    margin-top: 5%;
+}
+.form-group{
+    margin-bottom: 0;
+    height: 65px;
+}
+.modal-body{
+    padding-top: 30px;
+    padding-bottom: 0;
+}
+.reduce{
+    padding-left: 0;
+    height: 34px;
+    line-height: 34px;
+}
+.iconReduce{
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    color: #ff6c60;
+    cursor: pointer;
+}
+.addMac{
+    padding-left: 12px;
+}
+.iconAddMac{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    color: #09f;
+    cursor: pointer;
+}
+.iconAddMac:hover{
+    color: #06c;
+}
+.hideNum{
+    display: none;
+}
+.addShop{
+    padding-top: 7px;
+    padding-left: 25px;
+}
+.closeShopBtn{
+    font-size: 23px;
+}
+.searchWina{
+    margin-top: 0;
+}
+.panel-heading{
+    padding: 0;
+    padding-top: 5px;
+}
+.delectWina{
+    cursor: pointer;
+}
+.addWinaOne{
+    padding-right: 5px;
+}
+.addWinaOneAddress{
+    padding-left: 25px;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    border: 1px solid transparent;
+    color: #09f;
+    border-bottom:3px solid #09f;
+}
+.dateChoice .refresh:hover{
+    background-color: #06c;
+}
+.newaddMac{
+    display: inline-block;
+    padding-left: 15px;
+    width: 24px;
+    height: 24px;
+}
+.comeInTime,.employeeTime{
+    width: 100px;
+}
+.help-block{
+    position: absolute;
+}
+.comeUnit{
+    padding-left: 0;
+}
+.landing-panel{
+    position: relative;
+}
+.tabModel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.tabImage{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+.tabImage img{
+    width: 100%;
+    height: 100%;
+}
+.has-feedback .form-control{
+    padding-right: 5px;
+}
+.icon-upload-Btn{
+    margin-top: -7px;
+}
+.loadImgs{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.loadImg{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+.loadImg img{
+    width: 100%;
+    height: 100%;
+}
+.searchWina{
+    margin-top: 8px;
+}
+.report-time-btn{
+    color: #646464;
+    background-color: #fff;
+    border: 1px solid #dfdfdf;
+    width: 46px;
+}
+.heat-time-btn{
+    color: #646464;
+    background-color: #fff;
+    border: 1px solid #dfdfdf;
+    width: 46px;
+}
+.report-time-btn:hover{
+    color: #000;
+}
+.heat-time-btn:hover{
+    color: #000;
+}
+.report-btn-selected{
+    color: #fff;
+    background-color: #09f;
+}
+.report-btn-selected:hover{
+    color: #fff;
+    background-color: #06c;
+}
+.report-btn-selected:active{
+    color: #fff;
+}
+button.report-btn-selected:focus{
+    color: #fff;
+}
+.report-btn-selected:visited{
+    color: #fff;
+}
+.contactTabList a{
+    color: #333;
+    background-color: #fff;
+}
+.nav-tabs > li > a:hover{
+    color: #09f;
+    background-color: #fff;
+    border: 1px solid transparent;
+}
+.contactTabList .active a{
+    color: #09f;
+}
+.table > tbody{
+    border-bottom: 1px solid #ddd;
+}
+#heatMap {width: 100%;height: 100%;border-radius:4px;overflow: hidden;margin:0;font-family:"微软雅黑";border: 1px solid #dbdbdb}
+.heatMap{
+    width: 100%;
+    height: 700px;
+    padding-right: 15px;
+    position: relative;
+}
+.heatLive{
+    opacity: 0.7;
+    font-size: 12px;
+}
+.heatMaps .heat-time-btn{
+    width: 58px;
+}
+.heatMaps .report-btn-selected:hover{
+    width: 58px;
+}
+.spread{
+    position: absolute;
+    top: 1px;
+    right: 16px;
+    background-color: #fff;
+    width: 140px;
+    height: 54px;
+    line-height: 54px;
+    text-align: center;
+    border-top-right-radius: 4px;
+}
+.heatTr{
+    cursor: pointer;
+}
+.heatIcon{
+    position: absolute;
+    top: 10px;
+    display: inline-block;
+    color: #09f;
+    width: 18px;
+    height: 18px;
+    margin-top: 22px;
+}
+.spreadLine{
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+}
+.table .heatTd{
+    width: 37px;
+    height: 37px;
+}
+.table .heatSpan{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 4px;
+}
+.heatDataRanking{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background-color: #95d4fb;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+.noDataArea img{
+    cursor: default;
+}
+.modal-footer{
+    margin-top: 20px;
+}
+.table{
+    margin-bottom: 0;
+}
+.table th{
+    background-color: #f7f7f7;
+    padding: 0.5rem;
+    font-weight: normal;
+}
+.panel-heading{
+    border-bottom: none;
+}
+.customerTabData tr:hover{
+    background-color: #f7f7f7;
+}
+
+.addWinaTab tr:hover{
+    background-color: #f7f7f7;
+}
+
+.customerTabData td{
+    font-size: 0.7rem;
+    padding: 0.5rem;
+}
+.addWinaTab td{
+    font-size: 0.7rem;
+    padding: 0.5rem;
+}
+.table > tbody + tbody{
+    border-top: 1px solid #ddd;
+}
+.landing-panel-font{
+    padding-left: 15px;
+    font-size: 18px;
+    color: #333;
+}
+.putComeBtn{
+    width: 60px;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+    width: 10px;
+    height: 10px;
+    background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.1);
+    box-shadow: inset 0 0 6px rgba(0,0,0,.1);
+    background-color: #95d4fb;
+}
+@media (max-width: 1024px) {
+    .setIconRight{
+        padding-right: 5px;
+    }
+    .customerFlowContent{
+        padding-right: 0;
+    }
+}

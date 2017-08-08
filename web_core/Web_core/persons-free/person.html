@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Persons_info</title>
+    <link href="../Content/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Content/Style/standard.css"/>
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="../Content/JS/themes/default/style.min.css" rel="stylesheet" />
+    <link href="Style/Common.css" rel="stylesheet" />
+    <!--<script src="../Content/JS/jquery-1.9.1.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../Content/bootstrap/js/bootstrapValidator.js"></script>
+    <script src="../Content/JS/jstree.min.js"></script>
+    <script src="../Content/JS/md5.js"></script>
+    <script src="../Content/JS/iptools_v2.js"></script>
+</head>
+<body style="background: white;">
+    <div class="main">
+        <blockquote style="padding: 0 20px;">
+            <p>
+                员工详情
+                <button id="backward" type="button" class="btn commonBtn revert" style="float:right;display: inline-block;">返回</button>
+                <button id="save_person" type="button" class="btn commonBtn" style="float:right;display: inline-block;margin-right:8px;">保存</button>
+            </p>
+        </blockquote>
+        <div class="col-sm-12">
+            <form id="person_edit_form" class="form">
+                <div class="form-group col-sm-3">
+                    <label class="control-label">头像</label>
+                    <img id="person_head_pic" class="form-control himg" alt="" src="../Content/Image/defaultHead.svg" />
+                </div>
+                <div class="form-group col-sm-3">
+                    <label class="control-label">姓名</label>
+                    <input id="person_name" name="person_name" type="text" class="form-control" />
+                </div>
+                <div class="form-group col-sm-3">
+                    <label class="control-label">性别</label>
+                    <select id="person_gender" name="person_gender" class="form-control">
+                        <option value="male">男</option>
+                        <option value="female">女</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-3">
+                    <label class="control-label">联系方式</label>
+                    <input id="person_phone" name="person_phone" type="text" class="form-control" />
+                </div>
+                <div class="form-group col-sm-3">
+                    <label class="control-label">邮箱</label>
+                    <input id="person_email" name="person_email" type="text" class="form-control" />
+                </div>
+                <div class="form-group col-sm-3">
+                    <label class="control-label">身份证</label>
+                    <input id="person_identity" name="person_identity" type="text" class="form-control" />
+                </div>
+                <div class="form-group col-sm-3">
+                    <label class="control-label">状态</label>
+                    <select id="person_status" name="person_status" class="form-control">
+                        <option value="1">正常</option>
+                        <option value="2">离职</option>
+                        <option value="3">禁用</option>
+                    </select>
+                </div>
+                <div class="sep-line col-sm-12"></div>
+                <div class="form-group col-sm-3">
+                    <label class="control-label">部门</label>
+                    <input id="person_org" name="person_org" type="text" class="form-control" disabled="disabled" />
+                </div>
+                <div class="form-group col-sm-3">
+                    <label class="control-label">职位</label>
+                    <div class="btn-group" style="width:100%;">
+                        <button id="person_pos" type="button" class="btn btn-default dropdown-toggle org-tree-select"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-radius: 3px;">
+                            无
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="width: auto;min-width: 100%;">
+                            <div class="pos_select_tree"></div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group col-sm-3">
+                    <label class="control-label">权限</label>
+                    <select id="person_res" name="person_res" class="form-control">
+                        <option value="">请选择...</option>
+                    </select>
+                </div>
+                <div class="sep-line col-sm-12"></div>
+                <div class="form-group col-sm-3">
+                    <label class="control-label">登录名(与手机号相同)</label>
+                    <input id="person_login" name="person_login" type="text" class="form-control" disabled="disabled" autocomplete="off"/>
+                </div>
+                <div class="form-group col-sm-3">
+                    <label class="control-label">密码</label>
+                    <input id="person_pwd" name="person_pwd" type="password" class="form-control" autocomplete="off"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="JS/person.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        Iptools.Start({
+            baseRoot: false,
+            custmomizeUrl: "../Content/JS/properties.xml"
+        });
+        widget._init();
+    </script>
+</body>
+</html>

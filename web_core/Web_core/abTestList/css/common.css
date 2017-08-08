@@ -1,0 +1,226 @@
+﻿@font-face {
+    font-family: 'iconfont';
+    src: url('//at.alicdn.com/t/font_bd2i4zwh9njw0zfr.eot');
+    src: url('//at.alicdn.com/t/font_bd2i4zwh9njw0zfr.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_bd2i4zwh9njw0zfr.woff') format('woff'), url('//at.alicdn.com/t/font_bd2i4zwh9njw0zfr.ttf') format('truetype'), url('//at.alicdn.com/t/font_bd2i4zwh9njw0zfr.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: rgb(239, 243, 248);
+    font-family: "Microsoft YaHei";
+    padding: 20px;
+}
+
+.banner-title {
+    background: #fff;
+    border-radius: 5px;
+    padding: 40px;
+}
+
+    .banner-title .title {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .banner-title .content {
+        font-size: 20px;
+        border-left: 5px solid #aaa;
+    }
+
+.abtest-sidebar {
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 800px;
+}
+
+    .abtest-sidebar .title {
+        font-size: 22px;
+        font-weight: bold;
+        padding: 5px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .abtest-sidebar .at-list {
+        border-radius: 0;
+        padding-top: 15px;
+    }
+
+        .abtest-sidebar .at-list a {
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 18px;
+        }
+
+            .abtest-sidebar .at-list a.active {
+                background: #2ea4ed;
+            }
+
+                .abtest-sidebar .at-list a.active:focus {
+                    background: #2ea4ed;
+                }
+
+            .abtest-sidebar .at-list a:focus {
+                background: #fff;
+            }
+
+.abtest-content {
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 800px;
+    overflow-y: auto;
+}
+
+    .abtest-content .navigation {
+        padding: 15px 40px;
+    }
+
+        .abtest-content .navigation .title {
+            font-size: 22px;
+            font-weight: bold;
+            float: left;
+        }
+
+        .abtest-content .navigation .toolbar {
+            float: right;
+        }
+
+            .abtest-content .navigation .toolbar .nav a {
+                height: 40px;
+                width: 40px;
+                padding: 0;
+                text-align: center;
+            }
+
+                .abtest-content .navigation .toolbar .nav a span {
+                    display: inline-block;
+                    line-height: 0;
+                    margin-top: 34px;
+                }
+
+    .abtest-content .at-item-container {
+        padding: 30px;
+    }
+
+        .abtest-content .at-item-container .at-panel {
+            padding: 15px;
+        }
+
+        .abtest-content .at-item-container .at-item {
+            height: 280px;
+            border-radius: 5px;
+        }
+
+            .abtest-content .at-item-container .at-item.add {
+                border: 1px dashed #2ea4ed;
+                background: #eee;
+                text-align: center;
+                cursor: pointer;
+            }
+
+                .abtest-content .at-item-container .at-item.add .adding-icon {
+                    color: #2ea4ed;
+                    font-size: 70px;
+                    display: inline-block;
+                    line-height: 0;
+                    font-weight: bold;
+                    margin-top: 195px;
+                }
+
+                .abtest-content .at-item-container .at-item.add:hover {
+                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+                }
+
+                    .abtest-content .at-item-container .at-item.add:hover .adding-icon {
+                        font-size: 90px;
+                        margin-top: 215px;
+                    }
+
+            .abtest-content .at-item-container .at-item.show {
+                border: 1px solid #2ea4ed;
+                position: relative;
+                padding: 10px 25px;
+            }
+
+                .abtest-content .at-item-container .at-item.show .itag {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    height: 56px;
+                    line-height: 56px;
+                    padding: 0 25px 0 10px;
+                    font-size: 18px;
+                    background: #ff9798;
+                    color: #fff;
+                }
+
+                    .abtest-content .at-item-container .at-item.show .itag:before {
+                        position: absolute;
+                        right: 100%;
+                        top: 0;
+                        width: 34px;
+                        content: '';
+                        height: 56px;
+                        background: url("../Image/abtest-item-label.png");
+                    }
+
+                .abtest-content .at-item-container .at-item.show .header {
+                    height: 56px;
+                }
+
+                    .abtest-content .at-item-container .at-item.show .header .title {
+                        font-size: 20px;
+                        font-weight: bold;
+                        line-height: 30px;
+                    }
+
+                    .abtest-content .at-item-container .at-item.show .header .limit {
+                        font-size: 14px;
+                        color: #2ea4ed;
+                        line-height: 26px;
+                    }
+
+                .abtest-content .at-item-container .at-item.show .main-area {
+                    position: relative;
+                    height: 204px;
+                    width: 100%;
+                }
+
+                .abtest-content .at-item-container .at-item.show .report {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 15px;
+                    right: 150px;
+                }
+
+                .abtest-content .at-item-container .at-item.show .rate {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: 140px;
+                    text-align: right;
+                }
+
+                    .abtest-content .at-item-container .at-item.show .rate .rating-area {
+                        margin-bottom: 15px;
+                    }
+
+                        .abtest-content .at-item-container .at-item.show .rate .rating-area .rate-name {
+                            font-size: 18px;
+                        }
+
+                        .abtest-content .at-item-container .at-item.show .rate .rating-area .rate-num {
+                            font-size: 26px;
+                        }

@@ -1,0 +1,605 @@
+﻿
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff;
+    color: #444d58;
+    font-family: "Microsoft YaHei" !important;
+    background: #eff3f8 !important;
+    font-size: 13px;
+    line-height: 1.42857143;
+}
+
+a {
+    color: #5b9bd1;
+}
+
+     a, a:hover {
+        text-decoration: none;
+    }  
+.personMsgHorn{
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    color: #fff;
+}
+
+@media (min-width:1366px) {
+    .container {
+        width: 85%;
+    }
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 90%;
+    }
+}
+.iconfont {
+    display: inline-block;
+    height: 30px;
+}
+
+/*lobibox提示框的位置*/
+.lobibox-notify-wrapper, .lobibox-notify-wrapper-large {
+    top: 105px;
+}
+
+.headerArea {
+    background-color: rgb(239, 243, 248);
+}
+
+/* header */
+.header {
+    min-height: 64px;
+    background-color: rgb(239, 243, 248);
+    max-width: 100%;
+}
+
+.help-center-icon {
+    display: inline-block;
+    margin-top: 8px;
+}
+
+
+.tenant-logo img {
+    width: 60px;
+    height: auto;
+}
+
+
+/*头部右侧*/
+.header-rt {
+    display: inline-block;
+    float: right;
+    height: 100%;
+    position: relative;
+}
+
+.application-help {
+    padding-left: 6px;
+    min-width: 31px;
+    vertical-align: middle;
+}
+
+    .application-help .application-search {
+        font-size: 16px;
+        color: #555;
+        cursor: pointer;
+        position: relative;
+        left: -30px;
+        top: 3px;
+    }
+
+    .application-help .search-content {
+        height: 30px;
+        font-size: 14px;
+    }
+
+        .application-help .search-content input {
+            width: 160px;
+            background: transparent;
+            border: 0;
+            min-height: 24px;
+            cursor: text;
+            color: #7f96ac;
+            border: 1px solid #ddd;
+            border-radius: 14px;
+            padding-left: 10px;
+        }
+
+        .application-help .search-content .application-search-item {
+            font-size: 14px;
+            color: #a9a9a9;
+        }
+
+            .application-help .search-content .application-search-item .search-keywork {
+                color: #33425b;
+                margin-left: 8px;
+                text-decoration: none;
+            }
+
+.application-addings {
+    line-height: 70px;
+    vertical-align: middle;
+    min-width: 70px;
+    margin: 0 10px;
+}
+
+    .application-addings a {
+        font-size: 13px;
+        color: #ffffff;
+        padding: 6px 10px 7px 10px;
+        border-radius: 5px;
+        background-color: #444d58; /*#E26A6A*/
+    }
+
+        .application-addings a:hover {
+            text-decoration: none;
+        }
+
+        .application-addings a span {
+            font-size: 13px;
+            margin-left: 4px;
+        }
+
+    .application-addings .application-newItem {
+        background-color: white;
+        font-size: 13px;
+        color: #555 !important;
+    }
+
+
+@keyframes tool-item {
+    from {
+        font-size: 30px;
+    }
+
+    to {
+        font-size: 33px;
+    }
+}
+
+.application-tool {
+    vertical-align: middle;
+    line-height: 65px;
+    display: inline-block;
+}
+
+    .application-tool ul.dropdown-menu {
+        border: none;
+    }
+
+    .application-tool .tool-ip {
+        display: inline-block;
+        margin-right: 15px;
+        overflow: hidden;
+        height: 65px;
+        vertical-align: middle;
+        float: left;
+        cursor: pointer;
+        padding-top: 4px;
+    }
+
+        .application-tool .tool-ip.tool-caret[aria-expanded=true]:after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 10px solid #fff;
+            position: absolute;
+            bottom: -2px;
+            z-index: 1001;
+        }
+
+        .application-tool .tool-ip:hover {
+            text-decoration: none;
+        }
+
+        .application-tool .tool-ip span {
+            font-size: 24px;
+            border: none;
+            color: #b2b3b3;
+            background-color: rgb(239, 243, 248);
+            line-height: 0;
+        }
+
+        .application-tool .tool-ip:hover span {
+            color: #555;
+        }
+
+    .application-tool .tool-container {
+        width: 270px;
+        padding: 5px 15px;
+    }
+
+        .application-tool .tool-container .tool-item {
+            float: left;
+            text-align: center;
+            width: 80px;
+            cursor: pointer;
+        }
+
+            .application-tool .tool-container .tool-item:hover {
+                background: rgba(238,238,238,0.5);
+                border-radius: 3px;
+            }
+
+                .application-tool .tool-container .tool-item:hover div:first-child span {
+                    animation: tool-item linear 0.5s infinite alternate;
+                }
+
+            .application-tool .tool-container .tool-item div:first-child {
+                height: 50px;
+                overflow: hidden;
+            }
+
+                .application-tool .tool-container .tool-item div:first-child span {
+                    font-size: 30px;
+                    line-height: 0;
+                }
+
+            .application-tool .tool-container .tool-item p {
+                line-height: 15px;
+            }
+
+.application-funcBar {
+    /* padding-right: 25px; */
+    vertical-align: middle;
+    line-height: 30px;
+    display: inline-block;
+}
+
+    .application-funcBar a.dropdown-toggle {
+        padding: 15px 0;
+    }
+
+    .application-funcBar .dropdown-menu {
+        font-family: "Microsoft YaHei";
+        border:none;
+        padding:0px;
+        margin-top:7px;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .application-funcBar:hover {
+        background-color: rgba(200,200,200,0.1);
+    }
+
+    .application-funcBar ul .divider {
+        border-bottom: 1px solid #ccc;
+        min-width: 130px;
+    }
+
+    .application-funcBar ul li a {
+        padding: 8px 25px;
+    }
+
+        .application-funcBar ul li a:hover {
+            background: #fff;
+            color: #09f;
+        }
+
+    .application-funcBar ul li span {
+        margin-right: 10px;
+    }
+
+    .application-funcBar a {
+        /* vertical-align: middle; */
+        font-size: 13px;
+        color: #fff;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        text-decoration: none;
+    }
+    .application-funcBar ul#cDropMenu li:last-child{
+        border-radius: 0 0 5px 5px;
+    }
+    .application-funcBar ul li a#retractSessionBtn {
+        background: #f66;
+        color: #fff;
+        border-radius:0px 0px 5px 5px;
+    }
+
+        .application-funcBar ul li a#retractSessionBtn:hover {
+            background: #c33;
+        }
+
+    .application-funcBar a img {
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        max-width: 40px;
+      /*   margin: 0 8px; */
+    }
+
+/*个人设置冒泡对话框*/
+.noteTitle {
+    display: none;
+    padding: 3px 4px;
+    border: 2px solid #444d58;
+    top: 22px;
+    background-color: #444d58;
+    float: right;
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    z-index: 200;
+    position: absolute;
+    right: -47px;
+}
+/*--------------------------screenMenu-----------------------------------------*/
+
+.screenMenuli {
+    min-height: 42px;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-top: 13px;
+    text-align: center;
+    color: #fff;
+    /* background-color: #2ea5ed; */
+    background-color: #2a3542;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.screen-selected {
+    /* color: #000 !important; */
+    background: #35404d;
+    /* box-sizing: content-box; */
+    /* margin-bottom: -10px; */
+    color:#09f;
+}
+
+.screenMenuli:hover {
+    color:#09f;
+    background: #35404d;
+    /* box-sizing: content-box; */
+   /*   margin-bottom: -10px;  */
+}
+
+.screenBar {
+    min-height: 44px;
+    /* background: #2ea5ed;
+    border-color: #2ea5ed; */
+    background: #2a3542;
+    border-color: #2a3542;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.icon-content {
+    font-family: "Microsoft YaHei";
+    margin-left: 5px;
+}
+
+.viewBar {
+    min-height: 40px;
+    background: #fff;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    display:none;
+}
+
+.viewBread {
+    background-color: #fff;
+    margin-bottom: 0;
+}
+
+    .viewBread li {
+        font-size: 14px;
+        margin: 0 6px;
+    }
+
+        .viewBread li a {
+            cursor: pointer;
+        }
+
+        .viewBread li + li:before {
+            padding: 0 18px 0 5px;
+            content: "|";
+        }
+
+.mainContainer {
+    background-color: #eff3f8;
+    /* margin-top: 10px; */
+}
+
+.menu-fixed {
+    min-height: 42px;
+    line-height: 42px;
+    /* margin-bottom: 10px; */
+    background-color: #fff;
+    border-radius: 4px 4px 0 0;
+    margin-top:20px;
+}
+
+    .menu-fixed .screen-fixed {
+        height: 100%;
+        font-size: 20px;
+    }
+
+.breadNav {
+    background-color: #fff;
+    /* top: -8px; */
+    padding: 0;
+    margin-bottom: 0;
+    padding-left: 15px;
+    border-radius: 4px 4px 0 0;
+    width: auto;
+    display: inline-block;
+}
+
+    .breadNav li + li:before {
+        content: ">";
+    }
+
+    .breadNav li a {
+        cursor: pointer;
+        color: #5b9bd1;
+    }
+
+#loadingDiv {
+    margin: -50px 0 0 33%;
+    background-size: cover;
+    display: none;
+    height: 50px;
+    width: 300px;
+    position: absolute;
+    top: 195px;
+}
+
+
+/*iconList*/
+.goBack, .changeLayout, .companyId, .code {
+    position: fixed;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    background: #09f;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 99999;
+}
+
+.changeLayout_hover {
+    position: fixed;
+    right: 20px;
+    width: 106px;
+    height: 36px;
+    border-radius: 40px;
+    background: #09f;
+}
+
+.companyId_hover {
+    position: fixed;
+    right:20px;
+    width: 130px;
+    height: 36px;
+    border-radius: 40px;
+    background: #09f;
+}
+
+.code_hover img {
+    width: 140px;
+    height: auto;
+}
+.code_hover .pic{
+    position: fixed;
+    width: 150px;
+    color: #09f;
+    font-family: '微软雅黑';
+    right: 56px;
+    bottom: 35px;
+}
+.code_hover .pic span{
+    position: relative;
+    bottom:50px;
+}
+
+.iconList i {
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 22px;
+    color: #fff;
+}
+
+.companyId span span {
+    color: #fff;
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+}
+
+/*footer*/
+.site-footer {
+    text-align: center;
+    height: 81px;
+    padding-top: 20px;
+}
+
+    .site-footer span {
+        cursor: auto;
+        -webkit-user-select: initial;
+        -moz-user-select: initial;
+        -ms-user-select: initial;
+        user-select: initial;
+    }
+#mainframe{
+	width: 100%;
+	min-height: 800px;
+	border: 0;
+	margin-top:20px;
+}
+#application_user{
+    padding-left:5px;
+}
+.user_headpic{
+	height: 30px;
+    width: 30px;
+    max-width: 30px;
+    vertical-align: top;
+}
+
+#screenMenu{
+	position:relative;
+    height: 44px;
+}
+.secondMenuArea{
+	position: absolute;
+    z-index: 99;
+    background: #2a3542;
+    padding: 10px;
+    width: 135px;
+    border-radius: 5px;
+    color: #bdbfc2;
+    top:61px;
+    font-size:14px;
+    cursor:pointer;
+}
+.secondMenuHorn{
+	color: #2a3542;
+    position: absolute;
+    top: 1px;
+    left:52px;
+}
+.secondMenuArea li{
+	padding: 5px;
+	display:block;
+	cursor:pointer;
+}
+.secondMenuArea li a{
+	color: #bdbfc2;
+	display: inline-block;
+    width: 100%;
+}
+.secondMenuArea li:hover a{
+	color: #09f;
+}
+.secondMenuArea .active{
+	color:#09f;
+	background:#35404d;
+}
+.personInfoArea {
+    display: inline-block;
+    border: 1px solid #dbdbdb;
+    height: 40px;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+.application-funcBar .dropdown-toggle {
+    height: 40px; 
+}

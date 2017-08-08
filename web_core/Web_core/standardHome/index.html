@@ -1,0 +1,190 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <link href="Style/Common.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_byzfm05z14ptx1or.css">
+</head>
+<body>
+    <div>
+        <div class="content" style="padding: 0;">
+            <div class="home-slide-left">
+                <div class="col-sm-12 threeBlock">
+                    <div class="blockList col-sm-4">
+                        <div class="panel-default title-panel">
+                            <span class="line"></span>
+                            <div class="panel-body">
+                                <div id="addNewContact" class="tag-title">
+                                    <span class="iconfont icon-wode"></span><br />
+                                    <p class="hint-text">添加客户</p>
+                                </div>
+                                <div class="tag-content v-link" data-v-name="contact_list">
+                                    <div>
+                                        客户<span class="iconfont icon-i"></span>
+                                    </div>
+                                    <h5 class="tag-number" id="contact_count">0</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blockList col-sm-4">
+                        <div class="panel-default title-panel">
+                            <span class="line"></span>
+                            <div class="panel-body">
+                                <div id="addNewContactGroup" class="tag-title">
+                                    <span class="iconfont icon-kehu"></span><br />
+                                    <p class="hint-text">新建客群</p>
+                                </div>
+                                <div class="tag-content v-link" data-v-name="contact_group_list">
+                                    <div>
+                                        流失客户数<span class="iconfont icon-i"></span>
+                                    </div>
+                                    <h5 class="tag-number" id="contact_group_count">0</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blockList col-sm-4">
+                        <div class="panel-default title-panel">
+                            <div class="panel-body">
+                                <div id="addNewCampaign" class="tag-title">
+                                    <span class="iconfont icon-yanjing1"></span><br />
+                                    <p class="hint-text">发起活动</p>
+                                </div>
+                                <div class="tag-content v-link" data-v-name="campaign_list">
+                                    <div>
+                                        总访问量<span class="iconfont icon-i"></span>
+                                    </div>
+                                    <h5 class="tag-number" id="campaign_response_count">0</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12" style="padding:0;">
+                    <div class="panel panel-default landing-panel">
+                        <div class="panel-heading">
+                            <!--<span class="iconfont icon-shugang chart-icon"></span>-->
+                            <span class="landing-panel-font">客户分析</span>
+                        </div>
+                        <div class="panel-body">
+                            <!--<div class="analysis">
+                                <h5><span class="iconfont icon-iconfontdian1 chart-icon"></span>转化分析</h5>
+                                <div class="col-sm-6">
+                                    <div id="contactChart" style="height: 260px;"></div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div id="predictChart" class="contact-change-report">
+                                        <div class="perfect-line">
+                                            <div class="blank"></div>
+                                            <div class="blank"></div>
+                                            <div class="line-angle-down-sm"><div></div></div>
+                                            <div class="line-angle-down-lg"><div></div></div>
+                                        </div>
+                                        <div class="perfect-line font-line">
+                                            <div class="blank"></div>
+                                            <div class="blank"></div>
+                                            <div class="line-font-sm">消费转化率<br /><span id="line_rate_cost">0%</span></div>
+                                            <div class="blank"></div>
+                                            <div class="blank"></div>
+                                            <div class="blank"></div>
+                                        </div>
+                                        <div class="perfect-line">
+                                            <div class="blank"></div>
+                                            <div class="line-angle-down-sm"><div></div></div>
+                                            <div class="line-angle-up-sm"><div></div></div>
+                                            <div class="line-font-lg">总体转化率<br /><span id="line_rate_total">0%</span></div>
+                                        </div>
+                                        <div class="perfect-line font-line">
+                                            <div class="blank"></div>
+                                            <div class="line-font-sm">会员转化率<br /><span id="line_rate_member">0%</span></div>
+                                            <div class="blank"></div>
+                                            <div class="blank"></div>
+                                            <div class="blank"></div>
+                                            <div class="blank"></div>
+                                        </div>
+                                        <div class="perfect-line">
+                                            <div class="line-lg"></div>
+                                            <div class="line-angle-up-sm"><div></div></div>
+                                            <div class="line-sm"></div>
+                                            <div class="line-angle-up-lg"><div></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="customerAnalysis">
+                                <div class="panel-default landing-panel">
+                                    <div class="panel-heading" style="height:44px;">
+                                        <h5><span class="iconfont icon-iconfontdian1 chart-icon"></span>流失客户趋势分析</h5>
+                                        <!--<div class="btn-group btn-group-sm navbar-right">
+                                            <button type="button" class="btn report-time-btn" data-type="day">本日</button>
+                                            <button type="button" class="btn report-time-btn" data-type="week">本周</button>
+                                            <button type="button" class="btn report-time-btn" data-type="month">本月</button>
+                                            <button type="button" class="btn report-time-btn report-btn-selected" data-type="year">本年</button>
+                                        </div>-->
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="stepChart" style="height: 300px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12" style="padding:0;">
+                    <div class="panel panel-default footer-panel">
+                        <div class="panel-body more_table">
+                            <a style="cursor:pointer;" id="more_analysis"><span class="iconfont icon-fenxi"></span>更多分析</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home-slide-right">
+                <ul class="list-group">
+                    <!-- 最新客户 -->
+                    <li class="list-group-item landing-panel-aside">
+                        <div class="list-title-line">
+                            <span class="iconfont icon-gengduo"></span>
+                            <span>最新客户</span>
+                        </div>
+                        <div class="right-List newContactList">
+                        </div>
+                    </li>
+                    <!-- 最新活动 -->
+                    <!--<li class="list-group-item landing-panel-aside">
+                        <div>
+                            <div class="list-title-line">
+                                <span class="iconfont icon-huodong-copy"></span>
+                                <span>最近活动</span>
+                            </div>
+                            <div class="right-List newCampaignList">
+                            </div>
+                        </div>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-notify.min.js"></script>
+<script src="../Content/JS/highcharts-new.js"></script>
+<script src="http://cdn.hcharts.cn/highcharts/modules/drilldown.js"></script>
+<script src="../Content/JS/highcharts-themes.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="JS/widget.js"></script>
+<script>
+    Iptools.Start();
+    widget._init();
+</script>

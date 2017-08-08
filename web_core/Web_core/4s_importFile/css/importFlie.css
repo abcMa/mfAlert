@@ -1,0 +1,118 @@
+html,body{
+    width:100%;
+    background-color: #eff3f8;
+}
+ul{
+    padding: 0px;
+    margin:0px;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.left{
+    position: relative;
+    float: left;
+    width:300px;
+    margin-right: -300px;
+}
+.block{
+    padding: 20px 20px;
+    padding-top: 0px;
+    background-color: white;
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding-bottom: 0px;
+}
+.block h3{
+    padding:0px;
+    margin:0px;
+    height: 58px;
+    line-height: 58px;
+    font-size: 18px;
+}
+.block h3.title-header{
+    cursor: pointer;
+}
+.block h3 .title{
+    color:#333;
+}
+.right{
+    float: right;
+    width:100%;
+    height: 100%;
+}
+.right .right-content{
+    margin-left: 320px;
+}
+.import-type li{
+    margin-bottom: 20px;
+}
+.import-type li .uploadFile{
+    border-radius: 5px;
+    border: 1px dashed #ccc;
+    height: 100px;
+    padding: 20px;
+    position: relative;
+}
+.uploadFile .icon{
+    display: inline-block;
+    float: left;
+    font-size: 34px;
+    color:#ccc;
+    line-height: 40px;
+    padding-right: 20px;
+}
+.uploadFile .importIcon{
+    float: left;
+    position: relative;
+}
+.importIcon h5{
+    margin:0px;
+    font-size: 16px;
+    color:#555;
+    margin-bottom: 5px;
+}
+.importIcon .import-time{
+    font-size: 14px;
+    color:#ccc;
+}
+.uploadFile .file-content{
+    margin-top: 5px;
+}
+.uploadFile a.file-click{
+    display: inline-block;
+    height: 25px;
+    cursor: pointer;
+    position: relative;
+    float: left;
+    padding-right: 10px;
+    color:#09f;
+}
+.uploadFile input {
+    display: inline-block;
+    position: absolute;
+    bottom: 2px;
+    left:-70px;
+    width:110px;
+    height: 25px;
+    opacity: 0;
+    filter: Alpha(opacity=0);
+    cursor: pointer;
+}
+.import-list{
+    background-color: white;
+}
+.uploadFile a.load-file{
+    float: left;
+    color:#09f;
+}
+.uploadFile a .load-file-icon{
+    padding-left: 10px;
+}
+.uploadFile a:hover{
+    text-decoration: none;
+    color:#06c;
+}

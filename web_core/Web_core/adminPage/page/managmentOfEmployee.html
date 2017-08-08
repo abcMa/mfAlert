@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>易掌CRM-员工管理</title>
+
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Content/bootstrap/css/bootstrap.min.css">
+    <link href="../style/common_admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../style/dist/css/Lobibox.min.css"/>
+    <link href="../style/managment-employee.css" media="screen" rel="stylesheet" type="text/css">
+    <!--<script src="../../Content/JS/jquery-1.9.1.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../../Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../JS/lobibox.min.js"></script>
+    <script src="../../Content/JS/iptools_v2.js"></script>
+    <script src="../JS/managment-employee.js"></script>
+</head>
+<body>
+<div class="container-fluid" style='padding: 0 33px;'>
+   <div class="row">
+       <div class="main">
+           <h3 class="page-header">员工管理</h3>
+           <div class="form-group">
+               <div class="new-btn">
+                   <button class="btn btn-sm btn-success" data-backdrop="static" data-toggle="modal" onclick="openNewModal(this) "style="background-color: #ffffff;color: #4CAE4C">新建</button>
+                   <a href="adminPage.html" class="btn">返回</a>
+               </div>
+           </div>
+           <!-- 数据 -->
+           <div class="table-area">
+               <table class="table table-striped table-bordered table-hover">
+	               <thead>
+		               <tr>
+		                   <th class="">编号</th>
+		                   <th class="name">姓名</th>
+		                   <!--<th class="email">邮箱</th>-->
+		                   <th class="organizationName">部门</th>
+		                   <!--<th class="positionName">职位</th>-->
+		                   <th class="jobTitle">职称</th>
+		                   <th class="phone">电话</th>
+		                   <th class="loginName">登录名</th>
+                           <th class="">权限</th>
+		                   <th class="">操作</th>
+
+		               </tr>
+	               </thead>
+	               <tbody>
+	               </tbody>
+               </table>
+           </div>
+           <div class="pageForm" data-valueid="undefined">
+	           <span class="base">
+		           <span class="arrow-left" data-page="1">
+		               <a class="pageSkip" title="上一页" onclick="pageSkip(this)"></a>
+		           </span>
+		           <a class="pagenum" id="pagenumber"></a>
+		           <span class="arrow-right">
+		               <a class="pageNext" title="下一页" onclick="pageNext(this)"></a>
+	               </span>
+	           </span>
+	           <input class="pageInput" type="text" maxlength="4"/>
+	           <button class="pageButton btn-sm" id="toPage" onclick="toPage(this)">跳转</button>
+	           </div>
+       </div>
+    </div><!-- row -end -->
+    <!-- Modal -->
+	<div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">新建员工</h4>
+	      </div>
+	      <div class="modal-body">
+	          <div class="form-group col-sm-12">
+		          <label class="control-label">姓名</label>
+		          <input data-column="name" type="text" class="form-control name" placeholder="" value="">
+	          </div>
+	          <div class="form-group col-sm-12">
+		          <label class="control-label">邮箱</label>
+		          <input data-column="email" type="text" class="form-control email" placeholder="" value="">
+	          </div>
+	          <div class="form-group col-sm-12">
+		          <label class="control-label">部门</label>
+		          <select class="form-control ng-pristine ng-valid ng-touched organization" data-column="organization">
+		          </select>
+	          </div>
+	          <div class="form-group col-sm-12">
+		          <label class="control-label">职位</label>
+		          <select class="form-control ng-pristine ng-valid ng-touched position" data-column="position">
+		          </select>
+	          </div>
+	          <div class="form-group col-sm-12">
+		          <label class="control-label">职称</label>
+		          <input data-column="jobTitle" type="text" class="form-control jobTitle" placeholder="" value="">
+	          </div>
+	          <div class="form-group col-sm-12">
+		          <label class="control-label">电话</label>
+		          <input data-column="phone" type="text" class="form-control phone" placeholder="" value="">
+	          </div>
+	          <div class="form-group col-sm-12">
+		          <label class="control-label">登录名</label>
+		          <input data-column="loginName" type="text" class="form-control loginName" placeholder="" value="">
+	          </div>
+	          <div class="form-group col-sm-12">
+		          <label class="control-label">登录密码</label>
+		          <input data-column="loginPwd" type="text" class="form-control loginPwd" placeholder="" value="">
+	          </div>
+              <div class="form-group col-sm-12">
+                  <label class="control-label">权限</label>
+                  <select class="form-control ng-pristine ng-valid ng-touched role" data-column="responsibilityId">
+                  </select>
+              </div>
+	      </div>
+	      <div class="clear"></div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default closebtn" data-dismiss="modal">关闭</button>
+	        <button type="button" class="btn" id="commitData" onclick="commitData(this)">提交</button>
+	      </div>
+	    </div>
+	  </div>
+	</div><!-- modal-end -->
+	<!-- modal -->
+	<div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" style="background-color: #ffffff;color: #D9534F">删除</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger" role="alert" id="DelAlertBox">确认删除？</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default closebtn" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn" id="commitDel" onclick="confirmDel(this)">确定</button>
+                </div>
+            </div>
+        </div>
+    </div><!-- modal-end -->
+    <!--权限的modal-->
+    <div class="modal fade" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" style="background-color: #ffffff;color: #D9534F">权限管理</h4>
+                </div>
+                <div class="modal-body">
+                    <ul>
+
+                    </ul>
+                    <!--用table布局显示不出来-->
+                    <!--<table class="table table-striped roleTable">-->
+                         <!--<tr>-->
+                             <!--<td><input type="radio"/></td>-->
+                             <!--<td>销售人员权限</td>-->
+                         <!--</tr>-->
+                         <!--<tr>-->
+                             <!--<td><input type="radio"/></td>-->
+                             <!--<td>测试人员权限</td>-->
+                         <!--</tr>-->
+                    <!--</table>-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default closebtn" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn" id="setRole" onclick="getSelRole(this)">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal end-->
+    <!-- Modal -->
+	<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">编辑员工</h4>
+	      </div>
+	      <div class="modal-body">
+              <div class="form-group col-sm-12">
+                  <label class="control-label">姓名</label>
+                  <input data-column="name" type="text" class="form-control name" id="name" placeholder="" value="">
+              </div>
+              <div class="form-group col-sm-12">
+                  <label class="control-label">邮箱</label>
+                  <input data-column="email" type="text" class="form-control email" id="email" placeholder="" value="">
+              </div>
+              <div class="form-group col-sm-12">
+                  <label class="control-label">部门</label>
+                  <select class="form-control ng-pristine ng-valid ng-touched organization" id="org" data-column="organization">
+                  </select>
+              </div>
+              <div class="form-group col-sm-12">
+                  <label class="control-label">职位</label>
+                  <select class="form-control ng-pristine ng-valid ng-touched position" id="position" data-column="position">
+                  </select>
+              </div>
+              <div class="form-group col-sm-12">
+                  <label class="control-label">职称</label>
+                  <input data-column="jobTitle" type="text" class="form-control jobTitle" id="jobTitle" placeholder="" value="">
+              </div>
+              <div class="form-group col-sm-12">
+                  <label class="control-label">电话</label>
+                  <input data-column="phone" type="text" class="form-control phone" id="phone" placeholder="" value="">
+              </div>
+              <div class="form-group col-sm-12">
+                  <label class="control-label">登录名</label>
+                  <input data-column="loginName" type="text" class="form-control loginName" id="loginName" placeholder="" value="">
+              </div>
+              <div class="form-group col-sm-12">
+                  <label class="control-label">登录密码</label>
+                  <input data-column="loginPwd" type="text" class="form-control loginPwd" id="loginPwd" placeholder="" value="">
+              </div>
+              <div class="form-group col-sm-12">
+                  <label class="control-label">权限</label>
+                  <select class="form-control ng-pristine ng-valid ng-touched role" id="role" data-column="responsibilityId">
+                  </select>
+              </div>
+	      </div>
+	      <div class="clear"></div>
+            <div class="modal-footer-update" style="padding: 15px;text-align: right;border-top: 1px solid #e5e5e5;">
+                <button type="button" class="btn btn-default closebtn" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn" id="upData" onclick="upData(this)">提交</button>
+            </div>
+	    </div>
+	  </div>
+	</div><!-- modal-end -->
+</div>
+<script>
+//    window.sessionStorage.setItem("tenantId", 33);
+Iptools.Start({
+    baseRoot: false,
+    custmomizeUrl: "../../Content/JS/properties.xml"
+});
+</script>
+</body>
+</html>

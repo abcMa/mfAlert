@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>parent</title>
+</head>
+<body>
+    <div id="dtest"></div>
+    <button type="button" onclick="fchild()">启用</button>
+    <iframe src="child.html"></iframe>
+    <script src="../Content/JS/jquery-1.9.1.js"></script>
+    <script>
+        var promises = {};
+        function init(channel, func) {
+            promises[channel] = func;
+        }
+        function fchild() {
+            if (promises["button"]) {
+                try {
+                    promises["button"]("done!!!");
+                } catch (e) { }
+            }
+        }
+    </script>
+</body>
+</html>

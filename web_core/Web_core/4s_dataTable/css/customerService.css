@@ -1,0 +1,9 @@
+.customer-table{
+    padding: 0 15px;
+    background-color: #fff;
+    overflow-x: auto;
+    width: 100%;
+}
+.customer-table-container{
+    overflow-y: hidden;
+}

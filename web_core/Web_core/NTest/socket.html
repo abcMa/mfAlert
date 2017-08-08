@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>socket</title>
+</head>
+<body>
+    <div id="main"></div>
+    <button type="button" onclick="notif('按钮点击', '测试内容测试内容测试内容测试内容测试...')">提示框</button>
+    <script src="../Content/JS/jquery-1.9.1.js"></script>
+    <script src="http://cdn.goeasy.io/goeasy.js"></script>
+    <script>
+        var notif = function (title, content) {
+            if (("Notification" in window)) {
+                if (Notification.permission != "granted") {
+                    Notification.requestPermission(function (permission) {
+                        if (permission == "granted") {
+                            var notification = new Notification("收到新消息:", {
+                                icon: "../Content/Image/defaultHead.png",
+                                body: content
+                            });
+                            notification.onclick = function () {
+                                $("#main").append("提醒被点击！" + "<br/>");
+                                notification.close();
+                            };
+                            notification.onclose = function () {
+                                $("#main").append("提醒被关闭！" + "<br/>");
+                            };
+                        }
+                    });
+                } else {
+                    var a = new Notification("收到新消息:", {
+                        icon: "../Content/Image/defaultHead.png",
+                        body: content
+                    });
+                    a.onclick = function () {
+                        $("#main").append("提醒被点击！" + "<br/>");
+                        a.close();
+                    };
+                }
+            }
+        }
+        var goEasy = new GoEasy({
+            appkey: "BC-2477d62d1a1b4bdfa9982c503c9616ee",
+            onConnected: function () {
+                $("#main").append("成功连接" + "<br/>");
+            },
+            onDisconnected: function () {
+                $("#main").append("连接断开。" + "<br/>");
+            },
+            onConnectFailed: function (error) {
+                $("#main").append("连接失败，错误编码：" + error.code + "错误信息：" + error.content + "<br/>");
+            }
+        });
+        goEasy.subscribe({
+            channel: "test",
+            onMessage: function (message) {
+                $("#main").append("您有新消息：channel：" + message.channel + " 内容：" + message.content + "<br/>");
+                notif("收到新消息", message.content);
+            },
+            onSuccess: function () {
+                $("#main").append("订阅成功。" + "<br/>");
+            },
+            onFailed: function (error) {
+                $("#main").append("订阅失败, 错误编码：" + error.code + " 错误信息：" + error.content + "<br/>");
+            }
+        });
+
+
+    </script>
+</body>
+</html>

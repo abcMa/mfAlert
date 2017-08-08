@@ -1,0 +1,142 @@
+html,body{
+    width:100%;
+    height: 100%;
+    background-color: #eff3f8;
+}
+section{
+    width:100%;
+    overflow: hidden;
+    background-color: white;
+    margin: 0px auto;
+    font-family: 'Microsoft YaHei', '微软雅黑';
+}
+.import-container{
+    padding: 0px;
+}
+.inportProcess{
+    height: 130px;
+    width:100%;
+    position: relative;
+}
+.inportProcess .left{
+    float: left;
+    height: 120px;
+    width:128px;
+    margin-top: 20px;
+    padding-left: 15px;
+}
+.inportProcess .left .img{
+    width:88px;
+    height: 88px;
+}
+.inportProcess .left img{
+    width:100%;
+    height: 100%;
+}
+.inportProcess .explain{
+    position: absolute;
+    top:0%;
+    padding-left: 128px;
+    width: 100%;
+}
+.inportProcess .explain h1{
+    font-size: 18px;
+    line-height: 1rem;
+    color:#333;
+    margin-bottom:15px;
+}
+.inportProcess .explain ul{
+    padding: 0px;
+    padding-right: 15px;
+}
+.inportProcess .explain ul li{
+    list-style: none;
+    font-size: 14px;
+    line-height: 1.2rem;
+    color:#333;
+}
+div.tableList{
+    margin: 0px 50px;
+}
+div.tableList .header{
+    height: 40px;
+    line-height: 40px;
+}
+div.tableList .header div.col-md-6.left{
+    font-size:0.9rem;
+    font-weight: bold;
+    padding-left: 35px;
+}
+div.tableList .header div.col-md-6.right{
+    padding-right: 35px;
+}
+div.tableList .header div.col-md-6.right button{
+    float: right;
+}
+table.table{
+    margin-left: 0px;
+    /*height: 530px;*/
+}
+table.table thead{
+    border-bottom: none;
+}
+table.table thead tr{
+    border-top: 1px solid #ddd;
+    border-bottom: none;
+}
+table.table thead tr th{
+    border-bottom: 1px solid #ddd;
+}
+table.table tr th:nth-child(1),
+table.table tr td:nth-child(1){
+    padding-left: 60px;
+}
+/*操作里面，下载表格的样式*/
+table.table tbody,
+table.table tbody tr:nth-child(1){
+    border-top:none;
+}
+tbody tr {
+    height: 48px;
+    line-height: 48px;
+}
+/*操作里面，下载表格的样式*/
+tbody tr td{
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    height: 48px;
+    line-height: 48px !important;
+}
+tbody tr td a{
+    display: inline-block;
+    vertical-align: middle;
+    width:25px;
+    height: 30px;
+    background: url('../image/dom.png') no-repeat;
+    background-size: 80px auto;
+    margin-right: 20px;
+}
+tbody tr td a.success{
+    background-position: -26px 0;
+}
+tbody tr td a.fail{
+    background-position: 0px 0;
+}
+tbody tr td a.fail3{
+    background-position: -52px 0;
+}
+/*没有数据*/
+.tableList .nodataImg{
+    margin-top: 80px;
+    text-align: center;
+}
+.original-file.icon-copy:hover{
+    color:#06c !important;
+}
+.wrong-file.icon-paste:hover{
+    color:#c33 !important;
+}
+.s-manage-freeze .s-column .s-cell.vlink {
+    text-align: left;
+}
+

@@ -1,0 +1,1890 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>易掌规范</title>
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/cropper.min.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <style>
+        .page-header {
+            margin-top: 10px;
+        }
+
+        .crop-test-btn {
+            position: relative;
+            overflow: hidden;
+            display: block;
+            margin: 0 auto;
+            float: left;
+            margin-top: 15px;
+        }
+
+            .crop-test-btn input[type=file] {
+                position: absolute;
+                font-size: 100px;
+                right: 0;
+                top: 0;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+        .color-span {
+            margin: 5px 10px;
+            width: 100px;
+            height: 1.7rem;
+            display: inline-block;
+            border-radius: 3px;
+            text-align: center;
+            line-height: 1.7rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- 标签布局 -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#css" role="tab" data-toggle="tab">CSS</a></li>
+            <li role="presentation"><a href="#standardJs" role="tab" data-toggle="tab">JS</a></li>
+            <li role="presentation"><a href="#iptools" role="tab" data-toggle="tab">Iptools</a></li>
+            <li role="presentation"><a href="#components" role="tab" data-toggle="tab">Components</a></li>
+        </ul>
+        <!-- 内容布局 -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="css">
+                <div class="page-header">
+                    <h1>
+                        易掌前端样式规范 <small>基于bootstrap</small>
+                        <a href="../Content/Style/standard.css" target="_blank" class="btn commonBtn" download="standard.css">v1.0版本（下载）</a>
+                        <span><small>存在于Content/Style目录下</small></span>
+                    </h1>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">基础颜色</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#color-show" role="tab" data-toggle="tab">颜色</a></li>
+                            <li role="presentation"><a href="#color-html" role="tab" data-toggle="tab">说明</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="color-show">
+                                <span class="color-span" style="background: #09f;">#09f</span>
+                                <span class="color-span" style="background: #06c;">#06c</span>
+                                <span class="color-span" style="background: #3c6;">#3c6</span>
+                                <span class="color-span" style="background: #093;">#093</span>
+                                <span class="color-span" style="background: #f66;">#f66</span>
+                                <span class="color-span" style="background: #c33;">#c33</span>
+                                <span class="color-span" style="background: #333;color: #fff">#333</span>
+                                <span class="color-span" style="background: #ccc;">#ccc</span>
+                                <span class="color-span" style="background: #eff3f8;">#eff3f8</span>
+                                <span class="color-span" style="background: #f7f7f7;">#f7f7f7</span>
+                                <span class="color-span" style="background: #ffffff;box-shadow: 0 0 10px #dbdbdb">#ffffff</span>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="color-html" style="padding-top: 15px;">
+                                <h1>所有相关颜色均从上面的分类中选取，不允许出现规范外的颜色</h1>
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item">#09f:用于正常状态下的按钮颜色|部分icon颜色|标题栏颜色|用于可点击文字的颜色</a>
+                                    <a href="#" class="list-group-item">#06c:用于hover状态下的按钮背景色</a>
+                                    <a href="#" class="list-group-item">#3c6:...</a>
+                                    <a href="#" class="list-group-item">#093:...</a>
+                                    <a href="#" class="list-group-item">#f66:...</a>
+                                    <a href="#" class="list-group-item">#c33:...</a>
+                                    <a href="#" class="list-group-item">#333:...</a>
+                                    <a href="#" class="list-group-item">#ccc:...</a>
+                                    <a href="#" class="list-group-item">#eff3f8:...</a>
+                                    <a href="#" class="list-group-item">#f7f7f7:...</a>
+                                    <a href="#" class="list-group-item">#ffffff:带有颜色的文字的背景色|线框类按钮填充色|部分icon颜色</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">文字的大小</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#font-show" role="tab" data-toggle="tab">效果</a></li>
+                            <li role="presentation"><a href="#font-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation"><a href="#font-css" role="tab" data-toggle="tab">CSS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="font-show">
+                                <h1>我是h1标题</h1>
+                                <h2>我是h2标题</h2>
+                                <h3>我是h3标题</h3>
+                                <h4>我是h4标题</h4>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="font-html" style="padding-top: 15px;">
+                                <code>
+                                    < h1>我是h1标题< /h1><br />
+                                    < h2>我是h2标题< /h2><br />
+                                    < h3>我是h3标题< /h3><br />
+                                    < h4>我是h4标题< /h4><br />
+                                </code>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="font-css" style="padding-top: 15px;">
+                                <code>
+                                    h1 {
+                                    font-size: 0.9rem;
+                                    line-height: 1rem;
+                                    color: #555;
+                                    }<br />
+
+                                    h2 {
+                                    font-size: 0.8rem;
+                                    line-height: 0.9rem;
+                                    color: #555;
+                                    }<br />
+
+                                    h3 {
+                                    font-size: 0.7rem;
+                                    line-height: 0.8rem;
+                                    color: #555;
+                                    }<br />
+
+                                    h4 {
+                                    font-size: 0.6rem;
+                                    line-height: 0.7rem;
+                                    color: #555;
+                                    }<br />
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">按钮</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#btn-show" role="tab" data-toggle="tab">效果</a></li>
+                            <li role="presentation"><a href="#btn-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation"><a href="#btn-css" role="tab" data-toggle="tab">CSS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="btn-show" style="padding-top: 15px;">
+                                <button type="button" class="btn commonBtn">正常按钮</button>
+                                <button type="button" class="btn commonBtn revert">正常反色</button>
+                                <button type="button" class="btn error">错误按钮</button>
+                                <button type="button" class="btn error revert">错误反色</button>
+                                <button type="button" class="btn success">成功按钮</button>
+                                <button type="button" class="btn success revert">成功反色</button>
+                                <button type="button" class="btn cancel">取消按钮</button>
+                                <button type="button" class="btn disableBtn" disabled>禁用的按钮</button>
+                                <button type="button" class="btn tag smTag">小标签</button>
+                                <button type="button" class="btn tag lgTag">大标签</button>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="btn-html" style="padding-top: 15px;">
+                                <code>
+                                    < button type="button" class="btn commonBtn">正常的按钮< /button><br />
+                                    < button type="button" class="btn commonBtn revert">正常反色< /button><br />
+                                    < button type="button" class="btn commonBtn large">正常大按钮< /button><br />
+                                    < button type="button" class="btn commonBtn small">正常小按钮< /button><br />
+                                    < button type="button" class="btn error">错误按钮< /button><br />
+                                    < button type="button" class="btn error revert">错误反色< /button><br />
+                                    < button type="button" class="btn success">成功按钮< /button><br />
+                                    < button type="button" class="btn success revert">成功反色< /button><br />
+                                    < button type="button" class="btn warning">警告按钮< /button><br />
+                                    < button type="button" class="btn warning revert">警告反色< /button><br />
+                                    < button type="button" class="btn disableBtn" disabled>禁用的按钮< /button><br />
+                                    < button type="button" class="btn tag">标签< /button><br />
+                                </code>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="btn-css" style="padding-top: 15px;">
+                                <code>
+                                    /*按钮的样式*/<br />
+                                    .btn {
+                                    border-radius: 5px;
+                                    padding: 0.5rem 0.75rem;
+                                    color: white;
+                                    font-size: 0.7rem;
+                                    }<br />
+
+                                    .btn:focus {
+                                    outline: none;
+                                    box-shadow: none;
+                                    }<br />
+
+                                    .btn:active {
+                                    outline: none;
+                                    box-shadow: none;
+                                    }<br />
+
+                                    .btn.commonBtn {
+                                    background-color: #2ea4ed;
+                                    border: 1px solid #2ea4ed;
+                                    color: #fff;
+                                    }<br />
+
+                                    .btn.commonBtn:hover {
+                                    background-color: #0685d3;
+                                    color: #fff;
+                                    }<br />
+
+                                    .btn.commonBtn.revert {
+                                    border: 1px solid #2ea4ed;
+                                    color: #2ea4ed;
+                                    background: #fff;
+                                    }<br />
+
+                                    .btn.commonBtn.revert:hover {
+                                    background-color: #2ea4ed;
+                                    color: #fff;
+                                    }<br />
+
+                                    .btn.error {
+                                    border: 1px solid #ff9798;
+                                    color: #fff;
+                                    background: #ff9798;
+                                    }<br />
+
+                                    .btn.error:hover {
+                                    background-color: #ff7d7f;
+                                    color: #fff;
+                                    }<br />
+
+                                    .btn.error.revert {
+                                    border: 1px solid #ff9798;
+                                    color: #ff9798;
+                                    background: #fff;
+                                    }<br />
+
+                                    .btn.error.revert:hover {
+                                    background-color: #ff9798;
+                                    color: #fff;
+                                    }<br />
+
+                                    .btn.success {
+                                    border: 1px solid #90c591;
+                                    color: #fff;
+                                    background: #90c591;
+                                    }<br />
+
+                                    .btn.success:hover {
+                                    background-color: #74b575;
+                                    color: #fff;
+                                    }<br />
+
+                                    .btn.success.revert {
+                                    border: 1px solid #90c591;
+                                    color: #90c591;
+                                    background: #fff;
+                                    }<br />
+
+                                    .btn.success.revert:hover {
+                                    background-color: #90c591;
+                                    color: #fff;
+                                    }<br />
+
+                                    .btn.warning {
+                                    border: 1px solid #f8c994;
+                                    color: #fff;
+                                    background: #f8c994;
+                                    }<br />
+
+                                    .btn.warning:hover {
+                                    background-color: #f6bb79;
+                                    color: #fff;
+                                    }<br />
+
+                                    .btn.warning.revert {
+                                    border: 1px solid #f8c994;
+                                    color: #f8c994;
+                                    background: #fff;
+                                    }<br />
+
+                                    .btn.warning.revert:hover {
+                                    background-color: #f8c994;
+                                    color: #fff;
+                                    }<br />
+
+                                    .btn.disableBtn {
+                                    background-color: #dbdbdb;
+                                    border: 1px solid #dbdbdb;
+                                    }<br />
+
+                                    .btn.disableBtn:hover {
+                                    color: #fff;
+                                    }<br />
+
+                                    .btn.tag {
+                                    background-color: #95d4fb;
+                                    border: 1px solid #95d4fb;
+                                    padding: 0.25rem 0.75rem;
+                                    font-size: 0.7rem;
+                                    color: white;
+                                    }<br />
+
+                                    .btn.tag:hover, .btn.tag:focus, .btn.tag:active {
+                                    color: white;
+                                    outline: none;
+                                    box-shadow: none;
+                                    }<br />
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">表单</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#form-show" role="tab" data-toggle="tab">效果</a></li>
+                            <li role="presentation"><a href="#form-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation"><a href="#form-css" role="tab" data-toggle="tab">CSS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="form-show" style="padding-top: 15px;">
+                                <form role="form" class="form">
+                                    <div class="form-group">
+                                        <label for="loginName">登录</label>
+                                        <input type="text" class="form-control" id="loginName" placeholder="请输入你的登录账户">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">密码</label>
+                                        <input type="password" class="form-control" id="password" placeholder="请输入你的登录密码">
+                                    </div>
+                                    <button type="submit" class="btn formBtn">立即登录</button>
+                                </form>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="form-html" style="padding-top: 15px;">
+                                < form role="form" class="form"><br />
+                                < div class="form-group"><br />
+                                < label for="loginName">登录< /label><br />
+                                < input type="text" class="form-control" id="loginName" placeholder="请输入你的登录账户"><br />
+                                < /div><br />
+                                < div class="form-group"><br />
+                                < label for="password">密码< /label><br />
+                                < input type="password" class="form-control" id="password" placeholder="请输入你的登录密码"><br />
+                                < /div><br />
+                                < button type="submit" class="btn formBtn">立即登录< /button><br />
+                                < /form><br />
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="form-css" style="padding-top: 15px;">
+                                <code>
+                                    .form .form-group {
+                                    padding-bottom: 0.5rem;
+                                    margin: 0;
+                                    }<br />
+
+                                    .form label.formLabel {
+                                    margin: 0;
+                                    padding-bottom: 0.5rem;
+                                    font-size: 0.6rem;
+                                    color: #555;
+                                    }<br />
+
+                                    .form input.formList {
+                                    height: 2.5rem;
+                                    line-height: 2.5rem;
+                                    font-size: 0.6rem;
+                                    padding: 0;
+                                    padding-left: 0.5rem;
+                                    border-radius: 5px;
+                                    border-color: #dbdbdb;
+                                    color: #555;
+                                    }<br />
+
+                                    .form .formBtn {
+                                    width: 100%;
+                                    height: 2.5rem;
+                                    line-height: 2.5rem;
+                                    padding: 0;
+                                    background-color: #2ea4ed;
+                                    border: 1px solid #2ea4ed;
+                                    }<br />
+
+                                    .form .formBtn:hover {
+                                    background-color: #0685d3;
+                                    border: 1px solid #0685d3;
+                                    color: white;
+                                    }<br />
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">弹框</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#alert-show" role="tab" data-toggle="tab">效果</a></li>
+                            <li role="presentation"><a href="#alert-js" role="tab" data-toggle="tab">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="alert-show" style="padding-top: 15px;">
+                                <button type="button" class="btn commonBtn" onclick="pAlert(1)">消息</button>
+                                <button type="button" class="btn error" onclick="pAlert(2)">错误</button>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="alert-js" style="padding-top: 15px;">
+                                <code>
+                                    //消息<br />
+                                    Iptools.Tool.pAlert({<br />
+                                    type: "info",<br />
+                                    title: "提示框标题：",<br />
+                                    content: "消息类型提示",<br />
+                                    delay: 1000<br />
+                                    });<br />
+                                    //错误<br />
+                                    Iptools.Tool.pAlert({<br />
+                                    type: "danger",<br />
+                                    title: "提示框标题：",<br />
+                                    content: "错误类型提示",<br />
+                                    delay: 1000<br />
+                                    });<br />
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">模态框</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#modal-show" role="tab" data-toggle="tab">效果</a></li>
+                            <li role="presentation"><a href="#modal-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation"><a href="#modal-css" role="tab" data-toggle="tab">CSS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="modal-show" style="padding-top: 15px;">
+                                <!-- 对话框的按钮 -->
+                                <button type="button" class="btn commonBtn" data-toggle="modal" data-target="#myModal">对话框的按钮</button>
+                                <!-- 对话框 -->
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    <span class="sr-only">Close</span>
+                                                </button>
+                                                <h4 class="modal-title" id="myModalLabel">你所要输入的模态框的标题</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn cancel" data-dismiss="modal">关闭</button>
+                                                <button type="button" class="btn commonBtn">保存</button>
+                                                <button type="button" class="btn success">确认</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 对话框end -->
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="modal-html" style="padding-top: 15px;">
+                                <code>
+                                    <!-- 对话框的按钮 --><br />
+                                    < button type="button" class="btn commonBtn" data-toggle="modal" data-target="#myModal">对话框的按钮< /button><br />
+                                    <!-- 对话框 --><br />
+                                    < div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><br />
+                                    < div class="modal-dialog"><br />
+                                    < div class="modal-content"><br />
+                                    < div class="modal-header"><br />
+                                    < button type="button" class="close" data-dismiss="modal"><br />
+                                    < span aria-hidden="true">& times;< /span><br />
+                                    < span class="sr-only">Close< /span><br />
+                                    < /button><br />
+                                    < h4 class="modal-title" id="myModalLabel">你所要输入的模态框的标题< /h4><br />
+                                    < /div><br />
+                                    < div class="modal-body"><br />
+                                    你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态
+                                    框的内容你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容你所要展示的模态框的内容<br />
+                                    < /div><br />
+                                    < div class="modal-footer"><br />
+                                    < button type="button" class="btn cancel" data-dismiss="modal">关闭< /button><br />
+                                    < button type="button" class="btn commonBtn">保存< /button><br />
+                                    < button type="button" class="btn success">确认< /button><br />
+                                    < /div><br />
+                                    < /div><br />
+                                    < /div><br />
+                                    < /div><br />
+                                    <!-- 对话框end -->
+                                </code>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="modal-css" style="padding-top: 15px;">
+                                <code>
+                                    /*模态框的样式*/<br />
+                                    .modal-header {
+                                    background-color: #2ea4ed;
+                                    border-radius: 5px;
+                                    border-bottom-right-radius: 0;
+                                    border-bottom-left-radius: 0;
+                                    }<br />
+
+                                    .modal-title {
+                                    color: white;
+                                    font-size: 0.8rem;
+                                    }<br />
+
+                                    .modal-body {
+                                    font-size: 0.7rem;
+                                    line-height: 0.8rem;
+                                    }<br />
+
+                                    .closeBtn, .keepBtn, .confirmBtn {
+                                    opacity: 0.8;
+                                    filter: alpha(opacity=80);
+                                    color: white;
+                                    }<br />
+
+                                    .closeBtn {
+                                    background-color: #dbdbdb;
+                                    border-color: #dbdbdb;
+                                    }<br />
+
+                                    .keepBtn {
+                                    background-color: #8bd08b;
+                                    border-color: #8bd08b;
+                                    }<br />
+
+                                    .confirmBtn {
+                                    background-color: #ff7d7e;
+                                    border-color: #ff7d7e;
+                                    }<br />
+
+                                    .closeBtn:hover, .keepBtn:hover, .confirmBtn:hover {
+                                    color: white;
+                                    opacity: 1;
+                                    filter: alpha(opacity=100);
+                                    }<br />
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">进度条</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#progressbar-show" role="tab" data-toggle="tab">效果</a></li>
+                            <li role="presentation"><a href="#progressbar-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation"><a href="#progressbar-css" role="tab" data-toggle="tab">CSS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="progressbar-show" style="padding-top: 15px;">
+                                <div class="progress">
+                                    <div class="progress-bar progressBlue" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progressGreen" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progressRed" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progressYellow" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="progressbar-html" style="padding-top: 15px;">
+                                <code>
+                                    < div class="progress">
+                                    < div class="progress-bar progressBlue" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">< /div>
+                                    < /div><br />
+                                    < div class="progress">
+                                    < div class="progress-bar progressGreen" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">< /div>
+                                    < /div><br />
+                                    < div class="progress">
+                                    < div class="progress-bar progressRed" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">< /div>
+                                    < /div><br />
+                                    < div class="progress">
+                                    < div class="progress-bar progressYellow" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">< /div>
+                                    < /div><br />
+                                </code>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="progressbar-css" style="padding-top: 15px;">
+                                <code>
+                                    /* 进度条的样式 */<br />
+                                    .progress {
+                                    height: 0.5rem;
+                                    min-width: 100%;
+                                    position: relative;
+                                    }<br />
+
+                                    .progressBlue {
+                                    background-color: #2ea4ed;
+                                    }<br />
+
+                                    .progressGreen {
+                                    background: #8bd08b;
+                                    }<br />
+
+                                    .progressRed {
+                                    background: #ff7d7e;
+                                    }<br />
+
+                                    .progressYellow {
+                                    background: #f5bb78;
+                                    }<br />
+
+                                    .progress span {
+                                    position: absolute;
+                                    top: -4px;
+                                    color: #555;
+                                    }<br />
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">单选框复选款</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#checkboxAndRadio-show" role="tab" data-toggle="tab" aria-expanded="true">效果</a></li>
+                            <li role="presentation"><a href="#checkboxAndRadio-html" role="tab" data-toggle="tab" aria-expanded="true">HTML</a></li>
+                            <li role="presentation"><a href="#checkboxAndRadio-css" role="tab" data-toggle="tab" aria-expanded="true">CSS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="checkboxAndRadio-show">
+                                <div class="checkbox" style="height: 50px;">
+                                    <input type="checkbox" class="blueCheckbox"><br>
+                                    <input type="checkbox" class="blueCheckbox"><br>
+                                    <input type="checkbox" class="blueCheckbox"><br>
+                                </div>
+                                <div class="radio" style="height: 50px;">
+                                    <!--<input type="radio" class="blueRadio"><br>-->
+                                    <!--<input type="radio" class="blueRadio"><br>-->
+                                    <!--<input type="radio" class="blueRadio"><br>-->
+                                    <form>
+                                        男性：
+                                        <input type="radio" class="blueRadio" checked="checked" name="Sex" value="male">
+                                        <br>
+                                        女性：
+                                        <input type="radio" class="blueRadio" name="Sex" value="female">
+                                    </form>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="checkboxAndRadio-html" style="padding-top: 15px;">
+                                <code>
+                                    /* 进度条的样式 */<br>
+                                    &lt; input type="checkbox" class="blueCheckbox"&gt;<br>
+                                    &lt; input type="radio" class="blueRadio"&gt;
+                                </code>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="checkboxAndRadio-css" style="padding-top: 15px;">
+                                <code>
+                                    input.blueCheckbox[type="checkbox"],input.blueRadio[type="radio"]{<br>
+                                    margin:6px;<br>
+                                    -webkit-appearance: none;<br>
+                                    width:16px;<br>
+                                    height: 16px;<br>
+                                    }<br>
+                                    input.blueCheckbox[type="checkbox"]:focus,input.blueRadio[type="radio"]:focus{<br>
+                                    outline: none;<br>
+                                    }<br>
+                                    input.blueCheckbox[type="checkbox"]{<br>
+                                    background: url("../Image/checkAndRadio.png") no-repeat;<br>
+                                    background-position: 0px 0px;<br>
+                                    background-size:32px auto;<br>
+                                    }<br>
+                                    input.blueCheckbox[type="checkbox"]:checked{<br>
+                                    background: url("../Image/checkAndRadio.png") no-repeat;<br>
+                                    background-position: -16px 0px;<br>
+                                    background-size:32px auto;<br>
+                                    }<br>
+                                    input.blueRadio[type="radio"]{<br>
+                                    background: url("../Image/checkAndRadio.png") no-repeat;<br>
+                                    background-position: 0px -18px;<br>
+                                    background-size:32px auto;<br>
+                                    }<br>
+                                    input.blueRadio[type="radio"]:checked{<br>
+                                    background: url("../Image/checkAndRadio.png") no-repeat;<br>
+                                    background-position: -16px -18px;<br>
+                                    background-size:32px auto;<br>
+                                    }<br>
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">hover提示框</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#popover-show" role="tab" data-toggle="tab" aria-expanded="true">效果</a></li>
+                            <li role="presentation"><a href="#popover-html" role="tab" data-toggle="tab" aria-expanded="true">HTML</a></li>
+                            <li role="presentation"><a href="#popover-css" role="tab" data-toggle="tab" aria-expanded="true">CSS</a></li>
+                            <li role="presentation"><a href="#popover-js" role="tab" data-toggle="tab" aria-expanded="true">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="popover-show" style="padding-top: 15px;">
+                                <div><span class="fa fa-info-circle" data-placement="top" data-container="body" data-trigger="hover" data-toggle="popover" title="提示标题" data-content="这是提示的主要内容"></span>提示框</div>
+                                <div><span class="fa fa-info-circle" data-placement="tight" data-container="body" data-trigger="hover" data-toggle="popover" title="提示标题" data-content="向右的提示框"></span>向右的提示框</div>
+                                <div><span class="fa fa-info-circle" data-placement="tight" data-container="body" data-trigger="click" data-toggle="popover" title="提示标题" data-content="点击触发提示框"></span>click触发的提示框</div>
+                                <div><span class="fa fa-info-circle" data-placement="top" data-container="body" data-trigger="hover" data-toggle="popover" data-content="没有标题的提示框"></span>没有标题的提示框</div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="popover-html" style="padding-top: 15px;">
+                                <code>
+                                    /*图标码 fa-info-circle*/<br />
+                                    < span class="fa fa-info-circle tip-note" data-placement="top" data-container="body" data-trigger="hover" data-toggle="popover" title="提示标题" data-content="这是提示的主要内容">图标代码< /span>
+                                </code>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="popover-js" style="padding-top: 15px;">
+                                <code>
+                                    /*需要通过js启用*/<br />
+                                    $(function(){
+                                    $("[data-toggle='popover']").popover();
+                                    })
+
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="standardJs">
+                <div class="page-header">
+                    <h1>
+                        易掌JS规范 <small>基于JQuery[Iptools-components]</small>
+                    </h1>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">基础格式</div>
+                    <div class="panel-body">
+                        <code>
+                            var widget = {};<br />
+                            widget = {<br />
+                            _UIDEFAULFS: {<br />
+                            },<br />
+                            _rebuildUiDefaults: function (options) {<br />
+                            widget._UIDEFAULFS = Iptools.Tool._extend(widget._UIDEFAULFS, options);<br />
+                            },<br />
+                            _addEventListener: function (options) {<br />
+                            $(options.container).on(options.type, options.target, options.event);<br />
+                            },<br />
+                            _bindingDomEvent: function () {<br />
+                            },<br />
+                            _bindingEventAfterLoad: function () {<br />
+                            },<br />
+                            _init: function () {<br />
+                            }<br />
+                            };<br />
+                        </code>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">格式说明</div>
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <a class="list-group-item">
+                                <h4 class="list-group-item-heading">_UIDEFAULTS</h4>
+                                <p class="list-group-item-text">保存全局变量，例如页面元素选择器、图片或文件路径、关键数据ID等</p>
+                            </a>
+                            <a class="list-group-item">
+                                <h4 class="list-group-item-heading">_addEventListener</h4>
+                                <p class="list-group-item-text">
+                                    绑定事件方式：<br />
+                                    <code>
+                                        widget._addEventListener({<br />
+                                        container:"body",<br />
+                                        target:"[element]",<br />
+                                        type:"click[change,hidden.bs.modal,...]",<br />
+                                        event:function(){...}<br />
+                                        })<br />
+                                    </code>
+                                </p>
+                            </a>
+                            <a class="list-group-item">
+                                <h4 class="list-group-item-heading">_bindingDomEvent</h4>
+                                <p class="list-group-item-text">事件绑定统一定义位置，相当于接口定义，在页面加载前调用</p>
+                            </a>
+                            <a class="list-group-item">
+                                <h4 class="list-group-item-heading">_bindingEventAfterLoad</h4>
+                                <p class="list-group-item-text">特殊插件初始化，例如时间控件、富文本空间、lightbox、multi-select等</p>
+                            </a>
+                            <a class="list-group-item">
+                                <h4 class="list-group-item-heading">_init</h4>
+                                <p class="list-group-item-text">
+                                    页面JS入口，相当于Main函数，基础格式：<br />
+                                    <code>
+                                        widget._bindingDomEvent();<br />
+                                        //加载页面内容<br />
+                                        widget._bindingEventAfterLoad();<br />
+                                    </code>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="iptools">
+                <div class="page-header">
+                    <h1>
+                        易掌JS库 <small>基于JQuery</small>
+                        <a href="../Content/JS/iptools_v2.js" target="_blank" class="btn commonBtn" download="iptools.js">v1.0版本（下载）</a>
+                        <span><small>存在于Content/JS目录下</small></span>
+                    </h1>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Iptools</div>
+                    <div class="panel-body">
+                        包含三个模块
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-info">基础方法</li>
+                            <li class="list-group-item list-group-item-success">配置数据类</li>
+                            <li class="list-group-item list-group-item-warning">辅助工具类</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._notification<b style="color: #ff7d7e">[NEW!]</b></div>
+                    <div class="panel-body">
+                        作用：浏览器桌面提示<br />
+                        入参：{title , content , icon} , function<br />
+                        示例：<br />
+                        <code>
+                            Iptools.Tool._notification({<br />
+                            title: "通知标题：",                //通知标题，必填<br />
+                            content: "通知内容通知内容通知内容通知内容通知内容通知内容",       //通知内容，非必填，最长18个字符，超出部分显示...<br />
+                            icon: "[url]"                   //通知图片url，非必填，默认使用../Content/Image/defaultHead.png<br />
+                            }, function () {                //点击通知后执行的事件<br />
+                            //do something...<br />
+                            alert("点击了通知");<br />
+                            });<br />
+                        </code>
+                        <button class="btn commonBtn revert" onclick="testNotif();">试一下</button>
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._pushMessage<b style="color: #ff7d7e">[NEW!]</b></div>
+                    <div class="panel-body">
+                        作用：针对性做推送广播<br />
+                        入参：{channel , ... , *}<br />
+                        示例：<br />
+                        <code>
+                            Iptools.uidataTool._pushMessage({<br />
+                            channel: "test_channel",           //频道，需要确保不同场景下使用不同的频道，请遵循定义规则<br />
+                            title: "子页面更新",                 //任意自选参数<br />
+                            message: "更新数据1"                //任意自选参数<br />
+                            ...<br />
+                            });<br />
+                        </code>
+                        channel定义规则：<br /><br />
+                        公共频道：（自定义channel不要使用公共频道！）<br />
+                        1、channel:"broadcast"<br />
+                        说明：向所有当前租户的登录端广播，弹出桌面提示<br />
+                        示例：<br />
+                        <code>
+                            Iptools.uidataTool._pushMessage({<br />
+                            channel: "broadcast",<br />
+                            title: "子页面更新",<br />
+                            message: "更新数据1",<br />
+                            userIdList:"1,2,3"                //为必填参数，若不为空，则只有当前登陆用户在参数列表内时，才会弹出提示<br />
+                            });<br />
+                        </code>
+                        <br />
+                        2、channel:"broadcast_view"<br />
+                        说明：向所有当前租户的登录端广播，弹出桌面提示，当点击桌面提示时，跳转至对应的视图view<br />
+                        示例：<br />
+                        <code>
+                            Iptools.uidataTool._pushMessage({<br />
+                            channel: "broadcast_view",<br />
+                            title: "子页面更新",<br />
+                            message: "更新数据1",<br />
+                            viewId: "6e8f8df4-ee96-11e6-bf5f-00163e0052f2",             //view的uuid<br />
+                            valueId: "2"，                                              //当前数据的valueId，非必须<br />
+                            userIdList:"1,2,3"                //为必填参数，若不为空，则只有当前登陆用户在参数列表内时，才会弹出提示<br />
+                            });<br />
+                        </code>
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._pushListen<b style="color: #ff7d7e">[NEW!]</b></div>
+                    <div class="panel-body">
+                        作用：监听某个频道的广播<br />
+                        入参：channel , function<br />
+                        示例：<br />
+                        <code>
+                            Iptools.Tool._pushListen("test_channel", function (ms) {<br />
+                            //do something...<br />
+                            });<br />
+                        </code>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">Iptools.setDefaults</div>
+                    <div class="panel-body">
+                        作用：添加或改变session<br />
+                        入参：key | value<br />
+                        示例：<br />
+                        <code>
+                            Iptools.setDefaults({key:"[key]",value:"[value]"});
+                        </code>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">Iptools.getDefaults</div>
+                    <div class="panel-body">
+                        作用：获取session<br />
+                        入参：key<br />
+                        示例：<br />
+                        <code>
+                            Iptools.getDefaults({key:"[key]"});
+                        </code>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">Iptools.Start</div>
+                    <div class="panel-body">
+                        作用：初始化Iptools相关全局变量，包括API请求基地址，租户相关信息等<br />
+                        入参：[CustomizeUrl]<br />
+                        示例：<br />
+                        <code>
+                            Iptools.Start({<br />
+                            CustomizeUrl:"[Content/JS文件夹下的property.xml基于当前页面的相对路径]"//非必填，默认../Content/JS/property.xml<br />
+                            });<br />
+                        </code>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">Iptools.GetJson</div>
+                    <div class="panel-body">
+                        作用：GET ajax 封装<br />
+                        入参：async[默认true] | url | data<br />
+                        示例：<br />
+                        <code>
+                            Iptools.GetJson({<br />
+                            url:"service/login",<br />
+                            data:{tenantId:33,loginName:admin,loginPwd:adminInMd5}<br />
+                            }).done(function(){<br />
+                            ...do something<br />
+                            }).fail(function(){<br />
+                            ...do something<br />
+                            });<br />
+                        </code>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">Iptools.DoJson</div>
+                    <div class="panel-body">
+                        作用：ajax 封装<br />
+                        入参：async[默认true] | type | url | data<br />
+                        示例：<br />
+                        <code>
+                            Iptools.DoJson({<br />
+                            url:"basic/employee",<br />
+                            type:"Post",<br />
+                            data:{tenantId:33,name:'test'}<br />
+                            }).done(function(){<br />
+                            ...do something<br />
+                            }).fail(function(){<br />
+                            ...do something<br />
+                            });<br />
+                        </code>
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">Iptools.PostJson | Iptools.PutJson | Iptools.DeleteJson</div>
+                    <div class="panel-body">
+                        略[同上]
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getScreenMenu</div>
+                    <div class="panel-body">
+                        作用：获取当前租户与登陆人权限内的所有Screen<br />
+                        入参：无<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getViews</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getView</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getApplets</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getApplet</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getUserlistAppletData</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getUserDetailAppletData</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getAppletButtons</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getAppletLinks</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getFiledLinks</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getRelatedControlValues</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._addAppletData</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._addGroupAppletData</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._saveAppletData</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._saveGroupAppletData</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._deleteAppletData</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._uploadCanvasData</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._uploadfileData</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getCustomizeView</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getCustomizeApplet</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getDetectTree</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._setDetectTreeData</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._getContactTags</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">Iptools.uidataTool._buildReport</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool.pAlert</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._extend</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._search_replacement</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._blank_replacement</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._dataURLtoBlob</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._checkNull</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._newView</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._groupNewView</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._redirectToParent</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._jumpView</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._reFreshView</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._coverWindowShow</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._coverWindowHide</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._setBreadCondition</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._setUserInfo</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._setTabData</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._getTabData</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._CloseTab</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._getVersion</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._logOut</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._GetProperValue</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Iptools.Tool._scrollToTop</div>
+                    <div class="panel-body">
+                        作用：<br />
+                        入参：<br />
+                        示例：<br />
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="components">
+                <div class="page-header">
+                    <h1>
+                        易掌UI工具库 <small>基于Iptools</small>
+                        <a href="../Content/JS/ipComponents.js" target="_blank" class="btn commonBtn" download="components.js">v1.0版本（下载）</a>
+                        <span><small>存在于Content/JS目录下</small></span>
+                    </h1>
+                </div>
+                <style>
+                    #stable-form .input-group {
+                        padding: 6px 8px;
+                    }
+                </style>
+                <div class="panel panel-default">
+                    <div class="panel-heading">标准TABLE（<span style="color: #ff7d7e">NEW!</span>）</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#stable-show" role="tab" data-toggle="tab">效果</a></li>
+                            <li role="presentation"><a href="#stable-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation"><a href="#stable-js" role="tab" data-toggle="tab">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="stable-show" style="background-color: #eff3f8;padding:15px 30px 15px 15px;">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div id="stable-form">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">TOKEN</span>
+                                                <input type="text" class="form-control" name="token" id="stable_token" placeholder="请输入有效TOKEN" />
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">AppletUuid</span>
+                                                <input type="text" class="form-control" name="token" id="stable_applet" placeholder="请输入AppletUuid" />
+                                            </div>
+                                            <div style="padding:2px 15px">(Applet用例：b17e60a0-36f2-452d-9c76-e79b7c845772)</div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">当前页数</span>
+                                                <input type="text" class="form-control" name="token" id="stable_pagenow" placeholder="默认1" />
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">页面大小</span>
+                                                <input type="text" class="form-control" name="token" id="stable_pagesize" placeholder="默认10" />
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">边框样式</span>
+                                                <input type="text" class="form-control" name="token" id="stable_border"
+                                                       placeholder="半边框(bordered-ud[默认]) 全边框(bordered)" />
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">是否显示选择列</span>
+                                                <select class="form-control" name="token" id="stable_showCheck">
+                                                    <option value="1">默认是</option>
+                                                    <option value="0">否</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">跳转类型</span>
+                                                <select class="form-control" name="token" id="stable_jumptype">
+                                                    <option value="default">默认</option>
+                                                    <option value="html">自定义HTML模版</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">跳转模板</span>
+                                                <input type="text" class="form-control" name="token" id="stable_jump_template"
+                                                       placeholder="跳转HTML模板" />
+                                            </div>
+                                            <div style="text-align:center;">
+                                                <button onclick="sTable()" class="btn commonBtn revert">试一下</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <div id="stable_container" class="row" style="background-color: #fff;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="stable-html">
+                                <div class="alert alert-info" role="alert">
+                                    依赖项：
+                                    <div class="list-group">
+                                        <a class="list-group-item">../Content/JS/iptools_v2.js</a>
+                                        <a class="list-group-item">../Content/JS/ipComponents.js</a>
+                                    </div>
+                                </div>
+                                <code>
+                                    < div id="stable_container" class="row" style="background-color: #fff;">< /div><br />
+                                </code>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="stable-js">
+                                <code>
+                                    component._table("#stable_container", {<br />
+                                    applet: "b17e60a0-36f2-452d-9c76-e79b7c845772",<br />
+                                    borderStyle: "bordered",<br />
+                                    showChecks: false<br />
+                                    });<br />
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    #c1 {
+                        height: 100px;
+                        width: 100px;
+                        background-color: #06c;
+                        color: #fff;
+                        line-height: 100px;
+                        text-align: center;
+                        display: none;
+                    }
+                </style>
+                <div class="panel panel-default">
+                    <div class="panel-heading">标准UNIT（<span style="color: #ff7d7e">NEW!</span>）</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#unit-show" role="tab" data-toggle="tab">效果</a></li>
+                            <li role="presentation"><a href="#unit-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation"><a href="#unit-js" role="tab" data-toggle="tab">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="unit-show" style="background-color: #eff3f8;padding:15px 30px 15px 15px;">
+                                <div id="c1">自定义区域</div>
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div id="stable-form">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">TOKEN</span>
+                                                <input type="text" class="form-control" name="token" id="unit_token" placeholder="请输入有效TOKEN" />
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">AppletUuid</span>
+                                                <input type="text" class="form-control" name="token" id="unit_applet" placeholder="请输入AppletUuid" />
+                                            </div>
+                                            <div style="padding:2px 15px">(Applet用例：fb58ed21-5559-448b-824e-fb629870a3f6)</div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">模式</span>
+                                                <input type="text" class="form-control" name="token" id="unit_mode" placeholder="新建或编辑" />
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">valueId</span>
+                                                <input type="text" class="form-control" name="token" id="unit_valueId" placeholder="valueId" />
+                                            </div>
+                                            <div style="text-align:center;">
+                                                <button onclick="unit()" class="btn commonBtn revert">试一下</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <div id="unit_container" class="row" style="background-color: #eff3f8;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="unit-html">
+                                <div class="alert alert-info" role="alert">
+                                    依赖项：
+                                    <div class="list-group">
+                                        <a class="list-group-item">../Content/JS/iptools_v2.js</a>
+                                        <a class="list-group-item">../Content/JS/ipComponents.js</a>
+                                    </div>
+                                </div>
+                                <code>
+                                    < div id="unit_container" class="row" style="background-color: #fff;">< /div><br />
+                                </code>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="unit-js">
+                                <code>
+                                    component._unit("#unit_container", {<br />
+                                    applet: "fb58ed21-5559-448b-824e-fb629870a3f6",<br />
+                                    mode: mode,<br />
+                                    valueId: valueId,<br />
+                                    cusControls: {<br />
+                                    "5": {<br />
+                                    controls: [<br />
+                                    {<br />
+                                    size: 5,<br />
+                                    dom: "#c1"<br />
+                                    }<br />
+                                    ]<br />
+                                    }<br />
+                                    }<br />
+                                    });<br />
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">图片裁剪</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#crop-show" role="tab" data-toggle="tab">效果</a></li>
+                            <li role="presentation"><a href="#crop-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation"><a href="#crop-js" role="tab" data-toggle="tab">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="crop-show">
+                                <a class="btn commonBtn crop-test-btn">
+                                    选择图片
+                                    <input id="crop-test-input" type="file" />
+                                </a>
+                                <div id="crop-test-container"></div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="crop-html">
+                                <div class="alert alert-info" role="alert">
+                                    依赖项：
+                                    <div class="list-group">
+                                        <a class="list-group-item">
+                                            ../Content/bootstrap/css/cropper.min.css
+                                        </a>
+                                        <a class="list-group-item">../Content/bootstrap/js/cropper.min.js</a>
+                                        <a class="list-group-item">../Content/bootstrap/css/font-awesome.min.js</a>
+                                        <a class="list-group-item">../Content/JS/ipComponents.js</a>
+                                    </div>
+                                </div>
+                                <code>
+                                    < a class="btn commonBtn crop-test-btn"><br />
+                                    选择图片<br />
+                                    < input id="crop-test-input" type="file" /><br />
+                                    < /a><br />
+                                    < div id="crop-test-container">< /div><br />
+                                </code>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="crop-js">
+                                <code>
+                                    $("#crop-test-input").on("change", function () {<br />
+                                    var me = $(this);<br />
+                                    if (me[0].files && me[0].files.length) {<br />
+                                    component._crop({<br />
+                                    file: me[0].files[0],<br />
+                                    aspectRatio: 16 / 9, //图片裁剪框比例<br />
+                                    getCanvas: function (canvas) { //点击确定触发<br />
+                                    $("#crop-test-container").html(canvas);<br />
+                                    Iptools.uidataTool._uploadCanvasData({  //上传裁剪的图片到服务器，得到图片路径<br />
+                                    canvas: canvas,<br />
+                                    type: "picture"<br />
+                                    }).done(function (path) {<br />
+                                    $("#crop-test-container").append(Iptools.DEFAULTS.serviceUrl + path);<br />
+                                    });<br />
+                                    }<br />
+                                    });<br />
+                                    }<br />
+                                    });<br />
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">分页控件</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#pager-show" role="tab" data-toggle="tab">效果</a></li>
+                            <li role="presentation"><a href="#pager-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation"><a href="#pager-js" role="tab" data-toggle="tab">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="pager-show">
+                                <div id="pager-example-panel" style="margin: 8px 5px;"></div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="pager-html">
+                                <div class="alert alert-info" role="alert">
+                                    依赖项：
+                                    <div class="list-group">
+                                        <a class="list-group-item">../Content/JS/ipComponents.js</a>
+                                    </div>
+                                </div>
+                                <code>
+                                    < div id="pager-example-panel">< /div><br />
+                                </code>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="pager-js">
+                                <code>
+                                    component._pager({<br />
+                                    container: "pager-example-panel",//ID选择器<br />
+                                    pageSize: 10,<br />
+                                    pageCount: 39,<br />
+                                    rowCount: 388,<br />
+                                    pageNow: 5,<br />
+                                    jump: function (page) {<br />
+                                    //page为跳转的页数<br />
+                                    //加载自己的表格数据<br />
+                                    //加载完成后更新分页控件信息<br />
+                                    component._pager({<br />
+                                    container: "pager-example-panel",//ID选择器<br />
+                                    pageSize: 10,<br />
+                                    pageCount: 39,<br />
+                                    rowCount: 388,<br />
+                                    pageNow: page,<br />
+                                    });<br />
+                                    Iptools.Tool.Alert({<br />
+                                    type: "info",<br />
+                                    title: "跳转至：",<br />
+                                    content: "第" + page + "页",<br />
+                                    delay: 1000<br />
+                                    });<br />
+                                    }<br />
+                                    });<br />
+                                    //可以参考项目下smsSend中的写法
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">数字自增</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#ztn-show" role="tab" data-toggle="tab">效果</a></li>
+                            <li role="presentation"><a href="#ztn-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation"><a href="#ztn-js" role="tab" data-toggle="tab">JS</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="ztn-show">
+                                <select id="ztn-speed">
+                                    <option value="normal">(默认正常速度normal)</option>
+                                    <option value="slow">慢速(slow)</option>
+                                    <option value="fast">快速(fast)</option>
+                                </select>
+                                <input id="ztn-from" type="number" placeholder="开始" value="0" />
+                                <input id="ztn-to" type="number" placeholder="结束" value="100" />
+                                <input id="ztn-suf" placeholder="补全字符串" value="" />
+                                <button id="ztn-exc" class="btn commonBtn" onclick="ztnDemo(this)">执行</button>
+                                <button id="ztn-res" class="btn commonBtn">0</button>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="ztn-html">
+                                <div class="alert alert-info" role="alert">
+                                    依赖项：
+                                    <div class="list-group">
+                                        <a class="list-group-item">../Content/JS/Iptools_v2.js</a>
+                                    </div>
+                                </div>
+                                <code>
+                                    任意DOM元素
+                                </code>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="ztn-js">
+                                <code>
+                                    $(...).zeroTonum(<br />
+                                    from,//起始值<br />
+                                    to,//结束值<br />
+                                    speed,//速度，支持'slow','normal','fast'，默认使用normal<br />
+                                    suffix//补全字符串，添加在数字之后，可以是HTML<br />
+                                    ).done(function () {<br />
+                                    do something...<br />
+                                    });<br />
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">新建元器件</div>
+                    <div class="panel-body">
+                        ...
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">编辑元器件</div>
+                    <div class="panel-body">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../Content/JS/jquery-1.9.1.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-notify.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrapValidator.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-switch.min.js"></script>
+    <script src="../Content/bootstrap/js/cropper.js"></script>
+    <script src="../Content/JS/iptools_v2.js"></script>
+    <script src="../Content/JS/ipComponents.js"></script>
+    <script>
+        $(function () {
+            $("[data-toggle='popover']").popover();
+        });
+        Iptools.Start();
+        Iptools.DEFAULTS.API_URL = "http://eisst-dev.63home.cn:80/eis/v1/";
+        Iptools.DEFAULTS.serviceUrl = "http://eisst-dev.63home.cn/";
+        Iptools.DEFAULTS.tenantId = "33";
+        function pAlert(type) {
+            switch (type) {
+                case 1:
+                    Iptools.Tool.Alert({
+                        type: "info",
+                        title: "提示框标题：",
+                        content: "消息类型提示",
+                        delay: 1000
+                    });
+                    break;
+                case 2:
+                    Iptools.Tool.Alert({
+                        type: "danger",
+                        title: "提示框标题：",
+                        content: "消息类型提示",
+                        delay: 1000
+                    });
+                    break;
+            }
+        }
+        $("#crop-test-input").on("change", function () {
+            var me = $(this);
+            if (me[0].files && me[0].files.length) {
+                component._crop({
+                    file: me[0].files[0],
+                    aspectRatio: 16 / 9, //图片裁剪框比例
+                    getCanvas: function (canvas) { //点击确定触发
+                        $("#crop-test-container").html(canvas);
+                        Iptools.uidataTool._uploadCanvasData({
+                            canvas: canvas,
+                            type: "picture"
+                        }).done(function (path) {
+                            $("#crop-test-container").append(Iptools.DEFAULTS.serviceUrl + path);
+                        });
+                    }
+                });
+            }
+        });
+        component._pager({
+            container: "pager-example-panel",//ID选择器
+            pageSize: 10,
+            pageCount: 39,
+            rowCount: 388,
+            pageNow: 1,
+            jump: function (page) {
+                //page为跳转的页数
+                //加载自己的表格数据
+                //加载完成后更新分页控件信息
+                component._pager({
+                    container: "pager-example-panel",//ID选择器
+                    pageSize: 10,
+                    pageCount: 39,
+                    rowCount: 388,
+                    pageNow: page,
+                });
+                Iptools.Tool.Alert({
+                    type: "info",
+                    title: "跳转至：",
+                    content: "第" + page + "页",
+                    delay: 1000
+                });
+            }
+        });
+        $("#ztn-exc").attr("data-loading-text", "<span class='icon-spin icon-spinner'></span>");
+        function ztnDemo(e) {
+            var me = $(e);
+            me.css({
+                "pointer-events": "none"
+            });
+            me.button("loading");
+            var container = me.parent();
+            container.find("#ztn-res").zeroTonum(
+                container.find("#ztn-from").val(),
+                container.find("#ztn-to").val(),
+                container.find("#ztn-speed").val(),
+                container.find("#ztn-suf").val()
+            ).done(function () {
+                me.button("reset");
+                me.css({
+                    "pointer-events": "auto"
+                });
+            });
+        }
+        function testNotif() {
+            Iptools.Tool._notification({
+                title: "通知标题：",
+                content: "通知内容通知内容通知内容通知内容通知内容通知内容",
+            }, function () {
+                alert("点击了通知");
+            });
+        }
+        function sTable() {
+            var token = $("#stable_token").val();
+            var applet = $("#stable_applet").val();
+            var pageNow = $("#stable_pagenow").val();
+            var pagesize = $("#stable_pagesize").val();
+            var border = $("#stable_border").val();
+            var scheck = $("#stable_showCheck").val();
+            var options = {};
+            if (token != "") {
+                Iptools.DEFAULTS.token = token;
+                if (applet != "") {
+                    options["applet"] = applet;
+                }
+                if (pageNow != "") {
+                    options["pageNow"] = pageNow;
+                }
+                if (pagesize != "") {
+                    options["pageSize"] = pagesize;
+                }
+                if (border != "") {
+                    options["borderStyle"] = border;
+                }
+                if (scheck == 0) {
+                    options["showChecks"] = false;
+                }
+                component._table("#stable_container", options);
+            }
+            return false;
+        }
+        function unit() {
+            var token = $("#unit_token").val();
+            var applet = $("#unit_applet").val();
+            var mode = $("#unit_mode").val();
+            var valueId = $("#unit_valueId").val();
+            if (token != "") {
+                Iptools.DEFAULTS.token = token;
+                component._unit("#unit_container", {
+                    applet: applet,
+                    mode: mode,
+                    valueId: valueId,
+                    cusControls: {
+                        "5": {
+                            controls: [
+                                {
+                                    size: 5,
+                                    dom: "#c1"
+                                }
+                            ]
+                        }
+                    }
+                });
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

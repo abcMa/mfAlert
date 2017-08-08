@@ -1,0 +1,77 @@
+.campaignForm .row{
+  margin:10px 0;
+}
+.col-md-1,.separation{
+  line-height: 40px;
+}
+.col-md-1,.col-md-2,.col-md-4,.col-md-5,.col-md-7,.col-md-8,.col-md-9{
+   padding-right: 0px;
+   padding-left: 0px;     
+}
+.col-md-4 input,select{
+   width: 90%;
+   height: 40px;
+   /*border-radius: 4px;*/
+}
+textarea{
+  height: 80px;
+  width: 90%;
+}
+.col-md-2 input{
+  width: 100%;
+}
+.separation{
+  width: 43px;
+  padding: 0 15px;
+}
+.campaignForm{
+  padding:40px; 
+}
+.middle .col-md-4{
+  padding: 10px;
+}
+.channel{
+  border: 1px solid #DAD5D5;
+  padding-right: 0;
+  padding-left: 0;
+  height: 470px;
+}
+.channel-title{
+  border-bottom: 1px solid #CAC0C0;
+  text-align: center;
+}
+.channel-content{
+  padding: 30px;
+}
+.channel-content .row{
+  margin-right: 0;
+  margin-left: 0;
+}
+.send a{
+  padding: 5px 90px;
+  background-color: #1CCCC5;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.send{
+  text-align: center;
+  margin: 15px;
+}
+.channel-content .iconfont{
+  font-size: 40px;
+}
+.socialCircle{
+  padding-top: 60px;
+}
+.socialCircle .col-md-4{
+  text-align: center;
+}
+.rechargeBtn{
+  float: right;
+  padding: 3px 5px;
+  background-color: #1393D2;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+}

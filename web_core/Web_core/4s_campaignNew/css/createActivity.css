@@ -1,0 +1,83 @@
+.act-type{
+	border: 1px solid rgba(228, 228, 228, 1);
+	min-height: 330px;
+	margin:10px 15px;
+	text-align: center;
+	padding: 38px 15px;
+	border-radius: 3px;
+}
+.act-type p{
+	height: 40px;
+	margin-top: 10px;
+}
+.act-type img{
+	width: 31px;
+}
+.act-type-title{
+	font-size: 16px;
+    vertical-align: middle;
+}
+
+.type-btn-area{
+   position: relative;
+   bottom: 0px;
+}
+.type-btn{
+	display: block;
+    background-color: rgba(242, 242, 242, 1);
+    padding: 7px 0;
+    border-radius: 5px;
+    margin-top:10px;
+    cursor: pointer;
+}
+.type1-btns .type-btn:hover{
+    background-color: rgba(25, 158, 216, 1);
+    color: white;
+}
+.type2-btns .type-btn:hover{
+    background-color: rgba(204, 153, 0, 1);
+    color: white;
+}
+.type3-btns .type-btn:hover{
+    background-color: rgba(0, 204, 51, 1);
+    color: white;
+}
+.type1-btns .active{
+    background-color: rgba(25, 158, 216, 1);
+    color: white;
+}
+.type2-btns .active{
+    background-color: rgba(204, 153, 0, 1);
+    color: white;
+}
+.type3-btns .active{
+    background-color: rgba(0, 204, 51, 1);
+    color: white;
+}
+.down{
+	text-align: center;
+	margin:20px 0; 
+}
+.type-title{
+    height: 35px;
+    line-height: 35px;
+}
+
+.typeIcon{
+    width: 37px;
+    height: 37px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.actTypeIcon1{
+    background: url(../images/active_sprite.png) no-repeat -1px -76px;
+}
+
+.actTypeIcon2{
+    background: url(../images/active_sprite.png) no-repeat -1px -39px;
+}
+
+.actTypeIcon3{
+    background: url(../images/active_sprite.png) no-repeat -1px 5px;
+}

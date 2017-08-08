@@ -1,0 +1,474 @@
+﻿@font-face {
+    font-family: 'iconfontali';
+    src: url('//at.alicdn.com/t/font_ahcmt5pqhxhl4n29.eot');
+    src: url('//at.alicdn.com/t/font_ahcmt5pqhxhl4n29.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_ahcmt5pqhxhl4n29.woff') format('woff'), url('//at.alicdn.com/t/font_ahcmt5pqhxhl4n29.ttf') format('truetype'), url('//at.alicdn.com/t/font_ahcmt5pqhxhl4n29.svg#iconfont') format('svg');
+}
+
+.iconfontali {
+    font-family: "iconfontali" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+html{
+	border-radius:5px;
+}
+html body{
+	font-family:"Microsoft yahei";
+	color:#333;
+    background-color: rgba(255,255,255,0);
+}
+.report-time-btn,.report-type-btn {
+    color: #09f;
+    background-color: #fff;
+    border-color: #09f;
+}
+.report-time-btn:hover,.report-type-btn:hover{
+    color:#06c;
+    background-color: white;
+}
+.topContent{
+    width:100%;
+    height: 66px;
+    line-height: 66px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+.analysis-tab {
+    width:40%;
+    height: 66px;
+    line-height: 66px;
+    font-size: 18px;
+}
+.analysis-tab li{
+    padding: 0px 20px;
+}
+.analysis-tab li:first-child{
+    padding-left: 0px;
+}
+.analysis-tab li:first-child a{
+    padding-left: 20px;
+}
+    .analysis-tab li a {
+        padding: 0px;
+        background-color: #fff;
+        color: rgba(85,85,85,0.7);
+    }
+
+        .analysis-tab li:hover a {
+            color: #333 !important;
+            background-color: #fff;
+        }
+
+    /*.analysis-tab li.active a {*/
+        /*background-color: #eeeeee !important;*/
+        /*color: #000 !important;*/
+    /*}*/
+
+.tab-icon-panel .iconfontali {
+    height: 0;
+    display: inline-block;
+    font-size: 35px;
+}
+
+    .analysis-content .page-header h3 {
+        font-weight: bold;
+    }
+
+    .analysis-content .page-header p {
+        font-size: 18px;
+    }
+.analysis-tab-child{
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+.analysis-tab-child li{
+    border: 1px solid #09f;
+    padding: 0px 5px;
+}
+.analysis-tab-child li:first-child{
+    border-radius: 5px 0px 0px 5px;
+}
+.analysis-tab-child li:last-child{
+    border-radius: 0px 5px 5px 0px;
+}
+.analysis-tab-child li a {
+    color: rgba(85,85,85,0.7);
+    padding: 0px;
+    border-radius: 0px;
+}
+
+    .analysis-tab-child li:hover a{
+        color: #333;
+        background-color:rgba(255,255,255,0);
+    }
+.analysis-tab-child li.active{
+    background-color: #09f;
+}
+.analysis-tab-child li.active a {
+    color: #fff;
+    background-color: rgba(255,255,255,0);
+}
+.analysis-tab-child li.active:hover a{
+    background-color: rgba(255,255,255,0);
+}
+
+.landing-panel .landing-panel-font {
+    font-size: 16px;
+}
+
+.landing-panel .search-text-group {
+    margin-top: -5px !important;
+}
+
+    .landing-panel .search-text-group input {
+        display: inline-block !important;
+        width: 100px !important;
+    }
+
+    .landing-panel .search-text-group button {
+        margin-top: -3px;
+        background-color: #09f;
+        border-color: #09f;
+    }
+.landing-panel .search-text-group button:hover{
+    background-color: #06c;
+}
+
+.landing-panel .iconfont {
+    display: inline-block;
+    height: 16px;
+    font-size: 16px;
+    color: #09f;
+}
+
+
+.landing-panel button.report-btn-selected {
+    background-color: #09f;
+    border-color: #09f;
+    color: #fff;
+}
+.landing-panel button.report-btn-selected:hover{
+    background-color: #09f;
+}
+
+.landing-panel .navbar-right {
+    margin: -4px 0px 0 15px;
+}
+
+.nav-chart-btn {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+    .nav-chart-btn li {
+        margin-left: 15px;
+        display: inline-block;
+    }
+
+        .nav-chart-btn li a {
+            padding: 3px 8px;
+            color:#09f;
+        }
+    .nav-chart-btn li a:hover{
+        color:#06c;
+        background-color: white;
+    }
+
+.campaign-tag-choosen {
+    border: 1px solid;
+}
+
+    .campaign-tag-choosen span {
+        border-radius: 5px;
+        background-color: #eee;
+        padding: 5px 8px;
+        margin-right: 10px;
+    }
+
+.campaign-select-panel .multiselect-container {
+    width: 100%;
+}
+
+
+.contact-change-report {
+    padding: 10px 35px;
+}
+
+    .contact-change-report .perfect-line {
+        width: 100%;
+        min-height: 30px;
+        margin-top: 20px;
+        float: left;
+    }
+
+        .contact-change-report .perfect-line.font-line {
+            margin-top: 5px;
+        }
+
+    .contact-change-report .blank {
+        width: 10%;
+        height: 30px;
+        float: left;
+    }
+
+    .contact-change-report .line-angle-down-sm {
+        width: 40%;
+        height: 30px;
+        float: left;
+        position: relative;
+    }
+
+        .contact-change-report .line-angle-down-sm div {
+            width: 100%;
+            height: 30px;
+            border-top: 2px solid #5cd2fc;
+        }
+
+            .contact-change-report .line-angle-down-sm div:after {
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 20px solid #5cd2fc;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+    .contact-change-report .line-angle-down-lg {
+        width: 40%;
+        height: 30px;
+        float: left;
+        position: relative;
+    }
+
+        .contact-change-report .line-angle-down-lg div {
+            width: 100%;
+            height: 30px;
+            border-top: 2px solid #5cd2fc;
+        }
+
+            .contact-change-report .line-angle-down-lg div:after {
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-top: 30px solid #5cd2fc;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+    .contact-change-report .line-font-sm {
+        width: 50%;
+        height: 30px;
+        text-align: right;
+        font-size: 16px;
+        float: left;
+        margin-top: -10px;
+    }
+
+        .contact-change-report .line-font-sm span {
+            color: red;
+            font-size: 20px;
+            margin-left: 6px;
+        }
+
+    .contact-change-report .line-angle-up-sm {
+        width: 10%;
+        height: 30px;
+        float: left;
+        position: relative;
+    }
+
+        .contact-change-report .line-angle-up-sm div {
+            width: 100%;
+            height: 30px;
+            border-top: 2px solid #5cd2fc;
+        }
+
+            .contact-change-report .line-angle-up-sm div:after {
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 20px solid #5cd2fc;
+                position: absolute;
+                top: -20px;
+                right: 0;
+            }
+
+    .contact-change-report .line-font-lg {
+        width: 40%;
+        height: 30px;
+        text-align: right;
+        font-size: 18px;
+        float: left;
+        margin-top: -30px;
+    }
+
+        .contact-change-report .line-font-lg span {
+            color: red;
+            font-size: 22px;
+            display: block;
+            margin-right: 15px;
+        }
+
+    .contact-change-report .line-sm {
+        width: 10%;
+        height: 30px;
+        float: left;
+        border-top: 2px solid #5cd2fc;
+    }
+
+    .contact-change-report .line-lg {
+        width: 40%;
+        height: 30px;
+        float: left;
+        border-top: 2px solid #5cd2fc;
+    }
+
+    .contact-change-report .line-angle-up-lg {
+        width: 40%;
+        height: 30px;
+        float: left;
+        position: relative;
+    }
+
+        .contact-change-report .line-angle-up-lg div {
+            width: 100%;
+            height: 30px;
+            border-top: 2px solid #5cd2fc;
+        }
+
+            .contact-change-report .line-angle-up-lg div:after {
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-bottom: 30px solid #5cd2fc;
+                position: absolute;
+                top: -30px;
+                right: 0;
+            }
+a:focus,.focus.active.btn, .active.btn:focus, .focus.btn, .focus.btn:active, .btn:focus:active, .btn:focus{
+outline:none;	
+}
+text{
+	font-family:"Microsoft Yahei";
+}
+/*新增新修改样式*/
+.col-sm-12.mainContent{
+    padding: 0px;
+    margin:0px;
+    background-color:white;
+}
+.analysis-tab i.iconfont {
+    display: inline-block;
+    font-size: 16px;
+    color: #e6e8eb;
+    padding-left: 5px;
+}
+.analysis-tab.nav-pills>li.active>a,.analysis-tab.nav-pills>li.active>a:focus{
+    border-bottom: 2px solid #09f;
+    border-radius: 0px;
+    color:#333;
+    background-color: #fff;
+}
+.analysis-tab.nav-pills>li.active:hover>a{
+    background-color: #fff;
+}
+.nav-pills>li+li {
+    margin-left: 0px;
+}
+#ana1 .landing-panel ul li.active a{
+    background-color: #09f;
+}
+.panel-default>.panel-heading  {
+    border-bottom: none;
+    background-color: white;
+    padding-top: 20px;
+}
+.panel {
+    margin-bottom: 0px;
+    border:none;
+    border-radius: 0px;
+    -webkit-box-shadow:none;
+    box-shadow: none;
+}
+.dataBlock{
+    border-bottom: 1px solid #ddd;
+}
+.col-sm-6,.col-sm-12{
+    padding: 0px;
+    position: relative;
+}
+.line{
+    position: absolute;
+    right:0px;
+    top:30px;
+    width:1px;
+    height: 400px;
+    background-color: #ddd;
+}
+#ana1,#ana2{
+    margin-bottom: 30px;
+}
+.ana2-pie-chart-1,.ana2-pie-chart-2,.ana2-pie-chart-3,.ana2-pie-chart-4,.ana2-pie-chart-5,.ana2-pie-chart-6,.ana2-pie-chart-7{
+    height: 400px;
+    width:100%;
+}
+#campaign-analysis{
+    overflow: hidden;
+    background-color: white;
+    padding-top: 30px;
+    /*border-radius: 5px;*/
+    /*box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);*/
+}
+/*营销分析*/
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #09f;
+}
+.btn-group button span{
+    color:#333;
+}
+.btn-group .button b{
+    background-color: #555;
+}
+#campaign-analysis .campaign-tag-choosen{
+    padding-right:15px;
+    padding-bottom: 20px;
+}
+
+#campaign-analysis #campaign-choosen-body{
+    width:100%;
+    border: 1px solid #adadad;
+    border-radius: 5px;
+}
+@media (max-width: 1280px) {
+    .analysis-tab {
+        width:50%;
+        font-size: 16px;
+    }
+}
+@media (max-width: 1024px) {
+    .analysis-tab {
+        width:60%;
+        font-size: 16px;
+    }
+}
+.analysis-chart-area{
+    min-height: 200px;
+}

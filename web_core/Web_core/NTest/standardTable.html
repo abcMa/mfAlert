@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>标准表格</title>
+    <link href="../Content/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="//at.alicdn.com/t/font_3272u2mi3qjv2t9.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #eff3f8;
+        }
+
+        #test_panel {
+            height: 300px;
+            background-color: #eee;
+            box-shadow: 0 0 30px skyblue;
+        }
+
+        #test_panel2 {
+            height: 300px;
+            background-color: #eee;
+            box-shadow: 0 0 30px red;
+        }
+    </style>
+</head>
+<body>
+    <div style="padding: 30px;">
+        <div id="test" class="row" style="background-color: #fff;margin-bottom: 20px;"></div>
+        <div id="test2" class="row" style="background-color: #fff;"></div>
+    </div>
+    <div id="test_panel" style="display: none">11111</div>
+    <div id="test_panel2" style="display: none"></div>
+</body>
+</html>
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script>
+    Iptools.Start();
+    component._table("#test", {
+        pageNow: 1,//当前页面页数
+        pageSize: 15,//当前页面大小
+        borderStyle: "bordered-ud",//边框样式
+        applet: "b17e60a0-36f2-452d-9c76-e79b7c845772",
+        emptyImage: "../Content/Image/emptyReport.png",
+        emptySize: "150",
+        emptyText: "没有数据啦！！~~~",
+        emptyClick: function () {
+            alert(1);
+        },
+        jumpType: "template",
+        jumpTemplate: "<a class='d-v-link'><span class='icon-edit'></span></a>" +
+            "<a class='test_del'><span class='icon-trash'></span></a>",
+        events: [
+        {
+            target: ".0511",
+            type: "click",
+            event: function () {
+            }
+        }, {
+            target: ".test_del",
+            type: "click",
+            event: function () {
+                $("#test").data("stable")._condition({
+                    "or_question:type": "='radio'"
+                });
+                $("#test").data("stable")._refresh();
+            }
+        }
+        ],
+        dataModify: function (r) {
+            var promise = $.Deferred();
+            if (r) {
+                if (r.columns && r.columns.length) {
+                    r.columns.push({
+                        allowOutterQuery: false,
+                        allowOrderBy: false,
+                        type: "text",
+                        column: r.rootLink + ":test",
+                        name: "测试字段",
+                    });
+                    if (r.data && r.data.records && r.data.records.length) {
+                        for (var i = 0; i < r.data.records.length; i++) {
+                            var rec = r.data.records[i];
+                            rec[r.rootLink + ":test"] = "test" + i;
+                        }
+                    }
+                }
+            }
+            promise.resolve(r);
+            return promise;
+        },
+        multiPanel: true,
+        panels: [
+        {
+            name: "面板",
+            icon: "icon-th",
+            container: "test_panel",
+            onShow: function () {
+            }
+        }, {
+            name: "面板2",
+            icon: "icon-home",
+            container: "test_panel2"
+        }],
+        searchEvent: function (condition) {
+            if (condition) {
+                $("#test_panel").append(JSON.stringify(condition) + "<br/>");
+            }
+        }
+    });
+    component._table("#test2", {
+        applet: "3b3d4edb-ee96-11e6-bf5f-00163e0052f2",
+        borderStyle: "bordered",
+        showChecks: false,
+        jumpType: "template",
+        jumpTemplate: "<a class='d-v-link'><span class='icon-edit'></span></a>" +
+            "<a class='test_del'><span class='icon-trash'></span></a>",
+    });
+</script>

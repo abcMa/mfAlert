@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Persons</title>
+    <link href="../Content/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Content/Style/standard.css"/>
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="../Content/JS/themes/default/style.min.css" rel="stylesheet" />
+    <link href="Style/Common.css" rel="stylesheet" />
+    <!--<script src="../Content/JS/jquery-1.9.1.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../Content/bootstrap/js/bootstrapValidator.js"></script>
+    <script src="../Content/JS/jstree.min.js"></script>
+    <script src="../Content/JS/iptools_v2.js"></script>
+    <script src="../Content/JS/ipComponents.js"></script>
+    <script src="JS/widget.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="row">
+            <div class="col-sm-12 right-panel">
+                <div class="left-panel">
+                    <h1 class="title">人事架构</h1>
+                    <div style="width: auto;min-width: 200px;padding-right:20px;">
+                        <div>
+
+                            <div class="settings-bar">
+                                <span class="iconfontyyy">&#xe7ab;</span>
+                                <span class="iconfontyyy">&#xe717;</span>
+                                <span class="iconfontyyy">&#xe7ac;</span>
+                                <span class="iconfontyyy searchIcon">&#xe794;</span>
+                            </div>
+                            <!--搜索框-->
+                            <div id="searchPanel">
+                                <form class="search_list">
+                                    <span class="iconfontyyy search_icon">&#xe794;</span>
+                                    <input type="text" class="" placeholder="搜索">
+                                    <button type="submit">
+                                        <span class="iconfontyyy enter_icon">&#xe788;</span>
+                                    </button>
+                                </form>
+                            </div>
+                            <div id="tree"></div>
+                            <div class="btn-group btn-group-sm" role="group" style="margin-bottom:8px;float: left">
+                                <button id="search_without_match" type="button" class="btn commonBtn">未分配人员</button>
+                            </div><br /><br /><br />
+                        </div>
+                    </div>
+                </div>
+                <div class="rightCcontent">
+                    <div style="width: auto; padding: 0 30px;">
+                        <div>
+                            <nav class="navbar navbar-default">
+                                <div class="container-fluid">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        <a class="navbar-brand">人员列表</a>
+                                    </div>
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                        <form id="person_form" class="navbar-form navbar-left" role="search">
+                                            <div class="form-group">
+                                                <input id="person_name_search" type="text" class="form-control" placeholder="姓名">
+                                                <input id="person_phone_search" type="text" class="form-control" placeholder="手机">
+                                            </div>
+                                            <button type="submit" class="btn commonBtn">搜索</button>
+                                        </form>
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li>
+                                                <a href="javascript:;" class="person_new_link">
+                                                    <span class="icon-plus" style="margin-right:3px;"></span>新建
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th class="check-cell"><input type="checkbox" class="checkAll" /></th>
+                                        <th>姓名</th>
+                                        <th>联系方式</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="person_list_panel"></tbody>
+                                </table>
+                            </div>
+                            <div id="pager-example-panel"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        Iptools.Start({
+            baseRoot: false,
+            custmomizeUrl: "../Content/JS/properties.xml"
+        });
+        widget._init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>客户群画像</title>
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Content/Style/standard.css" />
+    <link href="Style/Common.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-12" style="min-height: 1300px;">
+            <div class="left-section">
+                <div class="g-info">
+                    <div class='g-manage g-noraml'>
+                        <span class="icon-edit edit"></span>
+                    </div>
+                    <div class='g-manage g-save' style="display: none;">
+                        <span class="icon-remove remove"></span>
+                        <span class="icon-ok ok"></span>
+                    </div>
+                    <div class="read">
+                        <h1><span id="cg-title">&nbsp;</span></h1>
+                        <span class="g-badge"><span id="cg-count">0</span>人</span>
+                        <span class="g-badge"><span id="cg-reason">0</span></span>
+                        <p id="cg-des">&nbsp;</p>
+                    </div>
+                    <div class="write">
+                        <form id="g-info-form">
+                            <input type="text" name="g-title" class="form-control cg-input" id="cg-title-edit" />
+                            <select name="g-reason" class="form-control cg-input" id="cg-type"></select>
+                            <textarea name="g-des" id="cg-des-edit" class="form-control cg-tarea">fafa</textarea>
+                        </form>
+                    </div>
+                </div>
+                <!--<div class="g-task-list">
+                    <h1>客户群动态</h1>
+                    <ul id="group-trace-list"></ul>
+                </div>-->
+            </div>
+            <div class="right-section">
+                <div class="g-main">
+                    <ul class="nav nav-tabs group-nav" role="tablist">
+                        <li role="presentation" class="active">
+                            <a id="g-report-tab" href="#g-analysis" aria-controls="profile" role="tab" data-toggle="tab">
+                                <span class="title">分析</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#g-members" aria-controls="home" role="tab" data-toggle="tab">
+                                <span class="title">成员</span>
+                                <span id="g-members-count" class="badge">0</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#g-campaigns" aria-controls="profile" role="tab" data-toggle="tab">
+                                <span class="title">活动</span>
+                                <span id="g-campaigns-counts" class="badge">0</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#g-rule" aria-controls="profile" role="tab" data-toggle="tab">
+                                <span>规则设置</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="g-analysis">
+                            <div class="g_analysis_report">
+                                <div class="g_analysis_sub_report">
+                                    <div class="g_report_title">车型分布</div>
+                                    <div id="g-report-1" class="report sub" data-str="car_model_cg_analysis_report"></div>
+                                </div>
+                                <div class="g_analysis_sub_report">
+                                    <div class="g_report_title">储值客户占比</div>
+                                    <div id="g-report-5" class="report rate" data-str="pre_paid_cg_analysis_report"></div>
+                                </div>
+                                <div class="g_analysis_sub_report">
+                                    <div class="g_report_title">客户来源</div>
+                                    <div id="g-report-11" class="report sub" data-str="contact_group_contact_region_report"></div>
+                                </div>
+                                <div class="g_analysis_sub_report">
+                                    <div class="g_report_title">末次到店分析</div>
+                                    <div id="g-report-2" class="report sub" data-str="last_visit_cg_analysis_report"></div>
+                                </div>
+                                <div class="g_analysis_sub_report">
+                                    <div class="g_report_title">购车时间</div>
+                                    <div id="g-report-3" class="report sub" data-str="buy_date_cg_analysis_report"></div>
+                                </div>
+                                <div class="g_analysis_sub_report">
+                                    <div class="g_report_title">用户互动</div>
+                                    <div id="g-report-4" class="report sub" data-str="visit_times_cg_analysis_report"></div>
+                                </div>
+                                <div class="g_analysis_sub_report">
+                                    <div class="g_report_title">消费额</div>
+                                    <div id="g-pay-fee-report" class="report sub" data-str="cg_fee_cg_analysis_report"></div>
+                                </div>
+                                <div class="g_analysis_sub_report">
+                                    <div class="g_report_title">消费频次</div>
+                                    <div id="g-report-10" class="report sub" data-str="cg_visit_cg_analysis_report"></div>
+                                </div>
+                            </div>
+                            <div class="g_analysis_report">
+                                <div class="g_report_title">客群成员数量趋势</div>
+                                <div id="g-report-member-trend" class="report"></div>
+                            </div>
+                            <div class="g_analysis_report">
+                                <div class="g_report_title">成员标签分布</div>
+                                <div id="g-report-tags" class="report"></div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="g-members">
+                            <div id="g_member_list"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="g-campaigns">
+                            <div id="g_campaign_list"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="g-rule" style="position: relative;">
+                            <div class="rule-manage">
+                                <button id="g_rule_excute" class="btn success small revert" data-loading-text="
+                                    <span class='icon-spin icon-spinner'></span>执行中">
+                                    <span class="icon-cogs"></span>
+                                    执行
+                                </button>
+                                <button id="g_rule_submit" class="btn commonBtn small revert" data-loading-text="
+                                    <span class='icon-spin icon-spinner'></span>更新中">
+                                    <span class="icon-hdd"></span>
+                                    更新规则
+                                </button>
+                            </div>
+                            <div class="tab-rule">
+                                <div class="rule-panel add">
+                                    <h1>客群规则</h1>
+                                    <div class="rule-type-lable">
+                                        <div class="type-lable active" data-content="#ga-rule-container">条件筛选</div>
+                                        <div class="type-lable" data-content="#ga-tag-container">标签筛选</div>
+                                    </div>
+                                    <div id="g-rule-container" class="rule-content">
+                                        <div class="con-type ga">
+                                            <a><input name="a-con-type" type="radio" class="blueRadio" checked="checked" />满足以下全部条件</a>
+                                            <a><input name="a-con-type" type="radio" class="blueRadio" />满足以下任意条件</a>
+                                        </div>
+                                        <div class="content active" id="ga-rule-container">
+                                            <div class="g-condition">
+                                                <ul id="ga_con_list" class="g-con-ul ga"></ul>
+                                            </div>
+                                            <div class="g-con-add">
+                                                <a class="ga">
+                                                    <span class="icon-plus-sign"></span>增加条件
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="content" id="ga-tag-container">
+                                            <div class="tag-sel ga">
+                                                <p>已选标签</p>
+                                            </div>
+                                            <div class="tag-source ga">
+                                                <p>可选标签</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-list">
+                    <div id="cg_task_list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='taskModal' tabindex='-1' role='dialog' aria-labelledby='blable' data-backdrop='static'>
+        <div class='modal-dialog' role='document' style="width:50%;max-width: 500px;">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title' id='blable'>创建客群任务</h4>
+                </div>
+                <div class='modal-body'>
+                    <form id="task-form">
+                        <div class="form-group">
+                            <label>任务名称</label>
+                            <input type="text" id="taskName" name="taskName" class="form-control" placeholder="请输入任务名称" />
+                        </div>
+                        <div class="form-group">
+                            <label>截止时间</label>
+                            <input type="text" id="endTime" name="endTime" class="form-control datepicker" placeholder="请输入截止时间" />
+                        </div>
+                        <div class="form-group">
+                            <label>任务描述</label>
+                            <textarea id="taskDes" name="taskDes" class="form-control" placeholder="请输入任务描述"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>任务类型</label>
+                            <select id="taskType" name="taskType" class="form-control">
+                                <option value="">请选择...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>执行人</label>
+                            <select id="assignType" name="assignType" class="form-control">
+                                <option value="1">客户经理</option>
+                                <option value="2">客服代理</option>
+                                <option value="3">保险专员</option>
+                                <option value="4">自定义</option>
+                            </select>
+                        </div>
+                        <div id="t-form-assign" class="form-group" style="display: none;">
+                            <label>默认负责人</label>
+                            <select id="taskAssign" name="taskAssign" class="form-control">
+                                <option value="">请选择...</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' id="task_Submit" class='btn commonBtn' data-loading-text="
+                        <span class='icon-spin icon-spinner'></span>执行中">
+                        确定
+                    </button>
+                    <button type='button' class='btn commonBtn revert' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='selectMemberModal' tabindex='-1' role='dialog' aria-labelledby='blable' data-backdrop='static'>
+        <div class='modal-dialog' role='document' style="width:50%;max-width: 1200px;min-width: 800px;">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title' id='blable'>添加成员</h4>
+                </div>
+                <div class='modal-body' style="min-height: 300px;padding: 0;">
+                    <div id="addMemberList"></div>
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' id="add_member_Submit" class='btn commonBtn' data-loading-text="
+                        <span class='icon-spin icon-spinner'></span>执行中">
+                        添加
+                    </button>
+                    <button type='button' class='btn commonBtn revert' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.js"></script>
+    <script src="../Content/bootstrap/js/bootstrapValidator.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../Content/JS/highcharts-new.js"></script>
+    <script src="../Content/JS/highcharts-3d-new.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/modules/drilldown.js"></script>
+    <script src="../Content/JS/highcharts-themes.js"></script>
+    <script src="../Content/JS/iptools_v2.js"></script>
+    <script src="../Content/JS/ipComponents.js"></script>
+    <script src="JS/widget.js"></script>
+    <script>
+        Iptools.Start();
+        widget._init();
+    </script>
+</body>
+</html>

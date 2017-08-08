@@ -1,0 +1,356 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>客户画像</title>
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css"/>
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet" />
+    <!--<link rel="stylesheet" href="../Content/bootstrap/css/bootstrap-tour.css"/>-->
+    <link rel="stylesheet" href="../contactNew/Style/dist/css/jquery.tagit.css"/>
+    <link rel="stylesheet" href="../contactNew/Style/dist/css/tagit.ui-zendesk.css"/>
+    <link rel="stylesheet" href="../contactNew/Style/dist/css/tag.css"/>
+    <link rel="stylesheet" href="../Content/bootstrap/css/font-awesome.min.css"/>
+    <link href="../Content/Style/standard.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="Style/contact.css"/>
+    <link rel="stylesheet" href="Style/common.css"/>
+</head>
+<body>
+
+<!-- 将用户添加新客户群Modal -->
+<div class="modal fade" id="addToContactGroupModal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog" role="document" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="">添加至客户群</h4>
+            </div>
+            <div class="modal-body">
+                <div id="addContactToGroup">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div><!-- modal-end -->
+
+<!--<section class="main clearfix">-->
+<div class="left">
+    <div class="left_top clearfix">
+        <div class="waitDiv"></div>
+        <div class="myInfoPanel clearfix">
+            <div class="head">
+                <div class="pic"><img src=""></div>
+            </div>
+            <div class="main_info">
+                <div class="perInfo clearfix">
+                    <h2 class="name">
+                        <span></span>
+                        <!--<a class="saveBtn">-->
+                        <!--<span class="fa fa-pencil-square-o"></span>-->
+                        <!--</a>-->
+                    </h2>
+                    <p class="phone">
+                        <span class="fa fa-phone"></span>
+                        <span></span>
+                    </p>
+                    <!--<p class="perId">-->
+                        <!--<span class="fa fa-id-card"></span>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left_middle">
+        <!--<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">-->
+            <!--<div class="panel panel-default">-->
+                <!--<div class="panel-heading" role="tab" id="headingOne" data-toggle="collapse"  href="#baseInfo">-->
+                    <!--<h4 class="panel-title">-->
+                        <!--<a role="button" aria-expanded="true" aria-controls="collapseOne" class="topTitle">-->
+                            <!--基本信息-->
+                        <!--</a>-->
+                        <!--<span class="taskIcon fa fa-angle-up"></span>-->
+                    <!--</h4>-->
+                <!--</div>-->
+                <div id="baseInfo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="detailInfo panel-body">
+                        <!--<table>-->
+
+                        <!--</table>-->
+                    </div>
+                </div>
+            <!--</div>-->
+        <!--</div>-->
+
+
+    </div>
+</div>
+<div class="right">
+<div class="right-content">
+<div class="right-top">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+
+        <li role="presentation"  class="active"><a href="#recordInteract" aria-controls="recordInteract" role="tab" data-toggle="tab">记录互动</a></li>
+        <li role="presentation"><a href="#message" aria-controls="message" role="tab" data-toggle="tab">短信</a></li>
+        <li role="presentation"><a href="#contactGroup" aria-controls="contactGroup" role="tab" data-toggle="tab">客户群</a></li>
+        <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">标签</a></li>
+        <li role="presentation"><a href="#tips" aria-controls="tips" role="tab" data-toggle="tab">笔记</a></li>
+
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <!--标签-->
+        <div role="tabpanel" class="tab-pane fade" id="home">
+            <div class="row" id="tagsCloud"><!--标签云-->
+                <button class="addTags btn">添加标签</button>
+                <div class="addTagPanel">
+                    <div class="allTag">
+
+                    </div>
+                    <div class="postNewTag">
+                        <a href="#"> + 新建标签</a>
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="tagValue" placeholder="请输入一个新标签...">
+                            </div>
+                            <button type="button" class="notClick btn" disabled="disabled">保 存</button>
+                            <button type="button" class="cancel btn">取 消</button>
+                        </form>
+                    </div>
+                </div>
+                <ul id="eventTags">
+
+                </ul>
+                <div id="tagsMoreInner">
+
+                </div>
+            </div>
+        </div>
+        <!--记录互动-->
+        <div role="tabpanel" class="tab-pane fade  active in" id="recordInteract">
+            <div class="interact-content ">
+                <div class="clearfix">
+                    <div>
+                        <div class="interactLabel">记录内容</div>
+                        <div class="interactMain">
+                            <select class="interact-type form-control">
+                                <option value="19"  data-category = '5'>客户来电</option>
+                                <option value="18"  data-category = '4'>外呼记录</option>
+                                <!--<option value="17"  data-category = '4'>客户回访</option>-->
+                                <!--<option value="21"  data-category = '5'>客户到店</option>-->
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="interactLabel">记录时间</div>
+                        <div class="interactMain">
+                            <input type="text" class="form-control timeName datetimepickSearch setDay" id="recordDay" placeholder="选择本日">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <textarea name=""  cols="30" rows="10" placeholder="详细内容"></textarea>
+                    </div>
+                </div>
+                <div class="btnList interactBtnList">
+                    <button type="button" class="notSaveNote btn" disabled data-loading-text="<span class='icon-spin icon-spinner'></span>保存中">保 存</button>
+                    <button type="button" class="cancelNote btn">取 消</button>
+                </div>
+            </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade clearfix" id="message">
+            <div class="sendTo clearfix">
+                <div>收件人</div>
+                <div>
+                    <button type="button" class="sendPer btn"></button>
+                </div>
+            </div>
+            <div class="msg-content clearfix">
+                <div class="col-md-12">
+                    <textarea placeholder="发送内容" maxlength="50"></textarea>
+                    <span>
+                        <span class="msg-count">0</span> /
+                        <span class="msg-left">50</span>
+                    </span>
+                </div>
+            </div>
+            <div class="msg-sig clearfix">
+                <div>短信签名：</div>
+                <div class="signature"></div>
+                <div class="sendMess">
+                    <button class="notSend btn" disabled="disabled" data-loading-text="<span class='icon-spin icon-spinner' style='margin-right:2px'></span>发送中">发 送</button>
+                </div>
+
+            </div>
+        </div>
+        <div role="tabpanel" class="right_top tab-pane fade" id="contactGroup">
+            <div class="conGroup clearfix">
+                <div class="join" >加入新客户群</div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="tips">
+            <textarea name=""  cols="150" rows="" placeholder="记录客户点滴"></textarea>
+            <div class="btnList tipBtnList">
+                <button type="button" class="notSaveNote btn" disabled="" data-loading-text="<span class='icon-spin icon-spinner'></span>保存中">保 存</button>
+                <button type="button" class="cancelNote btn">取 消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--测试--车主动态----布局-->
+<div class="right_bottom">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#carOwner" aria-controls="home" role="tab" data-toggle="tab">动态轨迹</a></li>
+        <li role="presentation"><a href="#carInfo" aria-controls="messages" role="tab" data-toggle="tab">车辆信息</a></li>
+        <li role="presentation"><a href="#workOrder" aria-controls="settings" role="tab" data-toggle="tab">工单记录</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="carOwner">
+            <div class="demo" >
+                <div class="noTraceData">
+                    <img src="../Content/Image/nodetail.png" alt=""/>
+                    <p>暂无动态</p>
+                </div>
+                <div class="demo-inner">
+                    <div class="panel-group"  role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading row" role="tab">
+                                <div class="col-md-1 col-sm-2">
+                                    <div class="line"></div>
+                                </div>
+                                <div class="firstTitle col-md-8 col-sm-8" data-toggle="collapse" href="#time_1">
+                                    <h2 data-month="" class="titleMonth">
+                                        <span class="currentTime"></span>
+                                        <span class="traceIcon fa-angle-up"></span>
+                                    </h2>
+                                </div>
+                                <div class="filterTraceType">
+                                    <button class="btn" data-show="1">筛 选</button>
+                                    <div class="allTraceType">
+                                        <div class="s-search-bar">
+                                            <form>
+                                                <div class="s-search-item">
+                                                    <div class="form-group">
+                                                        <label>动态类型</label>
+                                                        <select class="form-control">
+                                                            <option value="">请选择...</option>
+                                                            <option value="1">信息变更</option>
+                                                            <option value="2">任务相关</option>
+                                                            <option value="3">信息推送</option>
+                                                            <option value="4">外呼事件</option>
+                                                            <option value="5">客户事件</option>
+                                                            <option value="6">活动事件</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="sureFilterBtn btn-group-right">
+                                                    <button class="btn cancel revert ul-form-btn clear" type="button">清 空</button>
+                                                    <button class="btn commonBtn ul-form-btn" type="button">筛 选</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="time_1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <!--test start-->
+
+                                    <!--test end-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading row" role="tab">
+                                <div class="col-md-1 col-sm-2">
+                                    <div class="line"></div>
+                                </div>
+                                <div class="twoTitle col-md-8 col-sm-8"  data-toggle="collapse" href="#time_2">
+                                    <h2 data-month="" class="titleMonth">
+                                        <span class="beforeTime"></span>
+                                        <span class="traceIcon fa-angle-down"></span>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="time_2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading row" role="tab">
+                                <div class="col-md-1 col-sm-2">
+                                    <div class="line"></div>
+                                </div>
+                                <div class="threeTitle col-md-8 col-sm-8"  data-toggle="collapse" href="#time_3">
+                                    <h2 data-month="" class="titleMonth">
+                                        <span class="threeTime"></span>
+                                        <span class="traceIcon fa-angle-down"></span>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="time_3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="carInfo">
+
+        </div>
+        <div role="tabpanel" class="tab-pane" id="workOrder">
+
+        </div>
+    </div>
+</div>
+
+
+</div>
+</div>
+<!--</section>-->
+
+<!--<script src="../Content/JS/jquery-1.9.1.js"></script>-->
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../contactNew/JS/jquery-ui.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../Content/bootstrap/js/bootstrapValidator.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-switch.min.js"></script>
+<!--<script src="../Content/bootstrap/js/bootstrap-tour.js"></script>-->
+<script src="../contactNew/Style/dist/js/tag-it.js"></script>
+<script src="../contactDetail/JS/jquery.nicescroll.min.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script src="JS/widget.js"></script>
+<script src="JS/trace_widget.js"></script>
+<script src="JS/common.js"></script>
+<script src="../contactDetail/JS/zzsc.js"></script>
+<!--<script src="../deals/js/common.js"></script><!--选择分配给哪个员工人物-->
+<script>
+    Iptools.Start();
+    trace._init();
+    widget._init();
+    common._init();
+//    Comwidget._init();
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+@charset "utf-8";
+*{font-family: "Microsoft YaHei" !important;}
+ul.tagit li.tagit-choice .tagit-label{
+    color: #1c94c4;
+    font-size:12px;
+    moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+body{
+    overflow: hidden;
+    font-family: 'Microsoft YaHei', '微软雅黑' !important;
+    background-color: #eff3f8 !important;
+    min-height: 900px;
+}
+div.container {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.row {
+    margin:0px;
+}
+div.Right {
+    padding: 0px;
+    padding-left: 320px;
+}
+div.Right .RightContent {
+    background: white;
+    padding: 20px 15px;
+}
+h1{
+    margin: 0px;
+    margin-bottom: 20px;
+    color: #333;
+}
+div.Left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    padding: 20px 15px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+div.Right .form {
+    min-height: 800px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.tag{border: none;}
+div.Right .allTags{
+    width:100%;
+}
+.Right .allTags ul{
+    padding:20px;
+    min-height:280px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+}
+.allTags .modal-footer{border-top:none;padding-bottom: 0px;}
+p{
+    font-size: 14px;
+    color:#333;
+}
+h4{
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+/*标签样式修改*/
+ul.tagit li.tagit-choice {
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border: 1px solid #09f;
+    background: none;
+    background-color: #09f;
+    font-weight: normal;
+}
+ul.tagit li.tagit-choice:hover, ul.tagit li.tagit-choice.remove {
+    background-color: #09f;
+    border-color: #09f;
+}
+ul.tagit li.tagit-choice .tagit-label {
+    color: white;
+    font-size: 12px;
+    moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+ul.tagit li.tagit-choice .tagit-close .text-icon {
+    display: inline;
+    font-family: arial, sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    color: white;
+}
+ul.tagit li.tagit-choice a.tagLabel:hover, ul.tagit li.tagit-choice a.tagit-close .text-icon:hover {
+    color:#333;
+}
+ul.tagit li {
+    display: block;
+    float: left;
+    margin: 5px 10px 5px 0;
+}
+ul.tagit li.tagit-choice-editable {
+    padding: .2em 18px .2em .5em;
+}
+.modal-footer {
+    padding-top: 20px;
+    padding-right: 0px;
+}
+.ui-helper-hidden-accessible{
+    display: none;
+}

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>链接客户数据</title>
+    <link rel="stylesheet" href="../Content/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../Content/bootstrap/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Content/Style/jquery.tagit.css"/>
+    <link rel="stylesheet" href="../Content/Style/tag.css"/>
+    <link rel="stylesheet" href="../Content/Style/tagit.ui-zendesk.css"/>
+    <link rel="stylesheet" href="../Content/Style/standard.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/channel.css">
+</head>
+<body>
+<div class="mainSection" style="margin-bottom: 20px;">
+    <header>
+        <div class="headerOne">
+            <div class="headerContent">轻松链接客户数据 统一管理</div>
+        </div>
+        <div class="headerTwo">
+            <div class="headerContent">轻松链接一切 让客户无形盾形</div>
+        </div>
+    </header>
+</div>
+<div class="aside">
+    <div class="nav mainNav">
+        <ul class="nav nav-tabs contactTabList" role="tablist">
+            <li role="presentation" class="active leftData">
+                <a href="#courceInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="courceInfo-tablink" aria-expanded="true">数据源概况</a>
+            </li>
+            <li role="presentation" class="">
+                <a href="#inportDataInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="inportDataInfo-tablink" aria-expanded="true">导入记录</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div class="tab-pane contactInfo switchBasic active" id="courceInfo" role="tabpanel">
+            <div class="coirceMain">
+                <div class="coirceTitle">已接入数据源</div>
+                <div class="coirceContent">
+                    <div class="dataOne">
+                        <div class="dataOneIcon">
+                            <i class="icon iconfont dataIcon">&#xe73c;</i>
+                            <span class="successPhone"></span>
+                            <span class="successText">正常</span>
+                            <span class="failPhone"></span>
+                            <span class="failText">异常</span>
+                        </div>
+                        <div class="dataOneWord">门店收银</div>
+                    </div>
+                    <div class="dataOne">
+                        <div class="dataOneIcon">
+                            <i class="icon iconfont dataIcon">&#xe73c;</i>
+                            <span class="successPhone"></span>
+                            <span class="successText">正常</span>
+                            <span class="failPhone"></span>
+                            <span class="failText">异常</span>
+                        </div>
+                        <div class="dataOneWord">门店收银</div>
+                    </div>
+                    <div class="dataOne">
+                        <div class="dataOneIcon">
+                            <i class="icon iconfont dataIcon">&#xe73c;</i>
+                            <span class="successPhone"></span>
+                            <span class="successText">正常</span>
+                            <span class="failPhone"></span>
+                            <span class="failText">异常</span>
+                        </div>
+                        <div class="dataOneWord">门店收银</div>
+                    </div>
+                </div>
+            </div>
+            <div class="coirceMain">
+                <div class="coirceTitle">新接入数据源</div>
+                <div class="coirceContent">
+                    <div class="dataOne">
+                        <div class="dataOneIcon">
+                            <i class="icon iconfont dataIcon">&#xe73c;</i>
+                            <span class="successPhone"></span>
+                            <span class="successText">正常</span>
+                            <span class="failPhone"></span>
+                            <span class="failText">异常</span>
+                        </div>
+                        <div class="dataOneWord">门店收银</div>
+                    </div>
+                </div>
+            </div>
+            <div class="feedback">
+                <div class="feedbackTitle">
+                    <div class="feedbackMainTitle">我要反馈</div>
+                    <div class="feedbackNav">告诉我们您希望对接的客户数据来源渠道，我们将免费为您接入！</div>
+                </div>
+                <div class="feedbackInput">
+                    <textarea class="form-control" rows="3" placeholder="如：收银系统，微商系统"></textarea>
+                </div>
+                <div class="feedbackBtn">
+                    <button type="button" class="btn commonBtn feedBtn">我要反馈</button>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane contactInfo switchBasic" id="inportDataInfo" role="tabpanel">
+            <div class="inportDataMain">
+                <div class="importDataInput">
+                    <div class="form-group importInput">
+                        <i class="icon iconfont baceIcons">&#xe794;</i>
+                        <input type="text" class="form-control importsInput" placeholder="搜索">
+                        <div class="enters">
+                            <i class="icon iconfont enterIcons">&#xe788;</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="importContent">
+                    <div class="importDateTerm importnewly">近期
+                        <i class="icon iconfont newlyIcon">&#xe780;</i>
+                    </div>
+                    <div class="newly">
+                        <div class="importTitle">近期
+                            <span class="flodong">
+                                <i class="icon iconfont flodingIcon">&#xe72f;</i>
+                            </span>
+                        </div>
+                        <div class="importMain">
+                            <div class="importTerm importOne">会员客户数据
+                                <i class="icon iconfont importTermIcon">&#xe750;</i>
+                            </div>
+                            <div class="importTerm importTwo">会员客户数据
+                                <i class="icon iconfont importTermIcon">&#xe750;</i>
+                            </div>
+                            <div class="importTerm importThree">会员客户数据
+                                <i class="icon iconfont importTermIcon">&#xe750;</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="importDateTerm importWeek">上周
+                        <i class="icon iconfont weekIcon">&#xe780;</i>
+                    </div>
+                    <div class="week">
+                        <div class="importTitle">上周
+                            <span class="flodong">
+                                <i class="icon iconfont flodingIcon">&#xe72f;</i>
+                            </span>
+                        </div>
+                        <div class="importMain">
+                            <div class="importTerm importOne">会员客户数据
+                                <i class="icon iconfont importTermIcon">&#xe750;</i>
+                            </div>
+                            <div class="importTerm importTwo">会员客户数据
+                                <i class="icon iconfont importTermIcon">&#xe750;</i>
+                            </div>
+                            <div class="importTerm importThree">会员客户数据
+                                <i class="icon iconfont importTermIcon">&#xe750;</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="importDateTerm importMouth">上月
+                        <i class="icon iconfont mouthIcon">&#xe780;</i>
+                    </div>
+                    <div class="mouth">
+                        <div class="importTitle">上月
+                            <span class="flodong">
+                                <i class="icon iconfont flodingIcon">&#xe72f;</i>
+                            </span>
+                        </div>
+                        <div class="importMain">
+                            <div class="importTerm importOne">会员客户数据
+                                <i class="icon iconfont importTermIcon">&#xe750;</i>
+                            </div>
+                            <div class="importTerm importTwo">会员客户数据
+                                <i class="icon iconfont importTermIcon">&#xe750;</i>
+                            </div>
+                            <div class="importTerm importThree">会员客户数据
+                                <i class="icon iconfont importTermIcon">&#xe750;</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="importDateTerm importYear">2017
+                        <i class="icon iconfont yearIcon">&#xe780;</i>
+                    </div>
+                    <div class="year">
+                        <div class="importTitle">2017
+                            <span class="flodong">
+                                <i class="icon iconfont flodingIcon">&#xe72f;</i>
+                            </span>
+                        </div>
+                        <div class="importMain">
+                            <div class="importTerm importOne">会员客户数据
+                                <i class="icon iconfont importTermIcon">&#xe750;</i>
+                            </div>
+                            <div class="importTerm importTwo">会员客户数据
+                                <i class="icon iconfont importTermIcon">&#xe750;</i>
+                            </div>
+                            <div class="importTerm importThree">会员客户数据
+                                <i class="icon iconfont importTermIcon">&#xe750;</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="openAll">
+                    <span class="openLink">展开全部</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mainContent">
+<div style="width: 100%;min-width: 900px;">
+<div class="dataSource">
+<div class="title">
+    <span class="titleName">客户数据源</span>
+</div>
+<div class="nav main">
+    <ul class="nav nav-tabs contactTabList mainbace" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#allInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="allInfo-tablink" aria-expanded="true">全部</a>
+        </li>
+        <li role="presentation" >
+            <a href="#platformInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="platformInfo-tablink" aria-expanded="true">020平台</a>
+        </li>
+        <li role="presentation" >
+            <a href="#cashierInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="cashierInfo-tablink" aria-expanded="true">收银系统</a>
+        </li>
+        <li role="presentation" >
+            <a href="#serviceInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="serviceInfo-tablink" aria-expanded="true">客服渠道</a>
+        </li>
+        <li role="presentation" >
+            <a href="#memberInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="memberInfo-tablink" aria-expanded="true">会员系统</a>
+        </li>
+        <li role="presentation" >
+            <a href="#smallShopInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="smallShopInfo-tablink" aria-expanded="true">微商平台</a>
+        </li>
+        <li role="presentation" >
+            <a href="#baseInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="baseInfo-tablink" aria-expanded="true">数据库</a>
+        </li>
+        <li role="presentation" >
+            <a href="#companyInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="companyInfo-tablink" aria-expanded="true">企业管理</a>
+        </li>
+        <li role="presentation" >
+            <a href="#onlineShopInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="onlineShopInfo-tablink" aria-expanded="true">电商平台</a>
+        </li>
+    </ul>
+    <div class="form-group baceInput bacebg">
+        <i class="icon iconfont baceIcon">&#xe794;</i>
+        <input type="text" class="form-control customSource" placeholder="搜索你想要输入的客户数据源">
+        <div class="enter">
+            <i class="icon iconfont enterIcon">&#xe788;</i>
+        </div>
+    </div>
+</div>
+<div class="tab-content">
+    <div class="tab-pane contactInfo switchBasic active" id="allInfo" role="tabpanel">
+        <div class="all">
+            <div class="recommends">
+                <div class="recommend">热门推荐</div>
+                <div class="recommendMain">
+                    <div class="recommendTerm">
+                        <div class="recommendTermsIcon">
+                            <i class="icon iconfont termIcon">&#xe7c0;</i>
+                            <span class="recommendtermWord">Excel</span>
+                        </div>
+                        <span class="recommendTitle">Excel上传</span>
+                        <span class="viceTitle">企业管理</span>
+                    </div>
+                    <div class="recommendTerm">
+                        <div class="recommendTermIcon recommendTermcsv">
+                            <i class="icon iconfont termIcon csvtermIcon">&#xe7c4;</i>
+                        </div>
+                        <span class="recommendTitle">CSV上传</span>
+                        <span class="viceTitle">企业管理</span>
+                    </div>
+                    <div class="recommendTerms">
+                        <div class="terms">
+                            <i class="icon iconfont termsIcon">&#xe7a4;</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="recommends">
+                <div class="recommend">最新上线</div>
+                <div class="recommendTerm">
+                    <div class="recommendTermIcon">
+                        <i class="icon iconfont newtermIcon">&#xe7c6;</i>
+                        <span class="newtermWord">微信支付</span>
+                    </div>
+                    <span class="recommendTitle">微信支付</span>
+                    <span class="viceTitle">企业管理</span>
+                </div>
+            </div>
+            <div class="recommends">
+                <div class="recommend">电商平台</div>
+                <div class="recommendTerm">
+                    <div class="recommendTermIcons">
+                        <i class="icon iconfont onlineIcon">&#xe7c7;</i>
+                    </div>
+                    <span class="recommendTitle">数据库</span>
+                    <span class="viceTitle">企业管理</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane contactInfo switchBasic" id="platformInfo" role="tabpanel">
+        <div class="all">
+            <div class="recommends">
+                <div class="recommend">热门推荐</div>
+                <div class="recommendMain">
+                    <div class="recommendTerm">
+                        <div class="recommendTermsIcon">
+                            <i class="icon iconfont termIcon">&#xe7c0;</i>
+                            <span class="recommendtermWord">Excel</span>
+                        </div>
+                        <span class="recommendTitle">Excel上传</span>
+                        <span class="viceTitle">企业管理</span>
+                    </div>
+                    <div class="recommendTerm">
+                        <div class="recommendTermIcon recommendTermcsv">
+                            <i class="icon iconfont termIcon csvtermIcon">&#xe7c4;</i>
+                        </div>
+                        <span class="recommendTitle">CSV上传</span>
+                        <span class="viceTitle">企业管理</span>
+                    </div>
+                    <div class="recommendTerms">
+                        <div class="terms">
+                            <i class="icon iconfont termsIcon">&#xe7a4;</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane contactInfo switchBasic" id="cashierInfo" role="tabpanel">
+        <div class="all">
+            <div class="recommends">
+                <div class="recommend">电商平台</div>
+                <div class="recommendTerm">
+                    <div class="recommendTermIcons">
+                        <i class="icon iconfont onlineIcon">&#xe7c7;</i>
+                    </div>
+                    <span class="recommendTitle">数据库</span>
+                    <span class="viceTitle">企业管理</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane contactInfo switchBasic" id="serviceInfo" role="tabpanel">
+        <div class="all">
+            <div class="recommends">
+                <div class="recommend">最新上线</div>
+                <div class="recommendTerm">
+                    <div class="recommendTermIcon">
+                        <i class="icon iconfont newtermIcon">&#xe7c6;</i>
+                        <span class="newtermWord">微信支付</span>
+                    </div>
+                    <span class="recommendTitle">微信支付</span>
+                    <span class="viceTitle">企业管理</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane contactInfo switchBasic" id="memberInfo" role="tabpanel">
+        <div class="all">
+            <div class="recommends">
+                <div class="recommend">电商平台</div>
+                <div class="recommendTerm">
+                    <div class="recommendTermIcons">
+                        <i class="icon iconfont onlineIcon">&#xe7c7;</i>
+                    </div>
+                    <span class="recommendTitle">数据库</span>
+                    <span class="viceTitle">企业管理</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane contactInfo switchBasic" id="smallShopInfo" role="tabpanel">
+        <div class="all">
+            <div class="recommends">
+                <div class="recommend">最新上线</div>
+                <div class="recommendTerm">
+                    <div class="recommendTermIcon">
+                        <i class="icon iconfont newtermIcon">&#xe7c6;</i>
+                        <span class="newtermWord">微信支付</span>
+                    </div>
+                    <span class="recommendTitle">微信支付</span>
+                    <span class="viceTitle">企业管理</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane contactInfo switchBasic" id="baseInfo" role="tabpanel">
+        <div class="all">
+            <div class="recommends">
+                <div class="recommend">电商平台</div>
+                <div class="recommendTerm">
+                    <div class="recommendTermIcons">
+                        <i class="icon iconfont onlineIcon">&#xe7c7;</i>
+                    </div>
+                    <span class="recommendTitle">数据库</span>
+                    <span class="viceTitle">企业管理</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane contactInfo switchBasic" id="companyInfo" role="tabpanel">
+        <div class="all">
+            <div class="recommends">
+                <div class="recommend">最新上线</div>
+                <div class="recommendTerm">
+                    <div class="recommendTermIcon">
+                        <i class="icon iconfont newtermIcon">&#xe7c6;</i>
+                        <span class="newtermWord">微信支付</span>
+                    </div>
+                    <span class="recommendTitle">微信支付</span>
+                    <span class="viceTitle">企业管理</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane contactInfo switchBasic" id="onlineShopInfo" role="tabpanel">
+        <div class="all">
+            <div class="recommends">
+                <div class="recommend">电商平台</div>
+                <div class="recommendTerm">
+                    <div class="recommendTermIcons">
+                        <i class="icon iconfont onlineIcon">&#xe7c7;</i>
+                    </div>
+                    <span class="recommendTitle">数据库</span>
+                    <span class="viceTitle">企业管理</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="importData">
+    <div class="importTitles">
+        <span class="fileName">会员客户数据.xslx</span>
+        <i class="icon iconfont fileIcon">&#xe796;</i>
+    </div>
+    <table class="table">
+        <tr><th class="tablePadding">姓名</th> <th>年龄</th>  <th>手机号</th> <th>企业ID</th> <th>性别</th> <th>公司行业</th> <th>所属职务</th> </tr>
+        <tbody>
+        <tr><td class="tablePadding">第一行的内容</td> <td>第二行的内容</td>  <td>第二行的内容</td> <td>第三行的内容</td> <td>第四行的内容</td> <td>第五行的内容</td> <td>第六行的内容</td> </tr>
+        <tr><td class="tablePadding">第一行的内容</td> <td>第二行的内容</td>  <td>第二行的内容</td> <td>第三行的内容</td> <td>第四行的内容</td> <td>第五行的内容</td> <td>第六行的内容</td> </tr>
+        <tr><td class="tablePadding">第一行的内容</td> <td>第二行的内容</td>  <td>第二行的内容</td> <td>第三行的内容</td> <td>第四行的内容</td> <td>第五行的内容</td> <td>第六行的内容</td> </tr>
+        </tbody>
+    </table>
+    <div class="ticker">
+        <div id="dataPager"></div>
+    </div>
+</div>
+</div>
+</div>
+<!--<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>-->
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script src="js/common.js"></script>
+<script src="js/channel.js"></script>
+<script>
+    Iptools.Start();
+    channelWidget._init();
+</script>
+</body>
+</html>

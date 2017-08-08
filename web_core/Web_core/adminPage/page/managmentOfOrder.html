@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>易掌CRM-订单管理</title>
+    <link rel="stylesheet" href="../../Content/bootstrap/css/bootstrap.min.css">
+    <link href="../../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../Content/Style/standard.css"/>
+    <link rel="stylesheet" href="../style/managmentOfOrder.css">
+    <link href="../../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+<div class="order">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">短信充值记录</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="right channel">
+                        <a>支付方式
+                        <select id="channel">
+                            <option value="">全部</option>
+                            <option value ="wx_pub_qr">微信公众号扫码支付</option>
+                            <option value ="alipay_pc_direct">支付宝PC网页支付</option>
+                            <option value ="alipay_qr">支付宝扫码支付</option>
+                            <!--<option value="onlineBank">网银</option>-->
+                            <!--<option value="others">其他</option>-->
+                        </select>
+                    </a></li>
+                    <li class="right status">
+                        <a>支付状态
+                        <select id="status">
+                            <option value="">全部</option>
+                            <option value ="2">支付成功</option>
+                            <option value ="1">待支付</option>
+                        </select>
+                    </a></li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="btn commonBtn" id="reseach">搜  索</div>
+                </form>
+                <ul class="nav navbar-nav navbar-right payTime">
+                    <li><a href="#">充值时间</a></li>
+                    <li><a class="time days"><span>7天</span></a></li>
+                    <li><a class="time month"><span>30天</span></a></li>
+                    <li><a class="time all"><span class="btnColor">全部</span></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+<!--主体部分表格-->
+<section>
+    <div class="container-fluid mainContent">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>订单号</th>
+                        <th>金额/￥</th>
+                        <th>商品详情</th>
+                        <th>支付状态</th>
+                        <th>支付时间</th>
+                        <th>支付方式</th>
+                    </tr>
+                </thead>
+                <tbody id="orderContent">
+                <!--<tr>-->
+                    <!--<td>微信支付订单号</td>-->
+                    <!--<td>5.00</td>-->
+                    <!--<td>短信500条</td>-->
+                    <!--<td>支付成功</td>-->
+                    <!--<td>2016/11/17 11:58:00</td>-->
+                    <!--<td>微信支付</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>微信支付订单号</td>-->
+                    <!--<td>5.00</td>-->
+                    <!--<td>短信500条</td>-->
+                    <!--<td>支付失败</td>-->
+                    <!--<td>2016/11/17 11:58:00</td>-->
+                    <!--<td>微信支付</td>-->
+                <!--</tr>-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="pager-example-panel"></div>
+</section>
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../Content/JS/iptools_v2.js"></script>
+<script src="../../Content/JS/ipComponents.js"></script>
+<script src="../JS/managmentOfOrder.js"></script>
+<script>
+    Iptools.Start({
+        baseRoot: false,
+        custmomizeUrl: "../../Content/JS/properties.xml"
+    });
+    widget._init();
+</script>
+</body>
+</html>

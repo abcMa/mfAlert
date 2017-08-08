@@ -1,0 +1,257 @@
+@font-face {
+    font-family: 'iconfont';  /* project id 125778 */
+    src: url('//at.alicdn.com/t/font_75ve23jtu1tyy14i.eot');
+    src: url('//at.alicdn.com/t/font_75ve23jtu1tyy14i.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_75ve23jtu1tyy14i.woff') format('woff'),
+    url('//at.alicdn.com/t/font_75ve23jtu1tyy14i.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_75ve23jtu1tyy14i.svg#iconfont') format('svg');
+}
+body{background: #eff3f8;}
+.iconfontyyy {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+input,textarea{
+    -webkit-user-select:text;
+    -moz-user-select:text;
+}
+input[type="text"],textarea{ -webkit-appearance: none;-moz-appearance:none;}
+.iconNewGroup,.iconAdd,.iconDel,.iconPer{
+    display: inline-block;
+    height: 0px;
+    margin-right:10px;
+}
+.row{margin:0;}
+.clearfix:before,.clearfix:after{content: "";display: table;}
+.clearfix:after{clear: both;}
+.clearfix{zoom:1;}
+/*.top{margin-top:20px;}*/
+/*.demo{margin:0px auto;margin-bottom:15px;border:1px solid #AAA;}*/
+/*.name,.level,.divide{width:49%;border:1px solid #AAA;}*/
+.detial-des{
+    width:100%;
+}
+#buttonListPanel li .newDataBtn{
+    cursor: pointer;margin-top:9px;background:#2ea4ed;border-radius:4px
+}
+#buttonListPanel li .newDataBtn:hover{
+    background: #0685d3;
+}
+.name{float: left;width: 100%;padding:0 20px;}
+.name .content{margin: 20px 0px 20px;text-align: left;padding: 0;}
+.divide .content{margin: 0px 0px 20px;text-align: left;padding: 0;}
+.divide{float: left; width: 100%;padding:0 20px 20px 20px;}
+.divide select{width: 100%;height: 40px;border-radius: 4px;   border: 1px solid #ccc;}
+.level,.detial-des{float: right;padding: 0 20px 0 0;}
+.detial-des .content{margin: 20px 0px 20px;text-align: left;padding: 0;}
+.des{float: left;width:20%;height:40px;line-height: 40px;text-align: center;color:#868686;border-right: 1px solid #AAA;}
+.content{float: right;}
+.content input{height: 40px;width:100%;border-radius: 4px;text-align:left;padding:0;text-indent:10px;}
+.title-bar{
+    height: 52px;
+    /*background-color: #f8f8f8;*/
+    border-color: #e7e7e7;
+    border-radius: 4px;
+    line-height:52px;
+}
+.input-col input{
+    height: 50px;
+    /*width: 100%;*/
+    border-radius: 4px;
+    border: 1px solid #CEC6C6;
+}
+.input-col span{
+    position: relative;
+    /*top: 32px;*/
+    padding: 0 20px;
+    border-right: 1px solid #CEC6C6;
+}
+.table-area{
+    border-top: 1px solid #ddd;
+    background: #fff;
+    min-height:367px;
+    border-radius: 0 0 5px 5px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+}
+
+
+.onlineCount{
+    float: right;
+    background-color: #cecece;
+    color:#2ea4ed;
+    border-radius: 5px;
+    padding: 0 10px;
+    height: 32px;
+    line-height: 30px;
+    margin-top: 10px;
+    border: 1px solid #2ea4ed;
+    background: #fff;
+}
+.del{
+    background:#cecece;
+    cursor: pointer;
+    margin-right:10px;
+    border: 1px solid #2ea4ed;
+    background: #fff;
+
+}
+.del button{
+    color:#2ea4ed;
+}
+.addCon{
+    background:#2ea4ed;
+    cursor: pointer;
+    color:#fff;
+    border:none;
+    margin-right:10px;
+}
+.addCon:hover{
+    background:#0685d3;
+}
+.btn-search{
+    margin-top: 15px;padding: 6px 15px;height:1.7rem;font-size:14px; border:none;background: #2ea4ed;color:#fff;padding:7px 15px;
+}
+.btn-search:hover{
+    background:#0685d3;
+    border:none;
+}
+.btn-search:active,.btn-search:focus,.btn-primary:active:focus,.btn-primary:active:hover{
+    background:#0685d3;
+    border:none;
+}
+.contactGroupListTbody tr:hover{
+    background-color: #f5f5f5;
+}
+.modal-header{
+    background: #2ea4ed;
+    border-radius: 5px 5px 0 0;
+
+}
+.modal-header h4{
+    color:#fff;
+}
+.newContact span{
+    display: inline-block;
+    width: 15%;
+    height: 69px;
+    background: rgba(247, 247, 247, 1) url(Image/add.png) no-repeat center center;
+    border: 2px dashed rgb(218, 216, 216);
+    z-index: 2;
+}
+.del button{
+    outline: none;
+}
+.newContact input{
+    position: absolute;
+    left: 9px;
+    height: 60px;
+    opacity: 0;
+    top: 20px;
+}
+.container{
+    /*background: #fff;*/
+    width:100%;
+    margin-top:0px;
+    padding: 0px;
+}
+.table > tbody > tr > td{
+    vertical-align: middle;
+}
+.selContactContent thead tr th{
+    border-bottom:1px solid #ddd;
+}
+form>.top:first-child{
+    width: 40%;
+    float: left;
+}
+form>.top:last-child{
+    width: 60%;
+    float: right;
+}
+form{
+    background: #fff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+}
+.tag {
+    background-color: #95d4fb;
+    border: 1px solid #95d4fb;
+    /*padding: 0.25rem 0.75rem;*/
+    padding:3px 5px;
+    /*font-size: 0.7rem;*/
+    color: white;
+    display:inline-block;font-weight: lighter;
+    opacity:1;
+    margin-right:4px;
+    color:#fff;
+    cursor: pointer;
+    font-size: 12px;
+}
+.delToRed{
+    background-color: red;
+    border:none;
+    border:1px solid red;
+}
+.delToRed button{
+    color: #fff;
+}
+.confirmBtn{
+    background-color: #2ea4ed;
+    border-color: #2ea4ed;
+    opacity: 0.8;
+    color:#fff;
+    margin-left: 10px !important;
+}
+.confirmBtn:hover{
+    opacity: 1;
+    color:#fff;
+    background-color: #0685d3;
+    border-color: #0685d3;
+}
+.addAll{
+    float: left;background: none;color: #ff7d7e;
+}
+.addAll:hover{
+    background: #ff7d7e;color: #fff;
+}
+.closebtn{
+    background-color: #dbdbdb;
+    border-color: #dbdbdb;
+    opacity: 0.8;
+    color:#fff;
+}
+.closebtn:hover{
+    opacity: 1;
+    color:#fff;
+    background-color: #dbdbdb;
+    border-color: #dbdbdb;
+}
+.help-block {
+    position: absolute;
+}
+.form-control{
+    padding:6px 6px;
+}
+.form-control-feedback{
+    right:10px;
+}
+@media screen and (min-width: 768px) {
+    .modal-dialog {
+        width: 850px;
+        margin: 30px auto;
+    }
+}
+.modal-footer{
+    border-top:0px;
+}
+input.blueCheckbox[type="checkbox"] {
+    margin: 0px;
+}
+

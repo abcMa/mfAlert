@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>问卷调查</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/intopalmDate-2.14.3.min.css">
+    <link rel="stylesheet" href="../../Content/bootstrap/css/bootstrapValidator.css"/>
+    <link rel="stylesheet" href="../css/standard.css">
+    <link rel="stylesheet" href="css/base.css">
+
+    <style>
+        @media (min-width: 1200px) {
+            .container {
+                width: 970px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .submit-container button {
+                width: 20%;
+            }
+        }
+
+        .loading {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="container container-wrapper">
+    <!-- 题目 -->
+    <div class="container">
+        <div class="row">
+            <h1 class="title">问卷调查</h1>
+        </div>
+    </div>
+    <!-- 主内容 -->
+    <div class="container ques-container">
+        <div class="row">
+            <div class="subtitle">为了给您提供更好的服务，希望您能抽出几分钟时间，将您的感受和建议高度我们，我们非常重视每位客户的宝贵意见，感谢您的参与！</div>
+        </div>
+        <div class="row que-wrap">
+        </div>
+        <!-- 用户提交的表单 -->
+        <div class="row userInfo-container" style="display:none">
+            <form role="form" class="formApplet" id="userForm">
+
+            </form>
+        </div>
+        <!-- 提交按钮 -->
+        <div class="row submit-container">
+            <button type="button" class="btn commonBtn commitSurvey" data-loading-text="<span class='icon-refresh icon-spin'>执行中</span>">提交</button>
+        </div>
+        <!-- 结束页 -->
+        <div class="row endPage-container">
+            <div id="end_summernote"></div>
+        </div>
+    </div>
+</div>
+<!-- 进度条 -->
+<div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+         aria-valuemax="100">
+        <span class="sr-only"></span>
+    </div>
+    <div class="progressPrecent" style="line-height:20px">0%</div>
+</div>
+<div class="container loading">
+</div>
+
+<!--活动关闭显示-->
+<div class="campaign_status_container" style="display: none">
+    <p></p>
+    <div class="imgs">
+        <img class="notice_img">
+        <img src="../img/yz_ewm.png" class="ewm_img">
+    </div>
+</div>
+<!--提示弹框-->
+<div class="dialog">
+    <div class="ui-dialog-grid">
+           <div class="dialog-title"></div>
+           <div class="dialog-body">
+           </div>
+           <div class="dialog-footer">
+               <button class="btn close-dialog">确定</button>
+           </div>
+    </div>
+</div>
+<div class="container dialog-modal">
+</div>
+
+<script src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    var progressNo = 0;
+    $(".progress-bar").attr("aria-valuenow", progressNo + "%").css("width", progressNo + "%");
+    $(".progressPrecent").html(progressNo + "%");
+</script>
+<script src="../../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../Content/bootstrap/js/bootstrapValidator.js"></script>
+<script src="../../Content/bootstrap/js/bootstrap-notify.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script async src="../js/intopalmDate-2.14.3.min.js"></script>
+<script src="../js/intopalmSha1.js"></script>
+<script src="../js/intoplamShare.js" charset="gbk"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=evpqAQ0kPfZvx8l1bgSukTTk06Dsyeoc"></script>
+<script src="../../Content/JS/iptools_v2.js"></script>
+<script src="js/base.js"></script>
+<script type="text/javascript">
+    var time = 0;
+    stayTime();
+    Iptools.Start({
+        baseRoot: false,
+        custmomizeUrl: "../../Content/JS/properties.xml"
+    });
+    var timeLength = setInterval("stayTime()", 1000);
+
+    function checkDataInUrl(data) {
+        var flag;
+        if (data == null || data == "" || data == "null" || data == 0) {
+            window.location.href = "../404/index.html";
+        } else {
+            flag = true;
+        }
+        return flag;
+    }
+    ;
+    //获取url里的参数
+    function getUrlParameter(paramName) {
+        var pageURL = decodeURIComponent(window.location.search.substring(1));
+        var urlParams = pageURL.split('&');
+        var paramPair;
+
+        for (var i = 0; i < urlParams.length; i++) {
+            paramPair = urlParams[i].split('=');
+            if (paramPair[0] === paramName) {
+                return paramPair[1] === undefined ? null : paramPair[1];
+            }
+        }
+        return null;
+    }
+    var tenantId = getUrlParameter("tenantId");
+    var token = getUrlParameter("token");
+    if (checkDataInUrl(tenantId)) {
+        Iptools.DEFAULTS.tenantId = tenantId;
+    }
+    ;
+    if (checkDataInUrl(token)) {
+        Iptools.DEFAULTS.token = token;
+    }
+
+    function myLocation(result) {
+        var geoc = new BMap.Geocoder();
+//    console.log(result.center.lng+'-'+result.center.lat);
+        geoc.getLocation(result.center, function (rs) {
+            var addComp = rs.addressComponents;
+            address = String(addComp.province + addComp.city + addComp.district)
+            console.log(address);
+        });
+    }
+    widget.init();
+
+    //计算在该页面的停留时间
+    function stayTime() {
+        time++;
+    }
+    ;
+    //页面监听微信浏览器关闭
+    /* $(function(){
+     if(widget.DEFAULT.historyForm){
+     pushHistory();
+     }else{
+     pushHistory();
+     }
+     var bool=false;
+     setTimeout(function(){
+     bool=true;
+     },1500);
+     window.addEventListener("popstate", function(e) {
+     if(bool)
+     {
+     clearInterval(timeLength);
+     if(!readOnly) {
+     widget.timeCounter(time);
+     //createVisitorInfo();//提交访客信息
+     }
+     }
+     }, false);
+     });
+     function pushHistory() {
+     var state = {
+     title: "title",
+     url: "#"
+     };
+     window.history.pushState(state, "title", "#");
+     }
+     window.onbeforeunload = onbeforeunload_handler;
+     function onbeforeunload_handler(){
+     clearInterval(timeLength);
+     if(!readOnly) {
+     widget.timeCounter(time);
+     //createVisitorInfo();//提交访客信息
+     }
+     }; */
+</script>
+</body>
+</html>

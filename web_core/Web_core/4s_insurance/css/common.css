@@ -1,0 +1,115 @@
+/*模态框*/
+.insurance-model .modal-body{
+    padding: 20px 20px;
+    padding-bottom: 100px;
+    width:998px;
+}
+.model-block{
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+.insurance-model h3{
+    height: 40px;
+    line-height: 40px;
+    width:100%;
+    background-color: #eee;
+    margin:0px;
+    padding-left: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+.row{
+    height: 40px;
+    margin: 0px;
+    padding: 0px 15px;
+    margin-top: 6px;
+}
+.model-line .line{
+    height: 40px;
+    border-bottom: 1px dashed #ccc;
+
+}
+.col-sm-3,.col-sm-4{
+    padding-right:0px;
+    padding-left: 10px;
+}
+.insurance-model label{
+    float: left;
+    display: inline-block;
+    font-weight: normal;
+    padding-right: 5px;
+    line-height: 40px;
+}
+.insurance-model input{
+    float: left;
+    border: none;
+    display: inline-block;
+    width: 142px;
+    box-shadow: none;
+    margin-top: 10px;
+}
+.model-line .col-sm-4 input{
+    width:130px;
+}
+.insurance-model textarea{
+    float: left;
+    display: inline-block;
+    width:800px;
+    height: 26px;
+    resize: none;
+    border: none;
+    margin-top: 10px;
+}
+.insurance-model select{
+    border:none;
+    margin-top: 10px;
+}
+.insurance-model select:focus,.insurance-model input:focus,.insurance-model textarea:focus{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+input.blueCheckbox[type="checkbox"] {
+    margin-top: 12px;
+}
+.has-error .form-control{
+    box-shadow: none;
+}
+.has-success .form-control{
+    box-shadow: none;
+}
+.needIcon {
+    position: absolute;
+    left:-2px;
+    top:14px;
+    padding-right: 5px;
+    font-size: 10px;
+    color:#c33;
+    transform: scale(0.6);
+}
+
+/*下拉*/
+.dropdown-menu-left {
+    right: auto;
+    left: -121px;
+}
+.form-inline .input-group input {
+    margin-top: 6px;
+    padding: 0px;
+    height: 26px;
+}
+.input-group-btn:last-child > .btn {
+    z-index: 2;
+    margin-left: -1px;
+    background-color: rgba(122,122,122,0);
+    border: none;
+}
+.input-group-btn:last-child > .btn span{
+    color:white;
+}
+.input-group-btn:last-child > .btn:hover{
+    background-color: rgba(122,122,122,0);
+}
+small{
+    color: #a94442 !important;
+}

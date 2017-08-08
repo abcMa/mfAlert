@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微信粉丝</title>
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Content/bootstrap/css/bootstrap.css">
+    <link href="../Content/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Content/bootstrap/css/bootstrap-multiselect.css"/>
+    <link rel="stylesheet" href="../Content/Style/standard.css"/>
+    <link rel="stylesheet" href="Style/wx-fans.css">
+
+</head>
+<body>
+    <section>
+        <div class="waitDiv"></div>
+        <!--没有绑定时-->
+        <div class="not_bind" style="display: none;">
+            <div class="pic">
+                <img src="Images/nofans.png" alt=""/>
+            </div>
+            <div>
+                <button class="btn commonBtn start-bind">接入微信粉丝</button>
+            </div>
+        </div>
+        <!--绑定后的数据展示-->
+        <div class="row" style="display: none">
+            <div class="left">
+                <div class="inner">
+                    <div class="iconList">
+                        <img src="" class="hoverCode" style="display:none;" alt=""/>
+                        <span class="codeImg">
+                            <i class="iconfontyyy">&#xe78f;</i>
+                        </span>
+
+                        <!--<i class="iconfontyyy">&#xe6e4;</i>-->
+                        <span class="cancelBind" title="解绑">
+                            <i class="iconfontyyy">&#xe793;</i>
+                        </span>
+                    </div>
+                    <div class="gzh-title">
+                        <div class="gzh-img">
+                            <img src="Images/no-bind.png" alt=""/>
+                        </div>
+                    </div>
+                    <p class="gzh-nikeName"></p>
+                    <div class="row">
+                        <div class="col-md-6 allFans">总粉丝数<br/><span>12</span></div>
+                        <div class="col-md-6 existFans">已实名粉丝<br/><span>12</span></div>
+                    </div>
+                    <div class="autoSync clearfix">
+                        <div class="isAuto">
+                            <input type="checkbox"/>
+                            <span>开启自动同步</span>
+                        </div>
+                        <div class="sel">
+                            <select name="" id="" class="form-control" disabled="disabled">
+                                <option value="24">每天</option>
+                                <option value="72">每三天</option>
+                                <option value="168">每周</option>
+                                <option value="336">每两周</option>
+                                <option value="720">每月</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="addGzh">-->
+                    <!--<div class="add-inner">-->
+                        <!--<a href="" style="color:#2ea4ed;">-->
+                            <!--<i class="iconfontyyy">&#xe78b;</i>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+            <div class="right">
+                <div class="rightContent" id="wx-fans">
+                    <!--<nav class="navbar navbar-default search-function-container" id="table-nav" >-->
+                        <!--<div class="container-fluid" style="">-->
+                            <!--<div class="navbar-header">-->
+                                <!--<a class="navbar-brand" id="table_title" style="color:#555;">公众号"<span></span>"粉丝</a>-->
+                            <!--</div>-->
+                            <!--<div class="navbar-right">-->
+                                <!--<button class="syncData">同步粉丝数据</button>-->
+                                <!--<form class="search">-->
+                                    <!--<span class="iconfontyyy search_icon">&#xe794;</span>-->
+                                    <!--<input type="text" class="" placeholder="昵称、分组、标签等"/>-->
+                                    <!--<button type="submit">-->
+                                        <!--<span class="iconfontyyy enter_icon">&#xe788;</span>-->
+                                    <!--</button>-->
+                                <!--</form>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</nav>-->
+                    <!--<div class="fansInner">-->
+                        <!--<table class="table table-striped table-hover table-no-wrap" style="padding:0 15px;min-width:800px;">-->
+                            <!--<thead>-->
+                            <!--<tr>-->
+                                <!--<th>头像</th>-->
+                                <!--<th>昵称</th>-->
+                                <!--<th>性别</th>-->
+                                <!--<th>是否关注</th>-->
+                                <!--<th>地区</th>-->
+                                <!--<th>语言</th>-->
+                                <!--<th>分组</th>-->
+                                <!--<th>标签</th>-->
+                                <!--<th>时间</th>-->
+                                <!--<th>操作</th>-->
+                            <!--</tr>-->
+                            <!--</thead>-->
+                            <!--<tbody class="fansList">-->
+
+                            <!--</tbody>-->
+                        <!--</table>-->
+                    <!--</div>-->
+
+                    <!--<div id="pager-example-panel-allFans" style="margin-top:-20px;"></div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+<!--提醒授权的模态框-->
+    <div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog fonfirm_del">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="authMess">提示消息</h4>
+                </div>
+                <div class="modal-body">
+                    即将前往公众号授权页面，确认授权吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn closebtn" data-dismiss="modal">取消</button>
+                    <a href="" target="" class="sureAuth">
+                        <button type="button" class="btn confirmBtn" style="margin-top:0;">确认</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--取消授权的模态框-->
+    <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog fonfirm_del">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="cancelMess">提示消息</h4>
+                </div>
+                <div class="modal-body">
+                    确定解绑该公众号吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn closebtn" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn confirmBtn cancelAuth" style="margin-top:0;">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--合并模态框-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog fonfirm_del">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="mergeMess">合并微信粉丝至客户</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="width: 80%;margin: 0 auto;">
+                        <div class="col-md-4 modal-gzh-title">
+                            <div class="modal-gzh-img">
+                                <img src="" alt="">
+                            </div>
+                            <p>微信昵称</p>
+                        </div>
+                        <div class="col-md-2 convert" style="margin-top:50px;">
+                            <i class="iconfontyyy" style="font-size: 40px;color: #09f;">&#xe78c;</i>
+                        </div>
+                        <div class="col-md-6 conList" style="margin-top:40px;">
+                            <!--<select name="" id="example-single"></select>-->
+                            <div class="form-group">
+                                <!--<label class="control-label">支行名称</label>-->
+                                <div class="input-group">
+                                    <input class="form-control searchConInput" placeholder="输入姓名或电话号码查询" type="text" style="width:200px;display: inline">
+                                    <span class="input-group-btn" style="position: static;">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1" aria-expanded="false" style="height: 34px;background: #efefef;">
+                                            <span class="caret" style="margin-top:-6px;color:#333;"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-left conListBySearch" role="menu" style="width:238px;max-height: 500px;overflow-y: scroll;">
+                                            <li role="presentation" class="disabled">
+                                                <a role="menuitem" tabindex="-1" class="hint-link">请输入关键字...</a>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mergeTips">
+                        <span>微信昵称</span>
+                        将被合并至客户
+                        <span>客户名称</span>
+                    </p>
+                    <p style="line-height: 1.5;color:#09f;margin:0 20px;">
+                        【合并信息注意事项】<br>
+                        1、信息合并中，将以客户手机号作为唯一身份标准；<br>
+                        2、微信粉丝的所有信息，都将合并至目标客户下，包括行为动态记录，合并后动态行<br/><span style="display: inline-block;text-indent: 23px;">为记录将以时间标准重新排序；</span><br>
+                        3、微信粉丝被合并后，该粉丝的信息将被锁定，无法再次更新。
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <span style="color:#f5bb78;margin-right: 20px;"><i class="iconfontyyy" style="margin-right:6px;">&#xe78e;</i>此操作无法撤销</span>
+                    <button type="button" class="btn confirmBtn sureMerge" style="margin-top:0;">合 并</button>
+                    <button type="button" class="btn closebtn" data-dismiss="modal">取 消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-switch.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrapValidator.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-multiselect.js"></script>
+    <script src="../Content/JS/iptools_v2.js"></script>
+    <script src="../Content/JS/ipComponents.js"></script>
+    <script src="JS/wx-fans.js"></script>
+    <script>
+        Iptools.Start();
+        widget._init();
+    </script>
+</body>
+</html>

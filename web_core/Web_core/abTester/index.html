@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AB测试</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/cropper.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/slider/css/iThing-min.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-3 container">
+            <div class="container-body" style="margin-left: 20px;overflow-y: hidden;">
+                <ul class="nav nav-pills" role="tablist">
+                    <li role="presentation" class="active"><a href="#events" role="tab" data-toggle="tab">页面测试</a></li>
+                    <li role="presentation"><a href="#actions" role="tab" data-toggle="tab">渠道测试</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="events">
+                        <div class="tool-list-search">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="icon-search"></span>
+                                </span>
+                                <input type="text" class="form-control" placeholder="搜索事件">
+                            </div>
+                        </div>
+                        <div class="tool-list">
+                            <div class="event-item" style="margin-top: 0;">
+                                <div class="drag-bar" data-event="bimg"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">背景图</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterAddContactGroup"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">标题</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterSubmitForm"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">副标题</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterPayment"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">联系电话</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterRegistWebSite"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">内容详情</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterRegistWebSite"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">信息采集</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterRegistWebSite"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">按钮文字</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterRegistWebSite"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">按钮颜色</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterRegistWebSite"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">分享标题</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterRegistWebSite"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">分享描述</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterRegistWebSite"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">分享图片</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="actions">
+                        <div class="tool-list-search">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="icon-search"></span>
+                                </span>
+                                <input type="text" class="form-control" placeholder="搜索动作">
+                            </div>
+                        </div>
+                        <div class="tool-list">
+                            <div class="action-item">
+                                <div class="drag-bar" data-action="sms"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">短信内容</div>
+                            </div>
+                            <div class="action-item">
+                                <div class="drag-bar" data-action="mail"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">短信签名</div>
+                            </div>
+                            <div class="action-item">
+                                <div class="drag-bar" data-action="changeContact"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">发送时间</div>
+                            </div>
+                            <div class="action-item">
+                                <div class="drag-bar" data-action="addContactGroup"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">客户群</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9 container">
+            <div class="container-body" style="width: 97%">
+                <div class="operation-panel col-sm-12">
+                    <div class="operation-link-line"></div>
+                    <div class="operation-item-container col-sm-12" style="min-height: 80px;">
+                        <div class="item-header col-sm-1"><span class="start"><i class="iconfont">&#xe716;</i></span></div>
+                        <div class="item-body col-sm-11">
+                            <div class="start-panel">
+                                <span>A/B测试名称</span>
+                                <span class="iconfont reset-title">&#xe717;</span>
+                                <div class="tool-right"><button class="btn btn-sm commonBtn">保存</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="des-operation-container" class="operation-item-container col-sm-12">
+                        <div class="item-header col-sm-1"><span class="adding"><i class="iconfont">&#xe750;</i></span></div>
+                        <div class="item-body col-sm-11">
+                            <div id="drag-destination-add" class="adding-condition-panel">
+                                <p>拖拽事件/动作至此处</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-select.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-notify.min.js"></script>
+<script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="../Content/bootstrap/slider/js/jQAllRangeSliders-withRuler-min.js"></script>
+<script src="../Content/bootstrap/js/cropper.min.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script src="js/widget.js"></script>
+<script>
+    Iptools.Start();
+    widget._init();
+</script>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>车辆管理</title>
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" type="text/css" >
+    <link href="css/base.css" rel="stylesheet"/>
+    <style>
+
+
+        @media only screen and (max-width: 1440px) {
+            .trends-track-right {
+                width: 25%;
+                padding: 0px;
+            }
+            .trends-track-left{
+                width: 75%;
+                padding: 0px 25px;
+            }
+            .cell-top i,.cell-bottom i{
+                font-size: 14px;
+            }
+        }
+        /*小于等于1366*/
+        @media only screen and (max-width: 1366px) {
+            .trends-track-right {
+                width: 246px;
+                padding: 0px;
+            }
+            .trends-track-left{
+                width: 605px;
+                padding: 0px;
+            }
+            .cell-top i,.cell-bottom i{
+                font-size: 14px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="wrap-left">
+        <div class="left-block left-top">
+        </div>
+        <div class="left-block left-bottom">
+        </div>
+    </div>
+    <div class="wrap-right">
+        <!--核心tab-->
+        <div class="main-top-panel">
+            <!--核心指标-->
+            <div class="tab-content-item">
+                <div class="col-md-9 trends-track-left">
+                    <!--进店动态轴-->
+                    <div class="store-track-line">
+                       <div class="cell first-time">
+                           <span class="dot"></span>
+                           <div class="cell-top"></div>
+                           <div class="cell-bottom">
+                               <div class="trace-item-label">
+                                   <div>购车日期</div>
+                                   <i class="delivery_date"></i>
+                               </div>
+
+                           </div>
+                       </div>
+                        <div class="cell first-time">
+                            <span class="dot"></span>
+                            <div class="cell-top"><div class="trace-item-label"><div>保修开始</div>
+                                <i class="warranty_start_date"></i></div></div>
+                            <div class="cell-bottom"></div>
+                        </div>
+                        <div class="cell first-time">
+                            <span class="dot"></span>
+                            <div class="cell-top"></div>
+                            <div class="cell-bottom"><div class="trace-item-label"><div>首次进店</div>
+                                <i class="first_service_date"></i></div></div>
+                        </div>
+                        <div class="cell gap">
+                            <div class="cell-top"></div>
+                            <div class="cell-bottom"></div>
+                        </div>
+                        <div class="cell last-time">
+                            <span class="dot"></span>
+                            <div class="cell-top"></div>
+                            <div class="cell-bottom"><div class="trace-item-label"><div>首次保养</div>
+                                <i class="first_maintain_date"></i></div></div>
+                        </div>
+                        <div class="cell last-time">
+                            <span class="dot"></span>
+
+                            <div class="cell-top"><div class="trace-item-label"><div>末次保养</div>
+                                <i class="last_maintain_date"></i></div></div>
+                            <div class="cell-bottom"></div>
+                        </div>
+                        <div class="cell last-time">
+                            <span class="dot"></span>
+                            <div class="cell-top"></div>
+                            <div class="cell-bottom"><div class="trace-item-label"><div>末次进店</div>
+                                <i class="last_service_date"></i></div></div>
+                        </div>
+                        <div class="cell last-time">
+                            <span class="dot"></span>
+                            <div class="cell-top"><div class="trace-item-label"><div>末次跟进</div>
+                                <i class="last_outreach_date"></i></div></div>
+                            <!--车-末次跟进-->
+                            <div class="cell-bottom"></div>
+                        </div>
+                        <div class="cell gap">
+                            <div class="cell-top"></div>
+                            <div class="cell-bottom"></div>
+                        </div>
+                        <div class="cell end-time">
+                            <span class="dot"></span>
+                            <div class="cell-top"></div>
+                            <div class="cell-bottom"><div class="trace-item-label"><div>保险到期</div>
+                                <i class="insurance-end-time"></i></div></div>
+                        </div>
+                        <div class="cell end-time">
+                            <span class="dot"></span>
+                            <div class="cell-top"><div class="trace-item-label"><div>下次保养</div>
+                                <i class="next_maintain_date"></i></div></div>
+                            <div class="cell-bottom"></div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <!--里程轴-->
+                    <div class="mileage-track-line">
+                        <img class="track-car" src="image/car.png"/>
+                        <div class="track-items">
+                            <!--<div class="track-item">
+                                <span class="track1">5000</span>
+                                <i>首次进场</i>
+                            </div>
+                            <div class="track-item">
+                                <span class="track2">5000</span>
+                            </div>
+                            <div class="track-item">
+                                <span class="track3">5000</span>
+                            </div>
+                            <div class="track-item">
+                                <span class="track4">5000</span>
+                                <i>末次进场</i>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 trends-track-right">
+                    <div class="trends-bar-dropdown">
+                        <select class="bar-select-type">
+                            <option value="all">全部</option>
+                            <option value="cur">当期</option>
+                        </select>
+                    </div>
+                    <div class="trends-bar-chart">
+                        <div class="trend-bar trends-bar-top">
+                            <div class="bar-item" style="left: 0%;">
+                                <div>
+                                    <span class="bar total-consume-bar"><i class="bar-val">0</i></span>
+                                    <i class="bar-title">消费金额&nbsp;</i>
+                                </div>
+                            </div>
+                            <div class=" bar-item" style="left: 25%;">
+                                <div>
+                                    <span class="bar zifei_amount_vir"><i class="bar-val">0</i></span>
+                                    <i class="bar-title">自费金额&nbsp;</i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trend-bar trends-bar-bottom">
+                            <div class="bar-item" style="left: 0%;">
+                                <span class="bar store-no-bar"><i class="bar-val">0</i></span>
+                                <i class="bar-title">到店次数</i>
+                            </div>
+                            <div class="bar-item" style="left: 25%;">
+                                <div>
+                                    <span class="bar current-consume-bar"><i class="bar-val">0</i></span>
+                                    <i class="bar-title">消费次数</i>
+                                </div>
+                            </div>
+                            <div class="bar-item" style="left: 50%;">
+                                <div>
+                                    <span class="bar zifei_counter_vir"><i class="bar-val">0</i></span>
+                                    <i class="bar-title">自费次数</i>
+                                </div>
+                            </div>
+                            <div class="bar-item" style="left: 75%;">
+                                <span class="bar maintain-no-bar"><i class="bar-val">0</i></span>
+                                <i class="bar-title">保养次数</i>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div style="clear:both"></div>
+            </div>
+            <!--互动记录-->
+            <div class="tab-content-item">
+                <div class="interact-container">
+                    <div class="interact-row">
+                        <div class="item-control">
+                            <span class="item-control-title">互动对象</span>
+                            <div class="interact-target-area">
+                                <button class="item-control-val interact-target-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    请选择
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu interact-target" aria-labelledby="dLabel">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item-control">
+                            <span class="item-control-title">互动类型</span>
+                            <select class="item-control-val interact-type">
+
+                                <option value="18">外呼记录</option>
+                                <option value="19">客户来电</option>
+                                <!--<option value="17">客户回访</option>-->
+                                <!--<option value="21">客户进店</option>-->
+                            </select>
+                        </div>
+                        <div class="item-control">
+                            <span class="item-control-title">互动时间</span>
+                            <input type="text" class="item-control-val interact-datetime"/>
+                        </div>
+                    </div>
+                    <div class="interact-row telegram-status-row">
+                        <div class="item-control">
+                            <span class="item-control-title">是否接通</span>
+                            <select class="item-control-val connect-status">
+                                <option value="">请选择</option>
+                                <option value="1">是</option>
+                                <option value="0">否</option>
+                            </select>
+                        </div>
+                        <div class="item-control">
+                            <span class="item-control-title">是否成功</span>
+                            <select class="item-control-val success-status">
+                                <option value="">请选择</option>
+                                <option value="1">是</option>
+                                <option value="0">否</option>
+                            </select>
+                        </div>
+                        <div class="item-control">
+                            <span class="item-control-title">失败原因</span>
+                            <select class="item-control-val item-control-val fail-reason">
+                                <option value="">请选择</option>
+                                <option value="1">已卖车</option>
+                                <option value="2">非本人购车/用车</option>
+                                <option value="3">中途挂断</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="interact-row">
+                        <textarea class="interact-content" placeholder="互动内容"></textarea>
+                    </div>
+                    <div class="interact-row">
+                        <div class="item-control">
+                            <span class="item-control-title">下次跟进时间</span>
+                            <input type="text" class="item-control-val next-interact-datetime"/>
+                        </div>
+                    </div>
+                    <div class="interact-row">
+                        <button class="btn commonBtn interact-save disableBtn" disabled data-loading-text="<span class='icon-spin icon-spinner' style='margin-right:2px'></span>发送中">保&nbsp;存</button>
+                    </div>
+                </div>
+            </div>
+            <!--短信-->
+            <div class="tab-content-item">
+                <div class="interact-container">
+                    <div class="interact-row">
+                        <div class="item-control">
+                            <span class="item-control-title">发送对象</span>
+                            <div class="send-target-area">
+                                <button class="item-control-val send-target-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    请选择
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu send-target" aria-labelledby="dLabel">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item-control">
+                            <span class="item-control-title">模板</span>
+                            <div class="send-target-area">
+                                <button class="item-control-val msg-templet-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    请选择
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu msg-templet" aria-labelledby="dLabel">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="interact-row">
+                        <textarea class="msg-content" placeholder="短信内容" maxlength="50"></textarea>
+                       <span class="msg-length"><span>0</span></span>
+                    </div>
+                    <div class="interact-row">
+                        <div class="msg-signature"><span>短信签名:</span><span class="msg-signature-val">同享福</span></div>
+                        <button class="btn commonBtn massage-save disableBtn" disabled data-loading-text="<span class='icon-spin icon-spinner' style='margin-right:2px'></span>发送中">发&nbsp;送</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--动态tab-->
+        <div id="main-bottom-panel">
+            <!--动态轨迹-->
+            <div class="tab-content-item">
+                <div class="car-status-track">
+                    <div class="status-track-items" id="first-order">
+                        <div class="status-item-title">
+                            <span></span>
+                            <i class="statusItemSwitch fa fa-angle-down"></i>
+                            <div class="search-area" style="float: right;">
+                                <div class="btn-group">
+                                    <button class="btn small commonBtn revert ul-search dropdown-toggle" data-loading-text="<span class='fa fa-spin fa fa-spinner'></span>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">筛 选</button>
+                                    <ul class="dropdown-menu dropdown-menu-right s-search-ul" style="margin-top: -10px;">
+                                        <li data-stoppropagation="true"></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="status-block">
+                            <div></div>
+                        </div>
+
+                    </div>
+                    <div class="status-track-items" id="second-order">
+                        <div class="status-item-title"><span></span><i class="statusItemSwitch fa fa-angle-up"></i></div>
+                        <div class="status-block">
+                        </div>
+                    </div>
+                    <div class="status-track-items" id="third-order">
+                        <div class="status-item-title"><span></span><i class="statusItemSwitch fa fa-angle-up"></i></div>
+                        <div class="status-block">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--联系人-->
+            <div class="tab-content-item">
+                <div class="contact-list"></div>
+            </div>
+            <!--工单记录-->
+            <div class="tab-content-item">
+                <div class="SR-list"></div>
+            </div>
+            <!--保险记录-->
+            <div class="tab-content-item">
+                <div class="insurance-list"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script src="js/trace.js"></script>
+<script src="js/base.js"></script>
+<script>
+Iptools.Start();
+widget._init();
+$(function(){
+    $(".interact-datetime,.next-interact-datetime").datetimepicker({
+        format: "yyyy-mm-dd hh:00:00",
+        autoclose: true,
+        todayBtn: true,
+        minView: 1,
+        language: "zh-CN"
+    })
+    var now = new Date();
+    var nowStr = now.format("yyyy-MM-dd hh:mm");
+    $(".interact-datetime").val(nowStr);
+})
+widget._initTabPanel(".main-top-panel",{
+    navTabShowName:["核心指标","互动记录","短信"]
+});
+widget._initTabPanel("#main-bottom-panel",{
+    navTabShowName:["动态轨迹","联系人","工单记录","保险纪录"]
+});
+</script>
+</body>
+</html>

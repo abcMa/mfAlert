@@ -1,0 +1,399 @@
+﻿html {
+    background-color: #eff3f8;
+}
+
+body {
+    color: #333;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3, h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding-bottom: 50px;
+    background-color: #eff3f8;
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+.panel-body {
+    padding: 0;
+}
+/*左边部分样式*/
+.left {
+    float: left;
+    width: 100%;
+    padding-right: 320px;
+}
+
+    .left .block {
+        width: 100%;
+        overflow: hidden;
+        background-color: white;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+        .left .block.statistic, .left .contact-data .row.block {
+            background-color: rgba(255,255,255,0);
+        }
+
+    .left .contact-data div {
+        text-align: center;
+        position: relative;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    .left .contact div {
+        cursor: pointer;
+    }
+
+        .left .contact div:hover {
+            background-color: #09f;
+        }
+
+            .left .contact div:hover .load-data-container {
+                background-color: #09f;
+            }
+
+    .left .contact-data .block div.col-sm-4:hover {
+        background-color: #f66;
+    }
+
+        .left .contact-data .block div.col-sm-4:hover .load-data-container {
+            background-color: #f66;
+        }
+
+    .left .contact div.col-sm-4:hover span, .left .contact-data .block div.col-sm-4:hover span {
+        color: white;
+    }
+
+    .left .contact-data div span {
+        display: block;
+        padding-bottom: 20px;
+        font-size: 18px;
+    }
+
+    .left .contact-data div .num {
+        padding: 22px 0;
+        font-size: 40px;
+        color: #09f;
+    }
+
+    .left .contact-data .block div .num {
+        padding: 22px 0;
+        font-size: 40px;
+        color: #f66;
+    }
+
+    .left .contact-data div .disabled-num {
+        padding: 22px 0;
+        font-size: 40px;
+        color: #ccc;
+    }
+
+    .left .block .group-tool {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 30px;
+        width: 30px;
+        background: transparent;
+        cursor: pointer;
+        text-align: center;
+        display: none;
+    }
+
+        .left .block .group-tool span {
+            color: #ccc;
+            line-height: 30px;
+            font-size: 14px;
+        }
+
+        .left .block .group-tool:hover span {
+            background: #fff !important;
+            color: #09f !important;
+        }
+
+    .left .block:hover .group-tool {
+        display: block;
+    }
+
+    .left #stepChart {
+        min-height: 300px;
+    }
+
+.line {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 1px;
+    height: 44px;
+    background-color: #ccc;
+}
+
+.left .statistic div.data-report {
+    border-right: 3px solid #eff3f8;
+    background-color: #fff;
+}
+
+    .left .statistic div.data-report.no-line {
+        border-right: none;
+    }
+
+    .left .statistic div.data-report .cg-in-btn {
+        cursor: pointer;
+        color: #09f;
+        float: right;
+    }
+
+        .left .statistic div.data-report .cg-in-btn:hover {
+            color: #06c;
+        }
+
+.left .statistic .title {
+    font-size: 14px;
+    padding: 25px 25px 0 25px;
+}
+
+.left .statistic .explain {
+    overflow: hidden;
+    padding: 25px 0;
+}
+
+    .left .statistic .explain li:first-child {
+        float: left;
+    }
+
+    .left .statistic .explain li:last-child {
+        float: right;
+    }
+
+    .left .statistic .explain li .color-block {
+        display: inline-block;
+        width: 20px;
+        height: 14px;
+        background-color: yellow;
+        margin-right: 5px;
+    }
+
+.left .statistic .report {
+    margin: 0 auto;
+    height: 300px;
+}
+
+.left .report {
+    padding: 25px;
+    text-align: left !important;
+}
+
+    .left .report .report-text {
+        text-align: left;
+        display: inline-block;
+    }
+
+    .left .report .btn-group {
+        float: right;
+    }
+/*右边部分的样式*/
+.right {
+    float: right;
+    width: 300px;
+    margin-left: -300px;
+}
+
+    .right .block {
+        padding: 0 15px;
+        background-color: white;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+        .right .block .title-header {
+            height: 58px;
+            line-height: 58px;
+            font-size: 18px;
+        }
+
+        .right .block .title-header .fa {
+            float: right;
+            line-height: 58px;
+            color: #ccc;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .right .block .fa:hover {
+            color: #333;
+        }
+
+    .right .content {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    .right .touch .content {
+        padding-bottom: 25px;
+    }
+
+    .right .content li {
+        padding: 0 20px;
+        margin-top: 15px;
+        position: relative;
+    }
+
+        .right .content li span {
+            display: block;
+            font-size: 18px;
+            color: #09f;
+        }
+
+            .right .content li span.state {
+                padding-bottom: 15px;
+                font-size: 14px;
+                color: #333;
+            }
+
+            .right .content li span.line {
+                top: 6px;
+            }
+
+    .right .view {
+        text-align: right;
+        overflow: hidden;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+        .right .view li {
+            float: right;
+            color: #09f;
+        }
+
+            .right .view li:hover {
+                color: #06c;
+                cursor: pointer;
+            }
+
+            .right .view li.view-all {
+                padding-left: 25px;
+            }
+
+    .right .activity .content li {
+        cursor: pointer;
+        text-align: center;
+    }
+
+        .right .activity .content li:first-child {
+            border-right: none;
+        }
+
+        .right .activity .content li span {
+            font-size: 14px;
+            display: inline-block;
+            color: #333;
+            padding-bottom: 10px;
+        }
+
+        .right .activity .content li:hover span {
+            color: #09f;
+            border-bottom: 2px solid #09f;
+        }
+
+        .right .activity .content li.active span {
+            color: #09f;
+            border-bottom: 2px solid #09f;
+        }
+
+        .right .activity .content li.active:hover span {
+            color: #06c;
+            border-bottom: 2px solid #06c;
+        }
+
+    .right .activity .campaign::-webkit-scrollbar {
+        width: 5px;
+        height: 15px;
+        background-color: #f7f7f7;
+    }
+
+    .right .activity .campaign::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+    .right .activity .campaign::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #ccc;
+    }
+
+    .right .activity .campaign {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+        .right .activity .campaign img {
+            display: block;
+            margin: 20px auto;
+        }
+
+        .right .activity .campaign .campagn-block {
+            overflow: hidden;
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+            .right .activity .campaign .campagn-block:hover {
+                background-color: #f7f7f7;
+            }
+
+        .right .activity .campaign ul li {
+            float: left;
+            width: 80px;
+        }
+
+        .right .activity .campaign h4 {
+            width: 100%;
+            font-size: 14px;
+            line-height: 40px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .right .activity .campaign ul li .campaign-icon {
+            color: #09f;
+            padding-right: 5px;
+            font-size: 18px;
+        }
+
+    .right .end {
+        display: none;
+    }

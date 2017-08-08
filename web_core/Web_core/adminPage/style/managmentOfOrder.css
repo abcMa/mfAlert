@@ -1,0 +1,121 @@
+*{
+    font-size:16px;
+    font-family: "Microsoft YaHei";
+}
+html{
+    width:100%;
+    height: 100%;
+}
+body{
+    width:100%;
+    height: 100%;
+    background-color: #eff3f8;
+}
+/*header部分样式*/
+.order{
+    padding:12px 15px;
+    background-color: white;
+    overflow: hidden;
+    padding-bottom: 0px;
+}
+select{
+    border-radius: 3px;
+    font-size: 14px;
+}
+select option{font-size: 14px;}
+#research{
+    background:#fff;
+    border-radius: 3px;
+    border: 1px solid rgb(169,169,169);
+}
+#research:hover{
+    background:#e6e6e6;
+    border-radius: 3px;
+    border: 1px solid #e6e6e6;
+}
+a.time{
+    padding-left:0px !important;
+    padding-right:0px !important;
+    cursor: pointer;
+}
+.time span{
+    padding:3px 8px;
+    border-radius: 3px;
+    color:#09f;
+    font-size: 14px;
+}
+ .time span.btnColor {
+    background-color:#09f;
+    padding:3px 8px;
+    color:#fff;
+}
+/*主体部分样式*/
+th,tr{text-align: left;}
+tr td{font-weight: normal;font-size: 14px;}
+.mainContent{background: #fff;margin:0px;padding: 0px;}
+
+[disabled].form-control, [readonly].form-control, fieldset[disabled] .form-control {
+    cursor: not-allowed;
+}
+
+input[name=list-item] {
+    height: 15px;
+    width: 15px;
+}
+
+.searchContextItem {
+    padding: 0;
+}
+
+.pageCountCalText {
+    font-size: 14px;
+    background-color: white;
+}
+.pageCountCalText span{background-color: white;}
+th{
+    font-weight: normal;
+}
+/*新增加样式5月26*/
+.navbar {
+     margin-bottom: 0px;
+}
+.table>thead>tr>th {
+    border-bottom: none;
+}
+.table tr:hover{
+    background-color: #f7f7f7;
+}
+/*5月27*/
+.table {
+     margin-bottom: 0px;
+}
+table thead tr{
+    background-color: #F7F7F7;
+}
+.table>thead>tr>td, .table>thead>tr>th{
+    padding: 10px;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th {
+    padding: 10px;
+    border-color:#ccc;
+}
+.table>tbody tr:last-child td{
+    border-bottom: 1px solid #ccc;
+}
+.navbar-default {
+    background-color: white;
+    border-color: white;
+    color:#333;
+}
+.navbar-default .navbar-brand {
+    color:#333;
+    margin: 0px;
+    padding-left: 0px;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #333;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color: #333;
+    background-color: transparent;
+}

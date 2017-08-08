@@ -1,0 +1,53 @@
+body{
+    margin:0px;
+}
+section{
+    width: 960px;
+    margin:0px auto;
+    font-family: 'Microsoft YaHei', '微软雅黑';
+}
+section h3{
+    margin:0px;
+    height: 128px;
+    line-height: 128px;
+    text-align: center;
+    font-size: 32px;
+    background: #09f;
+    color:white;
+    font-weight: bold;
+}
+section .content{
+    overflow: hidden;
+    background: #eff3f8;
+    padding: 0px 20px;
+}
+section .content p.statement{
+    font-size: 16px;
+    text-indent: 2em;
+    line-height: 30px;
+    color:#1b1a1a;
+}
+section .content h4{
+    margin:0px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    color:#1b1a1a;
+}
+section .content>ul>li{
+    margin-bottom: 20px;
+}
+section .content ul{
+    padding: 0px;
+    margin:0px;
+}
+section .content li{
+    list-style: none;
+    font-size: 16px;
+    line-height: 30px;
+    color:#1b1a1a;
+}
+section .content .inscribe{
+    text-align: right;
+    font-weight: bold;
+}

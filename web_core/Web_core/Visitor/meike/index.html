@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>每克拉美—蓝色港湾店</title>
+    <link rel="stylesheet" href="../../Content/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../Content/bootstrap/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../Content/bootstrap/css/bootstrap-datetimepicker.min.css"/>
+    <link rel="stylesheet" href="../../Content/Style/standard.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="css/meike.css">
+</head>
+<body>
+<div class="mainSection">
+    <div class="head">
+        <div class="title">
+            <div class="storeName"></div>
+            <div class="form-group dateChoice">
+                <label  class="control-label dateText">日期选择：</label>
+                <div class="dateInput">
+                    <input type="text" class="form-control datetimepickSearch" id="inputStartDate" placeholder="请选择开始日期">
+                </div>
+                <span class="seperator-line">-</span>
+                <div class="dateInput">
+                    <input type="text" class="form-control datetimepickSearch" id="inputEndDate" placeholder="请选择结束日期">
+                </div>
+                <button type="button" id="setMiddleDate" class="btn btn-sm btn-primary commonBtn">
+                    <span class="fa fa-refresh" style="color: #fff;"></span>
+                </button>
+            </div>
+
+        </div>
+        <div class="nav">
+            <ul class="nav nav-tabs contactTabList" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#basesInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="basesInfo-tablink" aria-expanded="true" data-id="0" >客流统计</a>
+                </li>
+                <li role="presentation" >
+                    <a href="#customerInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="customerInfo-tablink" aria-expanded="true" data-id="1" >顾客属性</a>
+                </li>
+                <li role="presentation" >
+                    <a href="#mapInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="mapInfo-tablink" aria-expanded="true" data-id="2" >热力分布</a>
+                </li>
+                <li role="presentation" >
+                    <a href="#labelInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="labelInfo-tablink" aria-expanded="true" data-id="3" >高级设置</a>
+                </li>
+                <li role="presentation" >
+                    <a href="#adminInfo"  class="tabSwitch" role="tab" data-toggle="tab" id="adminInfo-tablink" aria-expanded="true" data-id="4" >探针管理</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="tab-content">
+        <div class="tab-pane contactInfo switchBasic active" id="basesInfo" role="tabpanel">
+            <div class="census">
+                <div class="customerFlow">
+                    <div class="customerFlowContent">
+                        <div class="setIconLeft">
+                            <!--<i class="icon iconfont iconSetOne">&#xe7c1;</i>-->
+                            <i class="fa fa-area-chart iconSetOne"></i>
+                        </div>
+                        <div class="setIconRight">
+                            <div class="flow">
+                                <span class="flowWords">客流量</span>
+                                <span  data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="门店部署的设备探测到的macId总数" data-original-title title>
+                                    <i class="icon iconfont flowIcon">&#xe7bb;</i>
+                                </span>
+                            </div>
+                            <span class="flowNum allNum"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="comeInStore">
+                    <div class="customerFlowContent">
+                        <div class="setIconLeft">
+                            <!--<i class="icon iconfont iconSetTwo">&#xe7c2;</i>-->
+                            <i class="fa fa-user iconSetTwo"></i>
+                        </div>
+                        <div class="setIconRight">
+                            <div class="flow">
+                                <span class="flowWords comeIn">进店顾客数</span>
+                                <span class="customerStopTime"  data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="店内停留时间超过3分钟的顾客（去除员工）" data-original-title title>
+                                    <i class="icon iconfont flowIcon">&#xe7bb;</i>
+                                </span>
+                            </div>
+                            <span class="flowNum comeInNum"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="newCustomerNum">
+                    <div class="customerFlowContent">
+                        <div class="setIconLeft">
+                            <!--<i class="icon iconfont iconSetThree">&#xe7c5;</i>-->
+                            <i class="fa fa-user-plus iconSetThree"></i>
+                        </div>
+                        <div class="setIconRight">
+                            <div class="flow">
+                                <span class="flowWords">新顾客数</span>
+                                <span  data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="首次到店的顾客" data-original-title title>
+                                    <i class="icon iconfont flowIcon">&#xe7bb;</i>
+                                </span>
+                            </div>
+                            <span class="flowNum newNum newsNum"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stopTime">
+                    <div class="customerFlowContent">
+                        <div class="setIconLeft">
+                            <!--<i class="icon iconfont iconSetFour">&#xe7be;</i>-->
+                            <i class="fa fa-clock-o iconSetFour"></i>
+                        </div>
+                        <div class="setIconRight">
+                            <div class="flow">
+                                <span class="flowWords">平均驻店时长</span>
+                                <span  data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="进店顾客平均停留时长" data-original-title title>
+                                    <i class="icon iconfont flowIcon">&#xe7bb;</i>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="flowNum newNum timeNum" style="padding-right: 0;"></span>
+                                <span class="flowNum">"</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="customerTrend">
+                <div class="col-sm-12" style="padding-left:0;padding-right: 0;">
+                    <div class="panel panel-default landing-panel">
+                        <div class="panel-heading" style="height:44px;line-height: 34px;">
+                            <span class="landing-panel-font">客流趋势</span>
+                            <div class="btn-group btn-group-sm navbar-right" style="margin-right: 30px;">
+                                <button type="button" class="btn report-time-btn" data-type="day">天</button>
+                                <button type="button" class="btn report-time-btn  report-btn-selected" data-type="hour">小时</button>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="customerTrendChart" style="height: 400px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="customerTab">
+                <div class="col-sm-12" style="padding-left:0;padding-right: 0;">
+                    <div class="panel panel-default landing-panel">
+                        <div class="panel-heading" style="height:44px;line-height: 34px;">
+                            <span class="landing-panel-font">数据报表</span>
+                        </div>
+                        <div class="panel-body" style="padding-right: 15px;">
+                            <div class="tableBody"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane contactInfo appendInfo" id="customerInfo" role="tabpanel">
+            <div class="">
+                <div class="customerTab">
+                    <div class="col-sm-12" style="padding-left:0px;padding-right: 0;">
+                        <div class="panel panel-default landing-panel">
+                            <!--<div class="panel-heading" style="height:44px;">-->
+                                <!--<span class="landing-panel-font">数据报表</span>-->
+                            <!--</div>-->
+                            <div class="panel-body">
+                                <div class="genderEducation">
+                                    <div class="genderCharts">
+                                        <div class="genderTitle">
+                                            <!--<i class="icon iconfont iconGender">&#xe7bd;</i>-->
+                                            <span class="genderProportion">性别比例</span>
+                                        </div>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="genderProportionChart" style="min-width:100px;height: 300px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="educationCharts">
+                                        <div class="educationTitle">
+                                            <!--<i class="icon iconfont iconGender">&#xe7bd;</i>-->
+                                            <span class="educationProportion">学历比例</span>
+                                        </div>
+                                        <div class="tab-content">
+                                            <div id="educationProportionChart" style="min-width: 400px; max-width: 600px; height: 300px; margin: 0 auto"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ageIncome">
+                                    <div class="ageCharts">
+                                        <div class="genderTitle">
+                                            <!--<i class="icon iconfont iconGender">&#xe7bd;</i>-->
+                                            <span class="genderProportion">年龄分布</span>
+                                        </div>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="ageProportionChart" style="min-width:100px;height: 200px;"></div>
+                                            <div class="agePhone"><img src="../../Content/Image/portrait.png" alt=""/></div>
+                                        </div>
+                                    </div>
+                                    <div class="incomeCharts">
+                                        <div class="genderTitle">
+                                            <!--<i class="icon iconfont iconGender">&#xe7bd;</i>-->
+                                            <span class="genderProportion">月收入水平</span>
+                                        </div>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="incomeProportionChart" style="min-width:100px;height: 300px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="liftCharts">
+                                    <div class="genderTitle">
+                                         <!--<i class="icon iconfont iconGender">&#xe7bd;</i>-->
+                                         <span class="genderProportion">人生阶段</span>
+                                    </div>
+                                    <div class="tab-content">
+                                         <div role="tabpanel" class="tab-pane active" id="liftProportionChart" style="min-width:100px;height: 380px;"></div>
+                                    </div>
+                                </div>
+                                <div class="gradeCharts">
+                                    <div class="genderTitle">
+                                         <!--<i class="icon iconfont iconGender">&#xe7bd;</i>-->
+                                         <span class="genderProportion">职业分布</span>
+                                    </div>
+                                    <div class="tab-content">
+                                         <div role="tabpanel" class="tab-pane active" id="gradeProportionChart" style="min-width:100px;height: 380px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane contactInfo appendInfo labelInfo" id="labelInfo" role="tabpanel">
+            <div class="senior">
+                <form class="form-horizontal" id="comeInCustomer">
+                    <div class="form-group">
+                        <label for="shopName" class="col-sm-3 control-label">店铺名称:</label>
+                        <div class="col-sm-4" style="padding-right: 20px">
+                            <input type="text" class="form-control inputShopName" name="shopName" id="shopName" placeholder="请输入店铺名称">
+                        </div>
+                        <span class="col-sm-3"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="comeInTime" class="col-sm-3 control-label">进店顾客定义:</label>
+                        <div class="col-sm-4 comeInTimes">
+                            <span class="comeTime">驻店时长超过</span>
+                            <input type="number" class="form-control comeInTime" min="0" value="3" name="comeInTime"  id="comeInTime">
+                        </div>
+                        <span class=" col-sm-3 comeUnit ">分钟</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="employeeTime" class="col-sm-3 control-label">员工定义:</label>
+                        <div class="col-sm-4 comeInTimes">
+                            <span class="employeeComeTime">驻店时长超过</span>
+                            <input type="number" class="form-control employeeTime" min="0"  value="60" name="employeeTime" id="employeeTime">
+                        </div>
+                        <span class="col-sm-3 comeUnit">分钟</span>
+                    </div>
+                    <div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-4 seniorBtn">
+                            <button type="button" class="btn commonBtn comeBtn putComeBtn">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="tab-pane contactInfo appendInfo adminInfo" id="adminInfo" role="tabpanel">
+            <div class="customerTab">
+                <div class="col-sm-12" style="padding-left:0;padding-right: 0;">
+                    <div class="panel panel-default landing-panel">
+                        <div class="panel-heading" style="height:60px;">
+                            <div class="searchAdd searchWina">
+                                <i class="icon iconfont baceIcon">&#xe794;</i>
+                                <input type="text" class="winaAddress" name="winaAddress" placeholder="探针mac地址">
+                                <div class="enter searchBtn">
+                                    <i class="icon iconfont enterIcon">&#xe788;</i>
+                                </div>
+                                <!--<button type="button" class="btn commonBtn searchBtn">搜索</button>-->
+                                <button type="button" class="btn commonBtn addWina" data-toggle="modal" data-target="#addModal">新增探针</button>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="padding-right: 15px;">
+                            <table class="table">
+                                <tr> <th>探针编号</th> <th>MAC地址</th> <th>操作</th></tr>
+                                <tbody class="addWinaTab">
+                                </tbody>
+                            </table>
+                            <div class="ticker">
+                                <div id="winaDataPager"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane contactInfo appendInfo adminInfo" id="mapInfo" role="tabpanel">
+            <div class="heatMaps">
+                <div class="col-sm-12" style="padding-left:0;padding-right: 0;">
+                    <div class="panel panel-default landing-panel">
+                        <div class="panel-heading" style="height:44px;line-height: 34px;">
+                            <span class="landing-panel-font">热力分布<span class="heatLive">(人群居住地分布热力图)</span></span>
+                            <div class="btn-group btn-group-sm navbar-right" style="margin-right: 30px;">
+                                <!--<button type="button" class="btn heat-time-btn report-btn-selected" data-type="all">全部</button>-->
+                                <!--<button type="button" class="btn heat-time-btn" data-type="all">居住地</button>-->
+                                <!--<button type="button" class="btn heat-time-btn  report-btn-selected" data-type="all">工作地</button>-->
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div class="heatMap">
+                                    <div id="heatMap"></div>
+                                    <div class="spread">
+                                        <table class="table">
+                                            <tr class="heatTr"> <th><i class="icon iconfont heatIcon">&#x3442;</i></th> <th><span class="spreadLine">客户来源</span></th><th></th></tr>
+                                            <tbody class="heatTab">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="loadImgs">-->
+    <!--<div class="loadImg">-->
+        <!--<img src="../../Content/Image/loading.gif" alt=""/>-->
+    <!--</div>-->
+<!--</div>-->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true" class="closeShopBtn">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">新增探针</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="eventAddMac">
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label">所属店铺</label>
+                        <div class="col-sm-8 addShop">
+                            <span class="addShopName"></span>
+                        </div>
+                        <div class="col-sm-1">
+
+                        </div>
+                    </div>
+                    <div class="macIdPage">
+                        <div class="macGroup">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label addWinaOne">探针MAC地址-1</label>
+                                <div class="col-sm-8 addWinaOneAddress">
+                                    <input type="text" class="form-control toEmpty newWinaAddress" name="macID"  placeholder="请输入MAC地址">
+                                </div>
+                                <div class="col-sm-1">
+
+                                </div>
+                                <p class="hideNum">1</p>
+                            </div>
+                        </div>
+
+                        <div class="addMac">
+                            <div class="newaddMac">
+                                <i class="icon iconfont iconAddMac">&#xe75f;</i>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn cancel" data-dismiss="modal">取消</button>
+                <button type="button" class="btn commonBtn confirm newBuildWina">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>-->
+<script src="../../Content/JS/jquery-1.9.1.js"></script>
+<script src="../../Content/bootstrap/js/bootstrap.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=evpqAQ0kPfZvx8l1bgSukTTk06Dsyeoc"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+<script src="../../Content/bootstrap/js/bootstrap-notify.min.js"></script>
+<script src="../../Content/JS/highcharts.js"></script>
+<script src="../../Content/JS/highcharts-3d.js"></script>
+<script src="../../Content/JS/highcharts-themes.js"></script>
+<script src="../../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../../Content/JS/iptools_v2.js"></script>
+<script src="../../Content/JS/ipComponents.js"></script>
+<script src="js/meike.js"></script>
+<script>
+    Iptools.Start({
+        baseRoot: false,
+        custmomizeUrl: "../../../Content/JS/properties.xml"
+    });
+    meikeWidget._init();
+    $(function (){
+        $("[data-toggle='popover']").popover();
+    });
+</script>
+</body>
+</html>

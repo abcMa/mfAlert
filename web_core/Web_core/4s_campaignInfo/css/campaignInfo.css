@@ -1,0 +1,530 @@
+.campaignName{
+    font-size: 18px;
+    color: #09f;
+    margin:0px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+.campaignName span{
+    width: 230px;
+    float: left;
+}
+text{
+	font-family:"Microsoft Yahei";
+}
+  /* .row span{
+    line-height: 40px;
+  } */
+/*.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}*/
+.arrow-right:hover {
+    background-color:#7ba9d0;
+}
+.arrow-left:hover {
+    background-color:#7ba9d0;
+}
+  .grayBox{
+    padding: 20px 20px;
+    margin: 20px 0;
+    background-color: #2ea4ed;
+    color: white;
+    border-radius: 5px;
+  }
+  .grayBox .num{
+    font-size: 48px;
+    font-weight: bold;    
+  }
+  .p-num{
+  text-align:center;
+  }
+  #profile .panel-group .nav>li{
+      float: left;
+      border-radius: 3px;
+  }
+.nav>li .iconfont{
+    /*color:#2ea4ed;*/
+}
+  .chartsTab{
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+
+
+  .top-left .col-md-9 .row{
+  line-height: 30px;
+  margin: 10px 0px;
+  }
+  .bottom-left-area a{
+    width: 162px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .closeQR{
+    position: absolute;
+    top: -4px;
+    right: 22px;
+    cursor: pointer;
+  }
+  .QRPanel{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    bottom: 0;
+    text-align: center;
+  }
+.ease {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.8s 0s, visibility 8s 0s;
+    -moz-transition: opacity 0.8s 0s, visibility 8s 0s;
+    transition: opacity 0.8s 1s, visibility 8s 0s;
+}
+.ease_in{
+    transition: all 4s ease-in;
+}
+.BtnAfter{
+	color: #333;
+    background: rgba(128, 124, 124, 0.36);
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+}
+
+.pageForm {
+    padding-top: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    /* position: absolute; */
+    width: 100%;
+    bottom: 0;
+}
+.addGroup .pageForm {
+	margin-bottom: 2px;
+}
+.base {
+    background-color: #fff;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    height: 100px;
+    width: 160px;
+    text-align: center;
+    vertical-align: middle;
+}
+.arrow-right {
+    width: 30%;
+    cursor: pointer;
+    background-color: #eee;
+    border-radius: 0 6px 6px 0;
+}
+.arrow-left {
+    width: 30%;
+    cursor: pointer;
+    background-color: #eee;
+    border-radius: 7px 0 0 7px;
+    box-sizing: border-box;
+}
+.pageSkip {
+    display: inline-block;
+    background: transparent url('../images/left_small.png') no-repeat -10px -10px;
+    text-indent: -999em;
+    background-size: 40px;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin: 0 7px 0 2px;
+    margin-bottom: 4px;
+}
+.pageNext {
+    display: inline-block;
+    background: transparent url('../images/right_small.png') no-repeat -10px -10px;
+    text-indent: -999em;
+    background-size: 40px;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-left: 7px;
+    margin-bottom: 4px;
+}
+.pageInput, .pageButton {
+    padding: 0px 10px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    border: 1px solid #bbb;
+    display: inline-block;
+    vertical-align: middle;
+}
+.pageInput {
+    width: 50px;
+    /* height: 25px; */
+    box-shadow: inset 1px 2px 1px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    margin-right: 5px;
+}
+.pageButton {
+    border: 1px solid #2ea4ed;
+    color: #2ea4ed;
+    background-color: white;
+}
+.pagenum {
+    font-size: 19px;
+    color: #006063;
+    margin-left: 5px;
+    line-height: 21px;
+    vertical-align: text-top;
+}
+.form-condition{
+	display:inline-block;
+    width: 62%;
+}
+.selectContactActive{
+	background-color: #f9f9f9;
+}
+.newGroup{
+	margin: 0 40px;
+}
+ .modalSwitch{
+    color: white;
+    padding: 10px;
+    border-radius: 3px 3px 0 0;
+    cursor:pointer;
+}
+.modalSwitch.active{
+    background-color: white;
+    color: #337ab7;
+    border: 1px solid #e4d8d8;
+    border-bottom: none;
+    cursor: initial;
+} 
+.bottom-left-area .iconfont{
+    font-size: 35px;
+    padding-right: 20px;
+    margin-top: 30px;
+    float: right;
+    text-align: right;
+    width: 46%;
+}
+.searchCondition{
+	box-sizing: border-box;
+    width: 150px;
+}
+.titleLine{
+    border-bottom: 1px solid #e4e4e4;
+    margin: 45px 0 17px;
+    font-weight: 900;
+}
+.titleLine .list-title{
+	padding-right: 0px;
+    padding-left: 0px;
+}
+#addToContactGroupModal .addGroup .col-md-4,#addToContactGroupModal .addGroup .col-md-2{
+	padding-left:0;
+	padding-right:0;
+}
+.actTableArea,.enrollTableArea {
+	/*min-height: 388px;*/
+	/*position: relative;
+    margin-top: 40px;*/
+}
+
+.table-none-data{
+	height: 86px;
+    text-align: center;
+    line-height: 87px;
+    font-size: 17px;
+    width: 100%;
+    margin: 0 auto;
+}
+#visitedLine{
+	height: 400px;
+	background-color: #fff;
+}
+#enrollLine{
+    height: 400px;
+	background-color: #fff;
+}
+.top-left{
+	padding: 20px 15px;
+    background-color: #fff;
+    min-height: 305px;
+}
+.report-time-btn{
+	color: #09f;
+    background-color: #fff;
+    border-color: #09f;
+}
+.report-time-btn:hover{
+    border: 1px solid #09f;
+    color: #09f;
+    background: #fff;
+}
+.report-time-btn.thisactive:hover{
+    background-color: #06c;
+    border: 1px solid #06c;
+    color: #fff;
+}
+.thisactive{
+	background-color: #09f;
+    border-color: #09f;
+    color: #fff;
+}
+.btn.thisactive:focus {
+	background-color: #09f;
+    border-color: #09f;
+    color: #fff;
+}
+
+.bottom-left-area a{
+	text-decoration: none;
+}
+a:focus,a:hover {
+	text-decoration:none;
+}
+.addgroup{
+	float:right;
+	margin-top: -1px;
+}
+.panel-title{
+    height: 40px;
+	line-height: 40px;
+}
+.panel-title span{
+    font-size: 14px;
+}
+.panel-title .addgroup>span{
+    padding-right: 10px;
+}
+.panel-title .iconfont{
+    color:white;
+}
+
+/*2017-1-13*/
+body{
+	background: rgb(239, 243, 248);
+    font-family: "Microsoft YaHei";
+}
+.blue-btn{
+	margin: 6px 0px;
+    padding: 0px;
+    width: 100%;
+    font-size: 0.8rem;
+    line-height: 34px;
+}
+
+.blue-btn{
+    color: white;	
+}
+
+
+.staticBox{
+	width: 50%;
+    float: left;
+    text-align: left;
+}
+
+.bottom-left-area .row .staticBox:first-child{
+   border-right: 1px solid #ccc;
+}
+.bottom-left-area .row .staticBox:last-child{
+   padding-left: 15px;
+}
+.staticBox span:last-child{
+	font-size: 18px;
+	display:block;
+    color: #09f;
+    margin-top: 15px;
+}
+.dataTabs{
+	background-color:#fff;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.dataTabContent{
+	background-color:#fff;
+}
+.tab-pane{
+    padding: 0px;
+}
+
+.nav-tabs {
+    border-bottom: none;
+    margin-bottom: 0px;
+}
+.nav-tabs>li>a{
+    color:#333;
+    padding: 0px 15px;
+    font-size: 16px;
+    height: 58px;
+    line-height: 58px;
+}
+.nav-tabs>li.active>a{
+    color:rgba(85,85,85,1);
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+	border: none;
+    border-bottom: 3px solid #09f;
+    color: #09f;
+}
+.nav-tabs>li>a:hover{
+    color:#09f;
+}
+.addgroup button{
+	margin-top:-3px;
+	padding: 0.3rem 0.5rem;
+}
+.top-left .col-md-10{
+	margin-left: -25px;
+}
+.contactLink{
+  cursor:pointer;
+}
+.revertBtnRow{
+	/*width: 95%;*/
+    margin: 0 auto;
+}
+.enrollTable>thead>tr>th{
+	line-height:30px;
+}
+#addToContactGroupModal .modal-header{
+	border-bottom:none;
+}
+#addToContactGroupModal .modal-body .row{
+	margin-bottom:20px;
+}
+/*新修改样式*/
+.nav-tabs>li>a:hover {
+    border-color:white;
+    background-color: white;
+
+}
+.btn .iconfont{
+    display: inline-block;
+    height: 16px;
+    width:16px;
+    margin:0px;
+    float: left;
+    margin-right: 5px;
+    margin-top: 1px;
+}
+.table>thead>tr>th{
+    border-bottom-width: 1px;
+}
+.panel-body {
+    padding: 0px;
+    border:none;
+}
+.panel-default{
+    border:none;
+}
+
+.top{
+    margin-bottom: 0px;
+}
+.main{
+    padding: 0px;
+}
+.row{
+    margin:0px;
+}
+/*数据报表分析样式*/
+#profile .panel-heading{
+    border-bottom: none;
+    border-color: rgba(0,0,0,0);
+    padding: 13px 15px 0px 0px;
+    line-height: 40px;
+}
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border-top:none;
+}
+.panel-group{
+    margin-bottom: 0px;
+}
+.panel {
+     -webkit-box-shadow:none;
+     box-shadow:none;
+}
+@media (max-width:1024px) {
+    .staticBox {
+        width: 58%;
+    }
+    .bottom-left-area .iconfont {
+        width: 38%;
+    }
+}
+.showAllAnswer{
+	cursor:pointer;
+}
+.answerItem{
+	margin: 5px 0px 15px 5px;
+}
+.q-statistics-item{
+	padding: 15px 0px;
+}
+.left-col{
+    display: inline-block;
+    width: 30%;
+    float: left;
+}
+.left-val{
+    display: inline-block;
+    width: 70%;
+    float: left;
+}
+.left-area{
+    width:300px;
+    position: absolute;
+}
+.right-area{
+    margin-left: 320px;
+}
+.editH5Btn{
+    float: right;
+    color: #09f;
+}
+.editH5Btn:hover{
+    color: #06c;
+}
+.top-left .row{
+    padding-bottom: 20px;
+}
+.previewBtn{
+    float: right;
+    color: #09f;
+}
+.top-left-btns{
+    text-align: right;
+}
+.releaseBtn{
+    margin-left: 10px;
+}
+.bottom-left-area{
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding:20px 15px;
+}
+.bottom-left-area h3{
+    font-size: 18px;
+    margin: 0px;
+    padding-bottom: 30px;
+}
+#funnel .noDataArea{
+    padding-top: 125px;
+    min-height: 400px;
+}
+.noDataArea span {
+    display: inline-block;
+    margin-top: 30px;
+}
+.search-text-group input{
+    width:100px;
+    display: inline-block;
+    padding:6px;
+}
+#statistics{
+    padding: 0px 15px;
+}

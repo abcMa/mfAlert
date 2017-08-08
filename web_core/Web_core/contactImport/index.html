@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>导入文件</title>
+    <link rel="stylesheet" href="../Content/bootstrap/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Content/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../Content/Style/standard.css">
+    <link rel="stylesheet" href="css/importFileStart.css">
+</head>
+<style>
+    .s-header-bar {
+        padding-top: 0px;
+    }
+</style>
+<body>
+<section>
+    <div class="inportProcess">
+        <div class="left">
+            <div class="img"><img src="image/import.png" alt=""></div>
+        </div>
+        <div class="explain">
+            <h1>导入之前，请注意以下事项：</h1>
+            <ul>
+                <li>1、你可以通过excel表格的方式，将客户数据批量导入到易掌客CRM中。</li>
+                <li>2、为了匹配客户的对应属性，excel表格文件中，第一行需要是客户属性，如姓名、电话、邮箱等。</li>
+                <li>3、当excel表格中包含1000+客户数据时，导入过程会略有延迟，程序会自动为您处理，您可以先进行其他工作。</li>
+            </ul>
+        </div>
+    </div>
+    <!--<div class="tableList">-->
+        <!--<div class="row header">-->
+            <!--<div class="col-md-6 left">导入记录</div>-->
+            <!--<div class="col-md-6 right"><button class="btn commonBtn startImport">开始新的导入</button></div>-->
+        <!--</div>-->
+        <!--<table class="table">-->
+            <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th>文件名称</th>-->
+                    <!--<th>导入时间</th>-->
+                    <!--<th>文件类型</th>-->
+                    <!--<th>文件数据条数</th>-->
+                    <!--<th>导入状态</th>-->
+                    <!--<th>导入条数</th>-->
+                    <!--<th>失败条数</th>-->
+                    <!--<th>操作</th>-->
+                <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+                <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>会员客户.xlsx</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>2017/03/01/ 12:00:00</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>EXCEL</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>234</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>导入完成</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>234</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>0</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td><a href=""></a><a href=""></a></td>&ndash;&gt;-->
+                <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+                <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>会员客户.xlsx</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>2017/03/01/ 12:00:00</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>EXCEL</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>234</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>导入完成</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>234</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>0</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td></td>&ndash;&gt;-->
+                <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+                <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>有价值的客户.xlsx</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>2017/03/15/ 12:00:00</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>EXCEL</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>3457</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>导入中</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>258</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td>5894</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td></td>&ndash;&gt;-->
+                <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+            <!--</tbody>-->
+        <!--</table>-->
+        <!--<div id="pager-example-panel"></div>-->
+        <!--<div style="padding: 0px 30px;">-->
+            <div id="imporList" class="col-sm-12 import-container"></div>
+        <!--</div>-->
+    <!--</div>-->
+</section>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src = "../Content/JS/iptools_v2.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script src="js/widget.js"></script>
+<script>
+    Iptools.Start()
+    widget._init();
+</script>
+</body>
+</html>

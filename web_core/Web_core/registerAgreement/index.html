@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>企加云--使用协议</title>
+    <link href="../Content/Image/favicon.ico" rel="shortcut icon">
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/agreement.css"/>
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2 logo">
+            <img src="../Content/Image/logoqi.svg" alt=""/>
+        </div>
+    </div>
+    <div class="agreement">
+        <div class="agreementHead">
+            企加云用户协议
+        </div>
+        <div class="statement">
+            ※正式注册使用企加云帐户前，请您仔细阅读以下声明。
+        </div>
+        <div class="statement">
+            ※凡是注册企加云的帐户，我们都将默认您同意以下内容。
+        </div>
+        <div class="statement">
+            1.企加云的帐户注册者必须是能够承担相应法律责任的公司或个人。
+        </div>
+        <div class="statement">
+            2.帐户负责人对在企加云上发布的所有内容负全部责任，在使用企加云服务时必须遵守国家相关法律法规，不得违背公序良俗、破坏社会和谐稳定，企加云帐户内禁止发布包含下列内容的相关信息：
+        </div>
+        <div class="statement">
+            ①有关宗教、种族或性别的贬损言辞；
+        </div>
+        <div class="statement">
+            ②骚扰、滥用或威胁其他帐户；
+        </div>
+        <div class="statement">
+            ③侵犯任何第三方著作权、专利、商标、商业秘密或其它专有权利、发表权或隐私权的信息；
+        </div>
+        <div class="statement">
+            ④其它任何违反相关法律法规的信息，等。
+        </div>
+        <div class="statement">
+            3.帐户在使用企加云服务期间与其他公司或个人所产生的一切纠纷，企加云不承担任何法律责任。
+        </div>
+        <div class="statement">
+            4.企加云有权中止违反本条款的帐户的服务，并无需特别通知。
+        </div>
+        <div class="statement">
+            5.对于因违反前述规定而被临时或永久取消帐户资格的公司和个人，企加云有权不再为其提供相关服务。
+        </div>
+        <div class="statement">
+            6.除法律明文规定的内容外，本声明的最终解释权归企加云产品团队所有。
+        </div>
+        <div class="modalBottom">
+            <div class="autograph">杭州企加云计算技术有限公司</div>
+            <div class="autograph">
+                <span class="year"></span>年
+                <span class="month"></span>月
+                <span class="day"></span>日
+            </div>
+        </div>
+    </div>
+    <script src="../Content/JS/jquery-1.9.1.js"></script>
+    <script>
+        var mydate = new Date();
+        $(".year").html(mydate.getFullYear());
+        var mon = mydate.getMonth() + 1;
+        var registerDay = mydate.getDate();
+        if( (mydate.getMonth() + 1) < 10 ){
+            mon = "0" + mon;
+        }
+        $(".month").html(mon);
+        if(mydate.getDate() < 10){
+            registerDay = "0" + mydate.getDate();
+        }
+        $(".day").html(registerDay);
+        $(window).height();
+        if( $(window).height() > 805 ){
+            var mheight = ($(window).height() - 805)/2;
+            $(".agreement").css("margin-top",mheight);
+        }
+    </script>
+</body>
+</html>

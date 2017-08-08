@@ -1,0 +1,348 @@
+.load-data-container{background: #fff;}
+body,.mainSection{background: #eff3f8;}
+#contentPanel{background: #fff;}
+.s-empty-container img.e-img-fc{cursor: auto;}
+
+.tour-backdrop{
+    opacity: 0.5;}
+/*引导标题*/
+.popover-title{
+    padding: 15px;
+    margin: 0;
+    font-size: 16px;
+    background-color: #f7f7f7;
+    border-bottom: none;
+    border-radius: 3px;
+}
+/*引导详细内容说明*/
+.popover-content{
+    padding: 20px 15px;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+}
+/*引导上一步，下一步结束*/
+.btnNew.disabled, .btnNew[disabled]{
+    color: #ccc;
+    background-color: #fff;
+    border-color: transparent;
+}
+/*引导上一步，下一步的当前步*/
+.popover-navigation .btnNew:focus{
+    color: #09f;
+    background-color: #fff;
+    border-color: transparent;
+}
+/*引导上一步，下一步的当前步hover*/
+.popover-navigation .btnNew:focus:hover{
+    color: #06c;
+    background-color: #fff;
+    border-color: transparent;
+}
+.disabled{pointer-events:none;}
+/*引导上一步，下一步不是当前步*/
+.btnNew{
+    color: #09f;
+    background-color: #fff;
+    border-color: transparent;
+    outline: none;
+}
+/*引导上一步，下一步不是当前步hover*/
+.btnNew:hover{
+    color: #06c;
+    background-color: #fff;
+    border-color: transparent;
+}
+/*结束引导hover*/
+.endNew:hover{
+    color: #09f;
+    background-color: #fff;
+    border-color: transparent;
+}
+/*结束引导最后一步*/
+.popover-navigation .endNew:focus{
+    color: #09f;
+    background-color: #fff;
+    border-color: transparent;
+}
+/*结束引导不是最后一步正常态*/
+.endNew{
+    color: #ccc;
+}
+/*弹出框宽度*/
+.popover{
+    width: 280px;
+    max-width: 280px;
+}
+/*弹出框在左侧距离引导元素距离*/
+.popover.left{
+    margin-left: -20px;
+}
+/*弹出框在右侧距离引导元素距离*/
+.popover.right{
+    margin-left: 20px;
+}
+/*弹出框在下侧距离引导元素距离*/
+.popover.bottom{
+    margin-top: 20px;
+}
+
+/*顶部三个tab的样式*/
+.insuranceSet .nav {
+    border-bottom: 0;
+    background: #fff;
+}
+.insuranceSet .nav>li {
+    font-size: 18px;
+}
+.insuranceSet .nav-tabs>li>a {
+    color: #333;
+    height: 58px;
+    line-height: 58px;
+    padding: 0 15px;
+}
+.insuranceSet .nav>li.active>a {
+    background-color: #fff;
+    height: 58px;
+    line-height: 58px;
+    padding: 0 15px;
+    border: 0;
+    color: #09f;
+    border-bottom: 4px solid #09f;
+}
+.insuranceSet .nav>li:not(.active)>a:hover {
+    background-color: #fff;
+    border-color: #fff;
+}
+.insuranceSet .nav-tabs>li>a:hover {
+    color: #09f;
+}
+section{
+    padding-bottom: 30px;
+    background: #fff;
+}
+
+section>.row{
+    display: none;}
+.multiselect-container.dropdown-menu {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    border:1px solid #09f;
+}
+.dropdown-menu > .active > a{
+    background: #09f;
+}
+.multiselect.dropdown-toggle.btn.btn-default{
+    border: 1px solid #09f;
+}
+.clearfix:before,.clearfix:after{content: "";display: table;}
+.clearfix:after{clear: both;}
+.clearfix{zoom:1;}
+.row{
+    margin:0;
+}
+.col-md-4{
+    text-align:center;
+}
+#myModal .modal-body{
+    color:#555;
+}
+thead:first-child > tr:first-child > th{
+    border-bottom: 1px solid #ddd;
+}
+.btn-group > .btn{
+    color:#555;
+}
+.input-group-addon:first-child {
+    display: none;
+}
+.input-group-btn {
+    /*display: none;*/
+}
+#table-nav,#table-nav-two{
+    margin-bottom: 0;
+    /*border-bottom: 1px solid #ddd;*/
+    border-radius: 5px 5px 0 0;
+    padding: 5px 0;
+    box-shadow: none;
+}
+.table-striped .hyperTr.groupList:last-child{
+    border-bottom: 1px solid #ccc;
+}
+.head-img{
+    width:30px;
+    height: 30px;
+    margin-top: -5px;
+    border-radius: 50%;
+}
+.s-table .s-column .s-cell.bordered-ud{
+    height: 41px;
+    position: relative;
+}
+
+.table-striped .hyperTr.groupList td:last-child{
+    color:#09f;
+    cursor: pointer;
+}
+.table-striped .hyperTr.groupList td:last-child:hover{
+    color: #06c !important;
+}
+.table-striped .hyperTr.groupList>td{
+    vertical-align: middle;
+    position: relative;
+    padding: 7px 15px;
+    border-top: 1px solid #ccc;
+}
+.table-striped .hyperTr.groupList>td.wx-img{
+    width: 75px;
+    padding: 7px 15px;
+}
+.navbar.navbar-default.search-function-container {
+    margin-bottom: 20px;
+    background: #fff;
+    border: none;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+}
+.syncData{
+    height:34px;
+    padding: 0 15px;
+    font-size:16px;
+    margin:8px 20px 8px 20px;
+}
+.syncData:hover{background: #06c;}
+.navbar-right input{
+    height: 34px;
+    border-radius: 5px;
+    padding:0 5px;
+    border: 1px solid #ddd;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.navbar-right input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #555;
+    opacity: 0.5;
+}
+.navbar-right input:-moz-placeholder, textarea:-moz-placeholder {
+    color:#555;opacity: 0.5;
+}
+.navbar-right input::-moz-placeholder, textarea::-moz-placeholder {
+    color:#555;opacity: 0.5;
+}
+.navbar-right input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color:#555;opacity: 0.5;
+}
+.navbar-right input:focus{
+    border-color: #09f;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.search{
+    float: right;
+    margin: 8px 0px 8px 40px;
+    position: relative;
+}
+.syncData{
+    float: right;
+}
+.search .search_icon,.search button{
+    position: absolute;
+    color: #a9a9a9;
+}
+.search_icon{
+    top: 10px;
+    right: 6px;
+}
+.search button{
+    top: 7px;
+    right: 7px;
+    border: none;
+    height: 20px;
+    width: 28px;
+    padding: 0px 0;
+    border-radius: 5px;
+    background: #09f;
+    display: none;
+    color: #fff;
+}
+.syncData{
+    background-color: #09f;
+    border-radius: 3px;
+    border:none;
+    color:#fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+}
+.inner{
+    background: #fff;
+}
+.inner{
+    width:100%;
+    position: relative;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+}
+.fansInner{padding:0 15px;background: #fff;}
+.fansInner table thead
+{
+    background-color: #f7f7f7;
+    /*padding: 0.5rem;*/
+    /*padding-right: 1rem;*/
+    font-size: 16px;
+}
+.wx-merge-icon img{
+    width:12px;
+    height:12px;
+}
+.wx-merge-icon{
+    position: absolute;
+    top: 2px;
+    left: 32px;
+    font-size: 12px;
+    color: #09f;
+}
+.rightContent{
+    background: #fff;
+}
+.table > thead:first-child > tr:first-child > th{padding:10px;font-weight: lighter;}
+.fansList tr,.table-striped > tbody > tr:nth-of-type(2n+1){background: #fff;}
+.table > tbody > tr > td{padding:10px;}
+.table > tbody > tr:hover{background: rgb(247,247,247)}
+.closebtn{border: 1px solid #ccc;color: #ccc;background: #fff;padding: 6px 20px;}
+.closebtn:hover{border: 1px solid #ccc;background-color: #f7f7f7;color: #ccc;}
+#pager-example-panel-allFans .list-paging{
+    padding:10px 20px;
+    background: #fff;
+}
+@media screen and (max-width: 1360px) {
+    .table-striped .hyperTr.groupList>td {
+        max-width: 142px;
+    }
+    .table > thead:first-child > tr:first-child > th{padding:15px 6px;}
+}
+
+.editInsType,.editSale{margin-right:12px;}
+.delInsType,.delSale{color:red;}
+/*新建优惠类型的按钮*/
+#addToSale .saveTask:hover,#myModalRate .sureDelRate:hover,
+#addToRate .saveTask:hover,#addToInsType .saveTask:hover,#myModal .sureDelInsType:hover,#myModalSale .sureDelSale:hover{
+    background-color: #06c;
+    border: 1px solid #06c;
+    color: #fff;
+}
+#addToSale .saveTask,#myModalRate .sureDelRate,
+#addToRate .saveTask,#addToInsType .saveTask,#myModal .sureDelInsType,#myModalSale .sureDelSale{
+    background-color: #09f;
+    border: 1px solid #09f;
+    color: #fff;
+}
+#addToSale .closeBtn,#myModalRate .closeBtn,
+#addToRate .closeBtn,#addToInsType .closeBtn,#myModal .closeBtn,#myModalSale .closeBtn{
+    padding: 6px 20px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    background: #fff;
+}
+.editRate{margin-right: 10px;}
+.delCom span{color:red;}

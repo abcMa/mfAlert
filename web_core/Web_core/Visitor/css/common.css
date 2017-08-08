@@ -1,0 +1,23 @@
+html,body,ul,li,p{
+    margin:0;
+    padding:0;
+}
+html,body{
+    background-color: #eff3f8;font-size: 16px;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@font-face {
+    font-family: 'iconfont';  /* project id 125778 */
+    src: url('//at.alicdn.com/t/font_3hc87aaksvtv5cdi.eot');
+    src: url('//at.alicdn.com/t/font_3hc87aaksvtv5cdi.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_3hc87aaksvtv5cdi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_3hc87aaksvtv5cdi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_3hc87aaksvtv5cdi.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}

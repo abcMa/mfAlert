@@ -1,0 +1,424 @@
+﻿@font-face {
+    font-family: 'iconfont';
+    src: url('//at.alicdn.com/t/font_5oj8yirv3j21q0k9.eot');
+    src: url('//at.alicdn.com/t/font_5oj8yirv3j21q0k9.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_5oj8yirv3j21q0k9.woff') format('woff'), url('//at.alicdn.com/t/font_5oj8yirv3j21q0k9.ttf') format('truetype'), url('//at.alicdn.com/t/font_5oj8yirv3j21q0k9.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: rgb(239, 243, 248);
+}
+
+.container {
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+    .container .container-body {
+        min-height: 800px;
+        background: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        margin-top: 20px;
+        display: inline-block;
+        max-height: 800px;
+        overflow-y: auto;
+    }
+
+        .container .container-body .operation-panel {
+            position: relative;
+        }
+
+            .container .container-body .operation-panel .bootstrap-select button {
+                padding: 6px 15px;
+            }
+
+            .container .container-body .operation-panel input.condition-input {
+                display: inline-block;
+                width: 120px;
+                margin-left: 5px;
+            }
+
+                .container .container-body .operation-panel input.condition-input.small {
+                    width: 60px;
+                    margin: 0 8px 0 20px;
+                }
+
+            .container .container-body .operation-panel .condition-tag-text-area {
+                height: 120px;
+                max-height: 120px;
+                overflow-y: auto;
+                resize: none;
+            }
+
+            .container .container-body .operation-panel .condition-tag-select-area {
+                height: 120px;
+                max-height: 120px;
+                overflow-y: auto;
+                border: 2px solid #eee;
+                padding: 0 5px;
+                border-radius: 5px;
+            }
+
+                .container .container-body .operation-panel .condition-tag-select-area .tag {
+                    border-radius: 5px;
+                    margin: 2px;
+                }
+
+            .container .container-body .operation-panel .consition-tag-arrow {
+                height: 140px;
+                max-height: 140px;
+                overflow: hidden;
+            }
+
+                .container .container-body .operation-panel .consition-tag-arrow .iconfont {
+                    display: block;
+                    margin-left: 0;
+                    line-height: 0;
+                    margin-top: 110px;
+                    font-size: 36px;
+                }
+
+        .container .container-body .nav-pills li {
+            width: 50%;
+            margin: 0;
+            border-radius: 0;
+            background: #fff;
+        }
+
+
+            .container .container-body .nav-pills li a {
+                text-align: center;
+                border-radius: 0;
+                color: #aaa;
+                font-size: 22px;
+                border-bottom: 5px solid #aaa;
+            }
+
+                .container .container-body .nav-pills li a:hover {
+                    background: #fff;
+                    border-bottom: 5px solid #2ea4ed;
+                    color: #2ea4ed;
+                }
+
+            .container .container-body .nav-pills li.active a {
+                background: #fff;
+                border-bottom: 5px solid #2ea4ed;
+                color: #2ea4ed;
+                font-size: 22px;
+            }
+
+                .container .container-body .nav-pills li.active a:hover {
+                    background: #fff;
+                }
+
+        .container .container-body h1 {
+            line-height: 50px;
+        }
+
+        .container .container-body .operation-link-line {
+            border-left: 2px #eee solid;
+            left: 40px;
+            position: absolute;
+            height: 100%;
+        }
+
+        .container .container-body .operation-item-container {
+            min-height: 200px;
+        }
+
+            .container .container-body .operation-item-container .item-header span.start {
+                height: 50px;
+                width: 50px;
+                line-height: 50px;
+                text-align: center;
+                background: rgb(239, 243, 248);
+                color: #000;
+                border-radius: 5px;
+                display: block;
+                padding-top: 6px;
+            }
+
+                .container .container-body .operation-item-container .item-header span.start i {
+                    font-size: 36px;
+                }
+
+            .container .container-body .operation-item-container .item-header span.event {
+                height: 50px;
+                width: 50px;
+                line-height: 50px;
+                text-align: center;
+                background: rgb(255, 125, 126);
+                color: #fff;
+                border-radius: 5px;
+                display: block;
+                padding-top: 6px;
+            }
+
+                .container .container-body .operation-item-container .item-header span.event i {
+                    font-size: 36px;
+                }
+
+            .container .container-body .operation-item-container .item-header span.action {
+                height: 50px;
+                width: 50px;
+                line-height: 50px;
+                text-align: center;
+                background: #2ea4ed;
+                color: #fff;
+                border-radius: 5px;
+                display: block;
+                padding-top: 8px;
+            }
+
+                .container .container-body .operation-item-container .item-header span.action i {
+                    font-size: 36px;
+                }
+
+            .container .container-body .operation-item-container .item-header span.adding {
+                height: 50px;
+                width: 50px;
+                line-height: 50px;
+                text-align: center;
+                background: rgb(239, 243, 248);
+                color: #000;
+                border-radius: 5px;
+                display: block;
+                padding-top: 6px;
+            }
+
+                .container .container-body .operation-item-container .item-header span.adding i {
+                    font-size: 18px;
+                }
+
+            .container .container-body .operation-item-container .item-body .new-condition .condition-item {
+                display: inline-block;
+                font-size: 14px;
+            }
+
+            .container .container-body .operation-item-container .item-body .new-condition span.icon-minus-sign {
+                font-size: 20px;
+                margin-right: 8px;
+                cursor: pointer;
+                color: red;
+            }
+
+            .container .container-body .operation-item-container .item-body .new-condition span.icon-plus-sign {
+                font-size: 20px;
+                margin-right: 8px;
+                cursor: pointer;
+                color: greenyellow;
+            }
+
+            .container .container-body .operation-item-container .item-body .new-condition.adding {
+                margin-top: 10px;
+            }
+
+            .container .container-body .operation-item-container .item-body .item-sms-content {
+                text-indent: 2em;
+            }
+
+            .container .container-body .operation-item-container .item-body .sms-info p {
+                color: #aaa;
+                margin: 0;
+            }
+
+            .container .container-body .operation-item-container .item-body .panel-heading {
+                color: #fff;
+            }
+
+                .container .container-body .operation-item-container .item-body .panel-heading span {
+                    font-size: 20px;
+                    color: #fff;
+                    margin-left: 15px;
+                    cursor: pointer;
+                }
+
+                .container .container-body .operation-item-container .item-body .panel-heading.event {
+                    background: rgb(255, 125, 126);
+                }
+
+                .container .container-body .operation-item-container .item-body .panel-heading.action {
+                    background: #2ea4ed;
+                }
+
+            .container .container-body .operation-item-container .adding-condition-panel {
+                border-radius: 5px;
+                line-height: 80px;
+                height: 80px;
+                text-align: center;
+                background: rgb(239, 243, 248);
+                border: 1px dashed #aaa;
+            }
+
+                .container .container-body .operation-item-container .adding-condition-panel p {
+                    margin: 0;
+                    font-size: 14px;
+                    color: #aaa;
+                    border-radius: 5px;
+                }
+
+                .container .container-body .operation-item-container .adding-condition-panel.action-highlight {
+                    box-shadow: 0 0 20px rgba(46, 164, 237, 0.5);
+                }
+
+                    .container .container-body .operation-item-container .adding-condition-panel.action-highlight.action-entered {
+                        background: rgba(46, 164, 237,0.5);
+                    }
+
+                .container .container-body .operation-item-container .adding-condition-panel.event-highlight {
+                    box-shadow: 0 0 20px rgba(255, 125, 126, 0.5);
+                }
+
+                    .container .container-body .operation-item-container .adding-condition-panel.event-highlight.event-entered {
+                        background: rgba(255, 125, 126,0.5);
+                    }
+
+            .container .container-body .operation-item-container .start-panel {
+                border-radius: 5px;
+                line-height: 50px;
+                height: 50px;
+                padding-left: 15px;
+                background: rgb(239, 243, 248);
+                border: 1px solid #aaa;
+                overflow: hidden;
+            }
+
+                .container .container-body .operation-item-container .start-panel button {
+                    height: 30px;
+                    padding: 5px 10px;
+                    margin-bottom: 5px;
+                }
+
+                .container .container-body .operation-item-container .start-panel .reset-title {
+                    cursor: pointer;
+                    color: #aaa;
+                    display: inline-block;
+                    line-height: 0;
+                }
+
+                    .container .container-body .operation-item-container .start-panel .reset-title:hover {
+                        color: #000;
+                    }
+
+            .container .container-body .operation-item-container .tool-right {
+                float: right;
+                margin-right: 15px;
+            }
+
+        .container .container-body .tool-list-search {
+            margin-top: 15px;
+            padding: 0 10px;
+        }
+
+        .container .container-body .tool-list .action-item {
+            background: #eee;
+            border-radius: 5px;
+            margin: 10px;
+            height: 50px;
+        }
+
+            .container .container-body .tool-list .action-item .drag-bar {
+                display: inline-block;
+                overflow: hidden;
+                width: 10%;
+                cursor: move;
+                height: 50px;
+                float: left;
+                text-align: center;
+                padding-top: 18px;
+            }
+
+                .container .container-body .tool-list .action-item .drag-bar span {
+                    display: inline-block;
+                    line-height: 50px;
+                    font-size: 22px;
+                }
+
+            .container .container-body .tool-list .action-item .item-content {
+                display: inline-block;
+                height: 50px;
+                width: 90%;
+                float: left;
+                line-height: 50px;
+                font-size: 20px;
+            }
+
+        .container .container-body .tool-list .event-item {
+            background: #eee;
+            border-radius: 5px;
+            margin: 10px;
+            height: 50px;
+        }
+
+            .container .container-body .tool-list .event-item .drag-bar {
+                display: inline-block;
+                overflow: hidden;
+                width: 10%;
+                cursor: move;
+                height: 50px;
+                float: left;
+                text-align: center;
+                padding-top: 18px;
+            }
+
+                .container .container-body .tool-list .event-item .drag-bar span {
+                    display: inline-block;
+                    line-height: 50px;
+                    font-size: 22px;
+                }
+
+            .container .container-body .tool-list .event-item .item-content {
+                display: inline-block;
+                height: 50px;
+                width: 90%;
+                float: left;
+                line-height: 50px;
+                font-size: 20px;
+            }
+
+        .container .container-body .tool-list .action-seperate-line {
+            border-top: 2px solid #aaa;
+            width: 90%;
+            margin: 24px auto;
+        }
+
+        .container .container-body .operation-item-container .remove-container:hover {
+            box-shadow: 0 0 15px rgba(255,255,255,0.5);
+        }
+
+.drag-helper {
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+    line-height: 50px;
+    text-align: center;
+    display: block;
+    padding-top: 6px;
+    z-index: 9;
+}
+
+    .drag-helper span.iconfont {
+        font-size: 36px;
+        color: #fff;
+    }
+
+    .drag-helper.action {
+        background: #2ea4ed;
+    }
+
+    .drag-helper.event {
+        background: rgb(255, 125, 126);
+    }
+
+    .drag-helper.default {
+        background: #eee;
+    }

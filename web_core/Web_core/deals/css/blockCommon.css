@@ -1,0 +1,102 @@
+.stageContent{
+    height: 100%;
+    padding: 0px;
+    margin:0px;
+    border: 1px solid #dfe3eb;
+    background-color: #f5f8fa;
+}
+.stageContent li.stageBlock{
+    float: left;
+    width: 260px;
+    height: 100%;
+    border-right: 1px solid #dfe3eb ;
+    position: relative;
+}
+.stageContent li .header{
+    padding: 10px 8px;
+    border-bottom: 1px solid #dfe3eb ;
+    height: 60px;
+}
+.stageContent li .header .title,
+.stageContent li .header .stage{
+    overflow: hidden;
+}
+.stageContent li .header h3{
+    float: left;
+    margin:0px;
+}
+.stageContent li .header span.num{
+    float: right;
+}
+.stageContent li .header ul{
+    width:100%;
+    padding: 0px;
+    overflow: hidden;
+}
+.stageContent li .header .stage div{
+    float: left;
+    padding-right: 10px;
+    /*width:15%;*/
+}
+.stageContent li.stageBlock .header .stage div span{
+    display: inline-block;
+    width:100%;
+    height: 4px;
+    background-color: red;
+}
+.column {
+    width:230px;
+    padding: 0px;
+    padding-top: 15px;
+    float: left;
+    padding-bottom: 100px;
+    margin-left: 15px;
+}
+.portlet {
+    margin: 0 0em 1em 0;
+    /*padding: 0.3em;*/
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+    border: none;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+}
+.portlet-header {
+    width:100%;
+    height: 100%;
+    position: relative;
+}
+.portlet-header .time{
+    color:#555;
+}
+.portlet-header a:hover{
+    text-decoration: none;
+}
+.ui-widget-header {
+    border: none;
+    background-color: white;
+    color: #222;
+    font-weight: 700;
+}
+.portlet-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+}
+.portlet-content {
+    padding: 0.4em;
+}
+.portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+}
+/*333*/
+.stageContent .column .portlet a{
+    display: inline-block;
+    width:100%;
+    height: 100%;
+    line-height: 30px;
+    color:#0091ae;
+}

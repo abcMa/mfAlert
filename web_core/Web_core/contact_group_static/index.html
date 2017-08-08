@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>静态客户群画像</title>
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet"/>
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+    <link href="../Content/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet"/>
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../Content/Style/standard.css"/>
+    <link href="Style/Common.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="row">
+    <div class="col-lg-12" style="min-height: 1300px;">
+        <div class="left-section">
+            <div id="group_info"></div>
+        </div>
+        <div class="right-section">
+            <div class="g-main">
+                <ul class="nav nav-tabs group-nav" role="tablist">
+                    <li role="presentation" class="active">
+                        <a id="g-report-tab" href="#g-analysis" aria-controls="profile" role="tab" data-toggle="tab">
+                            <span class="title">成 员</span>
+                            <span id="g-members-count" class="badge">0</span>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#g-campaigns" aria-controls="profile" role="tab" data-toggle="tab">
+                            <span class="title">活 动</span>
+                            <span id="g-campaigns-counts" class="badge">0</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="g-analysis">
+                        <div id="g_member_list" class="member-info"></div>
+                        <div id="g_member_report" class="member-info"
+                             style="display: none;padding: 15px;min-height:400px"></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="g-campaigns">
+                        <div id="g_campaign_list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='modal fade' id='taskModal' tabindex='-1' role='dialog' aria-labelledby='blable' data-backdrop='static'>
+    <div class='modal-dialog' role='document' style="width:50%;max-width: 500px;">
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span>
+                </button>
+                <h4 class='modal-title' id='blable'>创建任务</h4>
+            </div>
+            <div class='modal-body'>
+                <p>当前选择 <span id="select_count"></span> 条</p>
+                <form id="task-form">
+                    <div class="form-group">
+                        <label>任务名称</label>
+                        <input type="text" id="taskName" name="taskName" class="form-control" placeholder="请输入任务名称"/>
+                    </div>
+                    <div class="form-group">
+                        <label>任务状态</label>
+                        <select id="taskStatus" name="taskStatus" class="form-control">
+                            <option value="">请选择...</option>
+                            <option value="0">未开始</option>
+                            <option value="1">进行中</option>
+                            <option value="2">已完成</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>截止时间</label>
+                        <input type="text" id="endTime" name="endTime" class="form-control datepicker"
+                               placeholder="请输入截止时间"/>
+                    </div>
+                    <div class="form-group">
+                        <label>任务描述</label>
+                        <textarea id="taskDes" name="taskDes" class="form-control" placeholder="请输入任务描述"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>任务类型</label>
+                        <select id="taskType" name="taskType" class="form-control">
+                            <option value="">请选择...</option>
+                            <option value="1">提醒</option>
+                            <option value="2">关怀</option>
+                            <option value="3">回访</option>
+                            <option value="4">营销</option>
+                            <option value="5">其它</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>负责人</label>
+                        <div class="input-group">
+                            <input id="taskAssign" type="text" class="form-control" readonly="readonly"
+                                   placeholder="请选择负责人">
+                            <span class="input-group-btn">
+                                    <button class="btn commonBtn" type="button" id="task_assign_search">
+                                        <span class="fa fa-search"></span>
+                                    </button>
+                                </span>
+                        </div>
+                    </div>
+                </form>
+                <div id="task_assign_search_list" style="display: none;"></div>
+            </div>
+            <div class='modal-footer'>
+                <button type='button' id="task_Submit" class='btn commonBtn' data-loading-text="
+                        <span class='icon-spin icon-spinner'></span>执行中">
+                    确定
+                </button>
+                <button type='button' class='btn commonBtn revert' data-dismiss='modal' style='margin-left:5px;'>取消
+                </button>
+                <button type='button' id="task_assign_select" class='btn commonBtn search-list'>选择</button>
+                <button type='button' id="task_assign_cancel" class='btn commonBtn revert search-list'
+                        style='margin-left:5px;'>取消
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='modal fade' id='selectMemberModal' tabindex='-1' role='dialog' aria-labelledby='blable'
+     data-backdrop='static'>
+    <div class='modal-dialog' role='document' style="width:50%;max-width: 1200px;min-width: 800px;">
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span>
+                </button>
+                <h4 class='modal-title' id='blable'>添加成员</h4>
+            </div>
+            <div class='modal-body' style="min-height: 300px;padding: 0;">
+                <div id="addMemberList"></div>
+            </div>
+            <div class='modal-footer'>
+                <div class="btn-group">
+                    <button type='button' id="add_member_Submit" class='btn commonBtn dropdown-toggle'
+                            data-toggle="dropdown" data-loading-text="
+                            <span class='icon-spin icon-spinner'></span>执行中" aria-haspopup="true" aria-expanded="false">
+                        添加 <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" id="add_member_select">选中</a></li>
+                        <li><a href="#" id="add_member_all">全部筛选结果</a></li>
+                    </ul>
+                </div>
+                <button type='button' class='btn commonBtn revert' data-dismiss='modal' style='margin-left:5px;'>取消
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.js"></script>
+<script src="../Content/bootstrap/js/bootstrapValidator.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-switch.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../Content/JS/highcharts-new.js"></script>
+<script src="../Content/JS/highcharts-3d-new.js"></script>
+<script src="http://cdn.hcharts.cn/highcharts/modules/drilldown.js"></script>
+<script src="../Content/JS/highcharts-themes.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script src="JS/widget.js"></script>
+<script>
+    Iptools.Start();
+    widget._init();
+</script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>全部任务</title>
+    <link rel="stylesheet" href="../Content/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css"/>
+    <link rel="stylesheet" href="../Content/bootstrap/css/bootstrap-multiselect.css"/>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_byzfm05z14ptx1or.css">
+    <link rel="stylesheet" href="../Content/bootstrap/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../Content/Style/standard.css"/>
+    <!--<link rel="stylesheet" href="../Content/bootstrap/css/bootstrap-tour.css"/>-->
+    <link rel="stylesheet" href="css/mianban.css"/>
+    <link rel="stylesheet" href="../deals/css/blockCommon.css"/>
+    <link rel="stylesheet" href="css/task.css"/>
+</head>
+<body>
+<div class="mainSection">
+    <div class="contents">
+        <div class="leftTask">
+            <div class="leftMainTitle">
+                <div class="screenTitle">
+                    <i class="icon iconfont iconScreenTitle">&#xe7bc;</i>
+                    <span class="screenWord">任务看板</span>
+                </div>
+                <div class="screenContent">
+                </div>
+            </div>
+            <div class="leftMainContent">
+                <div class="leftNavContent">
+                    <i class="icon iconfont iconScreenTitle">&#xe7bc;</i>
+                    <span class="screenWord">视图筛选</span>
+                </div>
+                <div class="completeTask taskPadding">
+                    <input type="checkbox" class="blueCheckbox completeTaskInput">
+                    <span class="completeTaskWord taskSize">隐藏已完成任务</span>
+                </div>
+                <div class="deferredTask taskPadding">
+                    <input type="checkbox" class="blueCheckbox deferredTaskInput">
+                    <span class="deferredTaskWord taskSize">置顶逾期任务</span>
+                </div>
+                <div class="deferredTask taskPadding">
+                    <input type="checkbox" class="blueCheckbox deferredTaskInput" id="taskType">
+                    <span class="deferredTaskWord taskSize">任务类型</span>
+                    <select class="form-control allTask" id="allTaskType">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="rightTask">
+            <div class="header-content">
+                <div id="test" class="row"></div>
+            </div>
+            <div id="test_panel">
+                <div class="stage_main_content">
+                    <div class="panelTour">
+                        <div class="header"  data-id="0">
+                            <div class="title"><h3>未开始</h3><span class="num numW">0</span></div>
+                        </div>
+                        <div class="header"  data-id="1">
+                            <div class="title"><h3 >进行中</h3><span class="num numS">0</span></div>
+                        </div>
+                        <div class="header"  data-id="2">
+                            <div class="title"><h3>完成</h3><span class="num numT">0</span></div>
+                        </div>
+                        <!--<div class="header"  data-id="4">-->
+                            <!--<div class="title"><h3>等待</h3><span class="num numNot">0</span></div>-->
+                        <!--</div>-->
+                    </div>
+                    <ul class="stageContent">
+                        <li class="stageBlock">
+                            <div class="header"  data-id="0">
+                                <div class="title"><h3>未开始</h3><span class="num numW">0</span></div>
+                            </div>
+                            <ul class="column statusW">
+                            </ul>
+                        </li>
+                        <li class="stageBlock">
+                            <div class="header tourHead"  data-id="1">
+                                <div class="title"><h3 id="tourNew">进行中</h3><span class="num numS" id="tourNums">0</span></div>
+                            </div>
+                            <ul class="column status">
+                            </ul>
+                        </li>
+                        <li class="stageBlock" style="border-right: none">
+                            <div class="header"  data-id="2">
+                                <div class="title"><h3>完成</h3><span class="num numT">0</span></div>
+                            </div>
+                            <ul class="column statusT">
+                            </ul>
+                        </li>
+                        <!--<li class="stageBlock" style="border-right: none;">-->
+                            <!--<div class="header"  data-id="4">-->
+                                <!--<div class="title"><h3>等待</h3><span class="num numNot">0</span></div>-->
+                            <!--</div>-->
+                            <!--<ul class="column statusNot">-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="newTaskModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="newModalLabel">添加任务</h4>
+            </div>
+            <div class="modal-body">
+                <div class="addModal"></div>
+                <form id="editNewTaskForm">
+                    <div class="form-group">
+                        <label for="modalTaskName" class="titleName">任务名称</label>
+                        <input type="text" class="form-control" name="modalNewTaskName" id="modalNewTaskName" placeholder="请输入任务名称" onkeydown="return banInputSapce(event)">
+                    </div>
+                    <div class="form-group">
+                        <label for="modalNewTaskStatus" class="modalNewTaskStatus">任务状态</label>
+                        <select class="form-control" id="modalNewTaskStatus" name="modalNewTaskStatus">
+                        </select>
+                    </div>
+                    <div class="form-group addHeight">
+                        <label for="modalTaskContact" class="titleName">添加关系</label>
+                        <div id="modalNewTaskContact">
+                            <div class="addTask">
+                                <span class="addNewLeft">
+                                    <i class="icon iconfont iconAdd">&#xe7a4;</i>
+                                    <span class="addCustomers">添加客户</span>
+                                </span>
+                                <span class="newNewCustomer" style="display: none;">
+                                    <i class="fa fa-user "></i>
+                                      <span class="addNewCustomerVal">
+
+                                      </span>
+                                    <i class="fa fa-close addNewCustomers">&#xe67c;</i>
+                                </span>
+                                <span class="addNewRight">
+                                    <i class="icon iconfont iconAdd">&#xe7a4;</i>
+                                    <span class="buildCarOwner">添加车主</span>
+                                </span>
+                                <span class="newBuildCarOwner" style="display: none;">
+                                    <i class="fa fa-car"></i>
+                                      <span class="newBuildCarOwnerVal">
+
+                                      </span>
+                                    <i class="fa fa-close addNewNewCarOwner"></i>
+                                </span>
+                            </div>
+                            <div class="input-group addCustomerData">
+                                <input class="form-control searchConInput addNewTaskCustomer" placeholder="输入姓名或电话号码查询客户" type="text" style="width:426px;" AutoComplete="off">
+                                <span class="input-group-btn" style="position: static;">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1" aria-expanded="false" style="background: #efefef;">
+                                        <span class="caret" style="margin-top:-6px;color:#333;"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-left conListBySearchs" role="menu" style="width:426px;max-height: 215px;overflow-y: scroll;">
+                                        <li role="presentation" class="disabled">
+                                                <a role="menuitem" tabindex="-1" class="hint-link">请输入关键字...</a>
+                                        </li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="input-group newBuildCarOwnerData">
+                                <input class="form-control searchConInput newBuildTaskCarOwner" placeholder="输入姓名或电话号码查询车主" type="text" style="width:426px;" AutoComplete="off">
+                                <span class="input-group-btn" style="position: static;">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1" aria-expanded="false" style="background: #efefef;">
+                                        <span class="caret" style="margin-top:-6px;color:#333;"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-left newBuildCarOwnerListBySearch" role="menu" style="width:426px;max-height: 215px;overflow-y: scroll;">
+                                        <li role="presentation" class="disabled">
+                                            <a role="menuitem" tabindex="-1" class="hint-link">请输入关键字...</a>
+                                        </li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="">截止日期</label>
+                        <input type="text" class="form-control datepicker" readonly name="modalNewTimeDay" id="modalNewTimeDay" placeholder="请选择截止时间">
+                    </div>
+                    <div class="form-group groupHeight">
+                        <label for="modalTaskDepict" class="modalTaskDepict">任务描述</label>
+                        <textarea class="form-control taskDepict" name="modalTaskDepict" id="modalNewTaskDepict" placeholder="请输入任务描述(最多45字符)" style="resize: none;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="modalTaskType" class="modalTaskType">任务类型</label>
+                        <select class="form-control" id="modalNewTaskType" name="modalTaskType">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label  class="modalTaskPerson">负责人</label>
+                        <div class="input-group">
+                            <input class="form-control searchOwnerInput searchOwnerTaskNewInput" placeholder="搜索名字或者电话号码" id="owner" type="text" style="width:426px;" AutoComplete="off">
+                               <span class="input-group-btn" style="position: static;">
+                                    <button type="button" class="btn btn-default dropdowns-toggle" data-toggle="dropdown" tabindex="-1" aria-expanded="false" style="height: 34px;background: #efefef;border-top-right-radius: 4px;border-bottom-right-radius: 4px;">
+                                        <span class="caret" style="margin-top:-6px;color:#333;"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-left searchOwnerListNewInput" role="menu" style="width:426px;max-height: 215px;overflow-y: scroll;">
+                                        <li role="presentation" class="disabled">
+                                            <a role="menuitem" tabindex="-1" class="hint-link">请输入关键字...</a>
+                                        </li>
+                                    </ul>
+                               </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn cancel" data-dismiss="modal">取 消</button>
+                <button type="button" class="btn commonBtn newConfirmBtn">确 认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myTaskModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">编辑任务</h4>
+            </div>
+            <div class="modal-body">
+                <div class="addModal"></div>
+                <form id="editTaskForm">
+                    <div class="form-group">
+                        <label for="modalTaskName" class="titleName">任务名称</label>
+                        <input type="text" class="form-control" name="modalTaskName" id="modalTaskName" placeholder="请输入任务名称" onkeydown="return banInputSapce(event)">
+                    </div>
+                    <div class="form-group">
+                        <label for="modalTaskStatus" class="modalTaskStatus">任务状态</label>
+                        <select class="form-control" id="modalTaskStatus" name="modalTaskStatus">
+                        </select>
+                    </div>
+                    <div class="form-group addHeight">
+                        <label for="modalTaskContact" class="titleName">添加关系</label>
+                        <div id="modalTaskContact">
+                            <div class="addTask">
+                                <span class="addLeft">
+                                    <i class="icon iconfont iconAdd">&#xe7a4;</i>
+                                    <span class="addCustomer">添加客户</span>
+                                </span>
+                                <span class="newCustomer">
+                                    <i class="fa fa-user"></i>
+                                      <span class="addCustomerVal">
+
+                                      </span>
+                                    <i class="fa fa-close addNewCustomer"></i>
+                                </span>
+                                <span class="addRight">
+                                    <i class="icon iconfont iconAdd">&#xe7a4;</i>
+                                    <span class="addTransaction">添加车主</span>
+                                </span>
+                                <span class="newCarOwner">
+                                    <i class="fa fa-car"></i>
+                                      <span class="addCarOwnerName">
+
+                                      </span>
+                                    <i class="fa fa-close addNewCarOwner"></i>
+                                </span>
+                            </div>
+                            <div class="input-group addCustomerData">
+                                <input class="form-control searchConInput addTaskCustomer" placeholder="输入姓名或电话号码查询客户" type="text" style="width:426px;" AutoComplete="off">
+                                    <span class="input-group-btn" style="position: static;">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1" aria-expanded="false" style="background: #efefef;">
+                                            <span class="caret" style="margin-top:-6px;color:#333;"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-left conListBySearch" role="menu" style="width:426px;max-height: 215px;overflow-y: scroll;">
+                                            <li role="presentation" class="disabled">
+                                                <a role="menuitem" tabindex="-1" class="hint-link">请输入关键字...</a>
+                                            </li>
+                                        </ul>
+                                    </span>
+                            </div>
+                            <div class="input-group carOwner">
+                                <!--<select name="" id="addCarOwner" class="addCarOwner">-->
+                                    <!--<option value=""></option>-->
+                                <!--</select>-->
+                                <input class="form-control searchConInput searchCarOwnerInput" placeholder="输入姓名或电话号码查询车主" type="text" style="width:426px;display: inline">
+                                    <span class="input-group-btn" style="position: static;">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1" aria-expanded="false" style="background: #efefef;">
+                                            <span class="caret" style="margin-top:-6px;color:#333;"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-left carListBySearch" role="menu" style="width:426px;max-height: 215px;overflow-y: scroll;">
+                                            <li role="presentation" class="disabled">
+                                                <a role="menuitem" tabindex="-1" class="hint-link">请输入关键字...</a>
+                                            </li>
+                                        </ul>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="">截止日期</label>
+                        <input type="text" class="form-control datepicker" readonly name="modalTimeDay" id="modalTimeDay" placeholder="请选择截止时间">
+                    </div>
+                    <div class="form-group groupHeight">
+                        <label for="modalTaskDepict" class="modalTaskDepict">任务描述</label>
+                        <textarea class="form-control taskDepict" name="modalTaskDepict" id="modalTaskDepict" placeholder="请输入任务描述(最多45字符)" style="resize: none;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="modalTaskType" class="modalTaskType">任务类型</label>
+                        <select class="form-control" id="modalTaskType" name="modalTaskType">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label  class="modalTaskPerson">负责人</label>
+                        <div class="input-group">
+                            <input class="form-control searchOwnerTaskInput" placeholder="搜索名字或者电话号码" id="ownerTwo" type="text" style="width:426px;" AutoComplete="off">
+                               <span class="input-group-btn" style="position: static;">
+                                    <button type="button" class="btn btn-default dropdowns-toggle" data-toggle="dropdown" tabindex="-1" aria-expanded="false" style="height: 34px;background: #efefef;border-top-right-radius: 4px;border-bottom-right-radius: 4px;">
+                                         <span class="caret" style="margin-top:-6px;color:#333;"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-left searchOwnerListInput" role="menu" style="width:426px;max-height: 215px;overflow-y: scroll;">
+                                         <li role="presentation" class="disabled">
+                                             <a role="menuitem" tabindex="-1" class="hint-link">请输入关键字...</a>
+                                         </li>
+                                    </ul>
+                               </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn cancel" data-dismiss="modal">取 消</button>
+                <button type="button" class="btn commonBtn uploadTask">确 认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="js/jquery.mousewheel.js"></script>
+<script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.js"></script>
+<!--<script src="../Content/bootstrap/js/bootstrapValidator.min.js"></script>-->
+<script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-multiselect.js"></script>
+<!--<script src="../Content/bootstrap/js/bootstrap-tour.js"></script>-->
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script src="js/tasks.js"></script>
+<script>
+    Iptools.Start();
+    taskWidget._init();
+    function banInputSapce(e){
+        var keynum;
+        if(window.event) // IE
+        {
+            keynum = e.keyCode
+        }
+        else if(e.which) // Netscape/Firefox/Opera
+        {
+            keynum = e.which
+        }
+        if(keynum == 32){return false;}
+        return true;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+body{
+    background-color: #eff3f8;
+}
+#onStarList{
+    background-color: #fff;
+}
+.s-empty-container img.e-img-fc{
+    cursor: default;
+}
+.del-managmen {
+    font-size: 16px;
+    color: #ff7d7e;
+}

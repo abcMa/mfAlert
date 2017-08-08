@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>易掌CRM-权限管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../style/common_admin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_byzfm05z14ptx1or.css">
+    <link href="../../Content/JS/themes/default/style.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid" style="padding: 0 33px;">
+        <div class="row" style="margin-right:0;margin-left:0;">
+            <div class="main" style="padding: 0 37px;">
+                <div class="left-content col-md-9" style="padding-right: 20px;">
+                    <h3 class="">编辑权限</h3>
+                    <p style="width:40%">
+                        <span>权限名称：</span>
+                        <input type="text" id="roleName" class="form-control" />
+                    </p>
+                    <p>权限列表：</p>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#viewsanddata" role="tab" data-toggle="tab">视图权限</a></li>
+                        <li role="presentation"><a href="#humanresource" role="tab" data-toggle="tab">人事架构权限</a></li>
+                        <li role="presentation"><a href="#dataresponsibility" role="tab" data-toggle="tab">数据权限</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="viewsanddata">
+                            <div class="col-sm-12" style="padding: 15px 0;">
+                                <div id="res_Tree" class="roleList"></div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="humanresource">
+                            <div class="col-sm-12" style="padding: 15px 0;">
+                                <p>组织架构：</p>
+                                <div class="btn-group" style="width:40%;">
+                                    <button id="org_tree_select" type="button" class="btn btn-default dropdown-toggle org-tree-select"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-id="0">
+                                        未选择
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" style="width: auto;min-width: 100%">
+                                        <div id="org_tree"></div>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-default btn-org-add"><span class="icon-plus"></span></button>
+                            </div>
+                            <div class="col-sm-12" style="padding: 15px 0;">
+                                <p>已选择节点：</p>
+                                <ul id="choose_res_org_list"></ul>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="dataresponsibility">
+                            <div class="col-sm-12" style="padding:0;">
+                                <div class="page-header" style="margin-top: 20px;border-bottom: none;">
+                                    <h3>可配置数据列表</h3>
+                                </div>
+                                <div class="list-group data-res-panel"></div>
+                                <div style="position: absolute; padding: 0; z-index: 9;top: 0">
+                                    <div id="applet_res_panel" class="res-panel">
+                                        <div class="hidebar"><span class="icon-remove"></span></div>
+                                        <div class="col-sm-4">
+                                            <div class="page-header">
+                                                <h4>可选过滤项</h4>
+                                            </div>
+                                            <div class="list-group res-data-columns" style="margin: 20px 0"></div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div class="page-header">
+                                                <h4>配置过滤规则</h4>
+                                            </div>
+                                            <div class="input-group type-select" style="margin: 20px 0;">
+                                                <span class="input-group-addon">类别</span>
+                                                <select id="res_data_type" class="selectpicker form-control">
+                                                    <option value="">请选择...</option>
+                                                    <option value="1">in 组织列表</option>
+                                                    <option value="2">in 登陆人组织</option>
+                                                    <option value="3">in 职位列表</option>
+                                                    <option value="4">in 登陆人职位</option>
+                                                    <option value="5">等于登陆人</option>
+                                                </select>
+                                            </div>
+                                            <div id="res_applet_org_select" class="input-group" style="margin: 20px 0;display: none">
+                                                <span class="input-group-addon">组织</span>
+                                                <div class="btn-group" style="width:100%;">
+                                                    <button id="applet_org_tree_select" type="button" class="btn btn-default dropdown-toggle org-tree-select"
+                                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        无
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" style="min-width: 100%;width: auto">
+                                                        <div class="applet_org_tree"></div>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div id="res_applet_pos_select" class="input-group" style="margin: 20px 0; display: none">
+                                                <span class="input-group-addon">职位</span>
+                                                <div class="btn-group" style="width:100%;">
+                                                    <button id="applet_pos_tree_select" type="button" class="btn btn-default dropdown-toggle org-tree-select"
+                                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        无
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" style="min-width: 100%; width: auto">
+                                                        <div class="applet_pos_tree"></div>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div id="res_applet_node_check" style="margin: 20px 0; display: none">
+                                                <div>
+                                                    <input id="res_applet_conclusive_box" type="checkbox" data-on-text="包含子节点" data-off-text="不包含子节点" />
+                                                </div>
+                                            </div>
+                                            <div id="add_applet_res" style="display: none"><button class="btn" type="button">添加</button></div>
+                                            <div id="choose_res_applet_org_list" class="col-sm-12" style="padding: 15px 0; display: none">
+                                                <p>已选择组织列表：</p>
+                                                <ul></ul>
+                                            </div>
+                                            <div id="choose_res_applet_pos_list" class="col-sm-12" style="padding: 15px 0; display: none">
+                                                <p>已选择职位列表：</p>
+                                                <ul></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer col-sm-12">
+                        <a href="managmentOfRole.html" style="text-decoration: none;">
+                            <button type="button" class="btn">返回</button>
+                        </a>
+                        <button type="button" class="btn" id="commitData">保存</button>
+                    </div>
+                </div>
+                <div class="right-content col-md-3">
+                    <ul>
+                        <li>
+                            <h5 class="">视图与数据权限</h5>
+                            <div>勾选树结构中的节点，添加或删除当前权限所包含的视图，并且配置相应视图的数据权限</div>
+                        </li>
+                        <li>
+                            <h5 class="">人事架构权限</h5>
+                            <div>选择人事架构的节点，所选节点将作为人事架构配置中的根节点，自动包含此节点下所有子节点，所选节点应当不具有包含关系</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../Content/JS/jquery-1.9.1.js"></script>
+    <script src="../../Content/bootstrap/js/bootstrap.js"></script>
+    <script src="../../Content/bootstrap/js/bootstrap-select.min.js"></script>
+    <script src="../../Content/bootstrap/js/bootstrap-switch.min.js"></script>
+    <script src="../../Content/JS/iptools_v2.js"></script>
+    <script src="../../Content/JS/jstree.min.js"></script>
+    <script src="../../Content/JS/jstree.checkbox.js"></script>
+    <script src="../JS/edit-role.js"></script>
+    <script>
+        Iptools.Start({
+            custmomizeUrl: "../../Content/JS/properties.xml"
+        });
+        widget._init();
+    </script>
+</body>
+</html>

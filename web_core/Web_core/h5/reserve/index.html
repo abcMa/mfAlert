@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>H5服务预约</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link href="../css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/intopalmDate-2.14.3.min.css">
+    <link rel="stylesheet" href="../css/weui.css"/>
+    <link rel="stylesheet" href="../css/enroll.css"/>
+    <!--<script src="js/jquery-1.11.1.min.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../../Content/bootstrap/js/bootstrap-notify.min.js"></script>
+    <script src="../js/bootstrapValidator.min.js"></script>
+    <script src="../js/intopalmDate-2.14.3.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=evpqAQ0kPfZvx8l1bgSukTTk06Dsyeoc"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="../js/intopalmSha1.js"></script>
+    <script src="../js/intoplamShare.js" charset="gbk"></script>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script src="../../Content/JS/iptools_v2.js"></script>
+    <script src="../js/common_v2.js"></script>
+</head>
+<body class="top-bd">
+<div class="content" style="overflow: hidden;">
+    <section class="main">
+        <div class="elementHeight">
+        <div class="picture">
+            <img src="" alt=""/>
+        </div>
+        <div class="titled">
+            <div class="title-top"></div>
+            <div class="title-bottom">
+            </div>
+        </div>
+        <!--<div class="name">-->
+            <!--<span class="name-top"></span>-->
+            <!--<div class="company" onclick="toMap()">-->
+                <!--<div class="company-top"></div>-->
+                <!--<div class="company-bottom"></div>-->
+            <!--</div>-->
+            <!--<i class="name-bottom iaon iconfont">&#xe6b7;</i>-->
+        <!--</div>-->
+        <div class="tel">
+            <i class="tel-picture icon iconfont">&#xe665;</i>
+            <div class="phone"><a href=""></a></div>
+            <i class="tel-bottom icon iconfont">&#xe6b7;</i>
+        </div>
+        <div class="notice">
+            <!--<div class="noticeTop">-->
+                <!--<div class="notice-top">-->
+                    <!--<i class="alarm icon iconfont">&#xe669;</i>-->
+                    <!--<div class="notice-app">预约详情</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="notice-bottom">
+                <div class="notice-picture">
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="foots addFoot">
+            <div class="contact">如何联系您？</div>
+            <form>
+                <div class="foot-bottom sub" id="btnn">
+                    <a class="bt" id="btn" >提交</a>
+                </div>
+            </form>
+        </div>
+        <div class="weui_dialog successForm">
+            <!-- 弹框标题 -->
+            <div class="weui_dialog_hd"><strong class="weui_dialog_title"><i class="successIcon icon iconfont">&#xe765;</i></strong></div>
+            <div class="weui_dialog_bd">报名成功!</div>
+            <div class="weui_dialog_ft">
+                <a href="javascript:;" class="weui_btn_dialog primary successPrimary">再次报名</a>
+            </div>
+        </div>
+        <div class="webSideLink">
+            <span>技术支持:</span>
+            <a href="http://www.yizhangke.com/#/" class="webLink">易掌客</a>
+        </div>
+    </section>
+</div>
+<div class="float-btn">
+    <a href="javascript:;"></a>
+</div>
+
+<div class="award" style="position:fixed;">
+    <p>恭喜您获得</p>
+    <p class="awardName"></p>
+    <a href="tel:18332580459">
+        <button>立即领奖</button>
+    </a>
+</div>
+<div class="awardModal">
+
+</div>
+<div id="allmap"></div>
+<script>
+//先判断url内有没有携带租户id和h5id
+    Iptools.Start({
+        baseRoot: false,
+        custmomizeUrl: "../../Content/JS/properties.xml"
+    });
+    if(checkDataInUrl(tenantId)){
+        Iptools.DEFAULTS.tenantId = tenantId;
+    };
+    if(checkDataInUrl(campaignH5_id)){
+        Iptools.DEFAULTS.campaignH5_id = campaignH5_id;
+    };
+    if(checkDataInUrl(token)){
+        Iptools.DEFAULTS.token = token;
+    }
+    var img = "";
+    var formData = [];
+//    Iptools.DEFAULTS.tenantId = 33;
+//    Iptools.DEFAULTS.campaignH5_id = 8;
+
+    Iptools.DEFAULTS.isView = true;
+    stayTime();
+    var timeLength = setInterval("stayTime()",1000);
+    getResAppletId();
+    getStaAppletId();
+    getContactTraceAppletId();
+    getOppApplet();
+    $(document).ready(function(){
+        //页面加载完统计页面浏览量 不记名
+        renderPage();
+
+        if($('.notice-picture img').width() > $(window).width()){
+            $('.notice-picture img').width("100%");
+        }
+
+        $(".float-btn").click(function(){
+            //统计点击参与活动按钮的次数
+            if(!readOnly) {
+                clickCount(channel,ytk_tId);//不要删除或者注释掉
+            }
+            toBottom();
+            if(form_applet == 0){
+                openLink(linkUrl);
+            }else{
+                $('.foot').show();
+                $('.foots').show();
+            };
+            if($(".float-btn").hasClass("success")){
+                $(".foots").hide();
+            }
+        });
+    });
+    function renderPage(){
+        Iptools.uidataTool._getCustomizeApplet({
+            nameList:'"Campaign_H5 Detail Applet"'
+        }).done(function(data){
+                var  H5_detailId =  data.applets[0].applet;//8037
+                Iptools.uidataTool._getUserDetailAppletData({
+                    appletId:H5_detailId,
+                    valueId:Iptools.DEFAULTS.campaignH5_id
+                }).done(function(s){
+                    var rootId =  s.rootLink;
+                    //获得campaignid
+                    Iptools.DEFAULTS.campaignId = s.data[rootId+':campaign_id']['id'];
+                    //铺设表单applet
+                    form_applet =  s.data[rootId+':form_applet'];
+                    if(form_applet != 0){
+                        renderForm(form_applet);
+                    }
+//                    getCampaignSceneId();
+                    console.log(s);
+                    //h5页面标题
+                    if( s.data[rootId+':title']){
+                        title =  s.data[rootId+':title'];
+                        setTitle(title);
+                    };
+                    //首先判断is_cancelled是否为true，为true则证明该活动已删除
+                    //背景图片
+                    if( s.data[rootId+':is_cancelled']){
+                        var html = '<div style="text-align: center;">'+'<p style="text-align: center;margin-top:40px;font-size: 18px;line-height: 40px">该活动已经关闭<br>更多活动请关注我们</p>'+
+                                "<img src='../img/cancel.png' style='width:80%;margin-top:80px;'>"+'</div>';
+                        $("body").html("");
+                        $("body").append(html);
+                        $('body').css('background-color','#fff');
+                        return;
+                    };
+                    //拿到为客户和访客所打的自动标签
+                    if( s.data[rootId+':form_contact_tags']){
+                        var conTag =  s.data[rootId+':form_contact_tags'];
+                        conTagArr = conTag.split('|');
+                        //提到标签库里
+                        $.each(conTagArr,function(key,obj){
+                            if(!readOnly) {
+                                contactTagToTagLib(obj);
+                            }
+                        })
+                    };
+                    if( s.data[rootId+':visitor_tags']){
+                        var visiTag =  s.data[rootId+':visitor_tags'];
+                        visiTagArr = visiTag.split('|');
+                        //提到标签库里
+                        $.each(visiTagArr,function(key,obj){
+                            if(!readOnly) {
+                                tagToTagLib(obj);
+                            }
+                        })
+                    }
+                    if( s.data[rootId+':back_img']){
+                        img = s.data[rootId+':back_img'];
+                        setImg(img);
+                    }else{
+                        setImg(img);
+                    };
+                    //按钮颜色
+                    if( s.data[rootId+':button_color']){
+                        btnC =  s.data[rootId+':button_color'];
+                        setBtnColor(btnC);
+                    }else{
+                        setBtnColor(btnC);
+                    };
+
+                    //按钮文字-----显示什么文字要先判断下是否已经开始或结束
+                    if (s.data[rootId + ':button_text']) {
+                        btnHtml = s.data[rootId + ':button_text'];
+                     }
+                    if(s.data[rootId + ':start_time']){
+                        startTime = s.data[rootId + ':start_time'];
+                    };
+                    if(s.data[rootId + ':end_time']){
+                        endTime =s.data[rootId + ':end_time'];
+                    };
+                    comTime();
+                   campaignTimeCount = setInterval("comTime()",1000);
+
+                    //跳转链接
+                    if(s.data[rootId+':forward_link']){
+                        linkUrl =  s.data[rootId+':forward_link'];
+                    };
+                    //8:奖品数量
+                    if(s.data[rootId+':award_count']){
+                        awardLeft =  s.data[rootId+':award_count'];
+                    }
+                    //奖品名称
+                    if(s.data[rootId+':award_name']){
+                        awardName =  s.data[rootId+':award_name']
+                    };
+                    if(s.data[rootId+':award_phone']){
+                        awardTel =  s.data[rootId+':award_phone'];
+                    }
+
+                    //h5页面副标题
+                    if(s.data[rootId+':sub_title']){
+                        sub_title =  s.data[rootId+':sub_title'];
+                        setSub_title(sub_title);
+                    };
+                    //底部的富文本
+                    if(s.data[rootId+':rich_text']){
+                        bottom_text = s.data[rootId+':rich_text'];
+                        setBottomText(bottom_text);
+                    };
+                    //开始时间
+                    if(s.data[rootId+':start_time']){
+                        setStartTime( s.data[rootId+':start_time']);
+                    };
+                    //结束时间
+                    if(s.data[rootId+':end_time']){
+                        setEndTime(s.data[rootId+':end_time']);
+                    };
+                    //租户电话
+                    if(s.data[rootId+':contact_phone']){
+                        tenantPhone =  s.data[rootId+':contact_phone'];
+                        settenantPhone(tenantPhone);
+                    };
+                })
+                // console.log(data);
+        })
+
+    };
+    var formRootId
+    function renderForm(formApp){
+        Iptools.GetJson({
+//            async: false,
+            ajaxCounting:false,
+            url: "service/appletDataGetDetail",
+            data: {
+                token:Iptools.DEFAULTS.token,
+                appletId:formApp,
+                valueId:Iptools.DEFAULTS.campaignH5_id
+            }
+        }).done(function(data){
+                formRootId = data.rootAliasName;
+                if(JSON.stringify(data) != "{}"  && data.controls.length>0){
+                    for(var d = 0;d<data.controls.length;d++){
+                        var formDemo = {};
+                        formDemo.display_name = data.controls[d].displayName;
+                        formDemo.field_type = data.controls[d].fieldType;
+                        formDemo.columnName = data.controls[d].columnName;
+                        formData.push(formDemo);
+                    };
+//                    setFormData(formData);
+                };
+            getCampaignSceneId();
+        })
+    };
+    //页面监听微信浏览器关闭
+    $(function(){
+        if(historyForm){
+            pushHistory();
+        }else{
+            pushHistory();
+        }
+        var bool=false;
+        setTimeout(function(){
+            bool=true;
+        },1500);
+        window.addEventListener("popstate", function(e) {
+            if(bool)
+            {
+                clearInterval(timeLength);
+                if(!readOnly) {
+                    timeCounter(time);
+                    postVisitorInfo();//提交访客信息
+                }
+            }
+        }, false);
+    });
+    function pushHistory() {
+        var state = {
+            title: "title",
+            url: "#"
+        };
+        window.history.pushState(state, "title", "#");
+    }
+    window.onbeforeunload = onbeforeunload_handler;
+    function onbeforeunload_handler(){
+        clearInterval(timeLength);
+        if(!readOnly) {
+            timeCounter(time);
+            postVisitorInfo();//提交访客信息
+        }
+//         var warning="你在该页面呆了"+time+"秒";
+//         return warning;
+    };
+    function toMap(){
+        var keyword=$(".company-bottom").html();
+        window.open("http://api.map.baidu.com/geocoder?address="+keyword+"&output=html");
+    }
+</script>
+</body>
+</html>

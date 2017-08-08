@@ -1,0 +1,35 @@
+body{
+    background-color: #eff3f8;
+}
+.tab-content{
+    background-color: white;
+}
+.insuranceSet .nav {
+    border-bottom: 0;
+    background: #fff;
+}
+.insuranceSet .nav>li {
+    font-size: 18px;
+}
+.insuranceSet .nav-tabs>li>a {
+    color: #333;
+    height: 58px;
+    line-height: 58px;
+    padding: 0 15px;
+}
+.insuranceSet .nav>li.active>a {
+    background-color: #fff;
+    height: 58px;
+    line-height: 58px;
+    padding: 0 15px;
+    border: 0;
+    color: #09f;
+    border-bottom: 4px solid #09f;
+}
+.insuranceSet .nav>li:not(.active)>a:hover {
+    background-color: #fff;
+    border-color: #fff;
+}
+.insuranceSet .nav-tabs>li>a:hover {
+    color: #09f;
+}

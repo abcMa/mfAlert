@@ -1,0 +1,150 @@
+﻿.col-sm-12{
+    padding: 0px;
+}
+.left{
+    padding: 20px 15px;
+}
+.left h3{
+    margin:0px;
+    font-size: 18px;
+    color:#333;
+    margin-bottom: 20px;
+    height: 20px;
+    overflow: hidden;
+}
+h3 i.fa{
+    color:#ccc;
+}
+.left ul.seleced-campaign{
+    padding-bottom: 20px;
+}
+.left ul.seleced-campaign li{
+    height: 48px;
+    line-height: 48px;
+    border-bottom: 1px dashed #ccc;
+    font-size: 14px;
+    color:#333;
+    display:block;
+    overflow:hidden;
+    word-break:keep-all;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.left select{
+    width:270px;
+    height: 34px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.left .btn-container{
+    float: right;
+    margin-top: 20px;
+}
+.left button{
+    margin-left: 6px;
+}
+.btn-group button span {
+    color: #333;
+}
+.right input{
+    display: inline-block;
+    width:120px;
+}
+.right .navbar-right {
+    margin-top: -5px;
+}
+.analysis-chart-area {
+    min-height: 600px;
+}
+.multiselect-container {
+    width: 270px !important;
+    margin-top:5px;
+}
+/*修改原有样式*/
+.left .btn-default:hover {
+    color: #333;
+    background-color: #f7f7f7;
+}
+.btn-group.open .dropdown-toggle {
+    -webkit-box-shadow: none;
+    box-shadow:none;
+}
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default {
+    color: #333;
+    background-color: #F7F7F7;
+}
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+    color: #333;
+    background-color: #f7f7f7;
+}
+/**/
+.left .multiselect-container>li>a>label{
+    position: relative;
+}
+.left .multiselect-container>li>a>label input[type="checkbox"] {
+    margin: 0px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    width: 16px;
+    height: 16px;
+    outline: none;
+    border: none;
+}
+.left .multiselect-container>li>a>label input[type="checkbox"] {
+    position: absolute;
+    width: 17px;
+    height: 18px;
+    top: 50%;
+    margin-top: -9px;
+    left: 15px;
+    background: url(../../Content/Image/checkAndRadio.png) no-repeat;
+    background-position: -30px 2px;
+    background-size: 45px auto;
+}
+.left .multiselect-container>li>a>label input[type="checkbox"]:checked {
+    width: 17px;
+    height: 18px;
+    background: url(../../Content/Image/checkAndRadio.png) no-repeat;
+    background-position: 3px 2px;
+    background-size: 45px auto;
+}
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:link {
+    border: none !important;
+    text-decoration: none;
+    background-color: white;
+    background-image: none;
+    outline:none;
+    color:#333;
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover {
+    background: #fff;
+    background-image: none;
+}
+.left .multiselect-container>li {
+    cursor: pointer;
+}
+.left .dropdown-menu li,.left .dropdown-menu  li a:link,.left .dropdown-menu  li a:active,.left .dropdown-menu  li a:focus {
+    border: none !important;
+    outline: none !important;
+    border-color: white !important;
+}
+.multiselect.dropdown-toggle.btn.btn-default {
+    overflow: hidden;
+    color: #333;
+}
+.left .multiselect-container .input-group {
+    width:95%;
+    display: none;
+}
+.left .multiselect-container .input-group input{
+    border-radius: 5px !important;
+}
+.left .input-group-addon{
+    display: none;
+}
+.left .multiselect-clear-filter,.left .multiselect-all{
+    display: none;
+}

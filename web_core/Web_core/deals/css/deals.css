@@ -1,0 +1,257 @@
+html,body{
+    width:100%;
+    height: 100%;
+    background-color: #eff3f8;
+}
+li{
+    list-style:none;
+}
+input[type="text"]:focus {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.iconfont{
+    color:#2ea4ed;
+}
+section{
+    width:100%;
+    overflow: hidden;
+}
+.right{
+    background-color: white;
+    padding-top: 0px;
+    height: 100%;
+}
+.right .header-content{
+    width:100%;
+    height: 100%;
+}
+.right .headerTitle{
+    width:100%;
+    height:50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ddd;
+}
+.right .leftTitle{
+    float: left;
+    height: 100%;
+    line-height: 50px;
+}
+.right .leftTitle .title,
+.right .leftTitle ul li{
+    float: left;
+}
+.right .leftTitle .title {
+    margin:0px;
+    line-height: 50px;
+    height: 100%;
+}
+.right .leftTitle .title span.landing-panel-font{
+    font-size: 18px;
+    color:#555;
+    padding-left:10px;
+}
+.right .leftTitle .title li{
+    margin-top: 8px;
+    padding: 0px 20px;
+    height: 34px;
+    line-height: 34px;
+    background-color:white;
+    color:#2ea4ed;
+    border: 1px solid #2ea4ed;
+    cursor: pointer;
+    position: relative;
+}
+.title li:last-child .iconfont{
+   font-size: 20px;
+}
+.right .leftTitle .title li:hover{
+    color:#0685d3;
+}
+.right .leftTitle .title li.active{
+    background-color: #2ea4ed;
+    color:white;
+}
+.title li.active .iconfont{
+    color:white;
+}
+.right .leftTitle .title li.active:hover{
+    background-color: #0685d3;
+    border-color:#0685d3;
+}
+.right .leftTitle .title li:first-child{
+    border-radius: 5px 0px 0px 5px;
+}
+.right .leftTitle .title li:last-child{
+    border-radius: 0px 5px 5px 0px;
+}
+.right .rightTitle{
+    float: right;
+    position: relative;
+    padding-right: 20px;
+}
+.right .rightTitle span.icon-sousuo-sousuo1{
+    position: absolute;
+    width:20px;
+    height: 20px;
+    left:5px;
+    top:50%;
+    margin-top: -10px;
+    color:#a9a9a9;
+}
+.searchBtn{
+    position: absolute;
+    top: 15px;
+    right: 135px;
+    width: 28px;
+    height: 20px;
+    background-color: #2ea4ed;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+.searchBtn:hover{
+    background-color: #0685d3;
+}
+.enter-icon{
+    position: absolute;
+    top: 12px;
+    right: 7px;
+    font-size: 16px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    color: #fff;
+}
+.right .rightTitle input{
+    padding-left: 25px;
+    width:250px;
+    height: 34px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+.right .rightTitle input:focus{
+    border: 1px solid  #66afe9;
+    outline: none;
+    -webkit-box-shadow: 0 0 8px rgba(102,175,233,.6);
+    box-shadow:  0 0 8px rgba(102,175,233,.6);
+}
+/*block的样式*/
+#test_panel{
+    height: 90%;
+}
+.stage_main_content{
+    height:100%;
+    overflow-x: scroll;
+}
+
+
+.stageContent .bottom{
+    position: absolute;
+    bottom:0px;
+    width:100%;
+    padding: 8px;
+    height: 40px;
+    border-top: 1px solid #dfe3eb;
+    background-color:white;
+    text-align: center;
+}
+
+/*模态框*/
+.deals-modal .modal-body{
+    padding: 20px 20px;
+    padding-bottom: 100px;
+}
+.deals-modal .model-block{
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+.deals-modal h3{
+    height: 40px;
+    line-height: 40px;
+    width:100%;
+    background-color: #eee;
+    margin:0px;
+    padding-left: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+.deals-modal .row{
+    height: 40px;
+    margin: 0px;
+    padding: 0px 15px;
+    margin-top: 6px;
+}
+.deals-modal .model-line .line{
+    height: 40px;
+    border-bottom: 1px dashed #ccc;
+
+}
+.deals-modal .col-sm-3,.col-sm-4{
+    padding-right:0px;
+    padding-left: 10px;
+}
+.deals-modal label{
+    float: left;
+    display: inline-block;
+    font-weight: normal;
+    padding-right: 10px;
+    line-height: 40px;
+}
+.deals-modal input{
+    display: inline-block;
+    border: none;
+    width: 160px;
+    box-shadow: none;
+    margin-top: 10px;
+}
+.deals-modal textarea{
+    float: left;
+    display: inline-block;
+    width:420px;
+    height: 26px;
+    resize: none;
+    border: none;
+    margin-top: 10px;
+}
+.deals-modal select{
+    border:none;
+    margin-top: 10px;
+}
+.deals-modal select:focus, .deals-modal input:focus,.deals-modal textarea:focus{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.deals-modal input.blueCheckbox[type="checkbox"] {
+    margin-top: 12px;
+}
+.deals-modal .has-error .form-control{
+    box-shadow: none;
+}
+.deals-modal .has-success .form-control{
+    box-shadow: none;
+}
+.dropdown-menu-left {
+    right: auto;
+    left: -130px;
+}
+.form-inline .input-group input {
+    margin-top: 6px;
+    padding: 0px;
+    height: 26px;
+}
+.input-group-btn:last-child > .btn {
+    z-index: 2;
+    margin-left: -1px;
+    background-color: rgba(122,122,122,0);
+    border: none;
+}
+.input-group-btn:last-child > .btn span{
+    color:white;
+}
+.input-group-btn:last-child > .btn:hover{
+    background-color: rgba(122,122,122,0);
+}

@@ -1,0 +1,288 @@
+@charset "UTF-8";
+/*-----------------------------全局样式-------------------------------------*/
+dl,dt,dd,ul,ol,li,form,span,a,input,p{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-size:14px;font-weight:normal}
+ul,ol{list-style:none}
+img{border:none;vertical-align:middle}
+body{margin:0 auto;padding:0;font:16px Microsoft YaHei;color:#555;
+    background-color: #eef2f3;}
+body a{color:#646464;text-decoration:none;cursor:pointer}
+body a:hover,body a:active,body a:focus{text-decoration:none;outline:none}
+@font-face {
+    font-family: 'iconfont';  /* project id 125778 */
+    src: url('//at.alicdn.com/t/font_jofa09wdgx7833di.eot');
+    src: url('//at.alicdn.com/t/font_jofa09wdgx7833di.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_jofa09wdgx7833di.woff') format('woff'),
+    url('//at.alicdn.com/t/font_jofa09wdgx7833di.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_jofa09wdgx7833di.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.preview{
+    height: 50px;
+    line-height: 50px;
+    background-color: #faf9f7;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.previewLeft{
+    color: #2ea4ed;
+    font-size: 21px;
+}
+.picture{
+    height: 200px;
+    background: url("../img/action.png") no-repeat;
+    background-size:cover;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.pictureIcon{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    width: 25px;
+    height: 25px;
+}
+.titleTop{
+    font-weight: 600;
+}
+.titleBottom{
+    font-size: 14px;
+}
+.titleLogo{
+    padding-top: 50px;
+}
+.business{
+    margin-bottom: 10px;
+    background-color: #faf9f7;
+    min-height: 48px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+}
+.businessLeft{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    margin-top: -9px;
+    font-size: 18px;
+    color: #2ea4ed;
+    width: 18px;
+    height: 18px;
+
+}
+.businessCenter{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    margin-top: -9px;
+    width: 100%;
+}
+.seatIcon{
+    position: absolute;
+    right: 0px;
+    width: 20px;
+    height: 48px;
+    background-color: #fafafa;
+}
+.iconRight{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -9px;
+    font-size: 18px;
+    height: 18px;
+    width: 18px;
+}
+.web{
+    margin-bottom: 10px;
+    background-color: #faf9f7;
+    min-height: 48px;
+    position: relative;
+}
+.webIcon{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    margin-top: -9px;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: #2ea4ed;
+}
+.webLocation{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    margin-top: -9px;
+}
+.tel{
+    margin-bottom: 10px;
+    background-color: #faf9f7;
+    min-height: 48px;
+    position: relative;
+}
+.telLeft{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    margin-top: -9px;
+    font-size: 18px;
+    color: #2ea4ed;
+    width: 18px;
+    height: 18px;
+}
+.telCenter{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    margin-top: -9px;
+}
+.address{
+    margin-bottom: 10px;
+    background-color: #faf9f7;
+    min-height: 48px;
+    position: relative;
+}
+.addressLeft{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    margin-top: -9px;
+    font-size: 18px;
+    color: #2ea4ed;
+    width: 18px;
+    height: 18px;
+}
+.addressCenter{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    margin-top: -9px;
+}
+.follow{
+    margin-bottom: 10px;
+    margin-top: 20px;
+    min-height: 50px;
+}
+.followCenter{
+    margin-left: 10%;
+    width: 80%;
+    overflow: hidden;
+}
+.followCenterLeft{
+    width: 45%;
+    margin-right: 10%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+.followLeftLeft{
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-color:#faf9f7;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+.followLeftCenter{
+    float: left;
+    width: 75px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    background-color: #faf9f7;
+}
+.followLeftRight{
+    float: right;
+    width: 50px;
+    height: 50px;
+    background-color: #faf9f7;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.followCenterRight{
+    width: 45%;
+    float: right;
+    overflow: hidden;
+    position: relative;
+}
+.followRightLeft{
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-color:#faf9f7;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+.followRightCenter{
+    float: left;
+    width: 75px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    background-color: #faf9f7;
+}
+.followRightRight{
+    float: right;
+    width: 50px;
+    height: 50px;
+    background-color: #faf9f7;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.followLeftCenterIcon{
+    display: inline-block;
+    margin-left: -30px;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    color: #33cc66;
+}
+.followRightCenterIcon{
+    display: inline-block;
+    margin-left: -30px;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    color: #fe5d5d;
+}
+.formCampany{
+    text-align: center;
+    margin-top: 20px;
+}
+.CampanyName a{
+    color: #2ea4ed;
+}
+.smallBoxBg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.5;
+}
+.smallBox{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    margin-top: -130px;
+}
+.floatIcon{
+    font-size: 260px;
+}

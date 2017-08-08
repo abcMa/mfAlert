@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>客户群画像</title>
+	<link rel="stylesheet" href="../Content/bootstrap/css/bootstrap.css">
+    <link href="style/dist/css/font-awesome.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="style/font-awesome.css">
+    <link rel="stylesheet" href="../Content/Style/standard.css"/>
+	<link rel="stylesheet" href="style/conGroupDe.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_byzfm05z14ptx1or.css">
+
+
+</head>
+<body class="groupDetailBody">
+<nav class="navbar navbar-default search-function-container">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <a class="navbar-brand" id="lView_title">客户群画像</a>
+        </div>
+        <div class="collapse navbar-collapse" id="listPanelHeader">
+
+            <ul id="buttonListPanel" class="nav navbar-nav navbar-right">
+                <li class="editBtn">
+                    <a style="cursor: pointer;">
+                        <span class="iconfontyyy" style="margin-right: 10px;">&#xe717;</span>编辑</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<div class="wrap clearfix">
+
+	<section class="top clearfix">
+		<div class="left">
+			<div class="left-top">
+				<div class="title clearfix">
+                    <div class="ti-left">
+                        <p></p>
+                        <button type="button" class="btn-lg" disabled="disabled" style="color:#fff;padding: 4px;font-size: 14px;background: #fdb2b2;border: none;"></button>
+                    </div>
+                    <div class="ti-right">
+                        <!--<i class="fa fa-users" aria-hidden="true"></i>-->
+                        <p><span style="font-size: 30px;line-height: 0px;"></span>人</p>
+                    </div>
+                </div>
+
+				<div class="content">
+					<p></p>
+
+				</div>
+			</div>
+			<div class="left-bottom">
+                <div class="title clearfix">
+                    <p>客户群活动</p>
+                    <p>客群总活动数：<span id="allMarket"></span> </p>
+                </div>
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <!--<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>-->
+                        <!--<li data-target="#carousel-example-generic" data-slide-to="1"></li>-->
+                        <!--<li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner groupWithCampaign" role="listbox" style="height:260px;width: 590px;margin: 0 auto;">
+
+
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev" style="background: rgba(255,255,255,0)">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"  style="background: rgba(255,255,255,0);box-shadow:none;border:none;">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+			</div>
+		</div>
+		<div class="right">
+			<div class="title" style="border-bottom: 1px solid #ddd;">
+				<span>用户群动态</span>
+                <div class="addAction">
+                    <!--<button style="font-size: 14px;font-weight: lighter;"><i class="iconfontyyy" style="margin-right: 6px;">&#xe6d9;</i>添加动态</button>-->
+                </div>
+			</div>
+			<div class="demo">
+			<!-- 	<div class="time">
+					2016-08-14
+				</div> -->
+				<ul class="list">
+
+				</ul>
+                <div class="nodata" style="text-align: center;margin: 80px 0;display: none;">
+                    <img src="img/nodata.gif" alt="" style="width:200px;"/>
+                    <br><br>
+                    <span style="font-size:20px;">暂无群动态！</span>
+                </div>
+			</div>
+			<!-- 咨询分页 -->
+            <div id="pager-example-panel-groupAction"></div>
+			<!--<ul class="action-page">-->
+				<!--<li class="active">1</li>-->
+				<!--<li>2</li>-->
+			<!--</ul>-->
+		</div>
+	</section>
+    <div class="form">
+        <div class="middle" style="max-height:760px;">
+            <div class="top clearfix">
+                <div class="title">群成员</div>
+                <div class="btn-list">
+                    <button class="add"><i class="iconfontyyy" style="margin-right: 6px;">&#xe6d9;</i>添加</button>
+                    <button class="del" disabled = 'disabled'><i class="iconfontyyy" style="margin-right: 6px;">&#xe6df;</i>移除</button>
+                </div>
+            </div>
+            <div class="content">
+                <div class="select clearfix">
+                    <p>显示项：</p>
+                    <div class="sel_right">
+                        <div class="sel_top clearfix">
+                            <div class="default">
+
+                            </div>
+                            <div class="filter">
+                                <span>高级筛选</span>
+                                <img data-flag="down" src="img/u3009.png" alt="">
+                            </div>
+                            <div class="sure">
+                                <button>应用</button>
+                            </div>
+
+                        </div>
+                        <div class="can-sel">
+                            <!-- 	<div class="demo">
+                                    <input type="checkbox">
+                                    <span>姓名</span>
+                                </div> -->
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <table class="table table-striped enrollTable" id="haveConTable">
+                    <thead>
+                    <tr>
+                        <th><input type="checkbox" class="selAll blueCheckbox"></th>
+                        <!--<th>序号</th>-->
+                        <th name="title">姓名</th>
+                        <th name="phone">电话</th>
+                        <th name = "tag">标签</th>
+                        <th name = "contactType">客户类型</th>
+                        <th name = "channel" >客户来源</th>
+                        <!--<th name="gender">性别</th>-->
+                        <!--<th name="email">电子邮箱</th>-->
+                        <!--<th name="age">年龄</th>-->
+
+
+                        <!--<th><select> <option>性别</option><option>女</option><option>男</option></select></th>-->
+                        <!--<th>累计消费</th>-->
+                        <!--<th>自定属性</th>-->
+                    </tr>
+                    </thead>
+                    <tbody style="">
+
+                    </tbody>
+                </table>
+                <div id="pager-example-panel-contactInGroup" style="height: 50px;"></div>
+                <div class="empty" style="text-align: center; margin: 100px 0px;display: none;">
+                    <img src="../Content/Image/emptyData.png" class="addGroup" style="width:150px;height:auto;cursor:pointer" onclick="addToGroup()()">
+                    <br><br>
+                    <span style="font-size:20px;">暂无数据，快去添加吧</span>
+                </div>
+            </div>
+        </div>
+        <!--报表聚集地-->
+        <div class="bottom clearfix">
+            <!--客户群成员数量统计折线图-->
+
+            <div class="panel panel-default landing-panel">
+                <div class="panel-heading">
+                    <span class="iconfont icon-shugang"></span>
+                    <span class="landing-panel-font">客户群成员数量趋势</span>
+                    <div class="btn-group btn-group-sm navbar-right" style="margin-right: 5px;margin-top:-4px;">
+                        <button type="button" class="btn report-time-btn" data-type="day">本日</button>
+                        <button type="button" class="btn report-time-btn" data-type="week">本周</button>
+                        <button type="button" class="btn report-time-btn" data-type="month">本月</button>
+                        <button type="button" class="btn report-time-btn report-btn-selected" data-type="year">本年</button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div id="groupNumAcount" style="min-width: 310px; height: 400px; margin: 0 auto;border-bottom: 1px solid #ddd;"></div>
+                </div>
+            </div>
+            <!--客户标签分布-->
+            <div class="panel panel-default landing-panel">
+                <div class="panel-heading">
+                    <span class="iconfont icon-shugang"></span>
+                    <span class="landing-panel-font">客户群标签分布</span>
+                </div>
+                <div class="panel-body">
+                    <div id="groupTagAcount" style="min-width: 310px; height: 400px; margin: 0 auto;border-bottom: 1px solid #ddd;"></div>
+                </div>
+            </div>
+            <div class="chart-wrap">
+                <div class="chart-inner" style="width:50%;float:left;">
+                    <!--客户类型柱状图-->
+                    <div class="panel panel-default landing-panel"  >
+                        <div class="panel-heading">
+                            <span class="iconfont icon-shugang"></span>
+                            <span class="landing-panel-font">客户类型</span>
+                        </div>
+                        <div class="panel-body">
+                            <div id="conType" style="width:100%"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--客户来源饼形图-->
+                <div class="panel panel-default landing-panel"  style="width:50%;float:right">
+                    <span class="line"></span>
+                    <div class="panel-heading">
+                        <span class="iconfont icon-shugang"></span>
+                        <span class="landing-panel-font">客户来源</span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="conChannel" style="width:100%"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+<div class="modal fade in" id="addToContactGroupModal" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">添加客户</h4>
+            </div>
+            <div class="addGroup">
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="col-md-2">
+                            <span>姓名</span>
+                            <input class="form-control form-condition con-name">
+                        </div>
+                        <div class="col-md-2">
+                            <span>手机</span>
+                            <input class="form-control form-condition con-phone">
+                        </div>
+                        <div class="col-md-2">
+                            <span>标签</span>
+                            <input class="form-control form-condition con-tag">
+                        </div>
+                        <!--<div class="col-md-2">-->
+                            <!--<span>性别</span>-->
+                            <!--<select class="form-control control-normal-select con-gender" name="10_gender" style="box-sizing: border-box;">-->
+                                <!--<option value="">请选择</option>-->
+                                <!--<option value="female">女</option>-->
+                                <!--<option value="male">男</option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                        <div class="col-md-3">
+                            <span>客户类型</span>
+                            <select class="form-control control-normal-select con-type" name="10_gender" style="box-sizing: border-box;">
+                                <option value="">请选择</option>
+                                <option value="2">潜在客户</option>
+                                <option value="3">消费客户</option>
+                                <option value="4">会员客户</option>
+
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <span>客户来源</span>
+                            <input class="form-control form-condition con-channel">
+                        </div>
+                        <div class="col-md-1" style="padding:0;"><a class="btn btn-primary" style="">筛选</a></div>
+                    </div>
+                    <div class="row" style="height: 470px;padding: 0 20px;">
+                        <table class="table addContact" style="margin:0">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" class="allCheck blueCheckbox"/></th>
+                                <th>姓名</th>
+                                <th>手机</th>
+                                <!--<th>性别</th>-->
+                                <th>标签</th>
+                                <th>客户类型</th>
+                                <th>客户来源</th>
+                            </tr>
+                            </thead>
+                            <tbody class="contactGroupListTbody">
+
+
+                            </tbody>
+                        </table>
+                        <div id="pager-example-panel-allConList"></div>
+                        <div class="none" style="text-align: center;margin:130px 0;display: none;">
+                            <img src="../Content/Image/emptyData.png" class="addGroup" style="width:150px;height:auto;cursor:pointer">
+                            <br><br>
+                            <span style="font-size:20px;">暂无数据，快去添加吧</span>
+                        </div>
+                        <!--<p class="none" style="text-align: center;margin-top: 120px;font-size: 20px;"></p>-->
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn closebtn" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn commonBtn" id="addGroup" data-loading-text="<span class='icon-spin icon-spinner' style='margin-right:2px'></span>添加中">确认添加</button>
+                </div>
+            </div>
+            <div class="newGroup" style="display:none">
+                <div class="modal-body">
+                    <div class="row">
+                        <span>群名称</span>
+                        <input class="form-control new-con-name">
+                    </div>
+                    <div class="row">
+                        <span>等级</span>
+                        <input class="form-control new-con-level">
+                    </div>
+                    <div class="row">
+                        <span>备注</span>
+                        <input class="form-control new-con-des">
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-default closebtn" data-dismiss="modal">取消</button> -->
+                    <button type="button" class="btn" onclick="comfirmNewContact(this)">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 删除客户的弹出框 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog fonfirm_del">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">提示消息</h4>
+            </div>
+            <div class="modal-body">
+                确认从本群移除吗？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn closebtn" data-dismiss="modal">取消</button>
+                <button type="button" class="btn confirmBtn" style="margin-top:0;">移除</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<!--<script src="JS/jquery-1.9.1.min.js"></script>-->
+<script src="../Content/bootstrap/js/bootstrap.js"></script>
+<script src="../Content/bootstrap/js/bootstrapValidator.js"></script>
+<script src="../Content/JS/highcharts.js"></script>
+<script src="../Content/JS/highcharts-3d.js"></script>
+<script src="../Content/JS/highcharts-themes.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script src="../contactGroupNew/JS/common_widget.js"></script>
+<script src="JS/groupDe_widget.js"></script>
+<script src="../contactDetail/JS/trace_widget.js"></script>
+<script>
+    Iptools.Start();
+    common._init();
+    trace._init();
+    widget._init();
+    $('.carousel').carousel({
+            interval:false
+    })
+
+</script>
+</body>
+</html>

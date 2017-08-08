@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <link rel="stylesheet" href="../Content/bootstrap/css/bootstrap.min.css">
+
+  <!-- <link rel="stylesheet" href="css/createActivity.css"> -->
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+  <link href="css/evol-colorpicker.min.css" rel="stylesheet" type="text/css">
+  <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/market-common.css">
+  <link rel="stylesheet" type="text/css" href="../Content/Style/standard.css">
+  <link rel="stylesheet" type="text/css" href="css/campaignInfo.css">
+  
+
+  <title>营销活动草稿页</title>
+  <style>
+
+  .landing-panel .landing-panel-icon {
+    font-size: 16px;
+    margin-right: 8px;
+    color: #91c8f8;
+}
+.landing-panel .landing-panel-font {
+    font-size: 16px;
+}
+.nav-chart-btn {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 9px;
+}
+.landing-panel .landing-panel-icon {
+    font-size: 16px;
+    margin-right: 8px;
+    color: #91c8f8;
+}
+.panel-default>.panel-heading {
+    padding: 13px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: #fff;
+}
+.table > tbody > tr > th, .table > tbody > tr > td {
+  vertical-align: middle;
+}
+/* #addToContactGroupModal table th {
+    width: auto !important;
+} 
+.table td.fit, 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}*/
+  </style>
+ </head>
+ <body>
+  <div class="main">
+     <section class="top row">
+     </section>
+     <!--select activityType-->
+     <section class="middle row">
+          <!--right-->
+          <div class="col-md-12 col-sm-12" style="padding-right: 0px;padding-left: 0px;">
+			  <div class="left-area">
+				  <div class="top-left">
+					  <h3 class="campaignName">
+						  <span>活动名称</span>
+						  <a class="editH5Btn" onclick="toEditH5ByTenplateId(this)">
+							  <i class="fa fa-edit"></i>
+						  </a>
+						  <div style="clear: both"></div>
+					  </h3>
+					  <div class="row">
+                           <span class="left-col">
+                            结束时间：
+                           </span>
+                           <span class="left-val endTime">
+                           </span>
+						  <div style="clear: both"></div>
+					  </div>
+					  <div class="row">
+                           <span class="left-col">
+                            活动链接：
+                           </span>
+                           <span class="left-val campaignLink">
+                               <span></span>
+                               <a class="previewBtn" onclick="preview(this)">
+								   <i class="fa fa-eye"></i>
+							   </a>
+                           </span>
+
+						  <div style="clear: both"></div>
+					  </div>
+					  <div class="row">
+                           <span class="left-col">
+                           温馨提示：
+                           </span>
+                           <span class="left-val">
+                            1.活动可多次群发，随时编辑，及时更新；<br>
+                            2.“关闭活动”后，不可再编辑，活动对客户不可见；
+                           </span>
+						  <div style="clear: both"></div>
+					  </div>
+					  <div class="top-left-btns">
+						  <button class="btn cancelCampaignBtn cancel"
+								  onclick="cancelCampaign(this)">关&nbsp;闭
+						  </button>
+						  <button class="btn commonBtn releaseBtn" onclick="releaseCampaign(this)">群&nbsp;发
+						  </button>
+					  </div>
+				  </div>
+				  <div class="bottom-left-area">
+					  <h3>数据概览</h3>
+					  <div class="row" style="margin-bottom: 25px;">
+						  <div class="staticBox">
+							  <span>问卷浏览量</span>
+							  <span class="browse" id="browse">0</span>
+
+						  </div>
+						  <div class="staticBox">
+							  <span>问卷回收量</span>
+							  <span class="attract" id="attract">0</span>
+
+						  </div>
+					  </div>
+					  <div class="row">
+						  <div class="staticBox">
+							  <span>回收率</span>
+							  <span class="enrollNum" id="enrollNum">0</span>
+
+						  </div>
+						  <div class="staticBox">
+							  <span>平均完成时间</span>
+							  <span class="remain" id="remain">0</span>
+
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+
+             </div>
+		     <div class="row right-area">
+				 <!-- tabs -->
+				 <div class="dataTabs">
+					 <ul class="nav nav-tabs" role="tablist">
+						 <li role="presentation" class="active"><a href="#profile" role="tab" data-toggle="tab">数据报表分析</a></li>
+						 <li role="presentation" class="enroll-tab"><a href="#home" role="tab" data-toggle="tab">参与人员管理</a></li>
+						 <li role="presentation"><a href="#statistics" role="tab" data-toggle="tab">问卷统计</a></li>
+						 <li role="presentation"><a href="#messages" role="tab" data-toggle="tab">问卷发布记录</a></li>
+					 </ul>
+				 </div>
+				 <!-- Tab panes相对应的面板 -->
+				 <div class="tab-content dataTabContent">
+					 <div role="tabpanel" class="tab-pane" id="home">
+						 <!--list-->
+						 <div class="panel-group enrollTableArea" id="enrollTableArea">
+							 <div class="panel panel-default">
+								 <div id="collapseEnroll" class="panel-collapse collapseEnroll">
+									 <div class="panel-body enrollTable">
+									 </div>
+								 </div>
+							 </div>
+						 </div>
+					 </div>
+					 <div role="tabpanel" class="tab-pane  active" id="profile">
+						 <div class="row">
+							 <!-- 折线图 -->
+							 <div class="col-md-8 col-md-8" style="padding-left: 15px;margin-top:3px;">
+								 <div class="panel-group">
+									 <div class="panel panel-default">
+										 <div class="panel-heading">
+											 <h4 class="panel-title">
+												 <!-- <span class="icon-bar-chart landing-panel-icon"></span> -->
+												 <span class="landing-panel-font">客户趋势分析</span>
+												 <ul class="nav nav-chart-btn" role="tablist">
+													 <li role="presentation" class="thisactive"><span
+															 class="chartsTab visitTab"
+															 onclick="swithCharts(this)">访问量</span></li>
+													 <li role="presentation"><span class="chartsTab enrollTab"
+																				   onclick="swithCharts(this)">报名人数</span>
+													 </li>
+												 </ul>
+												 <!--<div class="btn-group btn-group-sm navbar-right">-->
+												 <!--<button type="button" class="btn report-time-btn" data-type="day"-->
+												 <!--onclick="dataToday(this)">本日-->
+												 <!--</button>-->
+												 <!--<button type="button" class="btn report-time-btn dataWeek"-->
+												 <!--data-type="week" onclick="dataWeek(this)">本周-->
+												 <!--</button>-->
+												 <!--<button type="button" class="btn report-time-btn"-->
+												 <!--data-type="month" onclick="dataMonth(this)">本月-->
+												 <!--</button>-->
+												 <!--&lt;!&ndash; <button type="button" class="btn btn-default report-time-btn report-btn-selected" data-type="year">本年</button> &ndash;&gt;-->
+												 <!--</div>-->
+												 <div class="navbar-right search-text-group">
+													 <span>时间范围</span>
+													 <input type="text" class="form-control datetimepickSearch" id="startTime"/>
+													 <span class="seperator-line">-</span>
+													 <input type="text" class="form-control datetimepickSearch" id="endTime"/>
+													 <button type="button" id="reportSearch_campaign" class="btn btn-sm btn-primary commonBtn">
+														 <span class="fa fa-refresh"></span>
+													 </button>
+												 </div>
+											 </h4>
+										 </div>
+										 <div class="panel-collapse collapse in">
+											 <div class="panel-body">
+												 <div id="visitedLine"></div>
+												 <div id="enrollLine" style="display:none;"></div>
+											 </div>
+										 </div>
+									 </div>
+								 </div>
+							 </div>
+							 <div class="col-md-4 col-md-4" style="border-left: 1px solid #ddd;">
+								 <div class="panel-group">
+									 <div class="panel panel-default">
+										 <div class="panel-heading">
+											 <h4 class="panel-title">
+												 漏斗图
+											 </h4>
+										 </div>
+										 <div id="collapseOne" class="panel-collapse">
+											 <div class="panel-body">
+												 <div id="funnel" style="height:400px"></div>
+											 </div>
+										 </div>
+									 </div>
+								 </div>
+							 </div>
+						 </div>
+					 </div>
+					 <div role="tabpanel" class="tab-pane" id="messages">
+						 <!--活动发布记录-->
+						 <div class="panel-group actTableArea" id="accordion">
+							 <div class="panel panel-default">
+
+								 <div  class="panel-collapse">
+									 <div class="panel-body releaseRecord" style="padding-bottom: 30px;">
+									 </div>
+								 </div>
+							 </div>
+						 </div>
+					 </div>
+					 <!--问卷统计-->
+					 <div role="tabpanel" class="tab-pane" id="statistics">
+						 <div class="panel-group" id="">
+							 <div class="panel panel-default">
+								 <div class="panel-heading">
+									 <!--<h4 class="panel-title">-->
+									 <!--<a >-->
+									 <!--问卷统计-->
+									 <!--</a>-->
+									 <!--&lt;!&ndash; <span class="caret"></span> &ndash;&gt;-->
+									 <!--</h4>-->
+								 </div>
+								 <div  class="panel-collapse">
+									 <div class="panel-body" style="padding-bottom: 30px;">
+										 <div class="q-statistics"></div>
+										 <!--<div id="camp-pager-example-panel"></div>-->
+									 </div>
+								 </div>
+							 </div>
+						 </div>
+					 </div>
+				 </div>
+			 </div>
+
+  </div>
+  <br><br>
+  <br><br>
+  <br><br>
+<!-- Modal -->
+<div class="modal fade" id="cancelReleaseModal" tabindex="-1" role="dialog" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">提示</h4>
+      </div>
+      <div class="modal-body">
+        <div style="color:red">
+			活动关闭后，将不能群发、编辑活动！确认关闭活动？
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div class="modal-footer">        
+        <button type="button" class="btn closebtn" data-dismiss="modal">取消</button>
+        <button type="button" class="btn commonBtn" onclick="cancelRelease(this)">
+          确认</button>
+      </div>
+    </div>
+  </div>
+</div><!-- modal-end -->
+<!-- Modal -->
+<div class="modal fade" id="addToContactGroupModal" tabindex="-1" role="dialog" >
+  <div class="modal-dialog" role="document" style="width:870px">
+    <div class="modal-content">
+      <div class="modal-header" style="padding-bottom: 0px;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<!--         <h4 class="modal-title">
+	        <a class="modalSwitch add active">添加客户群</a>
+	        <a class="modalSwitch new">添加客户群</a>
+        </h4> -->
+        <ul class="nav nav-tabs">
+		  <li role="presentation" class="modalSwitch add active">添加客户群</li>
+		  <li role="presentation" class="modalSwitch new">新增客户群</li>
+		</ul>
+      </div>
+      <div class="addGroup">
+	      <div class="modal-body">
+	        <div class="row" style="margin-left: 0px;">
+	            <div class="col-md-4"><span>客户群名称：</span><input class="form-control form-condition con-Name"></div>
+	            <!--<div class="col-md-3" style="padding: 0;"><span>分群依据：</span>-->
+	            <!--&lt;!&ndash; <input class="form-control form-condition con-level"> &ndash;&gt;-->
+	            <!--<select class="form-control con-level" style="width: 62%;display: inline-block;">-->
+				  <!--<option value ="-1" selected = "selected">请选择</option>-->
+				  <!--&lt;!&ndash; <option value ="1">高级</option>-->
+				  <!--<option value="2">中级</option>-->
+				  <!--<option value="3">低级</option> &ndash;&gt;-->
+				<!--</select> -->
+	            <!--</div>-->
+	            <div class="col-md-3"><span>群描述：</span><input class="form-control form-condition con-des"></div>
+	            <div class="col-md-2"><a class="btn commonBtn" style="margin-top: -4px;" onclick="getContactListByCondition(this)">筛选</a></div>
+	        </div>
+	        <div class="row table-responsive" style="margin: 10px;overflow-y: hidden;">
+	           <table class="table">
+	                <thead>
+	                  <tr>
+	                    <th style="width: 10% !important;"></th>
+	                    <th style="width: 20% !important;">客户群名称</th>
+	                    <!--<th style="width: 10% !important;">分群依据</th>-->
+	                    <th style="width: 10% !important;">人数</th>
+	                    <th style="width: 50% !important;">备注</th>
+	                  </tr>
+	                </thead>
+	                <tbody class="contactGroupListTbody">
+	<!-- 	                <tr>
+		                <td>种子客户</td>
+		                <td>1</td>
+		                <td>57</td>
+		                <td>重点关注用户群</td>
+		                </tr>	 -->                
+	                </tbody>
+	           </table>
+	             <!-- <div class="pageForm">
+		           <span class="base">
+			           <span class="arrow-left" data-page="1">
+			               <a class="pageSkip contactGroup" title="上一页" onclick="pageSkip(this)"></a>
+			           </span>
+			           <a class="contactGroup pagenum" id="pagenumber">0/0</a>
+			           <span class="arrow-right">
+			               <a class="pageNext contactGroup" title="下一页" onclick="pageNext(this)"></a>
+		               </span>
+		           </span>
+		           <input class="form-control contactGroup pageInput" type="text" maxlength="4" style="width:50px;"/>
+		           <button class="pageButton btn-sm" id="toPage" onclick="toPage(this)">跳转</button>
+	           </div> -->   
+	           <div id="contactGroup-pager-example-panel"></div>         
+	        </div>
+	      </div>
+	      <div class="clear"></div>
+	      <div class="modal-footer">        
+	       <button type="button" class="btn  closebtn" data-dismiss="modal">重选用户</button>
+	       <button type="button" class="btn commonBtn" onclick="comfirmAddToContact(this)">确认添加</button>
+	      </div>
+      </div>
+      <div class="newGroup" style="display:none">
+	      <div class="modal-body">
+	         <div class="row">
+	            <span>群名称</span>
+	            <input class="form-control new-con-name">
+	         </div>
+	         <!--<div class="row">
+	            <span>分群依据</span>
+	           &lt;!&ndash;  <input class="form-control new-con-level"> &ndash;&gt;
+	            <select class="form-control new-con-level">
+				  &lt;!&ndash; <option value ="0" selected = "selected">请选择</option>
+				  <option value ="1">高级</option>
+				  <option value="2">中级</option>
+				  <option value="3">低级</option> &ndash;&gt;
+				</select>
+	         </div>-->
+	         <div class="row">
+	            <span>备注</span>
+	            <input class="form-control new-con-des">
+	         </div>                  
+	      </div>
+	      <div class="clear"></div>
+	      <div class="modal-footer">        
+	        <!-- <button type="button" class="btn btn-default closebtn" data-dismiss="modal">取消</button> -->
+	        <button type="button" class="btn commonBtn" onclick="comfirmNewContact(this)">确认</button>
+	      </div>
+      </div>
+    </div>
+  </div>
+</div><!-- modal-end -->
+<!-- Modal -->
+<div class="modal fade" id="QRmodal" tabindex="-1" role="dialog" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="width: 50%; margin: 0 auto;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">微信扫码，查看活动</h4>
+      </div>
+      <div class="modal-body" style="height:200px">
+          <!--预览的二维码-->
+          <div class="row QRPanel">
+            <span class="QRCode"></span>
+          </div>
+      </div>
+      <div class="clear"></div>
+      <div class="modal-footer">        
+        <button type="button" class="btn" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div><!-- modal-end -->
+<!-- Modal -->
+<div class="modal fade" id="contactAnswerModal" tabindex="-1" role="dialog" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">答题详情</h4>
+      </div>
+      <div class="modal-body" style="height:200px;overflow-y:auto">
+          
+      </div>
+      <div class="clear"></div>
+      <div class="modal-footer">        
+        <button type="button" class="btn" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div><!-- modal-end -->
+  <script src="../Content/JS/iptools_v2.js"></script>
+  <script src="../Content/JS/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+  <!--<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>-->
+  <script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+  <script src="js/act-common.js" type="text/javascript" charset="utf-8"></script>
+<script src="../Content/JS/highcharts.js" type="text/javascript" charset="utf-8"></script>
+<script src="../Content/JS/highcharts-themes.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/extend/funnel.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/extend/jquery.qrcode.min.js"></script> 
+<script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script src="js/questionnarieInfo.js" type="text/javascript"></script>
+<!-- <script src="js/extend/countUp.min.js" type="text/javascript" charset="utf-8"></script> -->
+ </body>
+ </html>

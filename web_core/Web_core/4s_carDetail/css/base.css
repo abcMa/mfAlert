@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eff3f8;
+    color: #444d58;
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+    line-height: 1.42857143;
+    min-width: 1203px;
+}
+/*tab样式-start*/
+.ip-nav-tabs>li>a {
+    color: #333;
+    padding: 0px 15px;
+    font-size: 18px;
+    height: 58px;
+    line-height: 58px;
+}
+.ip-nav-tabs {
+    border-bottom: none;
+    margin-bottom: 0px;
+}
+.ip-nav-tabs>li.active>a, .ip-nav-tabs>li.active>a:focus, .ip-nav-tabs>li.active>a:hover {
+    border: none;
+    border-bottom: 3px solid #09f;
+    color: #09f;
+}
+.ip-nav-tabs>li>a:hover {
+    color: #09f;
+}
+.ip-nav-tabs>li>a:hover {
+    border-color: white;
+    background-color: white;
+}
+.tab-content {
+    padding-top: 20px;
+    background: #fff;
+}
+/*tab样式-end*/
+.row{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.wrap{
+    position: relative;
+    min-height: 1300px;
+}
+.wrap-left{
+    width: 300px;
+    position: absolute;
+}
+.wrap-right{
+    margin-left: 320px;
+}
+.main-top-panel,#main-bottom-panel{
+    background-color: #fff;
+}
+#main-bottom-panel{
+    margin-top: 20px;
+}
+.carBrandNo{
+    font-size: 18px;
+    color: #09f;
+    line-height: 1.4;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.left-top .slide-block .row,.left-bottom .slide-block .row{
+    padding:15px 0px;
+    border-bottom: 1px dashed #ddd;
+}
+.left-middle .slide-block .row{
+    padding-bottom:15px;
+}
+.slide-block .row .lt-col{
+  float: left;
+}
+.slide-block .row .lt-val{
+    float: right;
+}
+.left-top,.left-bottom{
+    overflow: hidden;
+}
+
+.lm-title,.lb-title{
+    font-size: 18px;
+    line-height: 18px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+.carOwnerName{
+    padding: 15px 0px;
+    color: #09f;
+}
+.contractSwitch{
+    float: right;
+}
+.trends-track-left{
+    float:left;
+    display:inline-block;
+}
+.trends-track-right{
+    float:right;
+    display:inline-block;
+}
+
+.bar-item{
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    padding: 0px;
+    width: 54px;
+    text-align: center;
+}
+.bar-title{
+    display: inline-block;
+    min-height:30px;
+    font-size: 12px;
+    padding-top: 7px;
+}
+
+.trends-bar-chart .bar{
+    /*height: 60px;
+    line-height: 60px;*/
+    display: block;
+    background-color:#5eb4ef;
+    color: #ffffff;
+}
+
+.trends-bar-chart .maintain-no-bar,.trends-bar-chart .store-no-bar,.trends-bar-chart .current-consume-bar,.trends-bar-chart .zifei_counter_vir{
+    background-color: #f66;
+}
+ i{
+    font-style: normal;
+}
+.tab-content{
+    padding:0px 15px 0;
+}
+#main-bottom-panelContant0{
+    padding:30px 15px 0;
+}
+.mileage-track-line{
+    text-align: left;
+    margin-top:30px;
+}
+
+.track-item{
+    display: inline-block;
+    text-align: right;
+    float: left;
+    line-height: 24px;
+    width:25%;
+    position: relative;
+}
+.track-item i{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    text-align: right;
+}
+
+.track0 i{
+    left: 0;
+    text-align: left;
+    width: 100px;
+}
+.track-item.track0 span{
+    background-color:#6fcdcd;
+}
+
+.track-item.track1 span{
+    background-color: #5eb4ef;
+}
+.track-item.track2 span{
+    background-color: rgb(255, 102, 102);
+}
+.track-item span{
+    display: block;
+    height: 24px;
+    color: #ffffff;
+    font-size: 16px;
+    padding-right: 2px;
+}
+
+.track-item.blue span{
+    background-color:#5eb4ef;
+}
+.track-car{
+    width:129px;
+    margin-bottom: 2px;
+}
+
+/*进店状态时间轴-start*/
+.cell{
+    display: inline-block;
+    float: left;
+    position: relative;
+    width:10%;
+}
+.cell-top,.cell-bottom{
+    display: inline-block;
+    height:72px;
+    width: 100%;
+    float:left;
+    padding:10px;
+    position: relative;
+}
+.cell-top i,.cell-bottom i{
+    font-size: 16px;
+}
+.trace-item-label{
+    position: absolute;
+    width: 200px;
+}
+.cell-bottom{
+    border-top:2px solid #5eb4ef;
+}
+
+.dot{
+    border: 2px solid #5eb4ef;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    position: absolute;
+    top:66px;
+    background-color: #5eb4ef;
+    left: 10px;
+    z-index: 20;
+}
+
+.cell:nth-child(1) .dot{
+    background-color: #ffffff;
+}
+.end-time .dot{
+    border: 2px solid #f66;
+    background-color: #ffffff;
+}
+
+.end-time .cell-bottom{
+    border-top: 2px solid #f66;
+}
+.gap{
+    width: 30px;
+}
+.gap .cell-bottom{
+    border-top: 2px dotted #5eb4ef;
+}
+
+/*动态轨迹*/
+.car-status-track{
+    margin-left: 35px;
+}
+.status-track-items{
+    padding-left: 35px;
+    border-left: 1px solid #09f;
+}
+
+.item-row-right{
+    float: right;
+}
+.status-item-row{
+    position: relative;
+    background-color: #f7f7f7;
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+}
+.status-item-row.no-data{
+    background-color: #fff;
+    box-shadow: none;
+    padding: 0;
+    color: #ccc;
+}
+.status-item-title{
+    font-size: 18px;
+    color: #333;
+    text-align:left ;
+    padding: 30px 0px 15px;
+    line-height: 35px;
+}
+.carIcon{
+    background: url(../image/car-icon.png)center no-repeat;
+}
+.rowIcon{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #09f;
+    border-radius: 50%;
+    position: absolute;
+    left:-56px;
+    top:0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    line-height: 40px;
+}
+.rowIcon:before{
+    color: white;
+    font-size: 16px;
+}
+#main-bottom-panel .tab-content #main-bottom-panelContant0{
+    width: 75%;
+}
+
+.statusItemSwitch{
+    padding-left: 10px;
+    cursor: pointer;
+    color: #ccc;
+}
+.statusItemSwitch:hover{
+    color: #333;
+}
+.status-item-row:last-child{
+    margin-bottom: 0px;
+}
+.left-block .row:last-child{
+    border-bottom: 1px solid #ccc;
+}
+.status-val.clickable{
+    color: #09f;
+    cursor: pointer;
+}
+.status-val.clickable:hover{
+    color:#06c;
+}
+/*互动记录*/
+.item-control{
+    display: inline-block;
+
+    border-bottom: 1px solid #ccc;
+}
+.item-control:nth-child(2),.item-control:nth-child(3){
+    margin-left: 27px;
+}
+.interact-row{
+    width: 100%;
+    padding: 10px 0px;
+}
+.item-control-val{
+    padding: 6px 10px 6px 20px;
+    border: none;
+}
+.item-control-val:active,.item-control-val:visited,.item-control-val:focus{
+    border:none;
+    outline: none;
+}
+.interact-container{
+    width: 680px;
+    font-size: 14px;
+}
+.interact-row textarea{
+    width: 100%;
+    height: 85px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    resize: none;
+}
+
+.msg-signature{
+    display: inline-block;
+    margin-right: 40px;
+}
+textarea{
+    outline: none;
+}
+.interact-save.disable,.massage-save.disable{
+  cursor: not-allowed;
+}
+.interact-row .msg-content{
+    width: 90%;
+}
+.interact-row .msg-length{
+    display: inline-block;
+    width: 8%;
+}
+.loadMore{
+    text-align: center;
+}
+.bar-val{
+    font-size: 14px;
+}
+.interact-target-area,.send-target-area{
+    position: relative;
+    display: inline-block;
+}
+.interact-target-area .td:hover,.send-target-area .td:hover{
+    background-color: #f7f7f7;
+}
+.send-target ul,.interact-target ul,.msg-templet ul{ list-style:none; padding:0px; margin:0px; width:320px;
+    height: 30px;
+    line-height: 30px; border-bottom:1px solid #ccc;
+    border-top:0px; font-size:12px;cursor: pointer}
+.send-target ul li,.interact-target ul li,.msg-templet ul li{ display:block; width:33%; float:left;text-indent:2em}
+.msg-templet ul{
+    width:380px;
+}
+.msg-templet ul li:first-child{
+    width:30%;
+ }
+.msg-templet ul li:last-child{
+    width:70%;
+}
+.send-target .th,.interact-target .th,.msg-templet .th{  font-weight:bold; border-top:1px }
+.send-target-btn,.interact-target-btn,.msg-templet-btn{
+    background-color:white;
+    border:none;
+}
+.send-target,.interact-target,.msg-templet{
+    padding:0;
+    border:0;
+}
+.send-target .td.active,.interact-target .td.active,.msg-templet .td.active{
+    background-color: #f7f7f7;
+}
+.loadMore button{
+    border: 1px dashed #09f;
+    background-color: #fff;
+    cursor: pointer !important;
+    color: #09f;
+    padding: 10px 0;
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 3px;
+}
+.loadMore button:hover{
+    background: #09f;
+    color: #fff;
+    border: 1px solid #09f;
+}
+.trends-bar-dropdown{
+    text-align: right;
+    position: relative;
+}
+.trends-bar-dropdown select{
+    border:none;
+    color: #09f;
+    font-size: 14px;
+}
+.trends-bar-dropdown select:hover{
+    color: #06c;
+}
+.trends-bar-dropdown select:focus{
+    outline: none;
+}
+.last_service_date,.last_outreach_date,.last_maintain_date,.first_maintain_date,.first_service_date,.warranty_start_date,.delivery_date{
+    color:#5eb4ef;
+}
+.insurance-end-time,.next_maintain_date{
+    color: #f66;
+}
+.trends-bar-top,.trends-bar-bottom{
+    height: 100px;
+    margin-top: 10px;
+    position: relative;
+}
+.trends-bar-top{
+    height:110px;
+}
+.interact-switch{
+    display: inline-block;
+}
+.interact-switch-line{
+    padding: 0;
+    height: 35px;
+    line-height: 35px;
+    /*text-align: center;*/
+    border-bottom: 1px solid #ccc;
+}
+.interact-select{
+    display: inline-block;
+    width: 35%;
+    height: 33px;
+    padding-bottom: 1px;
+    border: transparent;
+    border-bottom: 1px solid #ccc;
+    box-shadow:none;
+    -webkit-box-shadow:none;
+}
+.interact-select:focus{
+    box-shadow:none;
+    -webkit-box-shadow:none;
+    border-color: #ccc;
+}
+.interact-width{
+    display: inline-block;
+    width: 148px;
+}
+.interact-width-success{
+    display: inline-block;
+    width: 167px;
+    margin-left: 27px;
+}
+.interact-width-end{
+    display: inline-block;
+    width: 242px;
+    margin-left: 27px;
+}
+.interact-width label{
+    color: #444d58;
+}

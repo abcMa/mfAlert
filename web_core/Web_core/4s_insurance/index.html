@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>保险管理</title>
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Content/bootstrap/css/bootstrap-multiselect.css"/>
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/cropper.min.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/insurance.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div class="row">
+    <div class="col-sm-12" id="insurance-list" style="padding: 0px;"></div>
+</div>
+<!--模态框1-->
+<!--创建保单-->
+<div class="modal fade insurance-model" id="insurance-edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog"  style="width:1000px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">创建保险</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline" id="new-insurance" novalidate="novalidate">
+                    <div class="model-block">
+                        <h3>保险、车辆信息</h3>
+                        <div class="row model-line">
+                            <div class="form-group col-sm-3 line">
+                                <label for="type"><span class="fa fa-plus needIcon"></span>类别 :</label>
+                                <select name="type" id="type" class="choose" data-field="type">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="customer-source"><span class="fa fa-plus needIcon"></span>客户来源 :</label>
+                                <input type="text" class="type-text" name="customerSource" id="customer-source"  autocomplete="off" data-field="customer_source">
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="register-time"><span class="fa fa-plus needIcon"></span>初登日期 :</label>
+                                <input type="text" class="type-text" id="register-time" name="registerTime"  autocomplete="off" data-field="register_date">
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="plate-number"><span class="fa fa-plus needIcon"></span>车牌号 :</label>
+                                <div class="input-group emp" id="chepai" style="width:160px;float: left;">
+                                    <input class="form-control searchConInput input-search type-text" placeholder="搜索车牌号" id="plate-number" type="text" autocomplete="off" name="plateNum" data-field="plate_number">
+                                    <span class="input-group-btn chepai">
+                                        <button type="button" class="btn btn-default dropdown-toggle chepai" data-toggle="dropdown" tabindex="-1" aria-expanded="false">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-left" role="menu" id="palteList" style="max-height: 200px;overflow-y: scroll;">
+                                            <li role="presentation" class="disabled">
+                                                <a role="menuitem" tabindex="-1" class="hint-link">请输入至少2个关键字...</a>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-3">
+                                <label for="vin"><span class="fa fa-plus needIcon"></span>VIN :</label>
+                                <div class="input-group" id="vinList" style="width:160px;float: left;">
+                                    <input class="form-control searchConInput input-search type-text" placeholder="搜索vin" id="vin" type="text" autocomplete="off" name="vin" data-field="vin" style="width:142px;">
+                                    <span class="input-group-btn vin-list">
+                                        <button type="button" class="btn btn-default dropdown-toggle vin-list" data-toggle="dropdown" tabindex="-1" aria-expanded="false">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-left" role="menu" id="vin-List-search" style="max-height: 200px;overflow-y: scroll;">
+                                            <li role="presentation" class="disabled">
+                                                <a role="menuitem" tabindex="-1" class="hint-link">请输入至少6个关键字...</a>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="car-name"><span class="fa fa-plus needIcon"></span>车主 :</label>
+                                <input type="text" class="type-text"  id="car-name" name="carName"  autocomplete="off" data-field="customer_name" style="width:170px;">
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="car-brand"><span class="fa fa-plus needIcon"></span>车辆品牌 :</label>
+                                <input type="text" class="type-text" id="car-brand" name="brand"  autocomplete="off" data-field="car_brand">
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="car-model">车型名称 :</label>
+                                <input type="text" class="type-text" id="car-model"  autocomplete="off" data-field="car_model_name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-block">
+                        <h3>关联人信息</h3>
+                        <div class="row  model-line">
+                            <div class="form-group col-sm-3 line">
+                                <label for="insuranced-name"><span class="fa fa-plus needIcon"></span>被保险人 :</label>
+                                <input type="text" class="type-text"  id="insuranced-name" name="insurancedName"  autocomplete="off" data-field="insured_person">
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="insuranced-id">被保险人证件号 :</label>
+                                <input type="text" class="type-text"  id="insuranced-id" style="width:80px;"  autocomplete="off" data-field="insured_person_identiy">
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="cellphone"><span class="fa fa-plus needIcon"></span>联系电话 :</label>
+                                <input type="text" class="type-text" id="cellphone"  autocomplete="off" name="cellphone" data-field="cellphone">
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="other-phone">其他电话 :</label>
+                                <input type="text" class="type-text" id="other-phone"  autocomplete="off" data-field="cellphone2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-4 line">
+                                <label for="insuranced-deal">线索 :</label>
+                                <input type="text" class="deal-input"  id="insuranced-deal" name="dealName"  autocomplete="off" data-field="deal_id" readonly style="background-color: rgb(235,235,228);width:255px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-block">
+                        <h3>投保信息</h3>
+                        <div class="row">
+                            <div class="form-group col-sm-3 line">
+                                <label for="order-time"><span class="fa fa-plus needIcon"></span>出单日期 :</label>
+                                <input type="text" class="type-text"  id="order-time" name="orderTime"  autocomplete="off" data-field="order_date">
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="insuranced-company"><span class="fa fa-plus needIcon"></span>承保公司 :</label>
+                                <input type="text" class="type-button" id="insuranced-company" name="insurancedCompany" data-field="insurance_company" readonly style="background-color: rgb(235,235,228);">
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="start-time"><span class="fa fa-plus needIcon"></span>承保日期 :</label>
+                                <input type="text" class="type-text" id="start-time" name="startTime"  autocomplete="off" data-field="insurance_start_date">
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="end-time"><span class="fa fa-plus needIcon"></span>终止日期 :</label>
+                                <input type="text" class="type-text" id="end-time" name="endTime"  autocomplete="off" data-field="insurance_end_date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-block insurance-type-thr">
+                        <h3>交强险、商业险</h3>
+                        <div class="row model-line jiaoqiang-row">
+                            <div class="form-group col-sm-3 line">
+                                <label for="is-jiaoqiang">交强险 :</label>
+                                <input type="checkbox" class="blueCheckbox" id="is-jiaoqiang" data-field="is_jiaoqiang">
+                            </div>
+                            <div class="form-group col-sm-3 line jiaoqian">
+                                <label for="jiaoqiang-order">交强险保单号 :</label>
+                                <input type="text" class="type-text type-dis" id="jiaoqiang-order"  autocomplete="off" data-field="jiaoqiangxian_number"  name="jiaoqiangOrder" style="width: 114px;" disabled/>
+                            </div>
+                            <div class="form-group col-sm-3 line jiaoqian">
+                                <label for="jiaoqiang-money">交强险保费 :</label>
+                                <input type="text" class="type-text type-dis" id="jiaoqiang-money"  autocomplete="off" data-field="jiaoqiang_amount" name="jiaoqiangMoney" style="width: 129px;" disabled>
+                            </div>
+                            <div class="col-sm-3 line">
+
+                            </div>
+                        </div>
+                        <div class="row model-line chechuan-row">
+                            <div class="form-group col-sm-3 line">
+                                <label for="is-chechuan">车船税 :</label>
+                                <input type="checkbox" class="blueCheckbox" id="is-chechuan" data-field="is_chechuan">
+                            </div>
+                            <div class="form-group col-sm-3 line chechuan">
+                                <label for="chechuan-money">车船税 :</label>
+                                <input type="text" class="type-text type-dis" id="chechuan-money"  autocomplete="off" data-field="chechuanshui_amount" style="width:156px;" name="chechuanMon" disabled>
+                            </div>
+                            <div class="col-sm-6 line">
+
+                            </div>
+                        </div>
+                        <div class="row model-line shangye-row">
+                            <div class="form-group col-sm-3">
+                                <label for="is-shangye">商业险 :</label>
+                                <input type="checkbox" class="blueCheckbox" id="is-shangye" data-field="is_shangye">
+                            </div>
+                            <div class="form-group col-sm-3 line shangye">
+                                <label for="shangye-order">商业险保单号 :</label>
+                                <input type="text"  class="shangye-check type-text type-dis" id="shangye-order"  autocomplete="off" data-field="shangyexian_number" name="shangyeOrder" style="width: 114px;" disabled>
+                            </div>
+                            <div class="form-group col-sm-3 line shangye">
+                                <label for="shangye-money">商业险保费 :</label>
+                                <input type="text"  class="shangye-check type-text type-dis" id="shangye-money"  autocomplete="off" data-field="shangye_amount" name="shangyeMoney" style="width: 128px;" disabled>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+
+                            </div>
+                        </div>
+                        <div class="row model-line">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="disanfang">第三方责任险(万) :</label>
+                                <input type="text"  class="shangye-check type-text type-dis" id="disanfang" style="width:90px;"  autocomplete="off" data-field="sanzhexian_amount" disabled>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="chesun">车损险(万) :</label>
+                                <input type="text" class="shangye-check type-text type-dis" id="chesun"  autocomplete="off" data-field="chesunxian_amount" style="width: 110px;" disabled>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="daoqiang">盗抢险(万) :</label>
+                                <input type="text" class="shangye-check type-text type-dis" id="daoqiang"  autocomplete="off" data-field="daoqiangxian_amount" style="width: 110px;" disabled>
+                            </div>
+                        </div>
+                        <div class="row model-line">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="cheshang">车上人员责任险（万） :</label>
+                                <input type="text"  class="shangye-check type-text type-dis" id="cheshang" style="width:55px;"  autocomplete="off" data-field="chezuoxian_amount" disabled>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="buji">不计免赔 :</label>
+                                <input type="checkbox" class="shangye-check blueCheckbox type-dis" id="buji" data-field="is_bujimianpei" disabled>
+                            </div>
+                            <div class="col-sm-3 line">
+
+                            </div>
+                        </div>
+                        <div class="row model-line">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="boli">玻璃单独破损险（万） :</label>
+                                <!--<input type="text"  class="type-text" id="boli" style="width:55px;" data-field="bolixian_amount">-->
+                                <select name="" class="shangye-check fujia-add choose" id="boli" data-field="bolixian_amount" data-add="0" disabled>
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="ziran">自燃损失险（万） :</label>
+                                <input type="text" class="shangye-check fujia-add type-text type-dis" id="ziran" style="width:80px;"  autocomplete="off" data-field="ziranxian_amount" data-add="0" onkeyup="this.value=this.value.replace(/[, ]/g,'')" disabled>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="huaheng">车身划痕险（万） :</label>
+                                <input type="text" class="shangye-check fujia-add type-text type-dis" id="huaheng"  autocomplete="off" style="width:80px;" data-field="huahenxian_amount" data-add="0" onkeyup="this.value=this.value.replace(/[, ]/g,'')" disabled>
+                            </div>
+                        </div>
+                        <div class="row model-line">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="teyue">无法找到第三方特约责任险 :</label>
+                                <input type="checkbox"  id="teyue" class="shangye-check fujia-add blueCheckbox type-dis" data-add="0" data-field="is_wusanfang" disabled>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="sheshui">涉水损失险 :</label>
+                                <input type="checkbox" id="sheshui" class="shangye-check fujia-add blueCheckbox type-dis" data-add="0" data-field="is_sheshuixian" disabled>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="shebei">新增设备险（万） :</label>
+                                <input type="text" class="shangye-check fujia-add type-text type-dis"  autocomplete="off" id="shebei" style="width:80px;" data-add="0" data-field="xinzengshebei_amount" onkeyup="this.value=this.value.replace(/[, ]/g,'')" disabled>
+                            </div>
+                        </div>
+                        <div class="row model-line">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <label for="insuranced-total">附加险种总计 :</label>
+                                <input type="text"  class="type-text type-dis" id="insuranced-total"  autocomplete="off" style="width:55px;" data-field="fujiaxian_quantity" readonly disabled>
+                            </div>
+                            <div class="col-sm-6">
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="model-block">
+                        <h3>保费总计</h3>
+                        <div class="row model-line">
+                            <div class="form-group col-sm-3 line">
+                                <label for="discount">本次保险折扣 :</label>
+                                <input type="text" class="type-text" id="discount"  autocomplete="off" data-field="discount_rate" style="width: 110px;">
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="total">保费总计 :</label>
+                                <input type="email" class="type-text type-dis" id="total" data-field="total_amount" readonly disabled>
+                            </div>
+                            <div class="col-sm-6 line">
+
+                            </div>
+                        </div>
+                        <div class="row model-line">
+                            <div class="form-group col-sm-3 line">
+                                <label for="shangye-rate">商业险费率 :</label>
+                                <input type="email" class="type-text type-dis" id="shangye-rate" data-field="shangyexian_rate" maxlength="2" style="width: 110px;" readonly disabled>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="shangye-charge">商业险手续费 :</label>
+                                <input type="email" class="type-text type-dis" id="shangye-charge" style="width:100px;" data-field="shangyexian_commission" readonly disabled>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="jiaoqiang-charge">交强险手续费 :</label>
+                                <input type="email" class="type-text type-dis" id="jiaoqiang-charge" style="width:100px;" data-field="jiaoqiang_commission" readonly disabled>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="total-profit">净收益总计 :</label>
+                                <input type="email" class="type-text type-dis" id="total-profit" data-field="total_commission" style="width: 120px;" readonly disabled>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-3">
+                                <label for="pay-method"><span class="fa fa-plus needIcon"></span>缴费方式 :</label>
+                                <select name="payMethod" class="choose" id="pay-method"  data-field="pay_method">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <label for="profer-type"><span class="fa fa-plus needIcon"></span>优惠类型 :</label>
+                                <select name="proType" class="choose" id="profer-type" data-field="discount_type" style="width:120px;">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-3 xianjin">
+                                <label for="cash">现金 :</label>
+                                <input type="text" class="type-text type-dis" id="cash" data-field="cash_discount"  autocomplete="off" name="cash" style="width:170px;" disabled>
+                            </div>
+                            <div class="form-group col-sm-3 daijin">
+                                <label for="coupus">代金券 :</label>
+                                <input type="text" class="type-text type-dis" id="coupus" data-field="voucher_discount"   autocomplete="off" name="coupus" style="width:156px;" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-block">
+                        <h3>经办人</h3>
+                        <div class="row model-line">
+                            <div class="form-group col-sm-3 line">
+                                <label for="sales"></span>销售顾问 :</label>
+                                <input type="text" class="type-text" id="sales" name="sales"  autocomplete="off" data-field="sales_rep">
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="owner"><span class="fa fa-plus needIcon"></span>责任人 : </label>
+                                <div class="input-group emp" id="zeren" style="width:160px;float: left;">
+                                    <input class="form-control searchConInput input-search type-search"  autocomplete="off" placeholder="搜索名字或者电话号码" id="owner" type="text" autocomplete="off" name="owner" data-field="responsible_person">
+                                    <span class="input-group-btn owner">
+                                        <button type="button" class="btn btn-default dropdown-toggle owner" data-toggle="dropdown" tabindex="-1" aria-expanded="false">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-left ownerBySearch" role="menu" style="max-height: 200px;overflow-y: scroll;">
+                                            <li role="presentation" class="disabled">
+                                                <a role="menuitem" tabindex="-1" class="hint-link">请输入至少2个关键字...</a>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="issuer"><span class="fa fa-plus needIcon"></span>出单人 :</label>
+                                <div class="input-group emp" id="chudan" style="width:160px;float: left;">
+                                    <input class="form-control searchConInput input-search type-search"  autocomplete="off" placeholder="搜索名字或者电话号码" id="issuer" type="text" autocomplete="off" name="user" data-field="chudanren">
+                                    <span class="input-group-btn issuer">
+                                        <button type="button" class="btn btn-default dropdown-toggle issuer" data-toggle="dropdown" tabindex="-1" aria-expanded="false">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-left conListBySearch" role="menu" style="max-height: 200px;overflow-y: scroll;">
+                                            <li role="presentation" class="disabled">
+                                                <a role="menuitem" tabindex="-1" class="hint-link">请输入至少2个关键字...</a>
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-3 line">
+                                <label for="is-dianxiao">是否电销 :</label>
+                                <input type="checkbox" class="blueCheckbox" id="is-dianxiao" data-field="is_telesales">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label for="remarks">备注 :</label>
+                                <textarea name="" id="remarks"  autocomplete="off" data-field="note"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn cancel" data-dismiss="modal">取 消</button>
+                <button type="button" class="btn commonBtn" data-loading-text="<span class='fa-spin fa-spinner' ></span>保存中">保 存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--承包公司-->
+<div class="modal fade" id="myModalCom" tabindex="-1" role="dialog" aria-labelledby="myModalComLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalComp">选择承保公司</h4>
+            </div>
+            <div class="modal-body">
+                <div class="insu-company">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn cancel" data-dismiss="modal">关 闭</button>
+                <button type="button" class="btn commonBtn selectInsuCom">确 认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--是否设置线索状态-->
+<div class="modal fade" id="myDeal" tabindex="-1" role="dialog" aria-labelledby="myDealLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myDealLabel">是否设置线索</h4>
+            </div>
+            <div class="modal-body">
+                <p>此辆车目前尚有跟进中的线索，是否关联线索？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn cancel" data-dismiss="modal">不设置</button>
+                <button type="button" class="btn commonBtn set-deal" data-loading-text="<span class='fa fa-spin fa-spinner' ></span>保存中">设 置</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择线索-->
+<div class="modal fade" id="selectDeal" tabindex="-1" role="dialog" aria-labelledby="selectDealLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="selectDealDal">选择对应线索</h4>
+            </div>
+            <div class="modal-body">
+                <div class="deal-list">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn cancel" data-dismiss="modal">关 闭</button>
+                <button type="button" class="btn commonBtn selectDeal">确 认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--生成线索-->
+<div id="create-cule">
+</div>
+</body>
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-multiselect.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-notify.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-switch.min.js"></script>
+<script src="../Content/bootstrap/js/cropper.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script src="js/common.js"></script>
+<script src="js/trace.js"></script>
+<script src="js/insurance.js"></script>
+<script src="js/widget.js"></script>
+<script>
+    Iptools.Start();
+    widget._init();
+    Comwidget._init();
+    insurance._init();
+    InsuTrace._init();
+</script>
+</html>

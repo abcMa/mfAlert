@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>List</title>
+    <link href="../Content/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" type="text/css" >
+    <link href="Style/Common.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="../Content/JS/jquery-1.9.1.js"></script>
+    <!--<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script src="../Content/bootstrap/js/bootstrap.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../Content/bootstrap/js/lightbox.js"></script>
+    <script src="../Content/JS/xlsx.js"></script>
+    <script src="../Content/JS/iptools_v2.js"></script>
+    <script type="text/javascript" src="Style/dist/js/jquery.qrcode.min.js"></script> 
+    <script src="../Content/JS/ipComponents.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-switch.min.js"></script>
+    <script src="JS/campaignList.js"></script>
+    <style>
+   /*  @media (min-width: 992px){
+		.search-row{
+		width:51.666667%;
+		}
+	} */
+	.search-row{
+		padding-right:0px;
+		padding-left:0px;
+	}
+    .table > thead > tr > th,.table > tbody > tr > th, .table > tbody > tr > td {
+    text-align:left;
+    vertical-align: middle;
+    }
+
+    .table-responsive {
+     overflow-x: initial;
+    }
+    .table td {
+    font-size:14px;
+    }
+    .ewm-area .hide{
+        display:none;
+    }
+    .ewm{
+        position:relative;
+    }
+    .ewm-area{
+	    position: absolute;
+	    top: -45px;
+        left: -116px;
+	    width: 120px;
+	    box-shadow: 0px 1px 4px rgba(0,0,0,.1);
+	    background: #fff;
+	    padding: 4px;
+	    height: 120px;
+	    border: 1px solid #ddd;
+        z-index: 1000;
+    }
+    .left{
+	    border-width: 13px;
+	    border-style: solid;
+	    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #fff;
+	    position: absolute;
+	    top: -2px;
+        left: 2px;
+	    z-index:2000;
+	}
+	.navbar-default{
+	/* margin-top: 14px; */
+	margin: 10px 20px;
+	}   
+	.mainSection {
+     min-height: 500px;
+    }
+    .search-function-container{
+        border-bottom: 1px solid #ddd;
+        border-radius: 0px;;
+    }
+	.left-bot {
+	    border-width: 13px;
+	    border-style: solid;
+	    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0)  rgba(0, 0, 0, 0) #ddd;
+	    width: 0;
+	    height: 0;
+	    position: absolute;
+	    left: 4px;
+        top: -2px;
+	}
+	.navbar-brand {
+	    padding: 19px 15px;
+	}
+	.searchExcute {
+	    margin-top: 0px; 
+	    width: 40px;
+	    padding: 0px;
+	    height: 34px;
+	}
+	#collapseSearch .col-sm-4{
+	    padding-left:0;
+	    padding-right:0;
+	    text-align: right;
+	}
+	.searchIcon{
+	    margin-top: 3px; 
+	    font-size: 21px;
+	    display: inherit;
+	}
+	.campaignListNoData{
+		line-height: 58px;
+	    text-align: center;
+	    font-size: 18px;
+	    padding-top: 57px;
+	}
+	
+	.btn.searchExcute.commonBtn:active,.btn.searchExcute.commonBtn:focus{
+	   outline:none;
+	}
+	/*0,1,2,0*/
+	.table-responsive table tr:hover{
+	background-color:#eff3f8;
+	}
+	.emptyImg{
+	width:150px;
+	}
+	.campaignListNoData span{
+	display:block;
+	}
+    </style>
+</head>
+<body>
+    <div class='modal fade' id='mainListSearchModal' tabindex='-1' role='dialog' aria-labelledby='titleModalLabel' data-backdrop='static'>
+        <div class='modal-dialog' role='document' style="width:auto;max-width:80%">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title' id='titleModalLabel'>查询</h4>
+                </div>
+                <div class='modal-body'>
+                    <form>
+                        <div id='upBox_form_body' style='width:100%'>
+                        </div>
+                    </form>
+                </div>
+                <div class='clear'></div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn-sm mainSearchPick'>
+                        确定
+                    </button>
+                    <button type='button' class='btn-sm btn-default dismissAppletNewModal' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mainSection col-sm-12">
+        <!-- <div class="col-sm-3 searchArea">
+            <h1>
+                <span>搜索筛选</span>
+            </h1>
+            <div id="searchPanel" class="menu-list"></div>
+        </div>
+        <div id="contentPanel" class="col-sm-9 content_right"></div> -->
+                <nav class="navbar search-function-container">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#listPanelHeader">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button> -->
+                    <span class="navbar-brand" id="lView_title"></span>
+                </div>
+                <div class="collapse navbar-collapse" id="listPanelHeader">
+                    <form class="navbar-form navbar-left" role="search">
+<!--                         <a class="btn" role="button" data-toggle="collapse" href="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                         
+                            搜索
+                        </a>-->
+                    </form>
+                    <div class="collapse1" id="collapseSearch" style="display: inline-block;width: 55%;">
+	                    <form class="form-inline" role="form" id="searchPanel">
+		                    
+		                    
+	                    </form>
+	                    <div class="hiddenCondition" style="display: none;"></div>
+	                </div>
+                    <ul id="buttonListPanel" class="nav navbar-nav navbar-right"></ul>
+                </div>
+                
+            </div>
+        </nav>
+        <div id="contentPanel" class="col-sm-12 content_right"></div>
+    </div>
+    <!-- Modal -->
+<div class="modal fade" id="ewmModal" tabindex="-1" role="dialog" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">提示</h4>
+      </div>
+      <div class="modal-body">
+        <div class="ewm-area">
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div class="modal-footer">        
+        <button type="button" class="btn btn-default closebtn" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div><!-- modal-end -->
+    <script>
+        Iptools.Start();
+        widget._init();
+        Iptools.DEFAULTS.pageSize = 10;
+        //hover二维码预览活动
+        $(document).on("mouseenter", ".ewm", function() {
+            // hover starts code here
+            $(this).find(".ewm-area").removeClass("hide");
+            $(this).find(".left").removeClass("hide");
+            $(this).find(".left-bot").removeClass("hide");
+            //判断当前hover是否已经初始化过了，如果已经初始化，则不在调用
+            //$(".ewm-area").empty();
+            if($(this).find(".ewm-area canvas").length === 0){
+            	$(this).find(".ewm-area").qrcode({ 
+			        render: "canvas", //table方式 
+			        width: 110, //宽度 
+			        height:110, //高度 
+			        correctLevel:3,
+			        text: $(this).attr("data-val") //任意内容 
+			    });
+            }
+        });
+        $(document).on("mouseleave", ".ewm", function() {
+            // hover ends code here
+        	$(this).find(".ewm-area").addClass("hide");
+        	$(this).find(".left").addClass("hide");
+            $(this).find(".left-bot").addClass("hide");
+        });
+		
+    </script>
+</body>
+</html>

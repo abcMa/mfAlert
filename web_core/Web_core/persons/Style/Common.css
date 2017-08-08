@@ -1,0 +1,239 @@
+﻿
+[disabled].form-control, [readonly].form-control, fieldset[disabled] .form-control {
+    cursor: not-allowed;
+}
+
+body{
+    background-color: #eff3f8;
+}
+input[name=modalListRadio], input[name=selectListCheckbox] {
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.checkAll {
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.clear {
+    clear: both;
+}
+
+
+
+
+
+.left-panel {
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:300px;
+    padding:20px 30px;
+    background-color: white;
+}
+
+.right-panel {
+    min-height: 800px;
+    padding-left: 320px;
+    position: relative;
+}
+.rightCcontent{
+    padding: 20px 15px 50px;
+    background-color: white;
+}
+
+.check-cell {
+    width: 50px;
+    max-width: 50px;
+}
+
+.himg {
+    width: 100px;
+    border: 0;
+    height: 100px;
+}
+
+.sep-line {
+    border-bottom: 1px #ccc solid;
+    margin-bottom: 15px;
+}
+
+.jstree-clicked,.jsnode_selected_single {
+    background: #beebff;
+    border-radius: 2px;
+    box-shadow: inset 0 0 1px #999999;
+}
+
+.org-tree-select {
+    width: 100%;
+    text-align: left;
+    border-radius: 0 3px 3px 0;
+}
+
+    .org-tree-select .caret {
+        float: right;
+        margin-top: 8px;
+    }
+
+.pageCountCalText {
+    font-size: 13px;
+}
+
+/*disableBtn*/
+.input-disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+#person_edit_form .form-group {
+    height: 65px;
+}
+
+
+
+.search_list{
+    position: relative;
+    /*float: right;*/
+}
+#searchPanel{
+    display: none;
+    margin: 8px 0;
+}
+.container-fluid>.navbar-header{width:86%;}
+.search_list input{
+    height: 34px;
+    border-radius: 5px;
+    text-indent: 16px;
+    width:250px;
+    padding: 0 5px;
+    border: 1px solid #ccc;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.search_list input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #555;
+    opacity: 0.5;
+}
+.search_list input:-moz-placeholder, textarea:-moz-placeholder {
+    color:#555;opacity: 0.5;
+}
+.search_list input::-moz-placeholder, textarea::-moz-placeholder {
+    color:#555;opacity: 0.5;
+}
+.search_list input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color:#555;opacity: 0.5;
+}
+.search_list input:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.search_list .search_icon, .search_list button {
+    position: absolute;
+    color: #a9a9a9;
+}
+.search_list button {
+    top: 7px;
+    left: 214px;
+    border: none;
+    height: 20px;
+    width: 28px;
+    padding: 0px 0;
+    border-radius: 5px;
+    background: #2ea4ed;
+    display: none;
+    color: #fff;
+}
+.search_icon {
+    top: 10px;
+    left: 5px;
+}
+
+.settings-bar{
+    height: 35px;
+    padding: 10px 0;
+}
+.settings-bar .fa{
+    font-size:20px;
+    color: #09f;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+blockquote {
+    padding: 0px 10px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    border-left: 2px solid #2b2929;
+    margin-top: 3px;
+}
+.tool-bar{
+    display: inline-block;
+    float: right;
+}
+#person_form{
+    display: inline-block;
+    margin: 0px;
+}
+#search_without_match{
+    color: #555555;
+    margin-left: 24px;
+    cursor: pointer;
+    margin-top: 5px;
+    display: inline-block;
+    padding: 3px;
+ }
+#search_without_match.active{
+    background: #beebff;
+    border-radius: 2px;
+    box-shadow: inset 0 0 1px #999999;
+}
+#search_without_match i{
+    padding-right: 5px;
+}
+.person_delete_link{
+    cursor: pointer;
+    color: #ff7d7e;
+    line-height: 0;
+}
+.editPerson{
+    color: #09f;
+    line-height: 0;
+    margin-left: 5px;
+}
+a:hover{
+    text-decoration: none;
+}
+
+.has-error .btn.commonBtn.revert {
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+/*新增加的样式*/
+.table > thead > tr > th{
+    border-bottom: 1px solid #ddd;
+}
+
+.table .person-row:hover {
+    background-color: #f6f6f6;
+}
+.rightCcontent tr:hover {
+    background-color: #eff3f8;
+}
+
+label{
+    font-weight: normal;
+    margin-bottom: 3px;
+}
+#person_edit_form .form-group{
+    margin-bottom: 20px;
+}
+
+.del_person_link{
+    margin-left: 5px;
+}

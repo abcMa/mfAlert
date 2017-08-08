@@ -1,0 +1,159 @@
+body{
+    font-family: 'Microsoft YaHei', '微软雅黑';
+}
+.authManage{
+    overflow: hidden;
+}
+i{
+    font-style:normal;
+}
+.icon-trash{
+    vertical-align:middle;
+	display: inline-block;
+    width: 11px;
+    height: 14px;
+	background:url("../../adminPage/img/delete.png") no-repeat;
+}
+.deptTable{
+    border: 1px solid #B2AAAA;
+    box-shadow: 5px 5px 3px #B2AAAA;
+    border-radius: 5px;
+}
+
+.deptListBody{
+   border-radius: 5px;
+}
+table tbody.roleListBody tr td{vertical-align:middle;    text-align: left;}
+table tbody.roleListBody tr td.text-right{vertical-align:middle;    text-align:right;}
+.deptList{
+    margin-top: 32px;
+}
+
+.deptList .deptListBody tr td{
+	vertical-align: middle;
+}
+.btn-delete{
+	margin-left:5px;
+}
+a.newRole{
+    width:80px;
+    height: 32px;
+    line-height: 16px;
+    padding:7px 20px;
+    font-size: 14px;
+}
+.roleList{width:100%;}
+.container .modal-footer{border-top:none;}
+.roleList table{margin-bottom: 0px;}
+/*去除默认hover状态*/
+a.btn-success:hover{
+    color:#333;
+    background-color:#fff;
+    border-color: #a2a2a2;
+}
+a.btn-success:visited{background-color:#fff;}
+a.btn-success:link{background-color:#fff;}
+p{font-size: 16px;}
+.left-panel{
+    float: left;
+    padding: 20px;
+    position: absolute;
+}
+.nav-tabs.tabList {
+    width: 300px;
+    display: inline-block;
+
+    border-bottom: none;
+}
+.tabList li{
+    float: none;
+}
+.tabList li a{
+    text-align: center;
+    border-radius: inherit;
+}
+.tabList li.active a{
+    background-color: #eee;
+}
+.tabList li.active a,.tabList li.active a:hover,.tabList li.active a:focus{
+    border: none;
+    background-color: #eee;
+}
+.tabsettings .nav-tabs{
+    border-bottom: 1px solid #09f;
+}
+.tabsettings .nav-tabs>li.active>a, .tabsettings .nav-tabs>li.active>a:focus,.tabsettings .nav-tabs>li.active>a:hover {
+    border: none;
+    border-bottom: 3px solid #09f;
+}
+.tabsettings{
+    float: right;
+    padding-left:300px;
+}
+blockquote {
+    padding: 0px 10px;
+    margin: 0 0 20px;
+    font-size: 16px;
+    border-left: 2px solid #2b2929;
+}
+.tool-bar .iconfontyyy{
+    cursor: pointer;
+    padding: 0px 5px;
+    font-size: 20px;
+}
+.add-managment{
+    font-size: 16px;
+    color: #09f;
+}
+.del-managmen{
+    font-size: 16px;
+    color:#ff7d7e;
+}
+#commitData{
+    float: right;
+    margin-top: 32px;
+}
+.bootstrap-select.form-control:not([class*=col-]) {
+    width: 50%;
+}
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus{
+    background-color: #09f;
+    border-color: #09f;
+}
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary, .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary{
+    background:#09f;
+}
+
+.type-select .btn-group button.dropdown-toggle.bs-placeholder{
+    border: 1px solid #09f;
+    color: #09f;
+    background: #fff;
+}
+.type-select .btn-group button.dropdown-toggle.bs-placeholder:hover{
+    background-color: #09f;
+    color: #fff;
+}
+#applet_res_panel h4{
+    font-size: 16px;
+}
+.tabsettings .nav-tabs a{
+    height: 44px;
+    margin-bottom: 1px;
+}
+.tip-note{
+    color: #e6e8eb;
+    font-size: 16px;
+}
+.setting-modal-item .nav-tabs li a{
+    padding: 10px 35px;
+}
+a {
+    color: #09f;
+    text-decoration: none;
+}
+.hidebar{
+    color: #09f;
+}
+.hidebar:hover{
+    color: #06c;
+}

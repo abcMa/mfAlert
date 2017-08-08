@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>访客首页</title>
+    <link rel="stylesheet" href="../Content/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../Content/bootstrap/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Content/Style/standard.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/visitor.css">
+</head>
+<body>
+    <div class="mainSection">
+        <div class="content">
+            <div class="sectionTop">
+                <div class="col-sm-12">
+                    <div class="panel panel-default landing-panel">
+                        <div class="panel-heading">
+                            <p class="landing-panel-font">总体分析</p>
+                            <div class="btn-group btn-group-sm navbar-right analysisAll">
+                                <button type="button" class="btn report-time-btn" data-type="week">本周</button>
+                                <button type="button" class="btn report-time-btn  report-btn-selected" data-type="month">本月</button>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active landingPanelFont" id="totalChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="lineDownTop">
+                    <p class="lineDownLeft">线下访客</p>
+                    <span class="floatMaddle" data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="访客探测基于易掌客定制硬件设备 - 智能探针，每家门店可配置一个或多个智能探针，创建门店时需添加对应的智能探针MAC地址。" data-original-title title>
+                        <span class="lineDownRight">访客探测说明</span>
+                    </span>
+                </div>
+                <div class="lineDown">
+                    <button type="button" id="lineDownBtn" class="lineBtn" data-toggle="modal" data-target="#myModal">
+                        <i class="icon iconfont iconLineDown">&#xe7a4;</i>
+                        <span>新增门店</span>
+                    </button>
+                </div>
+            </div>
+            <div class="sectionBottom">
+                <p class="lineUpperTop">线上访问</p>
+                <div class="lineUpper">
+                    <div class="inlet serviceBtn">每克拉美—服务号</div>
+                    <div class="inlet serviceBtn">每克拉美—订阅号</div>
+                    <div class="lineBtn lineUpperBtn">
+                        <i class="icon iconfont iconLineDown">&#xe7a4;</i>
+                        <span>新增</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">新增门店</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" id="eventMACAddress">
+                        <div class="form-group">
+                            <label for="inputText3" class="col-sm-3 control-label">店铺名称</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control toEmpty" name="shopName" id="inputText3" autocomplete="off" placeholder="请输入店铺名称">
+                            </div>
+                            <div class="col-sm-1">
+
+                            </div>
+                        </div>
+                        <div class="macIdPage">
+                            <div class="macGroup">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label addWinaOne">探针MAC地址-1</label>
+                                    <div class="col-sm-8 addWinaOneAddress">
+                                        <input type="text" class="form-control toEmpty" name="macID"  placeholder="请输入MAC地址">
+                                    </div>
+                                    <div class="col-sm-1"></div>
+                                    <p class="hideNum">1</p>
+                                </div>
+                            </div>
+
+                            <div class="addMac">
+                                <div class="addShop">
+                                    <i class="icon iconfont iconAddMac">&#xe75f;</i>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn cancel" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn commonBtn confirm">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script src="../Content/JS/jquery-1.9.1.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+    <script src="../Content/JS/highcharts.js"></script>
+    <script src="../Content/JS/highcharts-3d.js"></script>
+    <script src="../Content/JS/highcharts-themes.js"></script>
+    <script src="../Content/JS/iptools_v2.js"></script>
+    <script src="../Content/JS/ipComponents.js"></script>
+    <script src="js/visitor.js"></script>
+    <script>
+        Iptools.Start();
+        visitorWidget._init();
+        $(function (){
+            $("[data-toggle='popover']").popover();
+        });
+    </script>
+</body>
+</html>

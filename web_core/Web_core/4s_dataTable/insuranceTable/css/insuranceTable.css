@@ -1,0 +1,11 @@
+.insurance-table{
+    width: 100%;
+    overflow-x: auto;
+    padding: 0 15px;
+    background-color: #fff;
+}
+.insurance-table-container{
+    /*overflow-x: scroll;*/
+    overflow-y: hidden;
+    /*width: 1742px;*/
+}

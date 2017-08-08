@@ -1,0 +1,227 @@
+
+.left li:last-child.title{
+    padding-bottom: 33px;
+}
+.left .title h3{
+    margin:0px;
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color:#333;
+    padding-left: 15px;
+}
+.left .title ul{
+    padding: 0px 40px;
+}
+.left li:nth-child(1).title ul{
+    padding-bottom: 20px;
+}
+.left .title li{
+    text-align: center;
+    font-size: 16px;
+    color:#333;
+    height: 48px;
+    line-height: 48px;
+    cursor: pointer;
+}
+.left .title li a{
+    display: block;
+    color:#333;
+    height: 48px;
+    line-height: 48px;
+    cursor: pointer;
+    width:100%;
+}
+.left .title li a:link{
+    text-decoration: none;
+}
+.left .title li.active{
+    background-color: #09f;
+    color:white;
+    border-radius: 5px;
+}
+.left .title li.active a{
+    color:white;
+}
+.left li  li:hover a{
+    color:#333;
+}
+.left li li:hover{
+    background-color: #F7F7F7;
+    border-radius: 5px;
+    color:#333;
+}
+/*客户转化分析样式*/
+.conversion input{
+    width:100px;
+    display: inline-block;
+}
+.col-sm-6, .col-sm-12 {
+    padding: 0px;
+    position: relative;
+}
+.contact-change-report {
+    padding: 10px 35px;
+}
+
+.contact-change-report .perfect-line {
+    width: 100%;
+    min-height: 30px;
+    margin-top: 20px;
+    float: left;
+}
+
+.contact-change-report .perfect-line.font-line {
+    margin-top: 5px;
+}
+
+.contact-change-report .blank {
+    width: 10%;
+    height: 30px;
+    float: left;
+}
+
+.contact-change-report .line-angle-down-sm {
+    width: 40%;
+    height: 30px;
+    float: left;
+    position: relative;
+}
+
+.contact-change-report .line-angle-down-sm div {
+    width: 100%;
+    height: 30px;
+    border-top: 2px solid #5cd2fc;
+}
+
+.contact-change-report .line-angle-down-sm div:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid #5cd2fc;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.contact-change-report .line-angle-down-lg {
+    width: 40%;
+    height: 30px;
+    float: left;
+    position: relative;
+}
+
+.contact-change-report .line-angle-down-lg div {
+    width: 100%;
+    height: 30px;
+    border-top: 2px solid #5cd2fc;
+}
+
+.contact-change-report .line-angle-down-lg div:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid #5cd2fc;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.contact-change-report .line-font-sm {
+    width: 50%;
+    height: 30px;
+    text-align: right;
+    font-size: 16px;
+    float: left;
+    margin-top: -10px;
+}
+
+.contact-change-report .line-font-sm span {
+    color: red;
+    font-size: 20px;
+    margin-left: 6px;
+}
+
+.contact-change-report .line-angle-up-sm {
+    width: 10%;
+    height: 30px;
+    float: left;
+    position: relative;
+}
+
+.contact-change-report .line-angle-up-sm div {
+    width: 100%;
+    height: 30px;
+    border-top: 2px solid #5cd2fc;
+}
+
+.contact-change-report .line-angle-up-sm div:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #5cd2fc;
+    position: absolute;
+    top: -20px;
+    right: 0;
+}
+
+.contact-change-report .line-font-lg {
+    width: 40%;
+    height: 30px;
+    text-align: right;
+    font-size: 18px;
+    float: left;
+    margin-top: -30px;
+}
+
+.contact-change-report .line-font-lg span {
+    color: red;
+    font-size: 22px;
+    display: block;
+    margin-right: 15px;
+}
+
+.contact-change-report .line-sm {
+    width: 10%;
+    height: 30px;
+    float: left;
+    border-top: 2px solid #5cd2fc;
+}
+
+.contact-change-report .line-lg {
+    width: 40%;
+    height: 30px;
+    float: left;
+    border-top: 2px solid #5cd2fc;
+}
+
+.contact-change-report .line-angle-up-lg {
+    width: 40%;
+    height: 30px;
+    float: left;
+    position: relative;
+}
+
+.contact-change-report .line-angle-up-lg div {
+    width: 100%;
+    height: 30px;
+    border-top: 2px solid #5cd2fc;
+}
+
+.contact-change-report .line-angle-up-lg div:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #5cd2fc;
+    position: absolute;
+    top: -30px;
+    right: 0;
+}

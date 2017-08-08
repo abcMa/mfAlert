@@ -1,0 +1,74 @@
+@charset "UTF-8";
+ /*-----------------------------全局样式-------------------------------------*/
+	dl,dt,dd,ul,ol,li,form,span,a,input,p{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+	h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-size:14px;font-weight:normal}
+	ul,ol{list-style:none}
+	img{border:none;vertical-align:middle}
+	em,i,cite{font-style:normal}
+	input,button,textarea{outline:none;border:0;vertical-align:middle;border:0;font-family:Microsoft YaHei}
+	input[type="submit"],input[type="reset"],input[type="button"],button {-webkit-appearance:none;border-radius:0}
+	select{-webkit-appearance:none;-moz-appearance:none;appearance:none}
+	textarea{resize:none}
+	html{font-size:62.5%;-webkit-text-size-adjust:none;}
+	body{margin:0 auto;padding:0;font:16px Microsoft YaHei;color:#333;}
+	body a{color:#666;text-decoration:none;cursor:pointer}
+	body a:hover,body a:active,body a:focus{text-decoration:none;outline:none}	
+#marryCard {margin:auto;max-width:640px;overflow:hidden;}
+.lay-wrapper {position:relative;overflow:hidden;}
+.layout {position:absolute;left:0;top:0;overflow:hidden;}
+.lay-card-pic {width:100%;}
+.musicPlay {position:absolute;top:12px;right:12px;width:40px;height:40px;text-align:center;line-height:40px;border-radius:40px;z-index:99}
+.musicPlay img {width:100%;}
+.music-play {-webkit-animation: mplay 5s linear infinite;animation-play-state:paused;-webkit-animation-play-state:paused}
+	@-webkit-keyframes mplay {
+		0% { -webkit-transform: rotate(0deg);}
+		100% { -webkit-transform: rotate(360deg);}
+	}
+.goIcon {position:fixed;bottom:10px;left:0;right:0;margin:auto;width:40px;opacity:0.5;z-index:99}
+.goIcon img {width:100%}
+
+.go-icon {-webkit-animation: gicon 1s linear infinite;}
+.rotate {-webkit-animation-play-state:running;}
+.bgimg{  
+    width: 100%;
+    height: 100%;
+    min-width: 320px;
+    min-height: 480px;
+    margin-top: -1px;
+    -moz-background-size:cover;
+    -webkit-background-size:cover;
+}
+.section img{
+	width: 100%;
+	height: 100%;
+}
+.goIcon {
+    width: 32px;
+ }
+
+ .fp-tableCell {
+     vertical-align: initial;
+ }
+					@-webkit-keyframes gicon {
+						0% {
+							-webkit-transform: translateY(20px);
+							opacity:.6;
+						}
+						50% {
+							-webkit-transform: translateY(0px);
+							opacity:.2;
+						}
+						100% {
+							-webkit-transform: translateY(20px);
+							opacity:.6;
+						}
+					}
+			@-webkit-keyframes crs{
+				0%{-webkit-transform:rotate(0)}
+				100%{-webkit-transform:rotate(360deg)}
+			}	
+
+	
+	
+	
+	

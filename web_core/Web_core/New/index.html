@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>New</title>
+    <link href="../Content/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/lightbox.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/summernote/summernote.css" rel="stylesheet" />
+    <link href="Style/Common.css" rel="stylesheet" />
+    <!--<script src="../Content/JS/jquery-1.9.1.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../Content/bootstrap/js/bootstrapValidator.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-switch.min.js"></script>
+    <script src="../Content/bootstrap/summernote/summernote.js"></script>
+    <script src="../Content/bootstrap/summernote/lang/summernote-zh-CN.js"></script>
+    <script src="../Content/bootstrap/js/lightbox.js"></script>
+    <script src="../Content/JS/iptools.js"></script>
+    <script src="JS/widget.js"></script>
+</head>
+<body>
+    <div class='modal fade' id='detailControlSearchModal' tabindex='-1' role='dialog' aria-labelledby='titleModalLabel' data-backdrop='static'>
+        <div class='modal-dialog' role='document' style="width: auto; max-width: 80%">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title' id='titleModalLabel'>选择</h4>
+                </div>
+                <div class='modal-body'>
+                    <nav class="navbar navbar-default">
+                        <div class="collapse navbar-collapse">
+                            <form class="navbar-form navbar-left list-search-form" role="search"></form>
+                        </div>
+                    </nav>
+                    <form>
+                        <div id='modalList_body' style='width:auto'>
+                        </div>
+                    </form>
+                </div>
+                <div class='clear'></div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn-sm detailSearchPick'>
+                        确定
+                    </button>
+                    <button type='button' class='btn-sm btn-default dismissAppletNewModal' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mainArea">
+        <nav class="navbar navbar-default search-function-container">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false" data-target="#NewPanelHeader">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">新建</a>
+                </div>
+                <div class="collapse navbar-collapse" id="NewPanelHeader">
+                    <ul id="buttonListPanel" class="nav navbar-nav navbar-right"></ul>
+                </div>
+            </div>
+        </nav>
+        <div id="mainContent"></div>
+    </div>
+    <script>
+        Iptools.Start();
+        widget._init();
+    </script>
+</body>
+</html>

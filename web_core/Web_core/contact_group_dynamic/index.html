@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>动态客户群画像</title>
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Content/Style/standard.css" />
+    <link href="Style/Common.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-12" style="min-height: 1300px;">
+            <div class="left-section">
+                <div id="group_info"></div>
+            </div>
+            <div class="right-section">
+                <div class="g-main">
+                    <ul class="nav nav-tabs group-nav" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#g-table" aria-controls="profile" role="tab" data-toggle="tab">
+                                <span>成 员</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#g-static-group" aria-controls="profile" role="tab" data-toggle="tab">
+                                <span>静态客户群</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#g-rule" aria-controls="profile" role="tab" data-toggle="tab">
+                                <span>设 置</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="g-table">
+                            <div id="g_member_list" class="member-info"></div>
+                            <div id="g_analysis" style="display: none">
+                                <div class="report-header">
+                                    <select class="form-control report-select" id="report_select"></select>
+                                </div>
+                                <div class="report-body">
+                                    <div id="report_panel" class="r-report"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="g-static-group">
+                            <div id="g_static_group_list" class="member-info"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="g-rule">
+                            <div>
+                                <label class="group-label">【规则设置】</label>
+                                <div class="con-type">
+                                    <a><input name="con-type" type="radio" class="blueRadio" />满足以下全部条件</a>
+                                    <a><input name="con-type" type="radio" class="blueRadio" />满足以下任意条件</a>
+                                </div>
+                                <div class="auto-condition-container">
+                                    <label class="group-label">条件规则</label>
+                                    <div class="condition-panel">
+                                        <div class="g-condition">
+                                            <ul id="g_con_list" class="g-con-ul"></ul>
+                                        </div>
+                                        <div class="g-con-add">
+                                            <a>
+                                                <span class="fa fa-plus"></span>增加条件
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tag-panel"></div>
+                                </div>
+                            </div>
+                            <button id="g_rule_submit" class="btn commonBtn" data-loading-text="
+                                <span class='fa fa-spin fa-spinner'></span>更新中" style="margin-top: 15px;">
+                                更 新
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-list">
+                    <div id="cg_task_list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='taskModal' tabindex='-1' role='dialog' aria-labelledby='blable' data-backdrop='static'>
+        <div class='modal-dialog' role='document' style="width:50%;max-width: 500px;">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title' id='blable'>创建客群任务</h4>
+                </div>
+                <div class='modal-body'>
+                    <form id="task-form">
+                        <div class="form-group">
+                            <label>任务名称</label>
+                            <input type="text" id="taskName" name="taskName" class="form-control" placeholder="请输入任务名称" />
+                        </div>
+                        <div class="form-group">
+                            <label>截止时间</label>
+                            <input type="text" id="endTime" name="endTime" class="form-control datepicker" placeholder="请输入截止时间" />
+                        </div>
+                        <div class="form-group">
+                            <label>任务描述</label>
+                            <textarea id="taskDes" name="taskDes" class="form-control" placeholder="请输入任务描述"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>任务类型</label>
+                            <select id="taskType" name="taskType" class="form-control">
+                                <option value="">请选择...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>执行人</label>
+                            <select id="assignType" name="assignType" class="form-control">
+                                <option value="1">客户经理</option>
+                                <option value="2">客服专员</option>
+                                <option value="3">保险专员</option>
+                                <option value="4">自定义</option>
+                            </select>
+                        </div>
+                        <div id="t-form-assign" class="form-group" style="display: none;">
+                            <label>默认负责人</label>
+                            <select id="taskAssign" name="taskAssign" class="form-control">
+                                <option value="">请选择...</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' id="task_Submit" class='btn commonBtn' data-loading-text="
+                        <span class='icon-spin icon-spinner'></span>执行中">
+                        确定
+                    </button>
+                    <button type='button' class='btn commonBtn revert' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='static-g-Modal' tabindex='-1' role='dialog' aria-labelledby='blable' data-backdrop='static'>
+        <div class='modal-dialog' role='document' style="width:30%;">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title' id='blable'>创建静态客群</h4>
+                </div>
+                <div class='modal-body'>
+                    <p>当前选择 <span id="select_count"></span> 人</p>
+                    <form id="static-group-form">
+                        <div class="form-group">
+                            <label style="position: relative;">客群名称<span class="e-star">*</span></label>
+                            <input type="text" id="sgName" name="sgName" class="form-control" placeholder="请输入客群名称" />
+                        </div>
+                        <div class="form-group">
+                            <label style="position: relative;">目标客户<span class="e-star">*</span></label>
+                            <select class="form-control" id="sgType" name="sgType">
+                                <option value="">请选择...</option>
+                                <option value="customer">车主</option>
+                                <option value="contact">联系人</option>
+                                <option value="sx">送修人</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label style="position: relative;">描述<span class="e-star">*</span></label>
+                            <textarea id="sgDes" name="sgDes" class="form-control" placeholder="请输入客群描述"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' id="create_static" class='btn commonBtn' data-loading-text="
+                        <span class='icon-spin icon-spinner'></span>执行中">
+                        创建
+                    </button>
+                    <button type='button' class='btn commonBtn cancel' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.js"></script>
+    <script src="../Content/bootstrap/js/bootstrapValidator.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-switch.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../Content/JS/highcharts-new.js"></script>
+    <script src="../Content/JS/highcharts-3d-new.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/modules/drilldown.js"></script>
+    <script src="../Content/JS/highcharts-themes.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MCTvPcmmkl5p1cFxX9vgX1u2"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+    <script src="../Content/JS/iptools_v2.js"></script>
+    <script src="../Content/JS/ipComponents.js"></script>
+    <script src="JS/widget.js"></script>
+    <script>
+        Iptools.Start();
+        widget._init();
+    </script>
+</body>
+</html>

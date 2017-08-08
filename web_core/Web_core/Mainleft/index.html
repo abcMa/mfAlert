@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gb2312" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <title>工作台</title>
+    <link href="../Content/Image/favicon.ico" rel="shortcut icon">
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/metisMenu.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_byzfm05z14ptx1or.css">
+    <link href="Style/Common.css" rel="stylesheet" />
+</head>
+<body>
+    <div class='modal fade' id='coverModal' tabindex='-1' role='dialog' aria-labelledby='' data-backdrop='static'>
+        <div class='modal-dialog' role='document' style="margin-top:400px;">
+            <div class='modal-content' style="background: transparent;border: none;box-shadow: none;">
+                <div class='modal-body'>
+                    <div>
+                        <img src="../Content/Image/loading.gif" alt="" style="display: block;margin: auto;height: 80px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header S -->
+    <div class="headerArea">
+
+    </div>
+    <div class="left-banner">
+        <div id="pullNavigator" class="pull">
+            <span class="fa fa-reorder"></span>
+            <span class="pull-text">易掌客</span>
+        </div>
+        <div class="screenMenuPanel" id="screenHolder">
+            <aside class="sidebar" style="display:none;">
+                <nav class="sidebar-nav">
+                    <ul class="metismenu" id="screenMenu"></ul>
+                </nav>
+            </aside>
+            <aside class="menuIconbar">
+                <ul id="short_screenMenu"></ul>
+            </aside>
+        </div>
+    </div>
+    <div class="mainContainer">
+        <div id="header" class="header container">
+            <div class="header-rt">
+                <div class="application-tool dropdown">
+                    <!--<a class="dropdown-toggle tool-ip tool-caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="iconfont">&#xe79a;</span>
+                    </a>-->
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        <li>
+                            <div class="tool-container">
+                                <div class="tool-item tool-v-link" data-v-name="contact_new">
+                                    <div><span class="iconfont" style="color: rgb(245,187,120)">&#xe735;</span></div>
+                                    <p>新建客户</p>
+                                </div>
+                                <div class="tool-item tool-v-link" data-v-name="contact_group_new">
+                                    <div><span class="iconfont" style="color: rgb(255,125,126)">&#xe74d;</span></div>
+                                    <p>新建客户群</p>
+                                </div>
+                                <div class="tool-item tool-v-link" data-v-name="campaign_new">
+                                    <div><span class="iconfont" style="color: rgb(139,208,139); ">&#xe74e;</span></div>
+                                    <p>新建活动</p>
+                                </div>
+                                <div class="tool-item tool-v-link" data-v-name="mcardView">
+                                    <div><span class="iconfont" style="color: #91c8f8">&#xe74f;</span></div>
+                                    <p>企业微名片</p>
+                                </div>
+                                <div class="tool-item tool-v-link" data-v-name="campaign publish page">
+                                    <div><span class="iconfont" style="color: rgb(245,187,120)">&#xe74c;</span></div>
+                                    <p>短信营销</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--<div class="application-tool">
+                    <a class="tool-ip full-screen-sizer" data-full="0"><span class="iconfont">&#xe7b5;</span></a>
+                </div>-->
+                <div class="application-funcBar dropdown">
+                    <div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <div class="personInfoArea">
+                            <img src="../Content/Image/defaultHead2.svg" alt="个人头像" class="user_headpic" />
+                            <div class="per-inf">
+                                <span id="application_user"></span>
+                                <span id="application_company" class="com">...</span>
+                            </div>
+                            <span class="caret" style="margin-top: -15px;"></span>
+                        </div>
+                    </div>
+                    <ul id="cDropMenu" class="dropdown-menu">
+                        <li><a style="cursor: pointer;" id="retractSessionBtn"><span class="fa fa-share-alt"></span>注销</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="sec_container" class="container">
+            <span class="tabs-control left fa fa-caret-left" style="left: 50px;"></span>
+            <span class="tabs-control right fa fa-caret-right" style="right: 300px;"></span>
+            <ul class="nav nav-tabs" role="tablist" id="parentTabFolder"></ul>
+            <div class="tab-content" id="parentTabContents"></div>
+        </div>
+        <div class="iconList">
+            <div class="goBack" style="bottom:250px;display: none;cursor: pointer">
+                <i class="fa fa-refresh"></i>
+            </div>
+            <!--<div class="changeLayout" style="bottom:200px;">
+                <a href="../Main" target="_self" style="text-decoration: none;outline:none;">
+                    <span style="display:none;color:#fff;position: relative;top: -3px;margin:0 7.4px;">切换布局</span>
+                    <i class="iconfont" style="font-size: 20px;">&#xe6cd;</i>
+                </a>
+            </div>-->
+            <div class="companyId companyId_hover" style="bottom:150px;">
+                <i class="fa fa-building-o"></i>
+            </div>
+            <p class="comp-content" style="display:none;padding:0px 30px;padding-right:50px;position: fixed;right: 20px;bottom:140px;color:white;background-color: #09f;height:36px;border-radius: 18px;line-height: 36px;"><span>企业ID : </span><span class="name"></span></p>
+            <div class="code" style="bottom:100px;">
+                <div class="pic" style="display:none;">
+                    <img src="../Content/Image/code.png" alt="" />
+                    <span>关注"易掌客"微信号 <br />将客户带在身边</span>
+                </div>
+                <i class="fa fa-qrcode"></i>
+            </div>
+        </div>
+    </div>
+    <!-- Start of KF5 supportbox script -->
+    <script type="text/javascript">
+        document.write('<script src="\/\/assets-cdn.kf5.com\/supportbox\/main.js?' + (new Date).getDay() + '" id="kf5-provide-supportBox" kf5-domain="yizhangke.kf5.com" charset="utf-8"><\/script>');
+    </script>
+    <!-- End of KF5 supportbox script -->
+    <script src="../Content/JS/jquery-1.9.1.js"></script>
+    <script src="http://cdn.goeasy.io/goeasy.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../Content/bootstrap/js/metisMenu.min.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-notify.min.js"></script>
+    <script src="JS/iptools.js"></script>
+    <script src="JS/widget.js"></script>
+    <script>
+        Iptools.Start({
+            checkSession: true,
+            userInvironment: true,
+        });
+        widget._init();
+    </script>
+</body>
+</html>

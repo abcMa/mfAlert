@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>营销自动化</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-3 container">
+            <div class="container-body" style="margin-left: 20px;">
+                <ul class="nav nav-pills" role="tablist">
+                    <li role="presentation" class="active"><a href="#events" role="tab" data-toggle="tab">事件</a></li>
+                    <li role="presentation"><a href="#actions" role="tab" data-toggle="tab">动作</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="events">
+                        <div class="tool-list-search">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="icon-search"></span>
+                                </span>
+                                <input type="text" class="form-control" placeholder="搜索事件">
+                            </div>
+                        </div>
+                        <div class="tool-list">
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterAddContact"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">新增客户后</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterAddContactGroup"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">新增客户群后</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterSubmitForm"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">提交表单后</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterPayment"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">消费支付后</div>
+                            </div>
+                            <div class="event-item">
+                                <div class="drag-bar" data-event="afterRegistWebSite"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">注册网站后</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="actions">
+                        <div class="tool-list-search">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="icon-search"></span>
+                                </span>
+                                <input type="text" class="form-control" placeholder="搜索动作">
+                            </div>
+                        </div>
+                        <div class="tool-list">
+                            <div class="action-item">
+                                <div class="drag-bar" data-action="sms"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">发送短信</div>
+                            </div>
+                            <div class="action-item">
+                                <div class="drag-bar" data-action="mail"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">发送邮件</div>
+                            </div>
+                            <div class="action-item">
+                                <div class="drag-bar" data-action="changeContact"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">修改客户属性</div>
+                            </div>
+                            <div class="action-item">
+                                <div class="drag-bar" data-action="addContactGroup"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">加入客户群</div>
+                            </div>
+                            <div class="action-item">
+                                <div class="drag-bar" data-action="removeContactGroup"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">移出客户群</div>
+                            </div>
+                            <div class="action-item">
+                                <div class="drag-bar" data-action="addTag"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">增加标签</div>
+                            </div>
+                            <div class="action-item">
+                                <div class="drag-bar" data-action="removeTag"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">移除标签</div>
+                            </div>
+                            <div class="action-seperate-line"></div>
+                            <div class="action-item">
+                                <div class="drag-bar" data-action="setDelay"><span class="iconfont">&#xe751;</span></div>
+                                <div class="item-content">设置延时</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 container">
+            <div class="container-body" style="width: 100%">
+                <div class="operation-panel">
+                    <div class="operation-link-line"></div>
+                    <div class="operation-item-container" style="min-height: 80px;">
+                        <div class="item-header col-sm-1"><span class="start"><i class="iconfont">&#xe716;</i></span></div>
+                        <div class="item-body col-sm-11">
+                            <div class="start-panel">
+                                <span>自动化营销事件流</span>
+                                <span class="iconfont reset-title">&#xe717;</span>
+                                <div class="tool-right"><button class="btn btn-sm commonBtn">保存</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="des-operation-container" class="operation-item-container">
+                        <div class="item-header col-sm-1"><span class="adding"><i class="iconfont">&#xe750;</i></span></div>
+                        <div class="item-body col-sm-11">
+                            <div id="drag-destination-add" class="adding-condition-panel">
+                                <p>拖拽事件/动作至此处</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 container">
+            <div class="container-body" style="margin-right: 20px;width: 90%;">
+                <h1 style="margin-top: 0;"><span class="icon-edit"></span>内容编辑</h1>
+                <div class="panel panel-default">
+                    <div class="panel-heading">发送短信</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label>短信内容</label>
+                            <textarea class="form-control" maxlength="100"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>短信签名</label>
+                            <input class="form-control" type="text" />
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="sms_send_type" checked="checked"> 直接发送
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="sms_send_type"> 定时发送
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>发送时间</label>
+                            <input class="form-control timePicker" type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-select.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-notify.min.js"></script>
+<script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="js/widget.js"></script>
+<script>
+    widget._init();
+</script>

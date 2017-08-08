@@ -1,0 +1,15 @@
+.step .header div ul li.circle {
+    width: 74px;
+}
+.step .header div ul li.circle:after {
+    content: "";
+    width: 74px;
+}
+.step .header div ul li:nth-child(3).circle:after {
+    content: "属性匹配，完成";
+    width: 130px;
+}
+.step3 .content h1:before {
+    left: -10px;
+    background-position: -93px -52px;
+}

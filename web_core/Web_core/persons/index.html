@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Persons</title>
+    <link href="../Content/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="../Content/JS/themes/default/style.min.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <link href="Style/Common.css" rel="stylesheet" />
+</head>
+<body>
+    <div class='modal fade' id='root_org_update' tabindex='-1' role='dialog'>
+        <div class='modal-dialog' role='document' style="width: auto; max-width: 600px;">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title'>根节点编辑</h4>
+                </div>
+                <div class='modal-body'>
+                    <form class="form_root_org_update">
+                        <div class="input-group" style="margin: 20px 0;">
+                            <span class="input-group-addon">组织名称</span>
+                            <input id="root_update_org_name" type="text" class="form-control" placeholder="名称">
+                        </div>
+                    </form>
+                </div>
+                <div class='clear'></div>
+                <div class='modal-footer'>
+
+                    <button type='button' class='btn commonBtn revert small' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                    <button type='button' class='btn commonBtn small rootorgupdate'>
+                        确定
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='org_update' tabindex='-1' role='dialog'>
+        <div class='modal-dialog' role='document' style="width: auto; max-width: 600px;">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title'>组织编辑</h4>
+                </div>
+                <div class='modal-body'>
+                    <form class="form_org_update">
+                        <div class="input-group" style="margin: 20px 0;">
+                            <span class="input-group-addon">上级组织</span>
+                            <div class="btn-group" style="width:100%;">
+                                <button id="update_org_parent" type="button" class="btn  commonBtn revert dropdown-toggle org-tree-select"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" style="width: 100%;">
+                                    <div class="org_select_tree"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="input-group" style="margin: 20px 0;">
+                            <span class="input-group-addon">组织名称</span>
+                            <input id="update_org_name" type="text" class="form-control" placeholder="名称">
+                        </div>
+                    </form>
+                </div>
+                <div class='clear'></div>
+                <div class='modal-footer'>
+
+                    <button type='button' class='btn commonBtn revert small' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                    <button type='button' class='btn commonBtn small orgupdate'>
+                        确定
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='org_new' tabindex='-1' role='dialog' aria-labelledby='titleModalLabel'>
+        <div class='modal-dialog' role='document' style="width: auto; max-width: 600px;">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title'>组织新增</h4>
+                </div>
+                <div class='modal-body'>
+                    <form class="form_org_new">
+                        <div class="input-group" style="margin: 20px 0;">
+                            <span class="input-group-addon">上级组织</span>
+                            <div class="btn-group" style="width:100%;">
+                                <button id="new_org_parent" type="button" class="btn  commonBtn revert dropdown-toggle org-tree-select"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" style="width: 100%;">
+                                    <div class="org_select_tree"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="input-group" style="margin: 20px 0;">
+                            <span class="input-group-addon">组织名称</span>
+                            <input id="new_org_name" type="text" class="form-control" placeholder="名称">
+                        </div>
+                    </form>
+                </div>
+                <div class='clear'></div>
+                <div class='modal-footer'>
+
+                    <button type='button' class='btn commonBtn revert small' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                    <button type='button' class='btn commonBtn small addNewOrg'>
+                        确定
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='pos_update' tabindex='-1' role='dialog'>
+        <div class='modal-dialog' role='document' style="width: auto; max-width: 600px;">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title'>职位编辑</h4>
+                </div>
+                <div class='modal-body'>
+                    <form class="form_pos_update">
+                        <div class="input-group" style="margin: 20px 0;">
+                            <span class="input-group-addon">上级职位</span>
+                            <div class="btn-group" style="width:100%;">
+                                <button id="update_pos_parent" type="button" class="btn  commonBtn revert dropdown-toggle org-tree-select"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    无
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" style="width: 100%;">
+                                    <div class="pos_select_tree"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="input-group" style="margin: 20px 0;">
+                            <span class="input-group-addon">所属组织</span>
+                            <div class="btn-group" style="width:100%;">
+                                <button id="update_pos_org_parent" type="button" class="btn  commonBtn revert dropdown-toggle org-tree-select"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    无
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" style="width: 100%;">
+                                    <div class="org_select_tree"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="input-group" style="margin: 20px 0;">
+                            <span class="input-group-addon">职位名称</span>
+                            <input id="update_pos_name" type="text" class="form-control" placeholder="名称">
+                        </div>
+                    </form>
+                </div>
+                <div class='clear'></div>
+                <div class='modal-footer'>
+
+                    <button type='button' class='btn commonBtn revert small' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                    <button type='button' class='btn commonBtn small posupdate'>
+                        确定
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='modal fade' id='pos_new' tabindex='-1' role='dialog'>
+        <div class='modal-dialog' role='document' style="width: auto; max-width: 600px;">
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 class='modal-title'>职位新增</h4>
+                </div>
+                <div class='modal-body'>
+                    <form class="form_pos_new">
+                        <div class="input-group" style="margin: 20px 0;">
+                            <span class="input-group-addon">上级职位</span>
+                            <div class="btn-group" style="width:100%;">
+                                <button id="new_pos_parent" type="button" class="btn  commonBtn revert dropdown-toggle org-tree-select"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    无
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" style="width: 100%;">
+                                    <div class="pos_select_tree"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="input-group" style="margin: 20px 0;">
+                            <span class="input-group-addon">上级组织</span>
+                            <div class="btn-group" style="width:100%;">
+                                <button id="new_pos_org_parent" type="button" class="btn  commonBtn revert dropdown-toggle org-tree-select"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    无
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" style="width: 100%;">
+                                    <div class="org_select_tree"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="input-group" style="margin: 20px 0;">
+                            <span class="input-group-addon">职位名称</span>
+                            <input id="new_pos_name" type="text" class="form-control" placeholder="名称">
+                        </div>
+                    </form>
+                </div>
+                <div class='clear'></div>
+                <div class='modal-footer'>
+
+                    <button type='button' class='btn commonBtn revert small' data-dismiss='modal' style='margin-left:5px;'>取消</button>
+                    <button type='button' class='btn commonBtn small addNewPos'>
+                        确定
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="row">
+            <div class="col-sm-12 right-panel">
+                <div class="left-panel">
+                    <!--<blockquote>-->
+                        <p style="font-size: 18px">
+                            人事架构
+                        </p>
+                    <!--</blockquote>-->
+                    <div class="settings-bar">
+                        <span class="fa fa-sitemap" title="添加部门" data-toggle="modal" data-target="#org_new"></span>
+                        <span class="fa fa-user-plus" title="添加职位" data-toggle="modal" data-target="#pos_new"></span>
+                        <span id="update_node" class="fa fa-edit" title="编辑"></span>
+                        <span id="remove_node" class="fa fa-trash-o" title="删除"></span>
+                        <span class="fa fa-search searchIcon" title="搜索"></span>
+                    </div>
+                    <!--搜索框-->
+                    <div id="searchPanel">
+                        <form  id="treeSearch" class="search_list">
+                            <span class="fa fa-search search_icon"></span>
+                            <input type="text" id="search_key_words" class="" placeholder="搜索">
+                            <button type="submit" class="search_tree_btn">
+                                <span class="fa fa-search enter_icon"></span>
+                            </button>
+                        </form>
+                    </div>
+                    <!--<div class="btn-group btn-group-sm" role="group" style="margin-bottom:8px;float: left">
+                        <button id="update_node" type="button" class="btn commonBtn revert">编辑</button>
+                        <button id="remove_node" type="button" class="btn commonBtn revert" disabled="disabled">删除</button>
+                        <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn commonBtn revert dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                添加子级
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="min-width: 100px;text-align: center;">
+                                <li><a style="cursor: pointer;" data-toggle="modal" data-target="#org_new">部门</a></li>
+                                <li><a style="cursor: pointer;" data-toggle="modal" data-target="#pos_new">职位</a></li>
+                            </ul>
+                        </div>
+                        <button id="search_without_match" type="button" class="btn commonBtn revert">未分配人员</button>
+                    </div>
+                    <div style="width:240px;margin: 10px 0;">
+                        <form id="treeSearch">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="icon-search"></span>
+                                </span>
+                                <input id="search_key_words" type="text" class="form-control" placeholder="搜索">
+                            </div>
+                        </form>
+                    </div>-->
+                    <div id="tree" style="max-width: 310px;overflow: auto;margin-top: 13px;"></div>
+                    <a id="search_without_match" class="noMatchPersons" type="button"><i class="fa fa-user-times icon-leaf" role="presentation"></i>未分配人员</a>
+                </div>
+                <div class="rightCcontent">
+                    <nav style="line-height: 34px;">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <!--<blockquote style="display: inline-block;">-->
+                                <p style="font-size: 18px;display: inline-block;margin-bottom: 0px;">
+                                    人员列表
+                                </p>
+                            <!--</blockquote>-->
+                            <div class="tool-bar">
+                                <form id="person_form" class="navbar-form" role="search">
+                                    <div class="form-group">
+                                        <input id="person_name_search" type="text" class="form-control" placeholder="姓名">
+                                        <input id="person_phone_search" type="text" class="form-control" placeholder="手机">
+                                    </div>
+                                    <button type="submit" class="btn  commonBtn revert">搜索</button>
+                                </form>
+
+                                <button style="cursor: pointer;" class="btn commonBtn person_new_link">
+                                    <span class="icon-plus" style="margin-right:3px;"></span>新建
+                                </button>
+
+                                <!--<a style="cursor: pointer;" class="person_delete_link input-disabled">-->
+                                    <!--<span class="icon-trash" style="margin-right:3px;"></span>删除-->
+                                <!--</a>-->
+
+                            </div>
+                    </nav>
+                    <div class="table-responsive" style="overflow-x:initial">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                               <!-- <th class="check-cell"><input type="checkbox" class="checkAll" /></th>-->
+                                <th>员工ID</th>
+                                <th>姓名</th>
+                                <th>联系方式</th>
+                                <th>部门</th>
+                                <th>职位</th>
+                                <th>权限</th>
+                                <th>登录名</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="person_list_panel"></tbody>
+                        </table>
+                    </div>
+                    <div id="person_list_page_container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../Content/JS/jquery-1.9.1.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../Content/bootstrap/js/bootstrapValidator.js"></script>
+    <script src="../Content/bootstrap/js/bootstrap-select.min.js"></script>
+    <script src="../Content/JS/jstree.min.js"></script>
+    <script src="../Content/JS/iptools_v2.js"></script>
+    <script src="../Content/JS/ipComponents.js"></script>
+    <script src="JS/widget.js"></script>
+    <script>
+        Iptools.Start();
+        widget._init();
+    </script>
+</body>
+</html>

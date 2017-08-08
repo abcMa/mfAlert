@@ -1,0 +1,73 @@
+  .row span{
+    line-height: 40px;
+  }
+  .grayBox{
+    padding: 20px 20px;
+    border: 1px solid #CCCACA;
+    margin: 20px 0;
+  }
+  .grayBox .num{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .chartsTab{
+    padding: 5px 10px;
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+  }
+  .visitTab{
+    background-color: rgb(26, 136, 86);
+    color: white;
+  }
+  .enrollTab{    
+    background-color: #D2B191;
+    color: white;  
+  }
+  .top-right .row{
+    text-align: center;
+    line-height: 30px;
+    padding: 5px 0;
+  }
+  .top-left .row{
+  line-height: 30px;
+  }
+  .top-right{
+    border: 1px solid #DEDBDB;
+    padding: 20px;
+  }
+  .top-right a{
+    background-color: rgb(124, 181, 236);
+    color: white;
+    width: 162px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .closeQR{
+    position: absolute;
+    top: -14px;
+    right: 22px;
+    cursor: pointer;
+  }
+  .QRPanel{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    bottom: 0;
+  }
+.ease {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.8s 0s, visibility 8s 0s;
+    -moz-transition: opacity 0.8s 0s, visibility 8s 0s;
+    transition: opacity 0.8s 1s, visibility 8s 0s;
+}
+.ease_in{
+    transition: all 4s ease-in;
+}
+.BtnAfter{
+	color: #333;
+    background: rgba(128, 124, 124, 0.36);
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+}

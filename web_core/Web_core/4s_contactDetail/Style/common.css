@@ -1,0 +1,131 @@
+/*客户画像页中公共部分提取*/
+/*新加的tab快捷操作*/
+button.btn:hover,button.btn:active,button.btn.focus{color:#fff;}
+#tips textarea,.editContent.noteType textarea,.interact-content textarea{outline: none;border: none;height:65px;resize:none;overflow: hidden;}
+#tips textarea{width:482px;    padding: 0;
+    margin-left: 15px;
+    border-bottom: 1px solid #ccc;}
+.interact-content textarea{width: 66%;border-bottom: 1px solid #ddd;    margin-bottom: 15px;}
+.sendTo{padding:0 15px;}
+.sendTo>div:first-child{line-height:1.4rem;color: #333;}
+.sendTo>div{padding: 6px 0;border-bottom:1px solid #ddd;}
+.msg-content textarea{height:70px;padding: 0;border: none;resize: none;width: 482px;outline: none;border-bottom: 1px solid #ddd;}
+.sendPer,.sendPer:hover,.sendPer:focus{cursor: inherit;border-radius: 3px;padding:0px 10px;height:1.4rem;background: #09f;color:#fff;}
+.sendTo,.msg-content,.msg-sig{margin-bottom:10px;}
+.msg-sig{line-height:1.8rem;padding: 0 15px;}
+.startSend{
+    padding:0 20px;    background: #09f;color: #fff;
+}
+.startSend:hover{background: #06c;}
+.sendMess .notSend,.sendMess .notSend:hover{ background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    color: #ccc;    padding: 6px 20px;
+}
+
+/*任务tab*/
+/*.profile-name input,.profile-des textarea{border:none;border-bottom:1px solid #ddd;box-shadow: none; border-radius: 0;resize:none;}*/
+/*.profile-name .form-control:focus,.profile-des .form-control:focus{border:none;border-bottom:1px solid #ddd;box-shadow: none; border-radius: 0;}*/
+span.glyphicon{font-family: 'Glyphicons Halflings'!important;}
+
+
+
+/*新版客户动态*/
+.time-title>div:last-child{padding:20px 15px;}
+.time-title>div:last-child h4{font-size: 16px;}
+.right_bottom .demo .demo-inner{position: relative;}
+.right_bottom .demo .demo-inner .panel-group{
+    display: none;}
+.demo-inner .panel-title{font-size: 24px;color: #555;line-height: 1;}
+.demo-inner .panel-group .panel,.demo-inner .panel-group .panel-heading + .panel-collapse > .panel-body{border:none;padding: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;}
+.demo-inner  .panel-default > .panel-heading{padding:0;background: #fff;}
+.currentTime,.beforeTime,.threeTime{font-size: 18px;color:#333;}
+.traceIcon{color: #ccc;font-size:18px;font-weight: bold;}
+.traceIcon:hover{color: #333;}
+.right_bottom .demo .demo-inner:before{content: ""; width: 1px;background: #09f;position: absolute;height: 100%;left: 35px;}
+.trace-demo{margin:0;margin-bottom: 10px;}
+.trace-demo .line{margin: 0 0 0 20px;border-left:1px solid #09f;height:10px;}
+.trace-demo .trace-icon{width: 40px;height: 40px;background: #09f;border-radius: 50%;text-align: center;color:#fff;margin-top: 9px;}
+.trace-demo .trace-icon span{margin: 8px 0;font-size: 16px;display: inline-block;text-align: center;}
+.time-title h2{font-size: 24px;line-height: 1;}
+.trace-panel>.trace-title{padding:0;}
+.trace-panel>.not-edit{border:none;}
+.trace-title-left{padding:0;}
+.trace-title-action{padding:0;}
+/*.trace-title-action ul .place-top{border-left:1px solid #ddd;}*/
+.trace-content{padding:0;line-height: 1.4rem;}
+.btnList{padding:15px; background: #fff;}
+.btnList button.saveNote{background: #09f;margin-right:10px;color:#fff;padding: 0 20px;}
+.btnList button.notSaveNote,.btnList button.notSaveNote:hover{
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;margin-right:10px;
+    color: #ccc;    padding: 6px 20px;}
+.lessTagAdd{background: #fff;color:#09f;height:30px;padding:0 10px;border:1px solid #09f;float: left;}
+.lessTagAdd:hover,.lessTagAdd:focus{background-color: #09f;color:#fff;}
+.btnList button.saveNote:hover{background-color: #06c;color:#fff;}
+
+.btnList button.cancelNote,.postNewTag .cancel{border: 1px solid #ccc;color: #ccc;background: #fff;padding: 0 20px;}
+.btnList button.cancelNote:hover,.postNewTag .cancel:hover{border: 1px solid #ccc;background-color: #f7f7f7;color: #ccc;}
+.task-title{font-size: 20px;margin:10px 0;}
+.task-des{height: 50px;}
+.trace-demo .trace-panel{
+    background-color: #f7f7f7;
+    padding:15px;
+    /*-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);*/
+    /*box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);*/
+}
+.trace-time{text-align: right;line-height: 28px;padding:0;}
+span.person{color:#09f;}
+span.person:hover{color:#06c;}
+.filterTraceType{font-size: 16px;padding: 0px 0px 20px 15px;position: fixed;z-index: 100;left: 75%;}
+.filterTraceType>.btn{background: #fff;color:#09f;margin-bottom: 5px;border:1px solid #09f;}
+.filterTraceType>#low{color:#06c;border:1px solid #06c}
+.filterTraceType>.btn:hover{background: #fff;border:1px solid #06c;color:#06c;}
+.allTraceType button,.allTag span,.sureToAddTag button,.postNewTag button{
+    cursor: pointer;
+    height: 34px;
+    outline: none;
+    font-size: 14px;
+    border-radius: 3px;
+    margin-top:10px;
+    padding: 6px 12px;
+}
+.mainType button,.allTag span{ background: #fff;color: #555;border: 1px solid #ddd;}
+.postNewTag button{background-color: #fff;border: 1px solid #09f;color:#555;margin:0px;}
+.sureToAddTag button{background: #09f;color:#fff;border: 1px solid #09f; margin:0px;}
+.sureToAddTag button:hover{background: #06c;border: 1px solid #06c;}
+
+.allTag span{height:26px;padding:2px 4px;margin-bottom: 6px;margin-top: 0;}
+.mainType button:hover,.allTag span:hover{background: #09f;color:#fff;border: 1px solid #09f;}
+.mainType>.hasBgc,.otherType>.hasBgc,.addTagPanel .allTag>.hasBgc{background: #09f;color:#fff; border: 1px solid #09f;}
+.allTraceType{ position: absolute;right: 0;text-align: left;    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);border-radius: 3px;background: #fff;display: none;width:180px;}
+.mainType{border-bottom: 1px solid #ddd;padding-bottom: 10px;}
+.traceMore{border:1px dashed #09f;background-color: #fff;cursor: pointer !important;color:#09f;    padding: 10px 0;
+    width: 25%;
+    margin: 0 auto;text-align: center;border-radius: 3px;}
+.traceMore:hover{background: #09f; color: #fff;border:1px solid #09f;}
+/*.sureFilterBtn{text-align: center;}*/
+.postNewTag{float: left;}
+.postNewTag .saveThisTag{border:1px solid #09f;padding:6px 20px;background: #09f;color:#fff;opacity: 1;}
+.postNewTag .saveThisTag:active,.postNewTag .saveThisTag:focus{color:#555;}
+.postNewTag .saveThisTag:hover{color:#fff;background: #06c;border:1px solid #06c;}
+
+.postNewTag .notClick,.postNewTag .notClick:hover{ background-color: #f7f7f7;border: 1px solid #ccc;color:#ccc;}
+
+.sureToAddTag{float:right;}
+.postNewTag a{color:#09f;text-decoration: none;line-height:3;}
+/*.sureFilterBtn button{width:120px;border:none;background: #09f;color:#fff;}*/
+/*.sureFilterBtn button:hover{background: #06c;}*/
+.postNewTag button:hover{background: #09f;color:#fff;}
+
+@media (min-width: 1500px){
+    .trace-demo>div:first-child{
+        padding-left:30px;
+    }
+    .right_bottom .demo .demo-inner:before{
+        left:50px;
+    }
+}

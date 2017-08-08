@@ -1,0 +1,109 @@
+@charset "utf-8";
+*{font-size:13px;font-family:"Microsoft yahei" !important}
+/*分页*/
+.pagination {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+.pageForm {
+    margin-top: 14px;
+    text-align: center;
+}
+.pageSkip {
+    display: inline-block;
+    background: transparent url('../img/left_small.png') no-repeat -10px -10px;
+    text-indent: -999em;
+    background-size: 40px;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin: 0 7px 0 2px;
+    margin-bottom: 4px;
+}
+.pageNext {
+    display: inline-block;
+    background: transparent url('../img/right_small.png') no-repeat -10px -10px;
+    text-indent: -999em;
+    background-size: 40px;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-left: 7px;
+    margin-bottom: 4px;
+}
+.arrow-left {
+    width: 30%;
+    cursor: pointer;
+    background-color: #eee;
+    border-radius: 7px 0 0 7px;
+    box-sizing: border-box;
+}
+.arrow-right {
+    width: 30%;
+    cursor: pointer;
+    background-color: #eee;
+    border-radius: 0 6px 6px 0;
+}
+.pagenum {
+    font-size: 19px;
+    color: #006063;
+    margin-left: 5px;
+    line-height: 21px;
+    vertical-align: text-top;
+}
+.pageInput, .pageButton {
+    padding: 0px 10px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    border: 1px solid #bbb;
+    display: inline-block;
+    vertical-align: middle;
+}
+.pageInput {
+    width: 50px;
+    /* height: 25px; */
+    box-shadow: inset 1px 2px 1px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    border: solid 1px #428bca;
+    margin-right: 5px;
+}
+.pageButton {
+    background: #428bca;
+    border-color: #428bca;
+    color: white;
+}
+/*分页-end*/
+.clear {
+    clear: both;
+    height: 0;
+    display: block;
+}
+
+.base {
+    background-color: #fff;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    height: 100px;
+    width: 160px;
+    text-align: center;
+    vertical-align: middle;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    padding:5px 0;
+    cursor:pointer;
+}
+ul li span{
+    font-size: 16px;
+}
+ul li span:last-child{
+   margin-left:20px;
+}
+.table tr td:last-child{
+    text-align:center;
+}

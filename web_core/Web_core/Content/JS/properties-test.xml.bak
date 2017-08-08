@@ -1,0 +1,18 @@
+<Configs>
+  <api>
+    <url>http://eisst.63home.cn:80/eis/v1/</url>
+    <service_url>http://eisst.63home.cn/</service_url>
+  </api>
+  <root>
+    <!--intopalm.com-->
+    <!--yizhangke.com-->
+    <path>product1.63home.cn</path>
+    <crmdomain>crm</crmdomain>
+    <wxpath>wxdev.63home.cn</wxpath>
+    <wxappid>wx3cfea31ab273a3e5</wxappid>
+    <wxserverUrl>eisst.63home.cn</wxserverUrl>
+    <wxyuntuike>yuntuike.63home.cn</wxyuntuike>
+  </root>
+</Configs>
+
+

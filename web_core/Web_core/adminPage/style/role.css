@@ -1,0 +1,10 @@
+.container{min-height: 500px;height: auto;}
+.editRole .container{min-height: 800px;height: auto;}
+.roleList,.modal-footer{width:100%;}
+.container .modal-footer{padding-right: 0px;padding-bottom: 0px;}
+a{text-decoration: none;}
+a.goback button{float: right;}
+a.keep{
+    margin-left:20px;
+    float:right;
+}

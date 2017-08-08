@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>活动报名</title>
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
+
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Content/bootstrap/summernote/summernote.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-switch.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/evol-colorpicker.min.css"/>
+    <link rel="stylesheet" href="css/jquery.tagit.css"/>
+    <link rel="stylesheet" href="css/tag.css"/>
+    <link rel="stylesheet" href="css/tagit.ui-zendesk.css"/>
+    <link rel="stylesheet" href="../Content/bootstrap/css/cropper.min.css"/>
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+
+	<link href="css/campaignEdit-ui.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+</head>
+<body>
+<div class="wrapper">
+</div>
+
+<div class="section-tab-preview" style="display: none">
+	<div class="section-second" id="iimg">
+		<img src="images/enterAct.png" alt=""/>
+	</div>
+	<div class="section-thrid-one section-banner">
+		<span class="opn-col" id="order">标题</span>
+		<span class="active-span" id="orders">摘要</span>
+	</div>
+	<div class="active-time-area" >
+		<div class="activeTimeIcon"><i class="glyphicon glyphicon-time"></i></div>
+		<div class="activeTime">
+			<div id="stime"></div>
+			<div id="etime"></div>
+		</div>
+	</div>
+	<div class="preadress-area"><i class="fa fa-map-marker"></i><span id="address">活动具体地点</span></div>
+	<div class="pretel-area"><i class="fa fa-phone"></i><span id="ptel"></span></div>
+	<div class="section-acticle section-acticle-bar">
+		<div class="pre-edit pre-edit-height">
+		</div>
+	</div>
+	<div class="section-siex">
+		<div class="section-siex-first" style="color: #fafafa;font-size: 18px;"><b>我感兴趣</b></div>
+	</div>
+</div>
+<div class="section-tab-first" style="display: none">
+	<!-- 基本信息 -->
+	<div class="tab-pane contactInfo switchBasic active" id="baseInfo" role="tabpanel">
+		<form action="" class="form-horizontal" id="enrollActivityForm">
+			<div class="form-group" style="margin-left: 0px">
+				<label for="inputEmail">首图</label>
+				<div class="input-group">
+					<input type="text" name="inputEmail" id="inputEmail" readOnly="true"  class="form-control" placeholder="图片尺寸为900*500px或等比例放大" aria-describedby="basic-addon2" >
+	                           <span class="input-group-addon" id="basic-addon2">
+	                           <input id="photo" type="file" style="opacity: 0;cursor: pointer;position: absolute;top: 0px;right: 0px;font-size: 100px;" />上传</span>
+				</div>
+			</div>
+			<div class="form-group" style="margin-left: 0px">
+				<label for="inputEma">标题</label>
+				<input type="text" name="inputEma" id="inputEma" class="form-control" placeholder="输入活动标题" aria-describedby="basic-addon2" oninput="myFunction()">
+			</div>
+			<div class="form-group" style="margin-left: 0px">
+				<label for="inputEm">摘要</label>
+				<input type="text" name="inputEm" id="inputEm" class="form-control" placeholder="输入活动副标题" aria-describedby="basic-addon2" oninput="myFunctions()">
+			</div>
+			<div class="form-group" style="margin-left: 0px">
+				<label for="inputE">开始时间</label>
+				<input type="text" name="inputE" id="inputE" class="form-control" placeholder="选择活动开始时间" aria-describedby="basic-addon2" oninput="myStime()">
+			</div>
+			<div class="form-group" style="margin-left: 0px">
+				<label for="endTime">结束时间</label>
+				<input type="" name="endTime" id="endTime" class="form-control" placeholder="选择活动结束时间" aria-describedby="basic-addon2" oninput="myEtime()" data-date-format="YYYY-MM-DD HH:mm:ss" name="strtime">
+			</div>
+			<div class="form-group" style="margin-left: 0px">
+				<label for="tel">联系电话</label>
+				<input type="tel" name="tel" id="tel" class="form-control" placeholder="输入联系电话" oninput="myTel()">
+			</div>
+			<div class="form-group" style="margin-left: 0px">
+				<label for="inp">活动地点</label>
+				<input type="text" name="inp" id="inp" class="form-control" placeholder="输入活动地点" aria-describedby="basic-addon2" oninput="myAddress()">
+			</div>
+			<div class="form-group" style="margin-left: 0px;">
+				<label for="editer">报名详情</label>
+				<div class="form-editor">
+					<div id="editer" class="form-control summernote" name="description" placeholder="请对项目进行详细的描述，使更多的人了解你的">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group" style="margin-left: 0px;">
+				<label for="inp">信息采集</label>
+				<div class="form-radio">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="section-tab-second" style="display: none">
+	<!-- 其他设置 -->
+	<div class="tab-pane contactInfo appendInfo" id="otherInfo" role="tabpanel">
+		<div class="form-group tags" style="margin-left: 0px">
+			<label >智能标签</label>
+			<div class="form-group">
+				<div class="col-sm-4 inputLabel">
+
+					<div class="form-group">
+						<label class="" for="inputLabel">访问客户自动标记标签</label>
+						<!--<input type="text" class="form-control" id="inputLabel" placeholder="可输入自定义标签，已'空格'分隔">-->
+						<div class="visitorTags tag" id="inputLabel">
+							<ul id="visitorEventTags"></ul>
+						</div>
+						<span class="promptR">自定义标签长度少于20字符</span>
+						<span class="prompt">(输入自定义标签，以'空格'分隔)</span>
+					</div>
+
+					<div class="form-group">
+						<label class="" for="inputSubmit">提交表单客户自动标记标签</label>
+						<!--<input type="text" class="form-control" id="inputSubmit" placeholder="可输入自定义标签，已'空格'分隔">-->
+						<div class="formContactTags tag" id="inputSubmit">
+							<ul id="formEventTags"></ul>
+						</div>
+						<span class="promptR">自定义标签长度少于20字符</span>
+						<span class="prompt">(输入自定义标签，以'空格'分隔)</span>
+					</div>
+				</div>
+				<div class="toVisitoriIcon col-sm-1">
+					<i class="fa fa-arrow-left VisitoriIcon">&#xe704;</i>
+					<i class="fa fa-arrow-left FormIcon">&#xe704;</i>
+				</div>
+				<div class="navBtns col-sm-4">
+					<div class="form-group VisitorContactTag">
+						<label class="">系统标签库</label>
+						<div class="chooseContent VisitorEventTag"></div>
+					</div>
+					<div class="form-group formContactsTag">
+						<label class="">系统标签库</label>
+						<div class="chooseContent FormEventTag"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group" style="margin-left: 0px;margin-top: 145px;height: 58px;">
+			<label for="btnWord">按钮文字</label>
+			<div style="padding: 0px;width:20%;">
+				<input type="text" name="buttonWord" id="btnWord" class="form-control" placeholder="立即报名" oninput="changeWord()">
+			</div>
+		</div>
+		<div class="form-group" style="margin-left: 0px;height: 58px;">
+			<label class="control-label">按钮颜色</label>
+			<div class="form-group" style="padding: 0 15px;">
+				<div style="width: 55px;">
+					<input style="width:0px;display: none;" id="mycolor" class="colorPicker evo-cp0">
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../Content/bootstrap/js/bootstrapValidator.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-switch.min.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="../Content/bootstrap/summernote/summernote_v2.js"></script>
+<script src="../Content/bootstrap/summernote/lang/summernote-zh-CN.js"></script>
+<script src="js/extend/evol-colorpicker.min.js"></script>
+<script src="../Content/bootstrap/js/cropper.min.js"></script>
+<script src="../Content/JS/ipComponents.js"></script>
+<script type="text/javascript">
+	//初始化外框架
+	component.initCampaignBaseDom({"container":".wrapper",
+		"campaignTypeName":"活动报名",
+		"tabNameArr":["基本信息","高级设置"]});
+	var tab1html = $(".section-tab-first").html();
+	var tab2html = $(".section-tab-second").html();
+	var prevewHtml = $(".section-tab-preview").html();
+	$(".section-tab-first").empty();
+	$(".section-tab-second").empty();
+	$(".section-tab-preview").empty();
+	$("#tab0-panel").html(tab1html);
+	$("#tab1-panel").html(tab2html);
+	$(".preview-area").html(prevewHtml);
+	$(".comfirm-btn").attr("onclick","createOrNewActivity(this)");
+	$(".wx-preview-btn").hide();
+
+</script>
+<script src="../campaignInfo/js/act-common.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/shortcutActivity-base.js" type="text/javascript"></script>
+<script src="js/tag-it.js"></script>
+<script src="js/enterActivity.js" type="text/javascript"></script>
+</body>
+<html>

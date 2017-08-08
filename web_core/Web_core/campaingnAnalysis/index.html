@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <title>报表分析</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="../Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/bootstrap-multiselect.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../contactAnalysis/css/common.css">
+    <link href="css/campaingnAnalysis.css" rel="stylesheet" />
+</head>
+<body>
+<div class="col-sm-12 mainContent">
+    <div class="left">
+        <h3>
+            选择营销活动
+            <span  data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="将所有的营销活动做一个总体分析，效果分析，对比分析，为之后的活动提供准确的优化方向。" data-original-title title>
+                 <i class="fa fa-info-circle"></i>
+            </span>
+        </h3>
+        <ul class="seleced-campaign" id="campaign-choosen-body">
+
+        </ul>
+        <select id="campaign-choosen-list" multiple="multiple" class="campaign">
+
+        </select>
+        <div class="btn-container">
+            <button type="button" class="btn cancel" id="clear-analysis-campaign">清  空</button>
+            <button type="button" class="btn commonBtn" id="start-analysis-campaign">开始分析</button>
+        </div>
+    </div>
+    <div class="right">
+        <div class="dataList">
+            <div class="col-sm-12">
+                <div class="panel panel-default landing-panel">
+                    <div class="panel-heading">
+                        <span class="landing-panel-font">营销活动对比分析</span>
+                        <ul class="nav nav-pills nav-chart-btn" role="tablist" id="campaign-analysis-tab-holder">
+                            <li role="presentation" class="active">
+                                <a href="#campaign-type-1" role="tab" data-toggle="tab" data-type="1">页面浏览量</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#campaign-type-2" role="tab" data-toggle="tab" data-type="2">吸引点击</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#campaign-type-3" role="tab" data-toggle="tab" data-type="3">参与人数</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#campaign-type-4" role="tab" data-toggle="tab" data-type="4">平均停留时长</a>
+                            </li>
+                        </ul>
+                        <div class="navbar-right search-text-group">
+                            <span>时间范围</span>
+                            <input type="text" class="form-control datetimepickSearch" id="campaign-startTime"/>
+                            <span class="seperator-line">-</span>
+                            <input type="text" class="form-control datetimepickSearch" id="campaign-endTime"/>
+                            <button type="button" id="reportSearch_campaign" class="btn btn-sm btn-primary commonBtn">
+                                <span class="fa fa-refresh"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane analysis-chart-area active" id="campaign-type-1"></div>
+                            <div role="tabpanel" class="tab-pane analysis-chart-area" id="campaign-type-2"></div>
+                            <div role="tabpanel" class="tab-pane analysis-chart-area" id="campaign-type-3"></div>
+                            <div role="tabpanel" class="tab-pane analysis-chart-area" id="campaign-type-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../Content/JS/jquery-1.9.1.js"></script>
+<script src="../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../Content/bootstrap/locale/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-notify.min.js"></script>
+<script src="../Content/bootstrap/js/bootstrap-multiselect.js"></script>
+<script src="../Content/JS/highcharts.js"></script>
+<script src="../Content/JS/highcharts-3d.js"></script>
+<script src="../Content/JS/highcharts-themes.js"></script>
+<script src="../Content/JS/iptools_v2.js"></script>
+<script src="js/widget.js"></script>
+<script>
+    Iptools.Start();
+    widget._init();
+    $(function (){
+        $("[data-toggle='popover']").popover();
+        $("[data-toggle='popover']").mouseenter(function(){
+            $(this).find(".iconfont").css("color","#09f");
+        })
+        $("[data-toggle='popover']").mouseleave(function(){
+            $(this).find(".iconfont").css("color","#e6e8eb");
+        })
+    });
+</script>
+</body>
+</html>

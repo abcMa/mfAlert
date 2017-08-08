@@ -1,0 +1,88 @@
+﻿.load-data-container{background: #fff;}
+body,.mainSection{background: #eff3f8;}
+#contentPanel{background: #fff;}
+
+
+
+.tour-backdrop{
+    opacity: 0.5;}
+/*引导标题*/
+.popover-title{
+    padding: 15px;
+    margin: 0;
+    font-size: 16px;
+    background-color: #f7f7f7;
+    border-bottom: none;
+    border-radius: 3px;
+}
+/*引导详细内容说明*/
+.popover-content{
+    padding: 20px 15px;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+}
+/*引导上一步，下一步结束*/
+.btnNew.disabled, .btnNew[disabled]{
+    color: #ccc;
+    background-color: #fff;
+    border-color: transparent;
+}
+/*引导上一步，下一步的当前步*/
+.popover-navigation .btnNew:focus{
+    color: #09f;
+    background-color: #fff;
+    border-color: transparent;
+}
+/*引导上一步，下一步的当前步hover*/
+.popover-navigation .btnNew:focus:hover{
+    color: #06c;
+    background-color: #fff;
+    border-color: transparent;
+}
+.disabled{pointer-events:none;}
+/*引导上一步，下一步不是当前步*/
+.btnNew{
+    color: #09f;
+    background-color: #fff;
+    border-color: transparent;
+    outline: none;
+}
+/*引导上一步，下一步不是当前步hover*/
+.btnNew:hover{
+    color: #06c;
+    background-color: #fff;
+    border-color: transparent;
+}
+/*结束引导hover*/
+.endNew:hover{
+    color: #09f;
+    background-color: #fff;
+    border-color: transparent;
+}
+/*结束引导最后一步*/
+.popover-navigation .endNew:focus{
+    color: #09f;
+    background-color: #fff;
+    border-color: transparent;
+}
+/*结束引导不是最后一步正常态*/
+.endNew{
+    color: #ccc;
+}
+/*弹出框宽度*/
+.popover{
+    width: 280px;
+    max-width: 280px;
+}
+/*弹出框在左侧距离引导元素距离*/
+.popover.left{
+    margin-left: -20px;
+}
+/*弹出框在右侧距离引导元素距离*/
+.popover.right{
+    margin-left: 20px;
+}
+/*弹出框在下侧距离引导元素距离*/
+.popover.bottom{
+    margin-top: 20px;
+}

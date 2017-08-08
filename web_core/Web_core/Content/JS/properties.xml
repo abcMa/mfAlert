@@ -1,0 +1,21 @@
+﻿<Configs>
+  <api>
+    <!--<url>http://localhost:8081/eis/v1/</url>-->
+    <!--<service_url>http://localhost:8081/</service_url>-->
+    <url>http://eisst-dev.63home.cn:80/eis/v1/</url>
+    <service_url>http://eisst-dev.63home.cn:80/</service_url>
+  </api>
+  <root>
+    <!--intopalm.com-->
+    <!--yizhangke.com-->
+    <pushKey>BC-91e4226249d44e9c818f5a6bdf1c109d</pushKey>
+    <path>dev.63home.cn</path>
+    <crmdomain>crm</crmdomain>
+    <wxpath>wxdev.63home.cn</wxpath>
+    <wxappid>wx3cfea31ab273a3e5</wxappid>
+    <wxserverUrl>eisst.63home.cn</wxserverUrl>
+    <wxyuntuike>yuntuike.63home.cn</wxyuntuike>
+  </root>
+</Configs>
+
+

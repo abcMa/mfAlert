@@ -1,0 +1,131 @@
+html,body,ul,li,p{
+    margin:0;
+    padding:0;
+}
+html,body{
+    background-color: #eff3f8;font-size: 16px;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@font-face {
+    font-family: 'iconfont';  /* project id 125778 */
+    src: url('//at.alicdn.com/t/font_byzfm05z14ptx1or.eot');
+    src: url('//at.alicdn.com/t/font_byzfm05z14ptx1or.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_byzfm05z14ptx1or.woff') format('woff'),
+    url('//at.alicdn.com/t/font_byzfm05z14ptx1or.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_byzfm05z14ptx1or.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.headerContent{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 150px;
+    font-size: 30px;
+    font-weight: normal;
+    opacity: 0.7;
+    color: #fff;
+}
+.content{
+    margin-top: 20px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.aside{
+    width: 370px;
+    float: left;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding-bottom: 50px;
+}
+.mainContent{
+    float: right;
+    width: calc(100% - 390px);
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    overflow-x: auto;
+}
+.coirceMain{
+    width: 370px;
+}
+.inportDataMain{
+    width: 370px;
+}
+.nav > li > a{
+    padding: 12px 15px;
+    font-size: 18px;
+}
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    border: none;
+    border-bottom: 3px solid #30a5ed;
+}
+.contactTabList{
+    font-size:18px;
+}
+.contactTabList li{
+    display: inline-block;
+    height: 54px;
+}
+.nav-tabs {
+    border-bottom: none;
+}
+.nav {
+    background-color: #fff;
+    width: 100%;
+    height: 54px;
+}
+.btn:active {
+    outline: none;
+    box-shadow: none;
+}
+.tab-content{
+    margin-top: 15px;
+}
+.contactTabList a{
+    color: #555;
+    background-color: #fff;
+    opacity: 0.7;
+}
+.nav-tabs > li > a:hover{
+    color: #555;
+    background-color: #fff;
+    opacity: 1;
+    border: 1px solid transparent;
+    border-bottom: 3px solid #2ea4ed;
+    border-bottom: 3px solid transparent;
+}
+.contactTabList .active a{
+    color: #555;
+    opacity: 1;
+}
+.table > tbody{
+    border-bottom: 1px solid #ddd;
+}
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    border: 1px solid transparent;
+    border-bottom: 3px solid #2ea4ed;
+}
+.btn-group > .btn:hover,
+.btn-group-vertical > .btn:hover,
+.btn-group > .btn:focus,
+.btn-group-vertical >
+.btn:focus,
+.btn-group > .btn:active,
+.btn-group-vertical > .btn:active,
+.btn-group > .btn.active,
+.btn-group-vertical > .btn.active{
+    z-index: 0;
+}

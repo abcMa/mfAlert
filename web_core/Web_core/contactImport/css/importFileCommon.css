@@ -1,0 +1,527 @@
+li{
+    list-style:none;
+}
+html{
+    width:100%;
+    height: 100%;
+}
+body{
+    width:100%;
+    height: 100%;
+    background-color: #eff3f8;
+}
+.step{
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+}
+.step .step1{
+    width:100%;
+    height: 100%;
+}
+.step .header{
+    width:100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: 130px;
+    border-bottom: 1px solid #dbdbdb;
+}
+.step .header .inner{
+    margin:0px auto;
+    width: 100%;
+}
+.step .header .inner{
+    width: 1000px;
+    margin:0px auto;
+}
+.step .header div.left,
+.step .header div.right{
+    float: left;
+}
+.step .header div.left{
+    margin-left: 100px;
+    font-size: 1.2rem;
+    color:#333;
+}
+.step .header div ul li{
+    float: left;
+}
+.step .header div ul li.circle{
+    width: 74px;
+}
+.step .header div ul li.circle span{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 34px;
+    height: 34px;
+    border-radius:50%;
+    border: 3px solid #dbdbdb;
+}
+.step .header div ul li.circle:after{
+    content: "";
+    width: 74px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+    color:#ccc;
+}
+.step .header div ul li:nth-child(1).circle:after{
+    content: "上传";
+}
+.step .header div ul li:nth-child(3).circle:after{
+    content: "细节确认";
+}
+.step .header div ul li:nth-child(5).circle:after{
+    margin-left: -10px;
+    width: 140px;
+    content: "属性匹配，完成";
+}
+.step .header div ul li.circle.active:after {
+    color:#09f;
+}
+.step .header div ul li.circle.active span{
+    border: 3px solid #09f;
+}
+.step .header div ul li.line{
+    width: 100px;
+    height:2px ;
+    margin-top: 18px;
+    background-color: #dbdbdb;
+    border-radius: 3px;
+}
+.step .header div ul li.line.active{
+    background-color: #09f;
+}
+.step .content {
+    width:100%;
+}
+.step .content .inner{
+    width:80%;
+    margin:0 auto;
+}
+.step .content h1{
+    font-size: 26px;
+    color:#09f;
+    margin:0 auto;
+    text-align: center;
+    width: 300px;
+    height: 90px;
+    line-height: 90px;
+    position: relative;
+    font-weight: normal;
+}
+.step .content h1:before{
+    content: "";
+    height: 50px;
+    width: 60px;
+    position: absolute;
+    top:50%;
+    margin-top: -25px;
+    left:-40px;
+    background: url("../image/importIcon.png") no-repeat;
+    background-position: -93px 0px;
+    background-size: auto 150px;
+}
+.step2 .content h1:before{
+    left:-10px;
+    background-position: -92px -52px;
+}
+.step3 .content h1:before{
+    left:-10px;
+    background-position: -0px -0px;
+}
+.step .uploadFile{
+    width: 100%;
+    height: 250px;
+    border-radius: 5px;
+    border: 2px dashed #ccc;
+    margin: 0 auto;
+}
+.step .button{
+    width: 100%;
+    height: 74px;
+    margin: 0px auto;
+    padding: 20px 0px;
+}
+.step .button button{
+    font-size: 14px;
+    cursor: pointer;
+}
+.step .button .buttonLeft{
+    float: left;
+}
+.step .button .buttonLeft button{
+    float: left;
+}
+.step .button button.next{
+    float: right;
+}
+.step label{
+    font-size: 0.8rem;
+    display: block;
+    color:#333;
+    position: relative;
+    font-weight: normal;
+}
+.step2 label{
+    width:90%;
+    position: relative;
+}
+.step .button button.disableBtn{
+    cursor: default;
+}
+/*step1*/
+.step1 p{
+    position: relative;
+    margin-top: 150px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    color:#333;
+}
+.step1 p.importIcon{
+    position: relative;
+    font-size: 20px;
+    line-height: 26px;
+}
+.step1 p.importIcon:before{
+    content: "";
+    position: absolute;
+    top:-115px;
+    left:50%;
+    margin-left: -49px;
+    width: 98px;
+    height:90px;
+    background:url("../image/importIcon.png") no-repeat;
+    background-position: 0px -170px;
+    background-size: 260px auto;
+}
+.step1 p.importIcon.next:before{
+    content: "";
+    position: absolute;
+    top:-115px;
+    left:50%;
+    margin-left: -52px;
+    width: 104px;
+    height:90px;
+    background:url("../image/importIcon.png") no-repeat;
+    background-position: 0px -80px;
+    background-size: 260px auto;
+}
+.step1 p.importIcon input{
+    position: absolute;
+    bottom: 0px;
+    left:30%;
+    opacity: 0;
+    filter:Alpha(opacity=0);
+    cursor: pointer;
+}
+.step1 p.next{
+   padding-top: 50px;
+}
+.step1 p span.chooseFile{
+    color:#09f;
+    cursor: pointer;
+}
+.step1 p span.again{
+    cursor: pointer;
+}
+.step1 p.attention{
+    margin: 0 auto;
+    text-align: left;
+    width: 90%;
+    margin-top: 20px;
+    color:#ff6666;
+    position: relative;
+    padding-left: 30px;
+}
+.step1 p.attention:before{
+    content:"";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    background: url("../image/importIcon.png") no-repeat;
+    background-position: -58px -50px;
+    background-size: 80px auto;
+}
+/*step2*/
+.step2 .type{
+    height: 70px;
+}
+.step2 form{
+    overflow: hidden;
+}
+.step2 form .left,
+.step2 form .right{
+    width:50%;
+    float: left;
+    overflow: hidden;
+}
+.step2 form .right .form-group{
+    height: 80px;
+}
+.step2 input[type=text]{
+    width: 90%;
+    border-radius: 3px;
+}
+.step2 select{
+    width: 90%;
+    height: 34px;
+    border-radius: 3px;
+    border-color: #dbdbdb;
+    padding-left: 0.5rem;
+    float: left;
+}
+.step2 .type p{
+    width: 550px;
+    float: right;
+    font-size: 16px;
+    color:#333;
+}
+.step2 select option:nth-child(1){
+    color:#ccc;
+}
+.step2 .phone{
+    /*height: 40px;*/
+    line-height: 40px;
+    margin-top: 30px;
+    padding: 0px;
+}
+.step2 .phone.contactGrounp{
+    margin-top: 0px;
+    margin-bottom: 60px;
+}
+.step2 .phone .checkbox{
+    margin:0px;
+    float: left;
+    width: 90%;
+    font-size: 16px;
+    color:#333;
+    margin-left: 15px;
+    position: relative;
+}
+.step2 .phone .checkbox input[type="checkbox"]{
+    position: absolute !important;
+    top:12px;
+    left:0px;
+    margin-bottom: -2px;
+    margin-left: -15px;
+}
+.step2 .phone .checkbox label{
+    padding-left: 10px;
+    cursor: pointer;
+}
+.step2 .phone .checkbox span{
+    font-size: 18px;
+    color:#09f;
+}
+.step2 .phone p{
+    width: 550px;
+    float: right;
+    font-size: 16px;
+    color:#333;
+}
+.step2 .phone p span{
+    color:#09f;
+}
+.step2 .excel{
+    width:90%;
+    font-size: 18px;
+    color:#333;
+    line-height: 40px;
+}
+.step2 .excel span{
+    font-size: 18px;
+    color:#09f;
+    padding: 0px 5px;
+}
+.step2 .button .buttonLeft button{
+    float: left;
+}
+.step2 .button button.concel{
+    color:#ccc;
+    background-color: white;
+    color:#ccc;
+}
+.step2 .button button.concel:hover{
+    background-color: #dbdbdb;
+}
+.step2 .button button.before{
+    margin-right: 20px;
+    border-color:#09f;
+    background-color: white;
+    color:#09f;
+}
+.step2 .button,
+.step3 .button{
+    width:100%;
+}
+/*step3*/
+.step3 .header{
+    height: 190px;
+    width:100%;
+    position: relative;
+}
+.step3 .headerContent{
+    height: 100px;
+    width:100%;
+    position: relative;
+    border-bottom: none;
+    margin-bottom: 50px;
+}
+.step3 .left{
+    float: left;
+    height: 80px;
+    margin:0px;
+}
+.step3 .left img{
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+}
+.step3 .explain{
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    padding-left: 200px;
+    width: 100%;
+}
+.step3 .explain h5{
+    font-size: 0.9rem;
+    line-height: 1rem;
+    color:#333;
+}
+.step3 .explain ul{
+    padding: 0px;
+}
+.step3 .explain ul li{
+    list-style: none;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    color:#333;
+}
+.step3 table{
+    border-top:none;
+    width: 100%;
+    margin: 0px auto;
+}
+.step3 tbody{
+    border-top:none;
+    display:inline-block ;
+    width:100%;
+    height: 200px;
+    overflow: auto;
+}
+.step3 table tr{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    width:100%;
+}
+.step3 table tr th{
+    border-top: none;
+    font-weight: normal;
+}
+.step3 table tr td,
+.step3 table tr th{
+    display: block !important;
+    float: left;
+    box-sizing: border-box;
+    height: 50px;
+    line-height: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width:32%;
+    font-size: 16px;
+    border-bottom: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-top:none;
+    border-bottom: 1px solid #ccc;
+}
+.step3  tr th{
+    font-size: 0.9rem;
+}
+.step3 tr th:nth-child(1) input[type="checkbox"],
+.step3 tr td:nth-child(1)  input[type="checkbox"]{
+    position: absolute !important;
+    top:50%;
+    margin-top: -8px;
+    left:-30px;
+    width:16px;
+    height: 16px;
+    margin-bottom: -2px;
+}
+.step3 tr th:nth-child(1) input[type="checkbox"]{
+    left:10px;
+}
+.step3 tr th:nth-child(1),
+.step3 tr td:nth-child(1){
+    font-size: 0.9rem;
+    position: relative;
+    padding-left: 40px;
+}
+.step3 tr th:nth-child(1) label,
+.step3 tr td:nth-child(1) label{
+    margin-bottom: 0px;
+}
+.step3 thead tr{
+    display: block;
+}
+.step3 select{
+    width: 80%;
+    height: 35px;
+    border-radius: 3px;
+    font-size: 14px;
+    padding-left: 10px;
+}
+.step3 .button .buttonLeft button{
+    float: left;
+}
+.step3 .button button.concel{
+    color:#ccc;
+    background-color: white;
+    color:#ccc;
+}
+.step3 .button button.concel:hover{
+    background-color: #dbdbdb;
+}
+.step3 .button button.before{
+    margin-right: 20px;
+    color:#09f;
+    background-color: white;
+    color:#09f;
+}
+.step2{
+    display: none;
+}
+.step3{
+    display: none;
+}
+/*5月16日新增*/
+.contact-group-word textarea{
+    padding: 5px;
+    border-radius: 5px;
+    border-color:#ccc;
+}
+.iconfont{
+    display: inline-block;
+    color:#e6e8eb;
+    cursor: pointer;
+    height: 18px;
+    overflow: hidden;
+}
+textarea[disabled], html input[disabled] {
+    background-color: white;
+}
+.wrong-msg{
+    float: left;
+    font-size: 12px;
+    color:#f66;
+}
+

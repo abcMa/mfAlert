@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>parent</title>
+    <link href="../Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/Style/standard.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">监听用例</div>
+                <div class="panel-body">
+                    <code>
+                        Iptools.Tool._pushListen("test_channel", function (ms) {<br />
+                        $("#dtest").append(JSON.stringify(ms));<br />
+                        });<br />
+                    </code>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">监听显示面板</div>
+                <div class="panel-body">
+                    <div id="dtest"></div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">公共频道广播用例</div>
+                <div class="panel-body">
+                    <code>
+                        Iptools.uidataTool._pushMessage({<br />
+                        channel: "broadcast_view",<br />
+                        title: "子页面更新",<br />
+                        message: "更新数据1",<br />
+                        viewId: "6e8f8df4-ee96-11e6-bf5f-00163e0052f2",<br />
+                        });<br />
+                    </code>
+                    <button type="button" class="btn commonBtn small revert" onclick="testbroadcast()">广播推送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../Content/JS/jquery-1.9.1.js"></script>
+    <script src="../Content/JS/iptools_v2.js"></script>
+    <script>
+        Iptools.Start();
+        Iptools.Tool._pushListen("test_channel", function (ms) {
+            $("#dtest").append(JSON.stringify(ms) + "<br/>");
+        });
+        function testbroadcast() {
+            Iptools.uidataTool._pushMessage({
+                channel: "broadcast_view",
+                title: "子页面更新",
+                message: "更新数据1",
+                viewId: "6e8f8df4-ee96-11e6-bf5f-00163e0052f2",
+                valueId: "2"
+            });
+        }
+    </script>
+</body>
+</html>

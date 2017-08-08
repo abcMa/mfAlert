@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>child</title>
+</head>
+<body>
+    <div id="dtest"></div>
+    <button type="button" onclick="toparent()">发起</button>
+    <script src="../Content/JS/jquery-1.9.1.js"></script>
+    <script>
+        Iptools.Start();
+        Iptools.uidataTool._pushMessage({
+            channel: "broadcast",
+            title: "测试",
+            message: "更新数据1",
+        });
+        function toparent() {
+            parent.init("button", function (rs) {
+                $("#dtest").append(rs + "<br/>");
+            });
+        }
+    </script>
+</body>
+</html>

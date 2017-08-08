@@ -1,0 +1,120 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #eff3f8;
+    min-height: 800px;
+    height: auto;
+}
+
+.left-section {
+    padding: 0;
+    float: left;
+    width: 300px;
+    margin-right: -300px;
+}
+
+.right-section {
+    padding: 0 0 0 20px;
+    width: 100%;
+    padding-left: 320px;
+    float: right;
+    padding-bottom: 100px;
+}
+
+.g-main {
+    background-color: #fff;
+}
+
+    .g-main .group-nav {
+        border: none;
+    }
+
+        .g-main .group-nav li[role=presentation] a {
+            border: none;
+            color: #333;
+            height: 2.9rem;
+            line-height: 1.9rem;
+            font-size: 0.9rem;
+        }
+
+        .g-main .group-nav li[role=presentation]:not(.actvie) a:hover {
+            border: none;
+            background-color: #fff;
+            color: #09f;
+        }
+
+        .g-main .group-nav li[role=presentation] a span.title {
+            letter-spacing: 0.1rem;
+        }
+
+        .g-main .group-nav li[role=presentation] a span.badge {
+            vertical-align: middle;
+            margin-bottom: 5px;
+            color: #fff;
+            background-color: #09f;
+        }
+
+        .g-main .group-nav li[role=presentation].active a {
+            border: none;
+            border-bottom: 3px solid #09f;
+            color: #09f;
+        }
+
+            .g-main .group-nav li[role=presentation].active a:hover {
+                border: none;
+                border-bottom: 3px solid #09f;
+                color: #09f;
+            }
+
+    .g-main .tab-content .tab-pane {
+        min-height: 300px;
+        padding: 0 5px;
+    }
+
+        .g-main .tab-content .tab-pane#g-analysis {
+            padding: 10px 15px;
+        }
+
+            .g-main .tab-content .tab-pane#g-analysis .report-select {
+                width: 200px;
+                display: inline-block;
+            }
+
+            .g-main .tab-content .tab-pane#g-analysis .report-tool {
+                float: right;
+            }
+
+            .g-main .tab-content .tab-pane#g-analysis .report-body {
+                padding-bottom: 50px;
+            }
+
+                .g-main .tab-content .tab-pane#g-analysis .report-body .r-report {
+                    height: 400px;
+                    margin-top: 20px;
+                }
+
+        .g-main .tab-content .tab-pane#g-rule {
+            padding: 15px 20px 50px 20px;
+        }
+
+            .g-main .tab-content .tab-pane#g-rule .auto-condition-container {
+                padding-left: 20px;
+            }
+
+#taskModal .modal-footer .search-list {
+    display: none;
+}
+
+.link-task-item {
+    cursor: pointer;
+    color: #09f;
+}
+
+    .link-task-item:hover {
+        text-decoration: none;
+        color: #06c;
+    }

@@ -1,0 +1,26 @@
+body{
+    background: #eff3f8;
+    min-height: 800px;
+    height: auto;
+}
+#insurance-list{
+    background-color: white;
+    padding-bottom: 15px;
+}
+.new-insurance .content{
+    border-bottom: 1px solid #ccc;
+}
+.modal-body{
+    overflow: hidden;
+    background-color: white;
+}
+.u-main form{
+    background-color: white;
+    padding-bottom: 0px;
+}
+.panel-default>.panel-heading{
+    background-image:none;
+}
+.this-month-end{
+    display: none;
+}

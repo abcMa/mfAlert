@@ -1,0 +1,665 @@
+body div p h1 h2 h3 h4 h5 h6 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 80px;
+    height: auto;
+    background-color:transparent;
+    font-family:'Microsoft YaHei','微软雅黑';
+}
+@font-face {
+    font-family: 'iconfont';  /* project id 125778 */
+    src: url('//at.alicdn.com/t/font_qvsbyhriiso9wwmi.eot');
+    src: url('//at.alicdn.com/t/font_qvsbyhriiso9wwmi.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_qvsbyhriiso9wwmi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_qvsbyhriiso9wwmi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_qvsbyhriiso9wwmi.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+@media screen and(min-width: 768px){
+    .col-sm-12{
+        width: 100%;
+        height: 100%;
+        float: left;
+        position: relative;
+    }
+}
+.section-main{
+    padding-left: 0;
+    padding-right: 0;
+}
+.section-event{
+    min-height: 200px;
+}
+section.row{
+    margin-left: 0;
+    margin-right: 0;
+}
+.bgPhoto{
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    height: 200px;
+    z-index: 1;
+}
+.bgPhoto img{
+    width: 100%;
+    height: 200px;
+}
+.section-event .col-main{
+    padding-left: 0;
+    width: 300px;
+    height: 620px;
+    position: relative;
+    margin-right: 10px;
+    padding-right: 0;
+    background-color: #fff;
+    border-radius: 50px;
+    border: 2px solid #dbdbdb;
+    box-shadow: 1px 2px 5px #dbdbdb;
+}
+.section-event .nav-left{
+    /*overflow-y: auto;*/
+    /*height: 1100px;*/
+}
+.section-event .navLeft{
+    overflow-y: auto;
+    height: 900px;
+}
+.active-span{
+    font-size: 16px;
+}
+.section-panel{
+    height: 70px;
+    background-color: #fff;
+    border-radius: 50px 50px 0 0;
+}
+.mobileBottom{
+    height: 2px;
+    border: 1px solid #ddd;
+    margin-top: 17px;
+}
+.section-panel i{
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    right: 0;
+    width: 24px;
+    height: 15px;
+    font-size: 25px;
+    color: #09f;
+
+}
+.section-panel span{
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 6px;
+    font-weight: normal;
+    color: #555;
+}
+.section-second img{
+    width: 100%;
+    height: 200px;
+}
+.cardCarousel{
+    width: 90%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 0;
+    margin-left: -5px;
+    margin-top: 5px;
+}
+.section-found{
+    min-height: 48px;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 0;
+}
+.section-found:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.section-found li{
+    list-style: none;
+    float: left;
+}
+.section-found .section-found-thrid {
+    height: 14px;
+    margin-top: -7px;
+    position: absolute;
+    top: 50%;
+    right: -2px;
+}
+.section-found .section-found-one{
+    display: inline-block;
+    margin-left: -40px;
+    margin-top: 29px;
+    font-size: 20px;
+    color: #68cfff;
+    width: 16px;
+    height: 16px;
+}
+.webActive .section-found-one{
+    margin-top: 26px;
+}
+.activePhone{
+    width: 190px;
+    margin-top: 13px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #646464;
+    margin-left: -5px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.activeAddressIcon{
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    margin-top: -11px;
+}
+.activeAddress{
+    margin-top: 13px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #646464;
+    margin-left: -5px;
+}
+.activeTimeIcon{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -6px;
+}
+.activeTime{
+    font-size: 14px;
+    color: #646464;
+    margin-left: -5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.section-found .section-found-two{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    color: #68cfff;
+}
+.section-found .section-found-twos{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: #68cfff;
+}
+.section-found p{
+    padding: 7px 0 0 0;
+}
+.contactInfoTab{
+    margin-left: 320px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    min-height: 520px;
+    margin-right: -15px;
+    background-color: #fff;
+    color: #939290;
+    padding-left: 0;
+    right: 0;
+}
+.mCrdIcon{
+    font-weight: 500;
+}
+.contactTabList{
+    margin-left:  7.5%;
+    margin-right: 20.5%;
+    font-size: 16px;
+}
+.contactInfo{
+    padding-left: 20px;
+    width: 500px;
+}
+.form-group-btn{
+    padding-left: 20px;
+    margin-left: 20px;
+    width: 500px;
+}
+.appendInfo{
+    display: none;
+    margin-bottom: 330px;
+}
+.appendInfo .backgroundPhoto{
+    overflow:hidden;
+}
+.appendInfo #photoTop{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: 100px;
+    opacity: 0;
+}
+.appendInfo .companyNameColor{
+    margin-bottom: 20px;
+}
+.appendInfo #nameColor{
+    width: 0;
+    display: none;
+}
+.appendInfo .companyPropagandaColor{
+    margin-bottom: 0;
+}
+.appendInfo .companyProColor{
+    margin-bottom: 20px;
+}
+.appendInfo #propagandaColor{
+    width: 0;
+    display: none;
+}
+.appendInfo #iconColor{
+    width: 0;
+    display: none;
+}
+.appendInfo .companyCircle{
+    padding-left: 0;
+}
+.control-label{
+    padding-right: 0!important;
+    padding-left: 0!important;
+    text-align: left!important;
+}
+.input-group-addon{
+    background-color: #09f;
+    cursor: pointer;
+    color: #fff;
+}
+.input-group-addon:hover{
+    background-color: #06c;
+}
+.tab-content .form-group{
+    margin-left: 0;
+    margin-right: 0;
+}
+.form-horizontal .form-group{
+    position: relative;
+}
+.form-horizontal .companyInput{
+    overflow:hidden;
+}
+.form-horizontal #photo{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 100px;
+    opacity: 0;
+}
+.form-horizontal .companyWeb{
+    margin-bottom: 20px;
+}
+.form-horizontal .companyWebInput{
+    padding-left: 0;
+}
+.section-event .nav-left-code{
+    height: 100%;
+}
+#enrollActivityForm .col-sm-6,#serviceApointment .col-sm-6{
+    height:40px;
+}
+div.evo-colorind{
+    width: 70px;
+    height: 34px;
+    border: 1px solid #c3c3c3;
+    border-radius: 4px;
+}
+.evo-pop{
+    width: 211px!important;
+}
+.pictureIcon{
+    position: absolute;
+    top: 45px;
+    right: 15px;
+    font-size: 25px;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+}
+.section-secound-code{
+    position: absolute;
+    top: 56px;
+    z-index: 2;
+    background-size:cover;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    padding-top: 55px;
+    margin-bottom: 20px;
+}
+.content{
+    margin-top: 205px;
+    height: 230px;
+    overflow-y: auto;
+}
+/*左上角图片样式*/
+.titleLogo{
+    position: absolute;
+    top: 37px;
+    left: 50%;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    background: url("../images/photoBg.png") no-repeat;
+    background-size: 100% 100%;
+}
+.titlePhoto{
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.titlePhoto img{
+    width: 100%;
+    height: 100%;
+}
+.titleWord{
+    margin-top: 85px;
+}
+.opn-col{
+    font-weight: 600;
+    font-size: 18px;
+}
+.section-found-second-code{
+    position: absolute;
+    padding: 0 15px;
+}
+.formCampany{
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+    margin-left: -50px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+.CampanyName{
+    color: #09f;
+}
+.webSide{
+    margin-top: 5px;
+}
+.follow{
+    margin-top: 10px;
+    /*margin-bottom: 10px;*/
+    min-height: 50px;
+}
+.followCenter{
+    margin-left: 10%;
+    width: 80%;
+    overflow: hidden;
+}
+.followCenter span{
+    color: #282828;
+    margin-left: 5px;
+}
+.followCenterLeft{
+    width: 30%;
+    margin-right: 5%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #09f;
+    border-radius: 25px;
+    background-color: #fff;
+}
+.followLeftCenter{
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+}
+.followCenterRight{
+    width: 30%;
+    margin-right: 5%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #09f;
+    border-radius: 25px;
+    background-color: #fafafa;
+}
+.followRightCenter{
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+}
+.followCenterCenter{
+    width: 30%;
+    float: right;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #09f;
+    border-radius: 25px;
+    background-color: #fafafa;
+}
+.followCenterCenterCenter{
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+}
+.followLeftCenterIcon{
+    display: inline-block;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    margin-bottom: 2px;
+    vertical-align: middle;
+}
+.followRightCenterIcon{
+    display: inline-block;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    color: #fe5d5d;
+    vertical-align: middle;
+    padding-top: 11px;
+}
+.followCenterCenterIcon{
+    display: inline-block;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    color: #33cc66;
+    vertical-align: middle;
+    padding-top: 13px;
+}
+.sideCheck{
+    cursor: pointer;
+    padding-left: 5px;
+}
+.sideCircle{
+    cursor: pointer;
+    padding-left: 5px;
+}
+.seatIcon{
+    position: absolute;
+    right: -2px;
+    width: 30px;
+    height: 48px;
+    border-radius: 3px;
+    background-color: #fff;
+    font-weight: normal;
+}
+.iconRight{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: 3px;
+    background-color: #fff;
+    color: #c3c3c3;
+}
+.paddress{
+    width: 190px;
+}
+/*企业微名片pc端小屏幕样式*/
+@media(min-width: 768px){
+    .col-sm-6 {
+        width: 80%!important;
+    }
+}
+@media (max-width: 900px) {
+    div.groups{
+        width: 45%;
+    }
+}
+@media (max-width: 1230px) {
+    .section-found li .section-found-second{
+        width: 200px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+@media(max-width: 870px) {
+    .section-found li b{
+        word-break: break-all; word-wrap:break-word;
+    }
+}
+/*按钮的样式*/
+.floatButton{
+    float: right;
+}
+#modalBindWX .modal-dialog,#modalUnBindWX .modal-dialog{
+    margin: 300px auto;
+}
+#modalBindWX .modal-dialog{
+    width: 260px;
+}
+#modalBindWX .modal-body{
+    text-align: center;
+    padding-bottom: 35px;
+}
+.modal-header{
+    background-color: #09f;
+}
+#modalBindWX .modal-header{
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+#modalBindWX .modal-body .wx_mobile_qr{
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+}
+.modal-body p{
+    line-height: 30px;
+}
+.closeModal{
+    font-size: 28px;
+}
+.smartmarquee {
+    position: relative;
+    overflow: hidden;
+}
+.smartmarquee .container { position: absolute; }
+.nav-tabs {
+    border-bottom: none;
+    margin-top: 10px;
+    margin-left: 0;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    border: none;
+    color: #555;
+    padding-top: 11px;
+    border-bottom: 3px solid #09f;
+}
+.tab-content{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.active .tabSwitch{
+    color: #09f!important;
+}
+.tabSwitch:hover{
+    color: #09f!important;
+}
+.tab-content label{
+    color:#555;
+    font-size: 14px;
+    font-weight: normal;
+}
+.has-success .input-group-addon{
+    color: #fff;
+    background-color: #09f;
+    border-color: #09f;
+}
+.report-time-btn{
+    color: #646464;
+    background-color: #fff;
+    border: 1px solid #dfdfdf;
+}
+.report-time-btn:hover{
+    color: #000;
+}
+.report-btn-selected{
+    color: #fff;
+    background-color: #09f;
+}
+.report-btn-selected:hover{
+    color: #fff;
+    background-color: #06c;
+}
+.report-btn-selected:active{
+    color: #fff;
+}
+button.report-btn-selected:focus{
+    color: #fff;
+}
+.report-btn-selected:visited{
+    color: #fff;
+}
+.contactTabList a{
+    font-size: 18px;
+    color: #333;
+    background-color: #fff;
+}
+.nav-tabs > li > a{
+    border-bottom: 3px solid transparent;
+    margin-bottom: 1px;
+}
+.nav-tabs > li > a:hover{
+    color: #555;
+    background-color: #fff;
+    opacity: 1;
+    border: 1px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+.contactTabList .active a{
+    color: #555;
+    opacity: 1;
+}
+.nav-tabs > .active{
+    margin-bottom: -2px;
+}
+.modal-content .close{
+    font-size: 21px;
+}
+#modalBindWX{
+    overflow-y: hidden;
+}
+.revertRevise{
+    margin-right: 10px;
+    width: 60px;
+}

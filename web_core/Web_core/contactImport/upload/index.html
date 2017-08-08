@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>导入文件</title>
+    <link href="../../Content/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../Content/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../Content/Style/standard.css">
+    <link rel="stylesheet" href="../css/importFileCommon.css">
+</head>
+<body>
+<section class="step">
+    <div class="step1">
+        <div class="header">
+            <div class="inner">
+                <div class="left">导入文件</div>
+                <div class="right">
+                    <ul>
+                        <li class="circle active">
+                            <span></span>
+                        </li>
+                        <li class="line"></li>
+                        <li class="circle">
+                            <span></span>
+                        </li>
+                        <li class="line"></li>
+                        <li class="circle">
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="inner">
+                <h1>选择一个文件上传</h1>
+                <div class="uploadFile">
+                    <p class="importIcon first"><span class="line1">将文件拖拽至此处</span><br><span class="line2">或</span><br><span class="chooseFile"><span class="again">选择文件</span><input type="file" accept=".xls,.xlsx" class="importFile"></span></p>
+                    <!--<p class="importIcon next"><span class="fileName"></span><span class="chooseFile">重新选择<input type="file" accept=".xls,.xlsx" class="importFile"></span></p>-->
+                </div>
+                <!--<div class="afterUploadFile">-->
+                    <!--<p class="iconfontyyy">&#xe78d;</p>-->
+                    <!--<p><span>文件名称.xlsx</span>&nbsp;&nbsp;&nbsp;<span>重新选择</span></p>-->
+                <!--</div>-->
+                <p class="attention">请注意：系统中，客户以手机号码作为唯一身份标识。如果你上传的文件中，包含了系统中存在的客户，那么，系统会智能的将表格文件中新的属性添加至该客户，而不会创建两个手机号码相同的客户。</p>
+                <div class="button">
+                    <button class="btn cancel">取  消</button>
+                    <button class="btn disableBtn next" data-loading-text="<span class='icon-spin icon-spinner' ></span>保存中" disabled>下一步，导入细节确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="step2">
+        <div class="header">
+            <div class="inner">
+                <div class="left">导入文件</div>
+                <div class="right">
+                    <ul>
+                        <li class="circle active">
+                            <span></span>
+                        </li>
+                        <li class="line active"></li>
+                        <li class="circle active">
+                            <span></span>
+                        </li>
+                        <li class="line"></li>
+                        <li class="circle">
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="inner">
+                <h1>导入细节确认</h1>
+                <form role="form" class="form">
+                    <div class="left">
+                        <div class="form-group">
+                            <label>导入文件名</label>
+                            <input type="text" placeholder="默认文件名称.xlsx" class="fileName">
+                        </div>
+                        <div class="form-group type">
+                            <label>选择客户类型（必选）
+                            <span  data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="客户类型是易掌客系统内置的对客户的划分类型，分为潜在客户、保有客户、会员客户。" data-original-title title>
+                                <i class="iconfont icon-i"></i>
+                            </span>
+                            </label>
+                            <select name="" id="contact-type">
+                                <option value="">请选择客户类型</option>
+                                <option value="4">会员客户</option>
+                                <option value="3">保有客户</option>
+                                <option value="2">潜在客户</option>
+                            </select>
+                            <!--<p>客户类型是易掌客系统内置的对客户的划分类型，分为潜在客户、消费客户、会员客户。</p>-->
+                        </div>
+                        <!--<div class="form-group phone">-->
+                            <!--<div class="checkbox"><label for="choosePhone">Excel表格中没有&nbsp;&nbsp;<span>手机号码</span>&nbsp;&nbsp;这一列-->
+                            <!--<span  data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="系统中，客户以手机号码作为唯一身份标识，因此上传的客户数据中必须包含手机号码。如果你的文件中有手机号码，但以其他方式命名，诸如：电话、联系方式等，请勾选此项，后续步骤中系统会帮你做相应的匹配。" data-original-title title>-->
+                                <!--<i class="iconfont icon-i"></i>-->
+                            <!--</span>-->
+                            <!--</label><input type="checkbox" class="blueCheckbox " id="choosePhone">-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash;<p>系统中，客户以<span>手机号码</span>作为<span>唯一身份标识</span>，因此上传的客户数据中<span>必须</span>包含手机号码。如果你的文件中有手机号码，但以其他方式命名，诸如：电话、联系方式等，<span>请勾选此项</span>，后续步骤中系统会帮你做相应的匹配</p>&ndash;&gt;-->
+                        <!--</div>-->
+                        <div class="form-group phone contactGrounp">
+                            <div class="checkbox"><label for="chooseContactGrounp">将本次导入数据创建为客户群
+                            </label><input type="checkbox" class="blueCheckbox " id="chooseContactGrounp">
+                            </div>
+                            <!--<p>系统中，客户以<span>手机号码</span>作为<span>唯一身份标识</span>，因此上传的客户数据中<span>必须</span>包含手机号码。如果你的文件中有手机号码，但以其他方式命名，诸如：电话、联系方式等，<span>请勾选此项</span>，后续步骤中系统会帮你做相应的匹配</p>-->
+                        </div>
+                        <div class="excel">本次将导入<span class="fileNum">0</span>条客户数据，将被标记为<span class="customerType">--</span>类型。</div>
+                    </div>
+                    <div class="right" style="display: none;">
+                        <div class="form-group name">
+                            <label>客户群名称</label>
+                            <input type="text" placeholder="输入客户群名称" class="contactGrounpName" disabled>
+                            <span class="wrong-msg"></span>
+                        </div>
+                        <!--<div class="form-group basic">-->
+                            <!--<label>分群依据</label>-->
+                            <!--<select name="" id="group-basic" disabled>-->
+                                <!--<option value="">请选择分群依据</option>-->
+                                <!--<option value="1">接触渠道</option>-->
+                                <!--<option value="2">消费频次</option>-->
+                                <!--<option value="3">客户价值</option>-->
+                                <!--<option value="4">客户运营阶段</option>-->
+                            <!--</select>-->
+                            <!--<span class="wrong-msg"></span>-->
+                        <!--</div>-->
+                        <div class="form-group contact-group-word des">
+                            <label>客户群描述</label>
+                            <!--<textarea name="" id="" style="width:90%;height:50px;" class="contantGroupDes" disabled></textarea>-->
+                            <input type="text" placeholder="输入客户群描述" class="contantGroupDes" disabled>
+                            <span class="wrong-msg"></span>
+                        </div>
+                    </div>
+                </form>
+                <div class="button">
+                    <div class="buttonLeft">
+                        <button class="btn commonBtn revert before">上一步</button>
+                        <button class="btn cancel">取  消</button>
+                        </div>
+                    <button class="btn disableBtn  next" data-loading-text="<span class='icon-spin icon-spinner' ></span>保存中" disabled>下一步，客户属性匹配</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="step3">
+        <div class="header">
+            <div class="inner">
+                <div class="left">导入文件</div>
+                <div class="right">
+                    <ul>
+                        <li class="circle active">
+                            <span></span>
+                        </li>
+                        <li class="line active"></li>
+                        <li class="circle active">
+                            <span></span>
+                        </li>
+                        <li class="line active"></li>
+                        <li class="circle active">
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="inner">
+                <h1>客户属性匹配</h1>
+                <div class="headerContent">
+                    <div class="left">
+                        <div class="img"><img src="../image/step3.png" alt=""></div>
+                    </div>
+                    <div class="explain">
+                        <h5>您的导入文件中缺少 “手机号码” 属性</h5>
+                        <ul>
+                            <li>1、没有手机号码的客户将无法创建；</li>
+                            <li>2、请在以下属性匹配列表中，将你文件中的表示手机号码的项与之匹配。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="list">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" class="blueCheckbox" disabled>上传文件中的属性</th>
+                            <th>第一条信息预览</th>
+                            <th>易掌客 客户属性</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <!--<tr>-->
+                            <!--<td><label for=""><input type="checkbox"></label></td>-->
+                            <!--<td>姓名</td>-->
+                            <!--<td>小王</td>-->
+                            <!--<td>-->
+                                <!--<select name="" id="">-->
+                                    <!--<option value="">请选择客户属性</option>-->
+                                    <!--<option value="">姓名</option>-->
+                                    <!--<option value="">手机号码</option>-->
+                                    <!--<option value="">生日</option>-->
+                                    <!--<option value="">星座</option>-->
+                                    <!--<option value="">邮箱</option></select></td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td><label for=""><input type="checkbox"></label></td>-->
+                            <!--<td>姓名</td>-->
+                            <!--<td>小王</td>-->
+                            <!--<td>-->
+                                <!--<select name="" id="">-->
+                                    <!--<option value="">请选择客户属性</option>-->
+                                    <!--<option value="">姓名</option>-->
+                                    <!--<option value="">手机号码</option>-->
+                                    <!--<option value="">生日</option>-->
+                                    <!--<option value="">星座</option>-->
+                                    <!--<option value="">邮箱</option>-->
+                                <!--</select>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td><label for=""><input type="checkbox"></label></td>-->
+                            <!--<td>姓名</td>-->
+                            <!--<td>小王</td>-->
+                            <!--<td>-->
+                                <!--<select name="" id="">-->
+                                    <!--<option value="">请选择客户属性</option>-->
+                                    <!--<option value="">姓名</option>-->
+                                    <!--<option value="">手机号码</option>-->
+                                    <!--<option value="">生日</option>-->
+                                    <!--<option value="">星座</option>-->
+                                    <!--<option value="">邮箱</option>-->
+                                <!--</select></td>-->
+                        <!--</tr>-->
+                    </table>
+                </div>
+                <div class="button">
+                    <div class="buttonLeft">
+                        <button class="btn commonBtn revert before">上一步</button>
+                        <button class="btn cancel">取  消</button></div>
+                        <button class="btn disableBtn next sure" disabled data-loading-text="<span class='icon-spin icon-spinner' ></span>导入中">开始导入</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../../Content/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../Content/JS/iptools_v2.js"></script>
+<script src="../../Content/JS/jszip.js"></script>
+<script src="../../Content/JS/xlsx.js"></script>
+<script src="js/commonupload.js"></script>
+<script src="js/widget.js"></script>
+<script>
+    Iptools.Start({
+        baseRoot: false,
+        custmomizeUrl: "../../Content/JS/properties.xml"
+    });
+    CommonWidget._init();
+    widget._init();
+    $(function (){
+        $("[data-toggle='popover']").popover();
+        $("[data-toggle='popover']").mouseenter(function(){
+            $(this).find(".iconfont").css("color","#09f");
+        })
+        $("[data-toggle='popover']").mouseleave(function(){
+            $(this).find(".iconfont").css("color","#e6e8eb");
+        })
+    });
+</script>
+</body>
+</html>
