@@ -48,6 +48,17 @@ var $ = function(dom){
 
         },
         on:function(type,target,fn){
+            try{  // Chrome、FireFox、Opera、Safari、IE9.0及其以上版本
+                curObj.find(target).addEventListener(type,fn,false);
+            }catch(e){
+                try{  // IE8.0及其以下版本
+                    curObj.find(target).attachEvent('on' + type,fn);
+                }catch(e){  // 早期浏览器
+                    curObj.find(target)['on' + type] = fn;
+                }
+            }
+        },
+        find:function(ele){
 
         }
     }

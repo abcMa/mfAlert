@@ -3622,7 +3622,7 @@ jQuery.fn.extend({
 			jQuery.event.add( this, types, fn, data, selector );
 		});
 	},
-	one: function( types, selector, data, fn ) {
+	one: function( types, selector, data, fn ) {;
 		return this.on( types, selector, data, fn, 1 );
 	},
 	off: function( types, selector, fn ) {
