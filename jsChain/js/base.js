@@ -54,3 +54,12 @@ $(".area1").on("click",".a-span",function(e){
 $(".area2").on("click",".a-span",function(e){
     $(".area2").append("<p>eeeee</p>");
 })
+//--------------------js获取配置文件---------------------------------------
+var para = {
+    async: false,
+    type: "GET"
+};
+para["url"] = "js/properties.xml";
+$.ajax(para).done(function (r) {
+    var r = $(r).find("Configs root wxyuntuike").text();
+});
