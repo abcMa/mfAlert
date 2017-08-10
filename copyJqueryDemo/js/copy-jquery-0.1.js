@@ -31,9 +31,11 @@ var $ = function(dom){
             }else{//以key,value的方式传参
                 curObj.style[ops] = val;
             }
+            return curObj;
         },
         hide:function(){
             curObj.style.display = "none";
+            return curObj;
         },
         show:function(type){
             if(type){
@@ -45,7 +47,7 @@ var $ = function(dom){
             }else{
                 curObj.style.display = "block";
             }
-
+            return curObj;
         },
         on:function(type,fn){
             try{  // Chrome、FireFox、Opera、Safari、IE9.0及其以上版本
