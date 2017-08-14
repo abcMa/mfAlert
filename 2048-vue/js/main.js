@@ -10,14 +10,14 @@
             tilePosition: 121,
             startTiles: 2,//初始化几个方格
             tiles: [],
-            grid: [],
+            grid: [],//网格
             conf: gameStorage.fetch('vue2048-config')
         },
         //实例创建之后被调用
         created: function() {
             this.getWindowSize();
         },
-
+        //created执行完执行
         ready: function() {
             var data = gameStorage.fetch('vue2048'),
                 conf = this.conf;
@@ -27,6 +27,7 @@
                 this.continueGame(data);
             } else {
 
+                //localStorage没有数据，初始化数据
                 if (conf.length === 0) {
                     //First Kick
                     this.conf = {
@@ -116,10 +117,11 @@
                 this.clearMessage();
                 //清空所有方格
                 this.tiles = [];
+                //分数置0
                 this.updateScore(0);
 
                 for (var i = 0; i < startTiles; i++) {
-                    //初始化方格
+                    //初始化随机方格
                     this.addRandomTile();
                 }
             },
@@ -164,11 +166,12 @@
 
                 this.init();
             },
-
+            //初始化随机砖块
             addRandomTile: function() {
                 //空闲的背景格子
                 if (this.availableCells().length > 0) {
                     var value = Math.random() < 0.9 ? 2 : 4,
+                        //随机方块的位置
                         randomCell = this.randomAvailableCell();
 
                     this.addTile({
@@ -523,15 +526,15 @@
     });
 
 
-
+    //实例化键盘manager
     var Keys = new KeyboardInputManager();
 
-
+    //绑定键盘事件
     Keys.on('move', function(direction) {
         Game.move(direction);
     });
 
-
+    //适配屏幕
     win.onresize = function(event) {
         Game.getWindowSize();
     };

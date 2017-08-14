@@ -1,5 +1,6 @@
 /**
  * Created by sks on 2017/6/27.
+ * 获取localStorage，和存储localStorage
  */
 (function (exports) {
 
