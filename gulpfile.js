@@ -2,7 +2,7 @@
  * Created by sks on 2017/8/15.
  */
 var gulp = require('gulp'),
-rename = require('gulp-rename'),
+    rename = require('gulp-rename'),
     uglify = require('gulp-uglify');//js压缩插件
 
 gulp.task('default', function() {
