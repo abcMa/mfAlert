@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/abcMa/mfAlert/issues"
   },
-  "homepage": "https://github.com/abcMa/mfAlert#readme"
+  "homepage": "https://github.com/abcMa/mfAlert#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
