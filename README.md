@@ -5,4 +5,4 @@ mf-exercise-libray
 #### fruitFM： 仿豆瓣FM
 #### questionnaireTool： 自己的问卷模块
 #### rightClickMenu： 右键弹出菜单：刷新，关闭当前，关闭其他，关闭所有
-#### web_core/Web_core： 易掌crm项目
+#### web_core/Web_core： crm
